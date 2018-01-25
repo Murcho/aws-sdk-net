@@ -13,7 +13,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
 	<FileAlignment>512</FileAlignment>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile></TargetFrameworkProfile>
     <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
     <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
@@ -99,6 +99,15 @@
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.dll")#></HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.CoreModule.dll")#></HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WebModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.WebModule.dll")#></HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.UnityWebRequestWWWModule.dll")#></HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />

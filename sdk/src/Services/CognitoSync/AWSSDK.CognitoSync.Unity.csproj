@@ -68,6 +68,12 @@
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.WebModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.WebModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data">

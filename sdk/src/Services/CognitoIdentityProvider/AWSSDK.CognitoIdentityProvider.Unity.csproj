@@ -3,14 +3,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{363BDA2C-45A8-4D0C-8A75-F34018AA05DB}</ProjectGuid>
+    <ProjectGuid>{9BBA9590-BBE6-41D1-8069-5354AF7466B2}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile></TargetFrameworkProfile>
-    <AssemblyName>AWSSDK.MobileAnalytics</AssemblyName>
-    <RootNamespace>Amazon.MobileAnalytics</RootNamespace>
+    <AssemblyName>AWSSDK.CognitoIdentityProvider</AssemblyName>
+    <RootNamespace>Amazon.CognitoIdentityProvider</RootNamespace>
     <BaseIntermediateOutputPath>obj\unity</BaseIntermediateOutputPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <ProductVersion>10.0.0</ProductVersion>
@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <DocumentationFile>bin\Debug\unity\AWSSDK.MobileAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\unity\AWSSDK.CognitoIdentityProvider.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <DocumentationFile>bin\Release\unity\AWSSDK.MobileAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\unity\AWSSDK.CognitoIdentityProvider.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <!--
@@ -76,43 +76,8 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data">
-      <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.5\System.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Mono.Data.SQLite">
-      <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\4.5\Mono.Data.SQLite.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Delivery\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Delivery\Policy\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Delivery\Policy\_unity\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Delivery\_unity\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Event\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Model\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\Session\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\_unity\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>

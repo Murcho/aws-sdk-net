@@ -41,6 +41,8 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private List<string> _availabilityZones = new List<string>();
+        private long? _backtrackConsumedChangeRecords;
+        private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private string _cloneGroupId;
@@ -53,7 +55,9 @@ namespace Amazon.RDS.Model
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
+        private DateTime? _earliestBacktrackTime;
         private DateTime? _earliestRestorableTime;
+        private List<string> _enabledCloudwatchLogsExports = new List<string>();
         private string _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -132,6 +136,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BacktrackConsumedChangeRecords. 
+        /// <para>
+        /// The number of change records stored for Backtrack.
+        /// </para>
+        /// </summary>
+        public long BacktrackConsumedChangeRecords
+        {
+            get { return this._backtrackConsumedChangeRecords.GetValueOrDefault(); }
+            set { this._backtrackConsumedChangeRecords = value; }
+        }
+
+        // Check to see if BacktrackConsumedChangeRecords property is set
+        internal bool IsSetBacktrackConsumedChangeRecords()
+        {
+            return this._backtrackConsumedChangeRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BacktrackWindow. 
+        /// <para>
+        /// The target backtrack window, in seconds. If this value is set to 0, backtracking is
+        /// disabled for the DB cluster. Otherwise, backtracking is enabled.
+        /// </para>
+        /// </summary>
+        public long BacktrackWindow
+        {
+            get { return this._backtrackWindow.GetValueOrDefault(); }
+            set { this._backtrackWindow = value; }
+        }
+
+        // Check to see if BacktrackWindow property is set
+        internal bool IsSetBacktrackWindow()
+        {
+            return this._backtrackWindow.HasValue; 
         }
 
         /// <summary>
@@ -359,10 +400,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EarliestBacktrackTime. 
+        /// <para>
+        /// The earliest time to which a DB cluster can be backtracked.
+        /// </para>
+        /// </summary>
+        public DateTime EarliestBacktrackTime
+        {
+            get { return this._earliestBacktrackTime.GetValueOrDefault(); }
+            set { this._earliestBacktrackTime = value; }
+        }
+
+        // Check to see if EarliestBacktrackTime property is set
+        internal bool IsSetEarliestBacktrackTime()
+        {
+            return this._earliestBacktrackTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EarliestRestorableTime. 
         /// <para>
-        /// Specifies the earliest time to which a database can be restored with point-in-time
-        /// restore.
+        /// The earliest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
         public DateTime EarliestRestorableTime
@@ -375,6 +433,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEarliestRestorableTime()
         {
             return this._earliestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledCloudwatchLogsExports. 
+        /// <para>
+        /// A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledCloudwatchLogsExports
+        {
+            get { return this._enabledCloudwatchLogsExports; }
+            set { this._enabledCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnabledCloudwatchLogsExports property is set
+        internal bool IsSetEnabledCloudwatchLogsExports()
+        {
+            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>

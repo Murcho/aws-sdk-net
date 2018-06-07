@@ -99,6 +99,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobRunId);
                 }
 
+                if(publicRequest.IsSetNotificationProperty())
+                {
+                    context.Writer.WritePropertyName("NotificationProperty");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationPropertyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationProperty, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTimeout())
+                {
+                    context.Writer.WritePropertyName("Timeout");
+                    context.Writer.Write(publicRequest.Timeout);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -108,7 +125,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartJobRunRequestMarshaller _instance = new StartJobRunRequestMarshaller();        
 
+        internal static StartJobRunRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartJobRunRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

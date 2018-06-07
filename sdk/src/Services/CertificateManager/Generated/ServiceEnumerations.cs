@@ -95,6 +95,56 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateTransparencyLoggingPreference.
+    /// </summary>
+    public class CertificateTransparencyLoggingPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CertificateTransparencyLoggingPreference
+        /// </summary>
+        public static readonly CertificateTransparencyLoggingPreference DISABLED = new CertificateTransparencyLoggingPreference("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CertificateTransparencyLoggingPreference
+        /// </summary>
+        public static readonly CertificateTransparencyLoggingPreference ENABLED = new CertificateTransparencyLoggingPreference("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateTransparencyLoggingPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateTransparencyLoggingPreference FindValue(string value)
+        {
+            return FindValue<CertificateTransparencyLoggingPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateTransparencyLoggingPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateType.
     /// </summary>
     public class CertificateType : ConstantClass
@@ -108,6 +158,10 @@ namespace Amazon.CertificateManager
         /// Constant IMPORTED for CertificateType
         /// </summary>
         public static readonly CertificateType IMPORTED = new CertificateType("IMPORTED");
+        /// <summary>
+        /// Constant PRIVATE for CertificateType
+        /// </summary>
+        public static readonly CertificateType PRIVATE = new CertificateType("PRIVATE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -318,6 +372,30 @@ namespace Amazon.CertificateManager
         /// Constant OTHER for FailureReason
         /// </summary>
         public static readonly FailureReason OTHER = new FailureReason("OTHER");
+        /// <summary>
+        /// Constant PCA_INVALID_ARGS for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_INVALID_ARGS = new FailureReason("PCA_INVALID_ARGS");
+        /// <summary>
+        /// Constant PCA_INVALID_ARN for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_INVALID_ARN = new FailureReason("PCA_INVALID_ARN");
+        /// <summary>
+        /// Constant PCA_INVALID_STATE for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_INVALID_STATE = new FailureReason("PCA_INVALID_STATE");
+        /// <summary>
+        /// Constant PCA_LIMIT_EXCEEDED for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_LIMIT_EXCEEDED = new FailureReason("PCA_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant PCA_REQUEST_FAILED for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_REQUEST_FAILED = new FailureReason("PCA_REQUEST_FAILED");
+        /// <summary>
+        /// Constant PCA_RESOURCE_NOT_FOUND for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_RESOURCE_NOT_FOUND = new FailureReason("PCA_RESOURCE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -546,6 +624,56 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RenewalEligibility.
+    /// </summary>
+    public class RenewalEligibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ELIGIBLE for RenewalEligibility
+        /// </summary>
+        public static readonly RenewalEligibility ELIGIBLE = new RenewalEligibility("ELIGIBLE");
+        /// <summary>
+        /// Constant INELIGIBLE for RenewalEligibility
+        /// </summary>
+        public static readonly RenewalEligibility INELIGIBLE = new RenewalEligibility("INELIGIBLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenewalEligibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenewalEligibility FindValue(string value)
+        {
+            return FindValue<RenewalEligibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenewalEligibility(string value)
         {
             return FindValue(value);
         }

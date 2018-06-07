@@ -43,15 +43,8 @@ namespace Amazon.Cloud9
     /// </para>
     ///  
     /// <para>
-    /// In the background, these tools are available through development environments running
-    /// on Amazon Elastic Compute Cloud (Amazon EC2) instances (known as <i>Amazon EC2 environments</i>),
-    /// your own servers (known as <i>SSH environments</i>), or a combination. This enables
-    /// you to create and switch between multiple environments, with each environment set
-    /// up for a specific development project.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about AWS Cloud9, see the <i>AWS Cloud9 User Guide</i>.
+    /// For more information about AWS Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS
+    /// Cloud9 User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +53,7 @@ namespace Amazon.Cloud9
     ///  <ul> <li> 
     /// <para>
     ///  <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment,
-    /// launches an Amazon EC2 instance, and then hosts the environment on the instance.
+    /// launches an Amazon EC2 instance, and then connects from the instance to the environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,8 +61,8 @@ namespace Amazon.Cloud9
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteEnvironment</code>: Deletes an environment. If the environment is hosted
-    /// on an Amazon EC2 instance, also terminates the instance.
+    ///  <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2 instance
+    /// is connected to the environment, also terminates the instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -295,7 +288,7 @@ namespace Amazon.Cloud9
 
         /// <summary>
         /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-        /// Cloud (Amazon EC2) instance, and then hosts the environment on the instance.
+        /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentEC2 service method.</param>
         /// 
@@ -324,7 +317,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">REST API Reference for CreateEnvironmentEC2 Operation</seealso>
         public virtual CreateEnvironmentEC2Response CreateEnvironmentEC2(CreateEnvironmentEC2Request request)
         {
-            var marshaller = new CreateEnvironmentEC2RequestMarshaller();
+            var marshaller = CreateEnvironmentEC2RequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentEC2ResponseUnmarshaller.Instance;
 
             return Invoke<CreateEnvironmentEC2Request,CreateEnvironmentEC2Response>(request, marshaller, unmarshaller);
@@ -342,7 +335,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">REST API Reference for CreateEnvironmentEC2 Operation</seealso>
         public virtual Task<CreateEnvironmentEC2Response> CreateEnvironmentEC2Async(CreateEnvironmentEC2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateEnvironmentEC2RequestMarshaller();
+            var marshaller = CreateEnvironmentEC2RequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentEC2ResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEnvironmentEC2Request,CreateEnvironmentEC2Response>(request, marshaller, 
@@ -384,7 +377,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentMembership">REST API Reference for CreateEnvironmentMembership Operation</seealso>
         public virtual CreateEnvironmentMembershipResponse CreateEnvironmentMembership(CreateEnvironmentMembershipRequest request)
         {
-            var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
+            var marshaller = CreateEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return Invoke<CreateEnvironmentMembershipRequest,CreateEnvironmentMembershipResponse>(request, marshaller, unmarshaller);
@@ -402,7 +395,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentMembership">REST API Reference for CreateEnvironmentMembership Operation</seealso>
         public virtual Task<CreateEnvironmentMembershipResponse> CreateEnvironmentMembershipAsync(CreateEnvironmentMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
+            var marshaller = CreateEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEnvironmentMembershipRequest,CreateEnvironmentMembershipResponse>(request, marshaller, 
@@ -415,8 +408,8 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an AWS Cloud9 development environment. If the environment is hosted on an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.
+        /// Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected
+        /// to the environment, also terminates the instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// 
@@ -445,7 +438,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var marshaller = new DeleteEnvironmentRequestMarshaller();
+            var marshaller = DeleteEnvironmentRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEnvironmentRequest,DeleteEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -463,7 +456,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteEnvironmentRequestMarshaller();
+            var marshaller = DeleteEnvironmentRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEnvironmentRequest,DeleteEnvironmentResponse>(request, marshaller, 
@@ -505,7 +498,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">REST API Reference for DeleteEnvironmentMembership Operation</seealso>
         public virtual DeleteEnvironmentMembershipResponse DeleteEnvironmentMembership(DeleteEnvironmentMembershipRequest request)
         {
-            var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
+            var marshaller = DeleteEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEnvironmentMembershipRequest,DeleteEnvironmentMembershipResponse>(request, marshaller, unmarshaller);
@@ -523,7 +516,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">REST API Reference for DeleteEnvironmentMembership Operation</seealso>
         public virtual Task<DeleteEnvironmentMembershipResponse> DeleteEnvironmentMembershipAsync(DeleteEnvironmentMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
+            var marshaller = DeleteEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEnvironmentMembershipRequest,DeleteEnvironmentMembershipResponse>(request, marshaller, 
@@ -565,7 +558,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">REST API Reference for DescribeEnvironmentMemberships Operation</seealso>
         public virtual DescribeEnvironmentMembershipsResponse DescribeEnvironmentMemberships(DescribeEnvironmentMembershipsRequest request)
         {
-            var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
+            var marshaller = DescribeEnvironmentMembershipsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentMembershipsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentMembershipsRequest,DescribeEnvironmentMembershipsResponse>(request, marshaller, unmarshaller);
@@ -583,7 +576,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">REST API Reference for DescribeEnvironmentMemberships Operation</seealso>
         public virtual Task<DescribeEnvironmentMembershipsResponse> DescribeEnvironmentMembershipsAsync(DescribeEnvironmentMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
+            var marshaller = DescribeEnvironmentMembershipsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentMembershipsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentMembershipsRequest,DescribeEnvironmentMembershipsResponse>(request, marshaller, 
@@ -625,7 +618,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
         public virtual DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
         {
-            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var marshaller = DescribeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, unmarshaller);
@@ -643,7 +636,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
         public virtual Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var marshaller = DescribeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, 
@@ -685,7 +678,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentStatus">REST API Reference for DescribeEnvironmentStatus Operation</seealso>
         public virtual DescribeEnvironmentStatusResponse DescribeEnvironmentStatus(DescribeEnvironmentStatusRequest request)
         {
-            var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
+            var marshaller = DescribeEnvironmentStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentStatusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentStatusRequest,DescribeEnvironmentStatusResponse>(request, marshaller, unmarshaller);
@@ -703,7 +696,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentStatus">REST API Reference for DescribeEnvironmentStatus Operation</seealso>
         public virtual Task<DescribeEnvironmentStatusResponse> DescribeEnvironmentStatusAsync(DescribeEnvironmentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
+            var marshaller = DescribeEnvironmentStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentStatusRequest,DescribeEnvironmentStatusResponse>(request, marshaller, 
@@ -745,7 +738,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var marshaller = new ListEnvironmentsRequestMarshaller();
+            var marshaller = ListEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
             return Invoke<ListEnvironmentsRequest,ListEnvironmentsResponse>(request, marshaller, unmarshaller);
@@ -763,7 +756,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListEnvironmentsRequestMarshaller();
+            var marshaller = ListEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEnvironmentsRequest,ListEnvironmentsResponse>(request, marshaller, 
@@ -805,7 +798,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var marshaller = UpdateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -823,7 +816,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var marshaller = UpdateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, 
@@ -866,7 +859,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironmentMembership">REST API Reference for UpdateEnvironmentMembership Operation</seealso>
         public virtual UpdateEnvironmentMembershipResponse UpdateEnvironmentMembership(UpdateEnvironmentMembershipRequest request)
         {
-            var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
+            var marshaller = UpdateEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEnvironmentMembershipRequest,UpdateEnvironmentMembershipResponse>(request, marshaller, unmarshaller);
@@ -884,7 +877,7 @@ namespace Amazon.Cloud9
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironmentMembership">REST API Reference for UpdateEnvironmentMembership Operation</seealso>
         public virtual Task<UpdateEnvironmentMembershipResponse> UpdateEnvironmentMembershipAsync(UpdateEnvironmentMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
+            var marshaller = UpdateEnvironmentMembershipRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentMembershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEnvironmentMembershipRequest,UpdateEnvironmentMembershipResponse>(request, marshaller, 

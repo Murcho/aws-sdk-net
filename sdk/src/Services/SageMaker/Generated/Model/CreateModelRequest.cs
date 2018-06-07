@@ -65,6 +65,7 @@ namespace Amazon.SageMaker.Model
         private string _modelName;
         private ContainerDefinition _primaryContainer;
         private List<Tag> _tags = new List<Tag>();
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
@@ -74,6 +75,12 @@ namespace Amazon.SageMaker.Model
         /// on ML compute instances is part of model hosting. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
+        /// the <code>iam:PassRole</code> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ExecutionRoleArn
         {
@@ -143,6 +150,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A object that specifies the VPC that you want your model to connect to. Control access
+        /// to and from your model container by configuring the VPC. For more information, see
+        /// <a>host-vpc</a>.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

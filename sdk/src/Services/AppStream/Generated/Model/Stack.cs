@@ -36,9 +36,12 @@ namespace Amazon.AppStream.Model
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
+        private string _feedbackURL;
         private string _name;
+        private string _redirectURL;
         private List<StackError> _stackErrors = new List<StackError>();
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+        private List<UserSetting> _userSettings = new List<UserSetting>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -113,6 +116,25 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeedbackURL. 
+        /// <para>
+        /// The URL that users are redirected to after they click the Send Feedback link. If no
+        /// URL is specified, no Send Feedback link is displayed.
+        /// </para>
+        /// </summary>
+        public string FeedbackURL
+        {
+            get { return this._feedbackURL; }
+            set { this._feedbackURL = value; }
+        }
+
+        // Check to see if FeedbackURL property is set
+        internal bool IsSetFeedbackURL()
+        {
+            return this._feedbackURL != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the stack.
@@ -128,6 +150,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedirectURL. 
+        /// <para>
+        /// The URL that users are redirected to after their streaming session ends.
+        /// </para>
+        /// </summary>
+        public string RedirectURL
+        {
+            get { return this._redirectURL; }
+            set { this._redirectURL = value; }
+        }
+
+        // Check to see if RedirectURL property is set
+        internal bool IsSetRedirectURL()
+        {
+            return this._redirectURL != null;
         }
 
         /// <summary>
@@ -164,6 +204,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStorageConnectors()
         {
             return this._storageConnectors != null && this._storageConnectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserSettings. 
+        /// <para>
+        /// The actions that are enabled or disabled for users during their streaming sessions.
+        /// By default these actions are enabled.
+        /// </para>
+        /// </summary>
+        public List<UserSetting> UserSettings
+        {
+            get { return this._userSettings; }
+            set { this._userSettings = value; }
+        }
+
+        // Check to see if UserSettings property is set
+        internal bool IsSetUserSettings()
+        {
+            return this._userSettings != null && this._userSettings.Count > 0; 
         }
 
     }

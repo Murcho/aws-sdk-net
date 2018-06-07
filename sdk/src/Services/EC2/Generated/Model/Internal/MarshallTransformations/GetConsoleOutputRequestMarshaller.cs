@@ -62,8 +62,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetLatest())
+                {
+                    request.Parameters.Add("Latest", StringUtils.FromBool(publicRequest.Latest));
+                }
             }
             return request;
         }
+                    private static GetConsoleOutputRequestMarshaller _instance = new GetConsoleOutputRequestMarshaller();        
+
+        internal static GetConsoleOutputRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetConsoleOutputRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

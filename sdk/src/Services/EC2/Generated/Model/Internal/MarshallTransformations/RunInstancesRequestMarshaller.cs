@@ -117,6 +117,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCpuOptions())
+                {
+                    if(publicRequest.CpuOptions.IsSetCoreCount())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.CpuOptions.CoreCount));
+                    }
+                    if(publicRequest.CpuOptions.IsSetThreadsPerCore())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.CpuOptions.ThreadsPerCore));
+                    }
+                }
                 if(publicRequest.IsSetCreditSpecification())
                 {
                     if(publicRequest.CreditSpecification.IsSetCpuCredits())
@@ -421,5 +432,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RunInstancesRequestMarshaller _instance = new RunInstancesRequestMarshaller();        
+
+        internal static RunInstancesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RunInstancesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

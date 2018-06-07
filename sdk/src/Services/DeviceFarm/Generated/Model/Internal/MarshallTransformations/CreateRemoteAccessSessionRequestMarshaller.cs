@@ -90,6 +90,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceArn);
                 }
 
+                if(publicRequest.IsSetInstanceArn())
+                {
+                    context.Writer.WritePropertyName("instanceArn");
+                    context.Writer.Write(publicRequest.InstanceArn);
+                }
+
+                if(publicRequest.IsSetInteractionMode())
+                {
+                    context.Writer.WritePropertyName("interactionMode");
+                    context.Writer.Write(publicRequest.InteractionMode);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -108,6 +120,24 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RemoteDebugEnabled);
                 }
 
+                if(publicRequest.IsSetRemoteRecordAppArn())
+                {
+                    context.Writer.WritePropertyName("remoteRecordAppArn");
+                    context.Writer.Write(publicRequest.RemoteRecordAppArn);
+                }
+
+                if(publicRequest.IsSetRemoteRecordEnabled())
+                {
+                    context.Writer.WritePropertyName("remoteRecordEnabled");
+                    context.Writer.Write(publicRequest.RemoteRecordEnabled);
+                }
+
+                if(publicRequest.IsSetSkipAppResign())
+                {
+                    context.Writer.WritePropertyName("skipAppResign");
+                    context.Writer.Write(publicRequest.SkipAppResign);
+                }
+
                 if(publicRequest.IsSetSshPublicKey())
                 {
                     context.Writer.WritePropertyName("sshPublicKey");
@@ -123,7 +153,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRemoteAccessSessionRequestMarshaller _instance = new CreateRemoteAccessSessionRequestMarshaller();        
 
+        internal static CreateRemoteAccessSessionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRemoteAccessSessionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -62,6 +62,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTException("Request object does not have required field JobId set");
             uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            
+            if (publicRequest.IsSetForce())
+                request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -80,10 +83,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }
+        private static CancelJobRequestMarshaller _instance = new CancelJobRequestMarshaller();        
 
+        internal static CancelJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

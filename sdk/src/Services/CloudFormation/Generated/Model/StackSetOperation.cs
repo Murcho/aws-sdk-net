@@ -33,8 +33,10 @@ namespace Amazon.CloudFormation.Model
     public partial class StackSetOperation
     {
         private StackSetOperationAction _action;
+        private string _administrationRoleARN;
         private DateTime? _creationTimestamp;
         private DateTime? _endTimestamp;
+        private string _executionRoleName;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private bool? _retainStacks;
@@ -60,6 +62,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministrationRoleARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized administrator roles to control which users or groups can manage specific
+        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AdministrationRoleARN
+        {
+            get { return this._administrationRoleARN; }
+            set { this._administrationRoleARN = value; }
+        }
+
+        // Check to see if AdministrationRoleARN property is set
+        internal bool IsSetAdministrationRoleARN()
+        {
+            return this._administrationRoleARN != null;
         }
 
         /// <summary>
@@ -102,6 +129,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetEndTimestamp()
         {
             return this._endTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleName. 
+        /// <para>
+        /// The name of the IAM execution role used to create or update the stack set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized execution roles to control which stack resources users and groups can
+        /// include in their stack sets. 
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleName
+        {
+            get { return this._executionRoleName; }
+            set { this._executionRoleName = value; }
+        }
+
+        // Check to see if ExecutionRoleName property is set
+        internal bool IsSetExecutionRoleName()
+        {
+            return this._executionRoleName != null;
         }
 
         /// <summary>

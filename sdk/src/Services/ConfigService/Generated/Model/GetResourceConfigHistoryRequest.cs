@@ -30,7 +30,10 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the GetResourceConfigHistory operation.
     /// Returns a list of configuration items for the specified resource. The list contains
-    /// details about each state of the resource during the specified time interval.
+    /// details about each state of the resource during the specified time interval. If you
+    /// specified a retention period to retain your <code>ConfigurationItems</code> between
+    /// a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the
+    /// <code>ConfigurationItems</code> for the specified retention period. 
     /// 
     ///  
     /// <para>
@@ -60,7 +63,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ChronologicalOrder. 
         /// <para>
-        /// The chronological order for configuration items listed. By default the results are
+        /// The chronological order for configuration items listed. By default, the results are
         /// listed in reverse chronological order.
         /// </para>
         /// </summary>
@@ -80,8 +83,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property EarlierTime. 
         /// <para>
         /// The time stamp that indicates an earlier time. If not specified, the action returns
-        /// paginated results that contain configuration items that start from when the first
-        /// configuration item was recorded.
+        /// paginated results that contain configuration items that start when the first configuration
+        /// item was recorded.
         /// </para>
         /// </summary>
         public DateTime EarlierTime
@@ -118,7 +121,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of configuration items returned on each page. The default is 10.
-        /// You cannot specify a limit greater than 100. If you specify 0, AWS Config uses the
+        /// You cannot specify a number greater than 100. If you specify 0, AWS Config uses the
         /// default.
         /// </para>
         /// </summary>

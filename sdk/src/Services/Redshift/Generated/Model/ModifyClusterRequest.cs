@@ -486,8 +486,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code>
-        /// | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+        /// Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code>
+        /// | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> 
         /// </para>
         /// </summary>
         public string NodeType
@@ -598,6 +598,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
         /// A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+        /// This change is asynchronously applied as soon as possible.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

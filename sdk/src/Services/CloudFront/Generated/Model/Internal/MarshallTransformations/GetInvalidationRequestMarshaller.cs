@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2017-03-25/distribution/{DistributionId}/invalidation/{Id}";
+            string uriResourcePath = "/2017-10-30/distribution/{DistributionId}/invalidation/{Id}";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
@@ -68,7 +68,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetInvalidationRequestMarshaller _instance = new GetInvalidationRequestMarshaller();        
 
-        
+        internal static GetInvalidationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetInvalidationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

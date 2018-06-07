@@ -200,6 +200,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+                if(publicRequest.IsSetProcessorFeatures())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ProcessorFeatures)
+                    {
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPromotionTier())
                 {
                     request.Parameters.Add("PromotionTier", StringUtils.FromInt(publicRequest.PromotionTier));
@@ -220,6 +236,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TdeCredentialPassword", StringUtils.FromString(publicRequest.TdeCredentialPassword));
                 }
+                if(publicRequest.IsSetUseDefaultProcessorFeatures())
+                {
+                    request.Parameters.Add("UseDefaultProcessorFeatures", StringUtils.FromBool(publicRequest.UseDefaultProcessorFeatures));
+                }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -232,5 +252,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyDBInstanceRequestMarshaller _instance = new ModifyDBInstanceRequestMarshaller();        
+
+        internal static ModifyDBInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyDBInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

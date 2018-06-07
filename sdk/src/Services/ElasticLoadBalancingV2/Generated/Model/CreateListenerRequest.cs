@@ -33,13 +33,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// You can create up to 10 listeners per load balancer.
-    /// </para>
-    ///  
-    /// <para>
     /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
     /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
     /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is idempotent, which means that it completes at most one time. If you
+    /// attempt to create multiple listeners with the same settings, each call succeeds.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +62,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
+        /// [HTTPS listeners] The default SSL server certificate. You must provide exactly one
+        /// certificate. To create a certificate list, use <a>AddListenerCertificates</a>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -79,9 +81,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The default action for the listener. For Application Load Balancers, the protocol
-        /// of the specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-        /// protocol of the specified target group must be TCP.
+        /// The actions for the default rule. The rule must include one forward action.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>forward</code>, you can specify a single target group.
+        /// The protocol of the target group must be HTTP or HTTPS for an Application Load Balancer
+        /// or TCP for a Network Load Balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+        /// that is OpenID Connect (OIDC) compliant to authenticate users as they access your
+        /// application.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito
+        /// to authenticate users as they access your application.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions

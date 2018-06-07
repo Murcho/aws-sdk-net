@@ -62,6 +62,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetTagSpecifications())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    {
+                        if(publicRequestlistValue.IsSetResourceType())
+                        {
+                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                        }
+                        if(publicRequestlistValue.IsSetTags())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetKey())
+                                {
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
@@ -69,5 +97,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateSnapshotRequestMarshaller _instance = new CreateSnapshotRequestMarshaller();        
+
+        internal static CreateSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

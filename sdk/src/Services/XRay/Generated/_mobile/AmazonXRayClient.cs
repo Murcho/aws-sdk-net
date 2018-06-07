@@ -235,7 +235,7 @@ namespace Amazon.XRay
 
         internal virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
-            var marshaller = new BatchGetTracesRequestMarshaller();
+            var marshaller = BatchGetTracesRequestMarshaller.Instance;
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetTracesRequest,BatchGetTracesResponse>(request, marshaller, unmarshaller);
@@ -253,10 +253,41 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<BatchGetTracesResponse> BatchGetTracesAsync(BatchGetTracesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetTracesRequestMarshaller();
+            var marshaller = BatchGetTracesRequestMarshaller.Instance;
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetTracesRequest,BatchGetTracesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEncryptionConfig
+
+        internal virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -266,7 +297,7 @@ namespace Amazon.XRay
 
         internal virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
-            var marshaller = new GetServiceGraphRequestMarshaller();
+            var marshaller = GetServiceGraphRequestMarshaller.Instance;
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
             return Invoke<GetServiceGraphRequest,GetServiceGraphResponse>(request, marshaller, unmarshaller);
@@ -284,7 +315,7 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetServiceGraphResponse> GetServiceGraphAsync(GetServiceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetServiceGraphRequestMarshaller();
+            var marshaller = GetServiceGraphRequestMarshaller.Instance;
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServiceGraphRequest,GetServiceGraphResponse>(request, marshaller, 
@@ -297,7 +328,7 @@ namespace Amazon.XRay
 
         internal virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
-            var marshaller = new GetTraceGraphRequestMarshaller();
+            var marshaller = GetTraceGraphRequestMarshaller.Instance;
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
             return Invoke<GetTraceGraphRequest,GetTraceGraphResponse>(request, marshaller, unmarshaller);
@@ -315,7 +346,7 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetTraceGraphResponse> GetTraceGraphAsync(GetTraceGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTraceGraphRequestMarshaller();
+            var marshaller = GetTraceGraphRequestMarshaller.Instance;
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTraceGraphRequest,GetTraceGraphResponse>(request, marshaller, 
@@ -328,7 +359,7 @@ namespace Amazon.XRay
 
         internal virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
-            var marshaller = new GetTraceSummariesRequestMarshaller();
+            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
             return Invoke<GetTraceSummariesRequest,GetTraceSummariesResponse>(request, marshaller, unmarshaller);
@@ -346,10 +377,41 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetTraceSummariesResponse> GetTraceSummariesAsync(GetTraceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTraceSummariesRequestMarshaller();
+            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTraceSummariesRequest,GetTraceSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutEncryptionConfig
+
+        internal virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -359,7 +421,7 @@ namespace Amazon.XRay
 
         internal virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
-            var marshaller = new PutTelemetryRecordsRequestMarshaller();
+            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
             return Invoke<PutTelemetryRecordsRequest,PutTelemetryRecordsResponse>(request, marshaller, unmarshaller);
@@ -377,7 +439,7 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutTelemetryRecordsResponse> PutTelemetryRecordsAsync(PutTelemetryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutTelemetryRecordsRequestMarshaller();
+            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTelemetryRecordsRequest,PutTelemetryRecordsResponse>(request, marshaller, 
@@ -390,7 +452,7 @@ namespace Amazon.XRay
 
         internal virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
-            var marshaller = new PutTraceSegmentsRequestMarshaller();
+            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return Invoke<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, unmarshaller);
@@ -408,7 +470,7 @@ namespace Amazon.XRay
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutTraceSegmentsRequestMarshaller();
+            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, 

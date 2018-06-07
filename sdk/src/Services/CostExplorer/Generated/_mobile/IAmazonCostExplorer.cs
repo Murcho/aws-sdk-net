@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer
     /// The Cost Explorer API allows you to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.
     /// You can also query for granular data, such as the number of daily write operations
-    /// for DynamoDB database tables in your production environment. 
+    /// for Amazon DynamoDB database tables in your production environment. 
     /// 
     ///  
     /// <para>
@@ -48,7 +48,11 @@ namespace Amazon.CostExplorer
     /// <para>
     /// https://ce.us-east-1.amazonaws.com
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about costs associated with the Cost Explorer API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
+    /// Cost Management Pricing</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCostExplorer : IAmazonService, IDisposable
     {
@@ -84,6 +88,40 @@ namespace Amazon.CostExplorer
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         Task<GetDimensionValuesResponse> GetDimensionValuesAsync(GetDimensionValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetReservationCoverage
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservationCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
+        Task<GetReservationCoverageResponse> GetReservationCoverageAsync(GetReservationCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetReservationPurchaseRecommendation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservationPurchaseRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
+        Task<GetReservationPurchaseRecommendationResponse> GetReservationPurchaseRecommendationAsync(GetReservationPurchaseRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

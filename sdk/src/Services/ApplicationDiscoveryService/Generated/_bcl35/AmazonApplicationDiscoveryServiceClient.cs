@@ -40,14 +40,14 @@ namespace Amazon.ApplicationDiscoveryService
     /// dependencies running in your on-premises data centers. Application Discovery Service
     /// also collects application performance data, which can help you assess the outcome
     /// of your migration. The data collected by Application Discovery Service is securely
-    /// retained in an Amazon-hosted and managed database in the cloud. You can export the
-    /// data as a CSV or XML file into your preferred visualization tool or cloud-migration
-    /// solution to plan your migration. For more information, see the Application Discovery
-    /// Service <a href="http://aws.amazon.com/application-discovery/faqs/">FAQ</a>.
+    /// retained in an AWS-hosted and managed database in the cloud. You can export the data
+    /// as a CSV or XML file into your preferred visualization tool or cloud-migration solution
+    /// to plan your migration. For more information, see <a href="http://aws.amazon.com/application-discovery/faqs/">AWS
+    /// Application Discovery Service FAQ</a>.
     /// </para>
     ///  
     /// <para>
-    /// Application Discovery Service offers two modes of operation.
+    /// Application Discovery Service offers two modes of operation:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,24 +56,26 @@ namespace Amazon.ApplicationDiscoveryService
     /// discovery gathers server information regardless of the operating systems, which minimizes
     /// the time required for initial on-premises infrastructure assessment. Agentless discovery
     /// doesn't collect information about software and software dependencies. It also doesn't
-    /// work in non-VMware environments. We recommend that you use agent-based discovery for
-    /// non-VMware environments and if you want to collect information about software and
-    /// software dependencies. You can also run agent-based and agentless discovery simultaneously.
-    /// Use agentless discovery to quickly complete the initial infrastructure assessment
-    /// and then install agents on select hosts to gather information about software and software
-    /// dependencies.
+    /// work in non-VMware environments. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery
-    /// by using Amazon software, the AWS Application Discovery Agent, which you install on
-    /// one or more hosts in your data center. The agent captures infrastructure and application
-    /// information, including an inventory of installed software applications, system and
-    /// process performance, resource utilization, and network dependencies between workloads.
-    /// The information collected by agents is secured at rest and in transit to the Application
-    /// Discovery Service database in the cloud. 
+    /// by using the AWS Application Discovery Agent, which you install on one or more hosts
+    /// in your data center. The agent captures infrastructure and application information,
+    /// including an inventory of installed software applications, system and process performance,
+    /// resource utilization, and network dependencies between workloads. The information
+    /// collected by agents is secured at rest and in transit to the Application Discovery
+    /// Service database in the cloud. 
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// We recommend that you use agent-based discovery for non-VMware environments and to
+    /// collect information about software and software dependencies. You can also run agent-based
+    /// and agentless discovery simultaneously. Use agentless discovery to quickly complete
+    /// the initial infrastructure assessment and then install agents on select hosts.
+    /// </para>
+    ///  
     /// <para>
     /// Application Discovery Service integrates with application discovery solutions from
     /// AWS Partner Network (APN) partners. Third-party application discovery tools can query
@@ -85,15 +87,15 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Application Discovery Service doesn't gather sensitive information. All data is handled
     /// according to the <a href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>.
-    /// You can operate Application Discovery Service using offline mode to inspect collected
-    /// data before it is shared with the service.
+    /// You can operate Application Discovery Service offline to inspect collected data before
+    /// it is shared with the service.
     /// </para>
     ///  </important> 
     /// <para>
     /// Your AWS account must be granted access to Application Discovery Service, a process
     /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, <a href="http://aws.amazon.com/application-discovery/how-to-start/">
-    /// sign up for AWS Application Discovery Service</a>.
+    /// request access, <a href="http://aws.amazon.com/application-discovery/">sign up for
+    /// Application Discovery Service</a>. 
     /// </para>
     ///  
     /// <para>
@@ -323,7 +325,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         public virtual AssociateConfigurationItemsToApplicationResponse AssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request)
         {
-            var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
+            var marshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
             var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
 
             return Invoke<AssociateConfigurationItemsToApplicationRequest,AssociateConfigurationItemsToApplicationResponse>(request, marshaller, unmarshaller);
@@ -343,7 +345,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AssociateConfigurationItemsToApplication">REST API Reference for AssociateConfigurationItemsToApplication Operation</seealso>
         public virtual IAsyncResult BeginAssociateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateConfigurationItemsToApplicationRequestMarshaller();
+            var marshaller = AssociateConfigurationItemsToApplicationRequestMarshaller.Instance;
             var unmarshaller = AssociateConfigurationItemsToApplicationResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateConfigurationItemsToApplicationRequest>(request, marshaller, unmarshaller,
@@ -390,7 +392,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
@@ -410,7 +412,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateApplicationRequest>(request, marshaller, unmarshaller,
@@ -462,7 +464,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var marshaller = new CreateTagsRequestMarshaller();
+            var marshaller = CreateTagsRequestMarshaller.Instance;
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
             return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
@@ -482,7 +484,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTagsRequestMarshaller();
+            var marshaller = CreateTagsRequestMarshaller.Instance;
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTagsRequest>(request, marshaller, unmarshaller,
@@ -529,7 +531,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         public virtual DeleteApplicationsResponse DeleteApplications(DeleteApplicationsRequest request)
         {
-            var marshaller = new DeleteApplicationsRequestMarshaller();
+            var marshaller = DeleteApplicationsRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteApplicationsRequest,DeleteApplicationsResponse>(request, marshaller, unmarshaller);
@@ -549,7 +551,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteApplications">REST API Reference for DeleteApplications Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplications(DeleteApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteApplicationsRequestMarshaller();
+            var marshaller = DeleteApplicationsRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteApplicationsRequest>(request, marshaller, unmarshaller,
@@ -601,7 +603,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
@@ -621,7 +623,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteTagsRequest>(request, marshaller, unmarshaller,
@@ -669,7 +671,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         public virtual DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request)
         {
-            var marshaller = new DescribeAgentsRequestMarshaller();
+            var marshaller = DescribeAgentsRequestMarshaller.Instance;
             var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAgentsRequest,DescribeAgentsResponse>(request, marshaller, unmarshaller);
@@ -689,7 +691,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         public virtual IAsyncResult BeginDescribeAgents(DescribeAgentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAgentsRequestMarshaller();
+            var marshaller = DescribeAgentsRequestMarshaller.Instance;
             var unmarshaller = DescribeAgentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAgentsRequest>(request, marshaller, unmarshaller,
@@ -746,7 +748,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         public virtual DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
         {
-            var marshaller = new DescribeConfigurationsRequestMarshaller();
+            var marshaller = DescribeConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationsRequest,DescribeConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -766,7 +768,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">REST API Reference for DescribeConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurations(DescribeConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigurationsRequestMarshaller();
+            var marshaller = DescribeConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -824,7 +826,7 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public virtual DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
         {
-            var marshaller = new DescribeExportConfigurationsRequestMarshaller();
+            var marshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -845,7 +847,7 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public virtual IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeExportConfigurationsRequestMarshaller();
+            var marshaller = DescribeExportConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeExportConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -894,7 +896,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
-            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var marshaller = DescribeExportTasksRequestMarshaller.Instance;
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
             return Invoke<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, unmarshaller);
@@ -914,7 +916,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var marshaller = DescribeExportTasksRequestMarshaller.Instance;
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeExportTasksRequest>(request, marshaller, unmarshaller,
@@ -966,7 +968,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
@@ -986,7 +988,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTagsRequest>(request, marshaller, unmarshaller,
@@ -1033,7 +1035,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         public virtual DisassociateConfigurationItemsFromApplicationResponse DisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request)
         {
-            var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
+            var marshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
             var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateConfigurationItemsFromApplicationRequest,DisassociateConfigurationItemsFromApplicationResponse>(request, marshaller, unmarshaller);
@@ -1053,7 +1055,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DisassociateConfigurationItemsFromApplication">REST API Reference for DisassociateConfigurationItemsFromApplication Operation</seealso>
         public virtual IAsyncResult BeginDisassociateConfigurationItemsFromApplication(DisassociateConfigurationItemsFromApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateConfigurationItemsFromApplicationRequestMarshaller();
+            var marshaller = DisassociateConfigurationItemsFromApplicationRequestMarshaller.Instance;
             var unmarshaller = DisassociateConfigurationItemsFromApplicationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateConfigurationItemsFromApplicationRequest>(request, marshaller, unmarshaller,
@@ -1113,7 +1115,7 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of StartExportTask.")]
         public virtual ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
         {
-            var marshaller = new ExportConfigurationsRequestMarshaller();
+            var marshaller = ExportConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ExportConfigurationsRequest,ExportConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -1134,7 +1136,7 @@ namespace Amazon.ApplicationDiscoveryService
         [Obsolete("Deprecated in favor of StartExportTask.")]
         public virtual IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ExportConfigurationsRequestMarshaller();
+            var marshaller = ExportConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ExportConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ExportConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -1182,7 +1184,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         public virtual GetDiscoverySummaryResponse GetDiscoverySummary(GetDiscoverySummaryRequest request)
         {
-            var marshaller = new GetDiscoverySummaryRequestMarshaller();
+            var marshaller = GetDiscoverySummaryRequestMarshaller.Instance;
             var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
 
             return Invoke<GetDiscoverySummaryRequest,GetDiscoverySummaryResponse>(request, marshaller, unmarshaller);
@@ -1202,7 +1204,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">REST API Reference for GetDiscoverySummary Operation</seealso>
         public virtual IAsyncResult BeginGetDiscoverySummary(GetDiscoverySummaryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDiscoverySummaryRequestMarshaller();
+            var marshaller = GetDiscoverySummaryRequestMarshaller.Instance;
             var unmarshaller = GetDiscoverySummaryResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDiscoverySummaryRequest>(request, marshaller, unmarshaller,
@@ -1254,7 +1256,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var marshaller = new ListConfigurationsRequestMarshaller();
+            var marshaller = ListConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ListConfigurationsRequest,ListConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -1274,7 +1276,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListConfigurationsRequestMarshaller();
+            var marshaller = ListConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -1321,7 +1323,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         public virtual ListServerNeighborsResponse ListServerNeighbors(ListServerNeighborsRequest request)
         {
-            var marshaller = new ListServerNeighborsRequestMarshaller();
+            var marshaller = ListServerNeighborsRequestMarshaller.Instance;
             var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
 
             return Invoke<ListServerNeighborsRequest,ListServerNeighborsResponse>(request, marshaller, unmarshaller);
@@ -1341,7 +1343,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         public virtual IAsyncResult BeginListServerNeighbors(ListServerNeighborsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListServerNeighborsRequestMarshaller();
+            var marshaller = ListServerNeighborsRequestMarshaller.Instance;
             var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListServerNeighborsRequest>(request, marshaller, unmarshaller,
@@ -1388,7 +1390,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         public virtual StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request)
         {
-            var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
+            var marshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
             var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
             return Invoke<StartDataCollectionByAgentIdsRequest,StartDataCollectionByAgentIdsResponse>(request, marshaller, unmarshaller);
@@ -1408,7 +1410,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartDataCollectionByAgentIds">REST API Reference for StartDataCollectionByAgentIds Operation</seealso>
         public virtual IAsyncResult BeginStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartDataCollectionByAgentIdsRequestMarshaller();
+            var marshaller = StartDataCollectionByAgentIdsRequestMarshaller.Instance;
             var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartDataCollectionByAgentIdsRequest>(request, marshaller, unmarshaller,
@@ -1473,7 +1475,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
-            var marshaller = new StartExportTaskRequestMarshaller();
+            var marshaller = StartExportTaskRequestMarshaller.Instance;
             var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
             return Invoke<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, unmarshaller);
@@ -1493,7 +1495,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartExportTaskRequestMarshaller();
+            var marshaller = StartExportTaskRequestMarshaller.Instance;
             var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartExportTaskRequest>(request, marshaller, unmarshaller,
@@ -1540,7 +1542,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         public virtual StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request)
         {
-            var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
+            var marshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
             var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
             return Invoke<StopDataCollectionByAgentIdsRequest,StopDataCollectionByAgentIdsResponse>(request, marshaller, unmarshaller);
@@ -1560,7 +1562,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">REST API Reference for StopDataCollectionByAgentIds Operation</seealso>
         public virtual IAsyncResult BeginStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopDataCollectionByAgentIdsRequestMarshaller();
+            var marshaller = StopDataCollectionByAgentIdsRequestMarshaller.Instance;
             var unmarshaller = StopDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopDataCollectionByAgentIdsRequest>(request, marshaller, unmarshaller,
@@ -1607,7 +1609,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
@@ -1627,7 +1629,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateApplicationRequest>(request, marshaller, unmarshaller,

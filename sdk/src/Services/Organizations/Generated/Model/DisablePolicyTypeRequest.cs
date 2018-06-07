@@ -32,13 +32,21 @@ namespace Amazon.Organizations.Model
     /// Disables an organizational control policy type in a root. A policy of a certain type
     /// can be attached to entities in a root only if that type is enabled in the root. After
     /// you perform this operation, you no longer can attach policies of the specified type
-    /// to that root or to any OU or account in that root. You can undo this by using the
-    /// <a>EnablePolicyType</a> operation.
+    /// to that root or to any organizational unit (OU) or account in that root. You can undo
+    /// this by using the <a>EnablePolicyType</a> operation.
     /// 
     ///  
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you disable a policy type for a root, it still shows as enabled for the organization
+    /// if all features are enabled in that organization. Use <a>ListRoots</a> to see the
+    /// status of policy types for a specified root. Use <a>DescribeOrganization</a> to see
+    /// the status of policy types in the organization.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DisablePolicyTypeRequest : AmazonOrganizationsRequest
     {

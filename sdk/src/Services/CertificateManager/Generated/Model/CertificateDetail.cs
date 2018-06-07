@@ -34,6 +34,7 @@ namespace Amazon.CertificateManager.Model
     public partial class CertificateDetail
     {
         private string _certificateArn;
+        private string _certificateAuthorityArn;
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
@@ -47,6 +48,8 @@ namespace Amazon.CertificateManager.Model
         private List<KeyUsage> _keyUsages = new List<KeyUsage>();
         private DateTime? _notAfter;
         private DateTime? _notBefore;
+        private CertificateOptions _options;
+        private RenewalEligibility _renewalEligibility;
         private RenewalSummary _renewalSummary;
         private RevocationReason _revocationReason;
         private DateTime? _revokedAt;
@@ -75,6 +78,30 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateAuthorityArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that
+        /// issued the certificate. This has the following format: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string CertificateAuthorityArn
+        {
+            get { return this._certificateAuthorityArn; }
+            set { this._certificateAuthorityArn = value; }
+        }
+
+        // Check to see if CertificateAuthorityArn property is set
+        internal bool IsSetCertificateAuthorityArn()
+        {
+            return this._certificateAuthorityArn != null;
         }
 
         /// <summary>
@@ -321,6 +348,45 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetNotBefore()
         {
             return this._notBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Value that specifies whether to add the certificate to a transparency log. Certificate
+        /// transparency makes it possible to detect SSL certificates that have been mistakenly
+        /// or maliciously issued. A browser might respond to certificate that has not been logged
+        /// by showing an error message. The logs are cryptographically secure. 
+        /// </para>
+        /// </summary>
+        public CertificateOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenewalEligibility. 
+        /// <para>
+        /// Specifies whether the certificate is eligible for renewal.
+        /// </para>
+        /// </summary>
+        public RenewalEligibility RenewalEligibility
+        {
+            get { return this._renewalEligibility; }
+            set { this._renewalEligibility = value; }
+        }
+
+        // Check to see if RenewalEligibility property is set
+        internal bool IsSetRenewalEligibility()
+        {
+            return this._renewalEligibility != null;
         }
 
         /// <summary>

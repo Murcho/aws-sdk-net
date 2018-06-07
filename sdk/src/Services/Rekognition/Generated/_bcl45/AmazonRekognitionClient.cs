@@ -324,7 +324,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         public virtual CompareFacesResponse CompareFaces(CompareFacesRequest request)
         {
-            var marshaller = new CompareFacesRequestMarshaller();
+            var marshaller = CompareFacesRequestMarshaller.Instance;
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
             return Invoke<CompareFacesRequest,CompareFacesResponse>(request, marshaller, unmarshaller);
@@ -342,7 +342,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         public virtual Task<CompareFacesResponse> CompareFacesAsync(CompareFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CompareFacesRequestMarshaller();
+            var marshaller = CompareFacesRequestMarshaller.Instance;
             var unmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<CompareFacesRequest,CompareFacesResponse>(request, marshaller, 
@@ -401,7 +401,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
-            var marshaller = new CreateCollectionRequestMarshaller();
+            var marshaller = CreateCollectionRequestMarshaller.Instance;
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
             return Invoke<CreateCollectionRequest,CreateCollectionResponse>(request, marshaller, unmarshaller);
@@ -419,7 +419,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCollectionRequestMarshaller();
+            var marshaller = CreateCollectionRequestMarshaller.Instance;
             var unmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCollectionRequest,CreateCollectionResponse>(request, marshaller, 
@@ -469,7 +469,11 @@ namespace Amazon.Rekognition
         /// API operation again.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -484,7 +488,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
         public virtual CreateStreamProcessorResponse CreateStreamProcessor(CreateStreamProcessorRequest request)
         {
-            var marshaller = new CreateStreamProcessorRequestMarshaller();
+            var marshaller = CreateStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
             return Invoke<CreateStreamProcessorRequest,CreateStreamProcessorResponse>(request, marshaller, unmarshaller);
@@ -502,7 +506,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
         public virtual Task<CreateStreamProcessorResponse> CreateStreamProcessorAsync(CreateStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStreamProcessorRequestMarshaller();
+            var marshaller = CreateStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStreamProcessorRequest,CreateStreamProcessorResponse>(request, marshaller, 
@@ -550,7 +554,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
-            var marshaller = new DeleteCollectionRequestMarshaller();
+            var marshaller = DeleteCollectionRequestMarshaller.Instance;
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCollectionRequest,DeleteCollectionResponse>(request, marshaller, unmarshaller);
@@ -568,7 +572,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCollectionRequestMarshaller();
+            var marshaller = DeleteCollectionRequestMarshaller.Instance;
             var unmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCollectionRequest,DeleteCollectionResponse>(request, marshaller, 
@@ -616,7 +620,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         public virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
         {
-            var marshaller = new DeleteFacesRequestMarshaller();
+            var marshaller = DeleteFacesRequestMarshaller.Instance;
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFacesRequest,DeleteFacesResponse>(request, marshaller, unmarshaller);
@@ -634,7 +638,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         public virtual Task<DeleteFacesResponse> DeleteFacesAsync(DeleteFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFacesRequestMarshaller();
+            var marshaller = DeleteFacesRequestMarshaller.Instance;
             var unmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFacesRequest,DeleteFacesResponse>(request, marshaller, 
@@ -680,7 +684,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
         public virtual DeleteStreamProcessorResponse DeleteStreamProcessor(DeleteStreamProcessorRequest request)
         {
-            var marshaller = new DeleteStreamProcessorRequestMarshaller();
+            var marshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStreamProcessorRequest,DeleteStreamProcessorResponse>(request, marshaller, unmarshaller);
@@ -698,7 +702,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
         public virtual Task<DeleteStreamProcessorResponse> DeleteStreamProcessorAsync(DeleteStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteStreamProcessorRequestMarshaller();
+            var marshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStreamProcessorRequest,DeleteStreamProcessorResponse>(request, marshaller, 
@@ -741,7 +745,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
         public virtual DescribeStreamProcessorResponse DescribeStreamProcessor(DescribeStreamProcessorRequest request)
         {
-            var marshaller = new DescribeStreamProcessorRequestMarshaller();
+            var marshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStreamProcessorRequest,DescribeStreamProcessorResponse>(request, marshaller, unmarshaller);
@@ -759,7 +763,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
         public virtual Task<DescribeStreamProcessorResponse> DescribeStreamProcessorAsync(DescribeStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStreamProcessorRequestMarshaller();
+            var marshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStreamProcessorRequest,DescribeStreamProcessorResponse>(request, marshaller, 
@@ -841,7 +845,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         public virtual DetectFacesResponse DetectFaces(DetectFacesRequest request)
         {
-            var marshaller = new DetectFacesRequestMarshaller();
+            var marshaller = DetectFacesRequestMarshaller.Instance;
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
             return Invoke<DetectFacesRequest,DetectFacesResponse>(request, marshaller, unmarshaller);
@@ -859,7 +863,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         public virtual Task<DetectFacesResponse> DetectFacesAsync(DetectFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetectFacesRequestMarshaller();
+            var marshaller = DetectFacesRequestMarshaller.Instance;
             var unmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectFacesRequest,DetectFacesResponse>(request, marshaller, 
@@ -988,7 +992,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         public virtual DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
         {
-            var marshaller = new DetectLabelsRequestMarshaller();
+            var marshaller = DetectLabelsRequestMarshaller.Instance;
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
             return Invoke<DetectLabelsRequest,DetectLabelsResponse>(request, marshaller, unmarshaller);
@@ -1006,7 +1010,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         public virtual Task<DetectLabelsResponse> DetectLabelsAsync(DetectLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetectLabelsRequestMarshaller();
+            var marshaller = DetectLabelsRequestMarshaller.Instance;
             var unmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectLabelsRequest,DetectLabelsResponse>(request, marshaller, 
@@ -1070,7 +1074,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         public virtual DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
         {
-            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var marshaller = DetectModerationLabelsRequestMarshaller.Instance;
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
             return Invoke<DetectModerationLabelsRequest,DetectModerationLabelsResponse>(request, marshaller, unmarshaller);
@@ -1088,7 +1092,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         public virtual Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var marshaller = DetectModerationLabelsRequestMarshaller.Instance;
             var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectModerationLabelsRequest,DetectModerationLabelsResponse>(request, marshaller, 
@@ -1178,7 +1182,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
         public virtual DetectTextResponse DetectText(DetectTextRequest request)
         {
-            var marshaller = new DetectTextRequestMarshaller();
+            var marshaller = DetectTextRequestMarshaller.Instance;
             var unmarshaller = DetectTextResponseUnmarshaller.Instance;
 
             return Invoke<DetectTextRequest,DetectTextResponse>(request, marshaller, unmarshaller);
@@ -1196,7 +1200,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
         public virtual Task<DetectTextResponse> DetectTextAsync(DetectTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetectTextRequestMarshaller();
+            var marshaller = DetectTextRequestMarshaller.Instance;
             var unmarshaller = DetectTextResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectTextRequest,DetectTextResponse>(request, marshaller, 
@@ -1245,7 +1249,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
         public virtual GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
         {
-            var marshaller = new GetCelebrityInfoRequestMarshaller();
+            var marshaller = GetCelebrityInfoRequestMarshaller.Instance;
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
             return Invoke<GetCelebrityInfoRequest,GetCelebrityInfoResponse>(request, marshaller, unmarshaller);
@@ -1263,7 +1267,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
         public virtual Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCelebrityInfoRequestMarshaller();
+            var marshaller = GetCelebrityInfoRequestMarshaller.Instance;
             var unmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCelebrityInfoRequest,GetCelebrityInfoResponse>(request, marshaller, 
@@ -1297,7 +1301,14 @@ namespace Amazon.Rekognition
         /// contains information about the celebrity in a object and the time, <code>Timestamp</code>,
         /// the celebrity was detected. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the <code>Celebrities</code> array is sorted by time (milliseconds from
         /// the start of the video). You can also sort the array by celebrity by specifying the
@@ -1352,7 +1363,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
         public virtual GetCelebrityRecognitionResponse GetCelebrityRecognition(GetCelebrityRecognitionRequest request)
         {
-            var marshaller = new GetCelebrityRecognitionRequestMarshaller();
+            var marshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             var unmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
             return Invoke<GetCelebrityRecognitionRequest,GetCelebrityRecognitionResponse>(request, marshaller, unmarshaller);
@@ -1370,7 +1381,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
         public virtual Task<GetCelebrityRecognitionResponse> GetCelebrityRecognitionAsync(GetCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCelebrityRecognitionRequestMarshaller();
+            var marshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             var unmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCelebrityRecognitionRequest,GetCelebrityRecognitionResponse>(request, marshaller, 
@@ -1453,7 +1464,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
         public virtual GetContentModerationResponse GetContentModeration(GetContentModerationRequest request)
         {
-            var marshaller = new GetContentModerationRequestMarshaller();
+            var marshaller = GetContentModerationRequestMarshaller.Instance;
             var unmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
             return Invoke<GetContentModerationRequest,GetContentModerationResponse>(request, marshaller, unmarshaller);
@@ -1471,7 +1482,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
         public virtual Task<GetContentModerationResponse> GetContentModerationAsync(GetContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetContentModerationRequestMarshaller();
+            var marshaller = GetContentModerationRequestMarshaller.Instance;
             var unmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetContentModerationRequest,GetContentModerationResponse>(request, marshaller, 
@@ -1541,7 +1552,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
         public virtual GetFaceDetectionResponse GetFaceDetection(GetFaceDetectionRequest request)
         {
-            var marshaller = new GetFaceDetectionRequestMarshaller();
+            var marshaller = GetFaceDetectionRequestMarshaller.Instance;
             var unmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
             return Invoke<GetFaceDetectionRequest,GetFaceDetectionResponse>(request, marshaller, unmarshaller);
@@ -1559,7 +1570,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
         public virtual Task<GetFaceDetectionResponse> GetFaceDetectionAsync(GetFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFaceDetectionRequestMarshaller();
+            var marshaller = GetFaceDetectionRequestMarshaller.Instance;
             var unmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFaceDetectionRequest,GetFaceDetectionResponse>(request, marshaller, 
@@ -1591,9 +1602,17 @@ namespace Amazon.Rekognition
         /// <para>
         /// The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
         /// element contains details about the matching faces in the input collection, person
-        /// information for the matched person, and the time the person was matched in the video.
+        /// information (facial attributes, bounding boxes, and person identifer) for the matched
+        /// person, and the time the person was matched in the video.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetFaceSearch</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the <code>Persons</code> array is sorted by the time, in milliseconds
         /// from the start of the video, persons are matched. You can also sort by persons by
@@ -1629,7 +1648,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
         public virtual GetFaceSearchResponse GetFaceSearch(GetFaceSearchRequest request)
         {
-            var marshaller = new GetFaceSearchRequestMarshaller();
+            var marshaller = GetFaceSearchRequestMarshaller.Instance;
             var unmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
             return Invoke<GetFaceSearchRequest,GetFaceSearchResponse>(request, marshaller, unmarshaller);
@@ -1647,7 +1666,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
         public virtual Task<GetFaceSearchResponse> GetFaceSearchAsync(GetFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFaceSearchRequestMarshaller();
+            var marshaller = GetFaceSearchRequestMarshaller.Instance;
             var unmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFaceSearchRequest,GetFaceSearchResponse>(request, marshaller, 
@@ -1722,7 +1741,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
         public virtual GetLabelDetectionResponse GetLabelDetection(GetLabelDetectionRequest request)
         {
-            var marshaller = new GetLabelDetectionRequestMarshaller();
+            var marshaller = GetLabelDetectionRequestMarshaller.Instance;
             var unmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
             return Invoke<GetLabelDetectionRequest,GetLabelDetectionResponse>(request, marshaller, unmarshaller);
@@ -1740,7 +1759,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
         public virtual Task<GetLabelDetectionResponse> GetLabelDetectionAsync(GetLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLabelDetectionRequestMarshaller();
+            var marshaller = GetLabelDetectionRequestMarshaller.Instance;
             var unmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLabelDetectionRequest,GetLabelDetectionResponse>(request, marshaller, 
@@ -1773,7 +1792,14 @@ namespace Amazon.Rekognition
         ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
         /// persons and the time(s) they were tracked in the video. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the array is sorted by the time(s) a person is tracked in the video. You
         /// can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
@@ -1818,7 +1844,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
         public virtual GetPersonTrackingResponse GetPersonTracking(GetPersonTrackingRequest request)
         {
-            var marshaller = new GetPersonTrackingRequestMarshaller();
+            var marshaller = GetPersonTrackingRequestMarshaller.Instance;
             var unmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
             return Invoke<GetPersonTrackingRequest,GetPersonTrackingResponse>(request, marshaller, unmarshaller);
@@ -1836,7 +1862,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
         public virtual Task<GetPersonTrackingResponse> GetPersonTrackingAsync(GetPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPersonTrackingRequestMarshaller();
+            var marshaller = GetPersonTrackingRequestMarshaller.Instance;
             var unmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPersonTrackingRequest,GetPersonTrackingResponse>(request, marshaller, 
@@ -1936,7 +1962,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         public virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
         {
-            var marshaller = new IndexFacesRequestMarshaller();
+            var marshaller = IndexFacesRequestMarshaller.Instance;
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
             return Invoke<IndexFacesRequest,IndexFacesResponse>(request, marshaller, unmarshaller);
@@ -1954,7 +1980,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         public virtual Task<IndexFacesResponse> IndexFacesAsync(IndexFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new IndexFacesRequestMarshaller();
+            var marshaller = IndexFacesRequestMarshaller.Instance;
             var unmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<IndexFacesRequest,IndexFacesResponse>(request, marshaller, 
@@ -2010,7 +2036,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
-            var marshaller = new ListCollectionsRequestMarshaller();
+            var marshaller = ListCollectionsRequestMarshaller.Instance;
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
             return Invoke<ListCollectionsRequest,ListCollectionsResponse>(request, marshaller, unmarshaller);
@@ -2028,7 +2054,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListCollectionsRequestMarshaller();
+            var marshaller = ListCollectionsRequestMarshaller.Instance;
             var unmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCollectionsRequest,ListCollectionsResponse>(request, marshaller, 
@@ -2081,7 +2107,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         public virtual ListFacesResponse ListFaces(ListFacesRequest request)
         {
-            var marshaller = new ListFacesRequestMarshaller();
+            var marshaller = ListFacesRequestMarshaller.Instance;
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
 
             return Invoke<ListFacesRequest,ListFacesResponse>(request, marshaller, unmarshaller);
@@ -2099,7 +2125,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         public virtual Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFacesRequestMarshaller();
+            var marshaller = ListFacesRequestMarshaller.Instance;
             var unmarshaller = ListFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFacesRequest,ListFacesResponse>(request, marshaller, 
@@ -2140,7 +2166,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
         public virtual ListStreamProcessorsResponse ListStreamProcessors(ListStreamProcessorsRequest request)
         {
-            var marshaller = new ListStreamProcessorsRequestMarshaller();
+            var marshaller = ListStreamProcessorsRequestMarshaller.Instance;
             var unmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
             return Invoke<ListStreamProcessorsRequest,ListStreamProcessorsResponse>(request, marshaller, unmarshaller);
@@ -2158,7 +2184,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
         public virtual Task<ListStreamProcessorsResponse> ListStreamProcessorsAsync(ListStreamProcessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListStreamProcessorsRequestMarshaller();
+            var marshaller = ListStreamProcessorsRequestMarshaller.Instance;
             var unmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStreamProcessorsRequest,ListStreamProcessorsResponse>(request, marshaller, 
@@ -2249,7 +2275,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
         public virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
         {
-            var marshaller = new RecognizeCelebritiesRequestMarshaller();
+            var marshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
             return Invoke<RecognizeCelebritiesRequest,RecognizeCelebritiesResponse>(request, marshaller, unmarshaller);
@@ -2267,7 +2293,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
         public virtual Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RecognizeCelebritiesRequestMarshaller();
+            var marshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             var unmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RecognizeCelebritiesRequest,RecognizeCelebritiesResponse>(request, marshaller, 
@@ -2334,7 +2360,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         public virtual SearchFacesResponse SearchFaces(SearchFacesRequest request)
         {
-            var marshaller = new SearchFacesRequestMarshaller();
+            var marshaller = SearchFacesRequestMarshaller.Instance;
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
             return Invoke<SearchFacesRequest,SearchFacesResponse>(request, marshaller, unmarshaller);
@@ -2352,7 +2378,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         public virtual Task<SearchFacesResponse> SearchFacesAsync(SearchFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SearchFacesRequestMarshaller();
+            var marshaller = SearchFacesRequestMarshaller.Instance;
             var unmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchFacesRequest,SearchFacesResponse>(request, marshaller, 
@@ -2441,7 +2467,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         public virtual SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
         {
-            var marshaller = new SearchFacesByImageRequestMarshaller();
+            var marshaller = SearchFacesByImageRequestMarshaller.Instance;
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
             return Invoke<SearchFacesByImageRequest,SearchFacesByImageResponse>(request, marshaller, unmarshaller);
@@ -2459,7 +2485,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         public virtual Task<SearchFacesByImageResponse> SearchFacesByImageAsync(SearchFacesByImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SearchFacesByImageRequestMarshaller();
+            var marshaller = SearchFacesByImageRequestMarshaller.Instance;
             var unmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchFacesByImageRequest,SearchFacesByImageResponse>(request, marshaller, 
@@ -2510,7 +2536,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2526,7 +2556,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
         public virtual StartCelebrityRecognitionResponse StartCelebrityRecognition(StartCelebrityRecognitionRequest request)
         {
-            var marshaller = new StartCelebrityRecognitionRequestMarshaller();
+            var marshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             var unmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
             return Invoke<StartCelebrityRecognitionRequest,StartCelebrityRecognitionResponse>(request, marshaller, unmarshaller);
@@ -2544,7 +2574,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
         public virtual Task<StartCelebrityRecognitionResponse> StartCelebrityRecognitionAsync(StartCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartCelebrityRecognitionRequestMarshaller();
+            var marshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             var unmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartCelebrityRecognitionRequest,StartCelebrityRecognitionResponse>(request, marshaller, 
@@ -2599,7 +2629,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2615,7 +2649,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
         public virtual StartContentModerationResponse StartContentModeration(StartContentModerationRequest request)
         {
-            var marshaller = new StartContentModerationRequestMarshaller();
+            var marshaller = StartContentModerationRequestMarshaller.Instance;
             var unmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
             return Invoke<StartContentModerationRequest,StartContentModerationResponse>(request, marshaller, unmarshaller);
@@ -2633,7 +2667,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
         public virtual Task<StartContentModerationResponse> StartContentModerationAsync(StartContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartContentModerationRequestMarshaller();
+            var marshaller = StartContentModerationRequestMarshaller.Instance;
             var unmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartContentModerationRequest,StartContentModerationResponse>(request, marshaller, 
@@ -2683,7 +2717,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2699,7 +2737,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
         public virtual StartFaceDetectionResponse StartFaceDetection(StartFaceDetectionRequest request)
         {
-            var marshaller = new StartFaceDetectionRequestMarshaller();
+            var marshaller = StartFaceDetectionRequestMarshaller.Instance;
             var unmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
             return Invoke<StartFaceDetectionRequest,StartFaceDetectionResponse>(request, marshaller, unmarshaller);
@@ -2717,7 +2755,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
         public virtual Task<StartFaceDetectionResponse> StartFaceDetectionAsync(StartFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartFaceDetectionRequestMarshaller();
+            var marshaller = StartFaceDetectionRequestMarshaller.Instance;
             var unmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartFaceDetectionRequest,StartFaceDetectionResponse>(request, marshaller, 
@@ -2767,7 +2805,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2786,7 +2828,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
         public virtual StartFaceSearchResponse StartFaceSearch(StartFaceSearchRequest request)
         {
-            var marshaller = new StartFaceSearchRequestMarshaller();
+            var marshaller = StartFaceSearchRequestMarshaller.Instance;
             var unmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
             return Invoke<StartFaceSearchRequest,StartFaceSearchResponse>(request, marshaller, unmarshaller);
@@ -2804,7 +2846,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
         public virtual Task<StartFaceSearchResponse> StartFaceSearchAsync(StartFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartFaceSearchRequestMarshaller();
+            var marshaller = StartFaceSearchRequestMarshaller.Instance;
             var unmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartFaceSearchRequest,StartFaceSearchResponse>(request, marshaller, 
@@ -2863,7 +2905,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2879,7 +2925,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         public virtual StartLabelDetectionResponse StartLabelDetection(StartLabelDetectionRequest request)
         {
-            var marshaller = new StartLabelDetectionRequestMarshaller();
+            var marshaller = StartLabelDetectionRequestMarshaller.Instance;
             var unmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
             return Invoke<StartLabelDetectionRequest,StartLabelDetectionResponse>(request, marshaller, unmarshaller);
@@ -2897,7 +2943,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         public virtual Task<StartLabelDetectionResponse> StartLabelDetectionAsync(StartLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartLabelDetectionRequestMarshaller();
+            var marshaller = StartLabelDetectionRequestMarshaller.Instance;
             var unmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartLabelDetectionRequest,StartLabelDetectionResponse>(request, marshaller, 
@@ -2950,7 +2996,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2966,7 +3016,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
         public virtual StartPersonTrackingResponse StartPersonTracking(StartPersonTrackingRequest request)
         {
-            var marshaller = new StartPersonTrackingRequestMarshaller();
+            var marshaller = StartPersonTrackingRequestMarshaller.Instance;
             var unmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
             return Invoke<StartPersonTrackingRequest,StartPersonTrackingResponse>(request, marshaller, unmarshaller);
@@ -2984,7 +3034,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
         public virtual Task<StartPersonTrackingResponse> StartPersonTrackingAsync(StartPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartPersonTrackingRequestMarshaller();
+            var marshaller = StartPersonTrackingRequestMarshaller.Instance;
             var unmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartPersonTrackingRequest,StartPersonTrackingResponse>(request, marshaller, 
@@ -3030,7 +3080,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
         public virtual StartStreamProcessorResponse StartStreamProcessor(StartStreamProcessorRequest request)
         {
-            var marshaller = new StartStreamProcessorRequestMarshaller();
+            var marshaller = StartStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
             return Invoke<StartStreamProcessorRequest,StartStreamProcessorResponse>(request, marshaller, unmarshaller);
@@ -3048,7 +3098,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
         public virtual Task<StartStreamProcessorResponse> StartStreamProcessorAsync(StartStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartStreamProcessorRequestMarshaller();
+            var marshaller = StartStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartStreamProcessorRequest,StartStreamProcessorResponse>(request, marshaller, 
@@ -3092,7 +3142,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
         public virtual StopStreamProcessorResponse StopStreamProcessor(StopStreamProcessorRequest request)
         {
-            var marshaller = new StopStreamProcessorRequestMarshaller();
+            var marshaller = StopStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
             return Invoke<StopStreamProcessorRequest,StopStreamProcessorResponse>(request, marshaller, unmarshaller);
@@ -3110,7 +3160,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
         public virtual Task<StopStreamProcessorResponse> StopStreamProcessorAsync(StopStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopStreamProcessorRequestMarshaller();
+            var marshaller = StopStreamProcessorRequestMarshaller.Instance;
             var unmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopStreamProcessorRequest,StopStreamProcessorResponse>(request, marshaller, 

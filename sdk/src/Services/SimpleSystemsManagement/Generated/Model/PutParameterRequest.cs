@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutParameter operation.
-    /// Add one or more parameters to the system.
+    /// Add a parameter to the system.
     /// </summary>
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -66,6 +66,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Information about the parameter that you want to add to the system.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not enter personally identifiable information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Description
         {
@@ -105,6 +110,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The fully qualified name of the parameter that you want to add to the system. The
         /// fully qualified name includes the complete hierarchy of the parameter path and name.
         /// For example: <code>/Dev/DBServer/MySQL/db-string13</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about parameter name requirements and restrictions, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
+        /// Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

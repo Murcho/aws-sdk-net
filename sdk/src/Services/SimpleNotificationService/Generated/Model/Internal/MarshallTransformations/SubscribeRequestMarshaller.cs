@@ -58,6 +58,21 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAttributes())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
+                    {
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                        }
+                        mapIndex++;
+                    }
+                }
                 if(publicRequest.IsSetEndpoint())
                 {
                     request.Parameters.Add("Endpoint", StringUtils.FromString(publicRequest.Endpoint));
@@ -66,6 +81,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
                 }
+                if(publicRequest.IsSetReturnSubscriptionArn())
+                {
+                    request.Parameters.Add("ReturnSubscriptionArn", StringUtils.FromBool(publicRequest.ReturnSubscriptionArn));
+                }
                 if(publicRequest.IsSetTopicArn())
                 {
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
@@ -73,5 +92,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static SubscribeRequestMarshaller _instance = new SubscribeRequestMarshaller();        
+
+        internal static SubscribeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SubscribeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

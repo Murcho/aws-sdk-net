@@ -44,11 +44,19 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Describe fleets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,6 +69,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,37 +100,17 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Manage fleet capacity:
+    /// Manage fleet actions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <a>StartFleetActions</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>StopFleetActions</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class FleetAttributes
     {
@@ -127,6 +119,8 @@ namespace Amazon.GameLift.Model
         private string _description;
         private string _fleetArn;
         private string _fleetId;
+        private FleetType _fleetType;
+        private EC2InstanceType _instanceType;
         private List<string> _logPaths = new List<string>();
         private List<string> _metricGroups = new List<string>();
         private string _name;
@@ -136,6 +130,7 @@ namespace Amazon.GameLift.Model
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
+        private List<string> _stoppedActions = new List<string>();
         private DateTime? _terminationTime;
 
         /// <summary>
@@ -227,6 +222,45 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetType. 
+        /// <para>
+        /// Indicates whether the fleet uses on-demand or spot instances. A spot instance in use
+        /// may be interrupted with a two-minute notification.
+        /// </para>
+        /// </summary>
+        public FleetType FleetType
+        {
+            get { return this._fleetType; }
+            set { this._fleetType = value; }
+        }
+
+        // Check to see if FleetType property is set
+        internal bool IsSetFleetType()
+        {
+            return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// EC2 instance type indicating the computing resources of each instance in the fleet,
+        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// EC2 Instance Types</a> for detailed descriptions.
+        /// </para>
+        /// </summary>
+        public EC2InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>
@@ -444,6 +478,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoppedActions. 
+        /// <para>
+        /// List of fleet actions that have been suspended using <a>StopFleetActions</a>. This
+        /// includes auto-scaling.
+        /// </para>
+        /// </summary>
+        public List<string> StoppedActions
+        {
+            get { return this._stoppedActions; }
+            set { this._stoppedActions = value; }
+        }
+
+        // Check to see if StoppedActions property is set
+        internal bool IsSetStoppedActions()
+        {
+            return this._stoppedActions != null && this._stoppedActions.Count > 0; 
         }
 
         /// <summary>

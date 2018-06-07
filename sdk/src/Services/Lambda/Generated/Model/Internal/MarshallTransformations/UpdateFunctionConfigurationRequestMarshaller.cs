@@ -114,6 +114,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MemorySize);
                 }
 
+                if(publicRequest.IsSetRevisionId())
+                {
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");
@@ -163,7 +169,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateFunctionConfigurationRequestMarshaller _instance = new UpdateFunctionConfigurationRequestMarshaller();        
 
+        internal static UpdateFunctionConfigurationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateFunctionConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

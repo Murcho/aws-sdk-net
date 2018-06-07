@@ -88,10 +88,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FeedbackURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeedbackURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RedirectURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RedirectURL = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StackErrors", targetDepth))
@@ -104,6 +116,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
                     unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
+                    unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

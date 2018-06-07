@@ -71,6 +71,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ChannelId);
                 }
 
+                if(publicRequest.IsSetCmafPackage())
+                {
+                    context.Writer.WritePropertyName("cmafPackage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmafPackageCreateOrUpdateParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmafPackage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDashPackage())
                 {
                     context.Writer.WritePropertyName("dashPackage");
@@ -154,7 +165,23 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateOriginEndpointRequestMarshaller _instance = new CreateOriginEndpointRequestMarshaller();        
 
+        internal static CreateOriginEndpointRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateOriginEndpointRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

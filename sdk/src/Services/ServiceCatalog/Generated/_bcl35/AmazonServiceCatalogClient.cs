@@ -251,7 +251,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         public virtual AcceptPortfolioShareResponse AcceptPortfolioShare(AcceptPortfolioShareRequest request)
         {
-            var marshaller = new AcceptPortfolioShareRequestMarshaller();
+            var marshaller = AcceptPortfolioShareRequestMarshaller.Instance;
             var unmarshaller = AcceptPortfolioShareResponseUnmarshaller.Instance;
 
             return Invoke<AcceptPortfolioShareRequest,AcceptPortfolioShareResponse>(request, marshaller, unmarshaller);
@@ -271,7 +271,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">REST API Reference for AcceptPortfolioShare Operation</seealso>
         public virtual IAsyncResult BeginAcceptPortfolioShare(AcceptPortfolioShareRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AcceptPortfolioShareRequestMarshaller();
+            var marshaller = AcceptPortfolioShareRequestMarshaller.Instance;
             var unmarshaller = AcceptPortfolioShareResponseUnmarshaller.Instance;
 
             return BeginInvoke<AcceptPortfolioShareRequest>(request, marshaller, unmarshaller,
@@ -314,7 +314,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         public virtual AssociatePrincipalWithPortfolioResponse AssociatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request)
         {
-            var marshaller = new AssociatePrincipalWithPortfolioRequestMarshaller();
+            var marshaller = AssociatePrincipalWithPortfolioRequestMarshaller.Instance;
             var unmarshaller = AssociatePrincipalWithPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<AssociatePrincipalWithPortfolioRequest,AssociatePrincipalWithPortfolioResponse>(request, marshaller, unmarshaller);
@@ -334,7 +334,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">REST API Reference for AssociatePrincipalWithPortfolio Operation</seealso>
         public virtual IAsyncResult BeginAssociatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociatePrincipalWithPortfolioRequestMarshaller();
+            var marshaller = AssociatePrincipalWithPortfolioRequestMarshaller.Instance;
             var unmarshaller = AssociatePrincipalWithPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociatePrincipalWithPortfolioRequest>(request, marshaller, unmarshaller,
@@ -377,7 +377,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         public virtual AssociateProductWithPortfolioResponse AssociateProductWithPortfolio(AssociateProductWithPortfolioRequest request)
         {
-            var marshaller = new AssociateProductWithPortfolioRequestMarshaller();
+            var marshaller = AssociateProductWithPortfolioRequestMarshaller.Instance;
             var unmarshaller = AssociateProductWithPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<AssociateProductWithPortfolioRequest,AssociateProductWithPortfolioResponse>(request, marshaller, unmarshaller);
@@ -397,7 +397,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">REST API Reference for AssociateProductWithPortfolio Operation</seealso>
         public virtual IAsyncResult BeginAssociateProductWithPortfolio(AssociateProductWithPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateProductWithPortfolioRequestMarshaller();
+            var marshaller = AssociateProductWithPortfolioRequestMarshaller.Instance;
             var unmarshaller = AssociateProductWithPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateProductWithPortfolioRequest>(request, marshaller, unmarshaller,
@@ -452,7 +452,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
         public virtual AssociateTagOptionWithResourceResponse AssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request)
         {
-            var marshaller = new AssociateTagOptionWithResourceRequestMarshaller();
+            var marshaller = AssociateTagOptionWithResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateTagOptionWithResourceResponseUnmarshaller.Instance;
 
             return Invoke<AssociateTagOptionWithResourceRequest,AssociateTagOptionWithResourceResponse>(request, marshaller, unmarshaller);
@@ -472,7 +472,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateTagOptionWithResourceRequestMarshaller();
+            var marshaller = AssociateTagOptionWithResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateTagOptionWithResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateTagOptionWithResourceRequest>(request, marshaller, unmarshaller,
@@ -522,7 +522,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
         public virtual CopyProductResponse CopyProduct(CopyProductRequest request)
         {
-            var marshaller = new CopyProductRequestMarshaller();
+            var marshaller = CopyProductRequestMarshaller.Instance;
             var unmarshaller = CopyProductResponseUnmarshaller.Instance;
 
             return Invoke<CopyProductRequest,CopyProductResponse>(request, marshaller, unmarshaller);
@@ -542,7 +542,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">REST API Reference for CopyProduct Operation</seealso>
         public virtual IAsyncResult BeginCopyProduct(CopyProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyProductRequestMarshaller();
+            var marshaller = CopyProductRequestMarshaller.Instance;
             var unmarshaller = CopyProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyProductRequest>(request, marshaller, unmarshaller,
@@ -588,7 +588,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         public virtual CreateConstraintResponse CreateConstraint(CreateConstraintRequest request)
         {
-            var marshaller = new CreateConstraintRequestMarshaller();
+            var marshaller = CreateConstraintRequestMarshaller.Instance;
             var unmarshaller = CreateConstraintResponseUnmarshaller.Instance;
 
             return Invoke<CreateConstraintRequest,CreateConstraintResponse>(request, marshaller, unmarshaller);
@@ -608,7 +608,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">REST API Reference for CreateConstraint Operation</seealso>
         public virtual IAsyncResult BeginCreateConstraint(CreateConstraintRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateConstraintRequestMarshaller();
+            var marshaller = CreateConstraintRequestMarshaller.Instance;
             var unmarshaller = CreateConstraintResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateConstraintRequest>(request, marshaller, unmarshaller,
@@ -653,7 +653,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public virtual CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request)
         {
-            var marshaller = new CreatePortfolioRequestMarshaller();
+            var marshaller = CreatePortfolioRequestMarshaller.Instance;
             var unmarshaller = CreatePortfolioResponseUnmarshaller.Instance;
 
             return Invoke<CreatePortfolioRequest,CreatePortfolioResponse>(request, marshaller, unmarshaller);
@@ -673,7 +673,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public virtual IAsyncResult BeginCreatePortfolio(CreatePortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePortfolioRequestMarshaller();
+            var marshaller = CreatePortfolioRequestMarshaller.Instance;
             var unmarshaller = CreatePortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePortfolioRequest>(request, marshaller, unmarshaller,
@@ -716,7 +716,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         public virtual CreatePortfolioShareResponse CreatePortfolioShare(CreatePortfolioShareRequest request)
         {
-            var marshaller = new CreatePortfolioShareRequestMarshaller();
+            var marshaller = CreatePortfolioShareRequestMarshaller.Instance;
             var unmarshaller = CreatePortfolioShareResponseUnmarshaller.Instance;
 
             return Invoke<CreatePortfolioShareRequest,CreatePortfolioShareResponse>(request, marshaller, unmarshaller);
@@ -736,7 +736,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">REST API Reference for CreatePortfolioShare Operation</seealso>
         public virtual IAsyncResult BeginCreatePortfolioShare(CreatePortfolioShareRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePortfolioShareRequestMarshaller();
+            var marshaller = CreatePortfolioShareRequestMarshaller.Instance;
             var unmarshaller = CreatePortfolioShareResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePortfolioShareRequest>(request, marshaller, unmarshaller,
@@ -781,7 +781,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public virtual CreateProductResponse CreateProduct(CreateProductRequest request)
         {
-            var marshaller = new CreateProductRequestMarshaller();
+            var marshaller = CreateProductRequestMarshaller.Instance;
             var unmarshaller = CreateProductResponseUnmarshaller.Instance;
 
             return Invoke<CreateProductRequest,CreateProductResponse>(request, marshaller, unmarshaller);
@@ -801,7 +801,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public virtual IAsyncResult BeginCreateProduct(CreateProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateProductRequestMarshaller();
+            var marshaller = CreateProductRequestMarshaller.Instance;
             var unmarshaller = CreateProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateProductRequest>(request, marshaller, unmarshaller,
@@ -819,6 +819,82 @@ namespace Amazon.ServiceCatalog
         public virtual CreateProductResponse EndCreateProduct(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProductResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProvisionedProductPlan
+
+        /// <summary>
+        /// Creates a plan. A plan includes the list of resources to be created (when provisioning
+        /// a new product) or modified (when updating a provisioned product) when the plan is
+        /// executed.
+        /// 
+        ///  
+        /// <para>
+        /// You can create one plan per provisioned product. To create a plan for an existing
+        /// provisioned product, the product status must be AVAILBLE or TAINTED.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
+        /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual CreateProvisionedProductPlanResponse CreateProvisionedProductPlan(CreateProvisionedProductPlanRequest request)
+        {
+            var marshaller = CreateProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = CreateProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProvisionedProductPlanRequest,CreateProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginCreateProvisionedProductPlan(CreateProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = CreateProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual CreateProvisionedProductPlanResponse EndCreateProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProvisionedProductPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -849,7 +925,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         public virtual CreateProvisioningArtifactResponse CreateProvisioningArtifact(CreateProvisioningArtifactRequest request)
         {
-            var marshaller = new CreateProvisioningArtifactRequestMarshaller();
+            var marshaller = CreateProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = CreateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return Invoke<CreateProvisioningArtifactRequest,CreateProvisioningArtifactResponse>(request, marshaller, unmarshaller);
@@ -869,7 +945,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">REST API Reference for CreateProvisioningArtifact Operation</seealso>
         public virtual IAsyncResult BeginCreateProvisioningArtifact(CreateProvisioningArtifactRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateProvisioningArtifactRequestMarshaller();
+            var marshaller = CreateProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = CreateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateProvisioningArtifactRequest>(request, marshaller, unmarshaller,
@@ -914,7 +990,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
         public virtual CreateTagOptionResponse CreateTagOption(CreateTagOptionRequest request)
         {
-            var marshaller = new CreateTagOptionRequestMarshaller();
+            var marshaller = CreateTagOptionRequestMarshaller.Instance;
             var unmarshaller = CreateTagOptionResponseUnmarshaller.Instance;
 
             return Invoke<CreateTagOptionRequest,CreateTagOptionResponse>(request, marshaller, unmarshaller);
@@ -934,7 +1010,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
         public virtual IAsyncResult BeginCreateTagOption(CreateTagOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTagOptionRequestMarshaller();
+            var marshaller = CreateTagOptionRequestMarshaller.Instance;
             var unmarshaller = CreateTagOptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTagOptionRequest>(request, marshaller, unmarshaller,
@@ -973,7 +1049,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         public virtual DeleteConstraintResponse DeleteConstraint(DeleteConstraintRequest request)
         {
-            var marshaller = new DeleteConstraintRequestMarshaller();
+            var marshaller = DeleteConstraintRequestMarshaller.Instance;
             var unmarshaller = DeleteConstraintResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConstraintRequest,DeleteConstraintResponse>(request, marshaller, unmarshaller);
@@ -993,7 +1069,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">REST API Reference for DeleteConstraint Operation</seealso>
         public virtual IAsyncResult BeginDeleteConstraint(DeleteConstraintRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConstraintRequestMarshaller();
+            var marshaller = DeleteConstraintRequestMarshaller.Instance;
             var unmarshaller = DeleteConstraintResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConstraintRequest>(request, marshaller, unmarshaller,
@@ -1033,8 +1109,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1047,7 +1123,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public virtual DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request)
         {
-            var marshaller = new DeletePortfolioRequestMarshaller();
+            var marshaller = DeletePortfolioRequestMarshaller.Instance;
             var unmarshaller = DeletePortfolioResponseUnmarshaller.Instance;
 
             return Invoke<DeletePortfolioRequest,DeletePortfolioResponse>(request, marshaller, unmarshaller);
@@ -1067,7 +1143,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public virtual IAsyncResult BeginDeletePortfolio(DeletePortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeletePortfolioRequestMarshaller();
+            var marshaller = DeletePortfolioRequestMarshaller.Instance;
             var unmarshaller = DeletePortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeletePortfolioRequest>(request, marshaller, unmarshaller,
@@ -1103,7 +1179,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         public virtual DeletePortfolioShareResponse DeletePortfolioShare(DeletePortfolioShareRequest request)
         {
-            var marshaller = new DeletePortfolioShareRequestMarshaller();
+            var marshaller = DeletePortfolioShareRequestMarshaller.Instance;
             var unmarshaller = DeletePortfolioShareResponseUnmarshaller.Instance;
 
             return Invoke<DeletePortfolioShareRequest,DeletePortfolioShareResponse>(request, marshaller, unmarshaller);
@@ -1123,7 +1199,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">REST API Reference for DeletePortfolioShare Operation</seealso>
         public virtual IAsyncResult BeginDeletePortfolioShare(DeletePortfolioShareRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeletePortfolioShareRequestMarshaller();
+            var marshaller = DeletePortfolioShareRequestMarshaller.Instance;
             var unmarshaller = DeletePortfolioShareResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeletePortfolioShareRequest>(request, marshaller, unmarshaller,
@@ -1162,8 +1238,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1176,7 +1252,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public virtual DeleteProductResponse DeleteProduct(DeleteProductRequest request)
         {
-            var marshaller = new DeleteProductRequestMarshaller();
+            var marshaller = DeleteProductRequestMarshaller.Instance;
             var unmarshaller = DeleteProductResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProductRequest,DeleteProductResponse>(request, marshaller, unmarshaller);
@@ -1196,7 +1272,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public virtual IAsyncResult BeginDeleteProduct(DeleteProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteProductRequestMarshaller();
+            var marshaller = DeleteProductRequestMarshaller.Instance;
             var unmarshaller = DeleteProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteProductRequest>(request, marshaller, unmarshaller,
@@ -1214,6 +1290,65 @@ namespace Amazon.ServiceCatalog
         public virtual DeleteProductResponse EndDeleteProduct(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProductResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteProvisionedProductPlan
+
+        /// <summary>
+        /// Deletes the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual DeleteProvisionedProductPlanResponse DeleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest request)
+        {
+            var marshaller = DeleteProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = DeleteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProvisionedProductPlanRequest,DeleteProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = DeleteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual DeleteProvisionedProductPlanResponse EndDeleteProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProvisionedProductPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -1238,8 +1373,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1247,7 +1382,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         public virtual DeleteProvisioningArtifactResponse DeleteProvisioningArtifact(DeleteProvisioningArtifactRequest request)
         {
-            var marshaller = new DeleteProvisioningArtifactRequestMarshaller();
+            var marshaller = DeleteProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = DeleteProvisioningArtifactResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProvisioningArtifactRequest,DeleteProvisioningArtifactResponse>(request, marshaller, unmarshaller);
@@ -1267,7 +1402,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         public virtual IAsyncResult BeginDeleteProvisioningArtifact(DeleteProvisioningArtifactRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteProvisioningArtifactRequestMarshaller();
+            var marshaller = DeleteProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = DeleteProvisioningArtifactResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteProvisioningArtifactRequest>(request, marshaller, unmarshaller,
@@ -1289,6 +1424,76 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DeleteTagOption
+
+        /// <summary>
+        /// Deletes the specified TagOption.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a TagOption if it is associated with a product or portfolio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request)
+        {
+            var marshaller = DeleteTagOptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagOptionRequest,DeleteTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTagOption(DeleteTagOptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteTagOptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTagOptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTagOption.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual DeleteTagOptionResponse EndDeleteTagOption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTagOptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeConstraint
 
         /// <summary>
@@ -1303,7 +1508,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         public virtual DescribeConstraintResponse DescribeConstraint(DescribeConstraintRequest request)
         {
-            var marshaller = new DescribeConstraintRequestMarshaller();
+            var marshaller = DescribeConstraintRequestMarshaller.Instance;
             var unmarshaller = DescribeConstraintResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConstraintRequest,DescribeConstraintResponse>(request, marshaller, unmarshaller);
@@ -1323,7 +1528,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">REST API Reference for DescribeConstraint Operation</seealso>
         public virtual IAsyncResult BeginDescribeConstraint(DescribeConstraintRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConstraintRequestMarshaller();
+            var marshaller = DescribeConstraintRequestMarshaller.Instance;
             var unmarshaller = DescribeConstraintResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConstraintRequest>(request, marshaller, unmarshaller,
@@ -1359,7 +1564,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
         public virtual DescribeCopyProductStatusResponse DescribeCopyProductStatus(DescribeCopyProductStatusRequest request)
         {
-            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var marshaller = DescribeCopyProductStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCopyProductStatusRequest,DescribeCopyProductStatusResponse>(request, marshaller, unmarshaller);
@@ -1379,7 +1584,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">REST API Reference for DescribeCopyProductStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeCopyProductStatus(DescribeCopyProductStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeCopyProductStatusRequestMarshaller();
+            var marshaller = DescribeCopyProductStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeCopyProductStatusResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeCopyProductStatusRequest>(request, marshaller, unmarshaller,
@@ -1415,7 +1620,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         public virtual DescribePortfolioResponse DescribePortfolio(DescribePortfolioRequest request)
         {
-            var marshaller = new DescribePortfolioRequestMarshaller();
+            var marshaller = DescribePortfolioRequestMarshaller.Instance;
             var unmarshaller = DescribePortfolioResponseUnmarshaller.Instance;
 
             return Invoke<DescribePortfolioRequest,DescribePortfolioResponse>(request, marshaller, unmarshaller);
@@ -1435,7 +1640,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         public virtual IAsyncResult BeginDescribePortfolio(DescribePortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribePortfolioRequestMarshaller();
+            var marshaller = DescribePortfolioRequestMarshaller.Instance;
             var unmarshaller = DescribePortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribePortfolioRequest>(request, marshaller, unmarshaller,
@@ -1474,7 +1679,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         public virtual DescribeProductResponse DescribeProduct(DescribeProductRequest request)
         {
-            var marshaller = new DescribeProductRequestMarshaller();
+            var marshaller = DescribeProductRequestMarshaller.Instance;
             var unmarshaller = DescribeProductResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProductRequest,DescribeProductResponse>(request, marshaller, unmarshaller);
@@ -1494,7 +1699,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">REST API Reference for DescribeProduct Operation</seealso>
         public virtual IAsyncResult BeginDescribeProduct(DescribeProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProductRequestMarshaller();
+            var marshaller = DescribeProductRequestMarshaller.Instance;
             var unmarshaller = DescribeProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProductRequest>(request, marshaller, unmarshaller,
@@ -1531,7 +1736,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         public virtual DescribeProductAsAdminResponse DescribeProductAsAdmin(DescribeProductAsAdminRequest request)
         {
-            var marshaller = new DescribeProductAsAdminRequestMarshaller();
+            var marshaller = DescribeProductAsAdminRequestMarshaller.Instance;
             var unmarshaller = DescribeProductAsAdminResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProductAsAdminRequest,DescribeProductAsAdminResponse>(request, marshaller, unmarshaller);
@@ -1551,7 +1756,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">REST API Reference for DescribeProductAsAdmin Operation</seealso>
         public virtual IAsyncResult BeginDescribeProductAsAdmin(DescribeProductAsAdminRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProductAsAdminRequestMarshaller();
+            var marshaller = DescribeProductAsAdminRequestMarshaller.Instance;
             var unmarshaller = DescribeProductAsAdminResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProductAsAdminRequest>(request, marshaller, unmarshaller,
@@ -1590,7 +1795,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         public virtual DescribeProductViewResponse DescribeProductView(DescribeProductViewRequest request)
         {
-            var marshaller = new DescribeProductViewRequestMarshaller();
+            var marshaller = DescribeProductViewRequestMarshaller.Instance;
             var unmarshaller = DescribeProductViewResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProductViewRequest,DescribeProductViewResponse>(request, marshaller, unmarshaller);
@@ -1610,7 +1815,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">REST API Reference for DescribeProductView Operation</seealso>
         public virtual IAsyncResult BeginDescribeProductView(DescribeProductViewRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProductViewRequestMarshaller();
+            var marshaller = DescribeProductViewRequestMarshaller.Instance;
             var unmarshaller = DescribeProductViewResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProductViewRequest>(request, marshaller, unmarshaller,
@@ -1646,7 +1851,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
         public virtual DescribeProvisionedProductResponse DescribeProvisionedProduct(DescribeProvisionedProductRequest request)
         {
-            var marshaller = new DescribeProvisionedProductRequestMarshaller();
+            var marshaller = DescribeProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisionedProductResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProvisionedProductRequest,DescribeProvisionedProductResponse>(request, marshaller, unmarshaller);
@@ -1666,7 +1871,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">REST API Reference for DescribeProvisionedProduct Operation</seealso>
         public virtual IAsyncResult BeginDescribeProvisionedProduct(DescribeProvisionedProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProvisionedProductRequestMarshaller();
+            var marshaller = DescribeProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisionedProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProvisionedProductRequest>(request, marshaller, unmarshaller,
@@ -1688,6 +1893,65 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeProvisionedProductPlan
+
+        /// <summary>
+        /// Gets information about the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual DescribeProvisionedProductPlanResponse DescribeProvisionedProductPlan(DescribeProvisionedProductPlanRequest request)
+        {
+            var marshaller = DescribeProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = DescribeProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProvisionedProductPlanRequest,DescribeProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProvisionedProductPlan(DescribeProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = DescribeProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  DescribeProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual DescribeProvisionedProductPlanResponse EndDescribeProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeProvisioningArtifact
 
         /// <summary>
@@ -1703,7 +1967,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         public virtual DescribeProvisioningArtifactResponse DescribeProvisioningArtifact(DescribeProvisioningArtifactRequest request)
         {
-            var marshaller = new DescribeProvisioningArtifactRequestMarshaller();
+            var marshaller = DescribeProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisioningArtifactResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProvisioningArtifactRequest,DescribeProvisioningArtifactResponse>(request, marshaller, unmarshaller);
@@ -1723,7 +1987,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">REST API Reference for DescribeProvisioningArtifact Operation</seealso>
         public virtual IAsyncResult BeginDescribeProvisioningArtifact(DescribeProvisioningArtifactRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProvisioningArtifactRequestMarshaller();
+            var marshaller = DescribeProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisioningArtifactResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProvisioningArtifactRequest>(request, marshaller, unmarshaller,
@@ -1756,9 +2020,9 @@ namespace Amazon.ServiceCatalog
         /// If the output contains a TagOption key with an empty list of values, there is a TagOption
         /// conflict for that key. The end user cannot take action to fix the conflict, and launch
         /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
-        /// TagOption keys as tags, or this will cause the error "Parameter validation failed:
-        /// Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
-        /// product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
+        /// TagOption keys as tags, or this causes the error "Parameter validation failed: Missing
+        /// required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with
+        /// the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
@@ -1773,7 +2037,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         public virtual DescribeProvisioningParametersResponse DescribeProvisioningParameters(DescribeProvisioningParametersRequest request)
         {
-            var marshaller = new DescribeProvisioningParametersRequestMarshaller();
+            var marshaller = DescribeProvisioningParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisioningParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProvisioningParametersRequest,DescribeProvisioningParametersResponse>(request, marshaller, unmarshaller);
@@ -1793,7 +2057,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">REST API Reference for DescribeProvisioningParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeProvisioningParameters(DescribeProvisioningParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProvisioningParametersRequestMarshaller();
+            var marshaller = DescribeProvisioningParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeProvisioningParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProvisioningParametersRequest>(request, marshaller, unmarshaller,
@@ -1835,7 +2099,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         public virtual DescribeRecordResponse DescribeRecord(DescribeRecordRequest request)
         {
-            var marshaller = new DescribeRecordRequestMarshaller();
+            var marshaller = DescribeRecordRequestMarshaller.Instance;
             var unmarshaller = DescribeRecordResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRecordRequest,DescribeRecordResponse>(request, marshaller, unmarshaller);
@@ -1855,7 +2119,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">REST API Reference for DescribeRecord Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecord(DescribeRecordRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRecordRequestMarshaller();
+            var marshaller = DescribeRecordRequestMarshaller.Instance;
             var unmarshaller = DescribeRecordResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRecordRequest>(request, marshaller, unmarshaller,
@@ -1896,7 +2160,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
         public virtual DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request)
         {
-            var marshaller = new DescribeTagOptionRequestMarshaller();
+            var marshaller = DescribeTagOptionRequestMarshaller.Instance;
             var unmarshaller = DescribeTagOptionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTagOptionRequest,DescribeTagOptionResponse>(request, marshaller, unmarshaller);
@@ -1916,7 +2180,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
         public virtual IAsyncResult BeginDescribeTagOption(DescribeTagOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTagOptionRequestMarshaller();
+            var marshaller = DescribeTagOptionRequestMarshaller.Instance;
             var unmarshaller = DescribeTagOptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTagOptionRequest>(request, marshaller, unmarshaller,
@@ -1955,7 +2219,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         public virtual DisassociatePrincipalFromPortfolioResponse DisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request)
         {
-            var marshaller = new DisassociatePrincipalFromPortfolioRequestMarshaller();
+            var marshaller = DisassociatePrincipalFromPortfolioRequestMarshaller.Instance;
             var unmarshaller = DisassociatePrincipalFromPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<DisassociatePrincipalFromPortfolioRequest,DisassociatePrincipalFromPortfolioResponse>(request, marshaller, unmarshaller);
@@ -1975,7 +2239,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">REST API Reference for DisassociatePrincipalFromPortfolio Operation</seealso>
         public virtual IAsyncResult BeginDisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociatePrincipalFromPortfolioRequestMarshaller();
+            var marshaller = DisassociatePrincipalFromPortfolioRequestMarshaller.Instance;
             var unmarshaller = DisassociatePrincipalFromPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociatePrincipalFromPortfolioRequest>(request, marshaller, unmarshaller,
@@ -2009,8 +2273,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2018,7 +2282,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         public virtual DisassociateProductFromPortfolioResponse DisassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest request)
         {
-            var marshaller = new DisassociateProductFromPortfolioRequestMarshaller();
+            var marshaller = DisassociateProductFromPortfolioRequestMarshaller.Instance;
             var unmarshaller = DisassociateProductFromPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateProductFromPortfolioRequest,DisassociateProductFromPortfolioResponse>(request, marshaller, unmarshaller);
@@ -2038,7 +2302,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">REST API Reference for DisassociateProductFromPortfolio Operation</seealso>
         public virtual IAsyncResult BeginDisassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateProductFromPortfolioRequestMarshaller();
+            var marshaller = DisassociateProductFromPortfolioRequestMarshaller.Instance;
             var unmarshaller = DisassociateProductFromPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateProductFromPortfolioRequest>(request, marshaller, unmarshaller,
@@ -2079,7 +2343,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
         public virtual DisassociateTagOptionFromResourceResponse DisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request)
         {
-            var marshaller = new DisassociateTagOptionFromResourceRequestMarshaller();
+            var marshaller = DisassociateTagOptionFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateTagOptionFromResourceRequest,DisassociateTagOptionFromResourceResponse>(request, marshaller, unmarshaller);
@@ -2099,7 +2363,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateTagOptionFromResourceRequestMarshaller();
+            var marshaller = DisassociateTagOptionFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateTagOptionFromResourceRequest>(request, marshaller, unmarshaller,
@@ -2121,6 +2385,69 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ExecuteProvisionedProductPlan
+
+        /// <summary>
+        /// Provisions or modifies a product based on the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual ExecuteProvisionedProductPlanResponse ExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request)
+        {
+            var marshaller = ExecuteProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteProvisionedProductPlanRequest,ExecuteProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ExecuteProvisionedProductPlanRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExecuteProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  ExecuteProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual ExecuteProvisionedProductPlanResponse EndExecuteProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAcceptedPortfolioShares
 
         /// <summary>
@@ -2135,7 +2462,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public virtual ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request)
         {
-            var marshaller = new ListAcceptedPortfolioSharesRequestMarshaller();
+            var marshaller = ListAcceptedPortfolioSharesRequestMarshaller.Instance;
             var unmarshaller = ListAcceptedPortfolioSharesResponseUnmarshaller.Instance;
 
             return Invoke<ListAcceptedPortfolioSharesRequest,ListAcceptedPortfolioSharesResponse>(request, marshaller, unmarshaller);
@@ -2155,7 +2482,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public virtual IAsyncResult BeginListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAcceptedPortfolioSharesRequestMarshaller();
+            var marshaller = ListAcceptedPortfolioSharesRequestMarshaller.Instance;
             var unmarshaller = ListAcceptedPortfolioSharesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAcceptedPortfolioSharesRequest>(request, marshaller, unmarshaller,
@@ -2194,7 +2521,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         public virtual ListConstraintsForPortfolioResponse ListConstraintsForPortfolio(ListConstraintsForPortfolioRequest request)
         {
-            var marshaller = new ListConstraintsForPortfolioRequestMarshaller();
+            var marshaller = ListConstraintsForPortfolioRequestMarshaller.Instance;
             var unmarshaller = ListConstraintsForPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<ListConstraintsForPortfolioRequest,ListConstraintsForPortfolioResponse>(request, marshaller, unmarshaller);
@@ -2214,7 +2541,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">REST API Reference for ListConstraintsForPortfolio Operation</seealso>
         public virtual IAsyncResult BeginListConstraintsForPortfolio(ListConstraintsForPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListConstraintsForPortfolioRequestMarshaller();
+            var marshaller = ListConstraintsForPortfolioRequestMarshaller.Instance;
             var unmarshaller = ListConstraintsForPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListConstraintsForPortfolioRequest>(request, marshaller, unmarshaller,
@@ -2255,7 +2582,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         public virtual ListLaunchPathsResponse ListLaunchPaths(ListLaunchPathsRequest request)
         {
-            var marshaller = new ListLaunchPathsRequestMarshaller();
+            var marshaller = ListLaunchPathsRequestMarshaller.Instance;
             var unmarshaller = ListLaunchPathsResponseUnmarshaller.Instance;
 
             return Invoke<ListLaunchPathsRequest,ListLaunchPathsResponse>(request, marshaller, unmarshaller);
@@ -2275,7 +2602,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         public virtual IAsyncResult BeginListLaunchPaths(ListLaunchPathsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListLaunchPathsRequestMarshaller();
+            var marshaller = ListLaunchPathsRequestMarshaller.Instance;
             var unmarshaller = ListLaunchPathsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListLaunchPathsRequest>(request, marshaller, unmarshaller,
@@ -2311,7 +2638,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         public virtual ListPortfolioAccessResponse ListPortfolioAccess(ListPortfolioAccessRequest request)
         {
-            var marshaller = new ListPortfolioAccessRequestMarshaller();
+            var marshaller = ListPortfolioAccessRequestMarshaller.Instance;
             var unmarshaller = ListPortfolioAccessResponseUnmarshaller.Instance;
 
             return Invoke<ListPortfolioAccessRequest,ListPortfolioAccessResponse>(request, marshaller, unmarshaller);
@@ -2331,7 +2658,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">REST API Reference for ListPortfolioAccess Operation</seealso>
         public virtual IAsyncResult BeginListPortfolioAccess(ListPortfolioAccessRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPortfolioAccessRequestMarshaller();
+            var marshaller = ListPortfolioAccessRequestMarshaller.Instance;
             var unmarshaller = ListPortfolioAccessResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPortfolioAccessRequest>(request, marshaller, unmarshaller,
@@ -2367,7 +2694,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         public virtual ListPortfoliosResponse ListPortfolios(ListPortfoliosRequest request)
         {
-            var marshaller = new ListPortfoliosRequestMarshaller();
+            var marshaller = ListPortfoliosRequestMarshaller.Instance;
             var unmarshaller = ListPortfoliosResponseUnmarshaller.Instance;
 
             return Invoke<ListPortfoliosRequest,ListPortfoliosResponse>(request, marshaller, unmarshaller);
@@ -2387,7 +2714,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         public virtual IAsyncResult BeginListPortfolios(ListPortfoliosRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPortfoliosRequestMarshaller();
+            var marshaller = ListPortfoliosRequestMarshaller.Instance;
             var unmarshaller = ListPortfoliosResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPortfoliosRequest>(request, marshaller, unmarshaller,
@@ -2426,7 +2753,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         public virtual ListPortfoliosForProductResponse ListPortfoliosForProduct(ListPortfoliosForProductRequest request)
         {
-            var marshaller = new ListPortfoliosForProductRequestMarshaller();
+            var marshaller = ListPortfoliosForProductRequestMarshaller.Instance;
             var unmarshaller = ListPortfoliosForProductResponseUnmarshaller.Instance;
 
             return Invoke<ListPortfoliosForProductRequest,ListPortfoliosForProductResponse>(request, marshaller, unmarshaller);
@@ -2446,7 +2773,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">REST API Reference for ListPortfoliosForProduct Operation</seealso>
         public virtual IAsyncResult BeginListPortfoliosForProduct(ListPortfoliosForProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPortfoliosForProductRequestMarshaller();
+            var marshaller = ListPortfoliosForProductRequestMarshaller.Instance;
             var unmarshaller = ListPortfoliosForProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPortfoliosForProductRequest>(request, marshaller, unmarshaller,
@@ -2485,7 +2812,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         public virtual ListPrincipalsForPortfolioResponse ListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request)
         {
-            var marshaller = new ListPrincipalsForPortfolioRequestMarshaller();
+            var marshaller = ListPrincipalsForPortfolioRequestMarshaller.Instance;
             var unmarshaller = ListPrincipalsForPortfolioResponseUnmarshaller.Instance;
 
             return Invoke<ListPrincipalsForPortfolioRequest,ListPrincipalsForPortfolioResponse>(request, marshaller, unmarshaller);
@@ -2505,7 +2832,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">REST API Reference for ListPrincipalsForPortfolio Operation</seealso>
         public virtual IAsyncResult BeginListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPrincipalsForPortfolioRequestMarshaller();
+            var marshaller = ListPrincipalsForPortfolioRequestMarshaller.Instance;
             var unmarshaller = ListPrincipalsForPortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPrincipalsForPortfolioRequest>(request, marshaller, unmarshaller,
@@ -2527,6 +2854,66 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListProvisionedProductPlans
+
+        /// <summary>
+        /// Lists the plans for the specified provisioned product or all plans to which the user
+        /// has access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisionedProductPlans service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual ListProvisionedProductPlansResponse ListProvisionedProductPlans(ListProvisionedProductPlansRequest request)
+        {
+            var marshaller = ListProvisionedProductPlansRequestMarshaller.Instance;
+            var unmarshaller = ListProvisionedProductPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisionedProductPlansRequest,ListProvisionedProductPlansResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedProductPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisionedProductPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual IAsyncResult BeginListProvisionedProductPlans(ListProvisionedProductPlansRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListProvisionedProductPlansRequestMarshaller.Instance;
+            var unmarshaller = ListProvisionedProductPlansResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListProvisionedProductPlansRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProvisionedProductPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisionedProductPlans.</param>
+        /// 
+        /// <returns>Returns a  ListProvisionedProductPlansResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual ListProvisionedProductPlansResponse EndListProvisionedProductPlans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProvisionedProductPlansResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProvisioningArtifacts
 
         /// <summary>
@@ -2544,7 +2931,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         public virtual ListProvisioningArtifactsResponse ListProvisioningArtifacts(ListProvisioningArtifactsRequest request)
         {
-            var marshaller = new ListProvisioningArtifactsRequestMarshaller();
+            var marshaller = ListProvisioningArtifactsRequestMarshaller.Instance;
             var unmarshaller = ListProvisioningArtifactsResponseUnmarshaller.Instance;
 
             return Invoke<ListProvisioningArtifactsRequest,ListProvisioningArtifactsResponse>(request, marshaller, unmarshaller);
@@ -2564,7 +2951,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">REST API Reference for ListProvisioningArtifacts Operation</seealso>
         public virtual IAsyncResult BeginListProvisioningArtifacts(ListProvisioningArtifactsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListProvisioningArtifactsRequestMarshaller();
+            var marshaller = ListProvisioningArtifactsRequestMarshaller.Instance;
             var unmarshaller = ListProvisioningArtifactsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListProvisioningArtifactsRequest>(request, marshaller, unmarshaller,
@@ -2600,7 +2987,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         public virtual ListRecordHistoryResponse ListRecordHistory(ListRecordHistoryRequest request)
         {
-            var marshaller = new ListRecordHistoryRequestMarshaller();
+            var marshaller = ListRecordHistoryRequestMarshaller.Instance;
             var unmarshaller = ListRecordHistoryResponseUnmarshaller.Instance;
 
             return Invoke<ListRecordHistoryRequest,ListRecordHistoryResponse>(request, marshaller, unmarshaller);
@@ -2620,7 +3007,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         public virtual IAsyncResult BeginListRecordHistory(ListRecordHistoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRecordHistoryRequestMarshaller();
+            var marshaller = ListRecordHistoryRequestMarshaller.Instance;
             var unmarshaller = ListRecordHistoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRecordHistoryRequest>(request, marshaller, unmarshaller,
@@ -2664,7 +3051,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
         public virtual ListResourcesForTagOptionResponse ListResourcesForTagOption(ListResourcesForTagOptionRequest request)
         {
-            var marshaller = new ListResourcesForTagOptionRequestMarshaller();
+            var marshaller = ListResourcesForTagOptionRequestMarshaller.Instance;
             var unmarshaller = ListResourcesForTagOptionResponseUnmarshaller.Instance;
 
             return Invoke<ListResourcesForTagOptionRequest,ListResourcesForTagOptionResponse>(request, marshaller, unmarshaller);
@@ -2684,7 +3071,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
         public virtual IAsyncResult BeginListResourcesForTagOption(ListResourcesForTagOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListResourcesForTagOptionRequestMarshaller();
+            var marshaller = ListResourcesForTagOptionRequestMarshaller.Instance;
             var unmarshaller = ListResourcesForTagOptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListResourcesForTagOptionRequest>(request, marshaller, unmarshaller,
@@ -2725,7 +3112,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
         public virtual ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request)
         {
-            var marshaller = new ListTagOptionsRequestMarshaller();
+            var marshaller = ListTagOptionsRequestMarshaller.Instance;
             var unmarshaller = ListTagOptionsResponseUnmarshaller.Instance;
 
             return Invoke<ListTagOptionsRequest,ListTagOptionsResponse>(request, marshaller, unmarshaller);
@@ -2745,7 +3132,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
         public virtual IAsyncResult BeginListTagOptions(ListTagOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagOptionsRequestMarshaller();
+            var marshaller = ListTagOptionsRequestMarshaller.Instance;
             var unmarshaller = ListTagOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagOptionsRequest>(request, marshaller, unmarshaller,
@@ -2781,8 +3168,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// If the request contains a tag key with an empty list of values, there is a tag conflict
-        /// for that key. Do not include conflicted keys as tags, or this will cause the error
-        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
+        /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
@@ -2800,7 +3187,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         public virtual ProvisionProductResponse ProvisionProduct(ProvisionProductRequest request)
         {
-            var marshaller = new ProvisionProductRequestMarshaller();
+            var marshaller = ProvisionProductRequestMarshaller.Instance;
             var unmarshaller = ProvisionProductResponseUnmarshaller.Instance;
 
             return Invoke<ProvisionProductRequest,ProvisionProductResponse>(request, marshaller, unmarshaller);
@@ -2820,7 +3207,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">REST API Reference for ProvisionProduct Operation</seealso>
         public virtual IAsyncResult BeginProvisionProduct(ProvisionProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ProvisionProductRequestMarshaller();
+            var marshaller = ProvisionProductRequestMarshaller.Instance;
             var unmarshaller = ProvisionProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<ProvisionProductRequest>(request, marshaller, unmarshaller,
@@ -2856,7 +3243,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         public virtual RejectPortfolioShareResponse RejectPortfolioShare(RejectPortfolioShareRequest request)
         {
-            var marshaller = new RejectPortfolioShareRequestMarshaller();
+            var marshaller = RejectPortfolioShareRequestMarshaller.Instance;
             var unmarshaller = RejectPortfolioShareResponseUnmarshaller.Instance;
 
             return Invoke<RejectPortfolioShareRequest,RejectPortfolioShareResponse>(request, marshaller, unmarshaller);
@@ -2876,7 +3263,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">REST API Reference for RejectPortfolioShare Operation</seealso>
         public virtual IAsyncResult BeginRejectPortfolioShare(RejectPortfolioShareRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RejectPortfolioShareRequestMarshaller();
+            var marshaller = RejectPortfolioShareRequestMarshaller.Instance;
             var unmarshaller = RejectPortfolioShareResponseUnmarshaller.Instance;
 
             return BeginInvoke<RejectPortfolioShareRequest>(request, marshaller, unmarshaller,
@@ -2902,6 +3289,11 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists the provisioned products that are available (not terminated).
+        /// 
+        ///  
+        /// <para>
+        /// To use additional filtering, see <a>SearchProvisionedProducts</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanProvisionedProducts service method.</param>
         /// 
@@ -2912,7 +3304,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         public virtual ScanProvisionedProductsResponse ScanProvisionedProducts(ScanProvisionedProductsRequest request)
         {
-            var marshaller = new ScanProvisionedProductsRequestMarshaller();
+            var marshaller = ScanProvisionedProductsRequestMarshaller.Instance;
             var unmarshaller = ScanProvisionedProductsResponseUnmarshaller.Instance;
 
             return Invoke<ScanProvisionedProductsRequest,ScanProvisionedProductsResponse>(request, marshaller, unmarshaller);
@@ -2932,7 +3324,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         public virtual IAsyncResult BeginScanProvisionedProducts(ScanProvisionedProductsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ScanProvisionedProductsRequestMarshaller();
+            var marshaller = ScanProvisionedProductsRequestMarshaller.Instance;
             var unmarshaller = ScanProvisionedProductsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ScanProvisionedProductsRequest>(request, marshaller, unmarshaller,
@@ -2968,7 +3360,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         public virtual SearchProductsResponse SearchProducts(SearchProductsRequest request)
         {
-            var marshaller = new SearchProductsRequestMarshaller();
+            var marshaller = SearchProductsRequestMarshaller.Instance;
             var unmarshaller = SearchProductsResponseUnmarshaller.Instance;
 
             return Invoke<SearchProductsRequest,SearchProductsResponse>(request, marshaller, unmarshaller);
@@ -2988,7 +3380,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         public virtual IAsyncResult BeginSearchProducts(SearchProductsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SearchProductsRequestMarshaller();
+            var marshaller = SearchProductsRequestMarshaller.Instance;
             var unmarshaller = SearchProductsResponseUnmarshaller.Instance;
 
             return BeginInvoke<SearchProductsRequest>(request, marshaller, unmarshaller,
@@ -3027,7 +3419,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         public virtual SearchProductsAsAdminResponse SearchProductsAsAdmin(SearchProductsAsAdminRequest request)
         {
-            var marshaller = new SearchProductsAsAdminRequestMarshaller();
+            var marshaller = SearchProductsAsAdminRequestMarshaller.Instance;
             var unmarshaller = SearchProductsAsAdminResponseUnmarshaller.Instance;
 
             return Invoke<SearchProductsAsAdminRequest,SearchProductsAsAdminResponse>(request, marshaller, unmarshaller);
@@ -3047,7 +3439,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         public virtual IAsyncResult BeginSearchProductsAsAdmin(SearchProductsAsAdminRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SearchProductsAsAdminRequestMarshaller();
+            var marshaller = SearchProductsAsAdminRequestMarshaller.Instance;
             var unmarshaller = SearchProductsAsAdminResponseUnmarshaller.Instance;
 
             return BeginInvoke<SearchProductsAsAdminRequest>(request, marshaller, unmarshaller,
@@ -3065,6 +3457,62 @@ namespace Amazon.ServiceCatalog
         public virtual SearchProductsAsAdminResponse EndSearchProductsAsAdmin(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchProductsAsAdminResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchProvisionedProducts
+
+        /// <summary>
+        /// Gets information about the provisioned products that meet the specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts service method.</param>
+        /// 
+        /// <returns>The response from the SearchProvisionedProducts service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual SearchProvisionedProductsResponse SearchProvisionedProducts(SearchProvisionedProductsRequest request)
+        {
+            var marshaller = SearchProvisionedProductsRequestMarshaller.Instance;
+            var unmarshaller = SearchProvisionedProductsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchProvisionedProductsRequest,SearchProvisionedProductsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchProvisionedProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchProvisionedProducts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual IAsyncResult BeginSearchProvisionedProducts(SearchProvisionedProductsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = SearchProvisionedProductsRequestMarshaller.Instance;
+            var unmarshaller = SearchProvisionedProductsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchProvisionedProductsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchProvisionedProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchProvisionedProducts.</param>
+        /// 
+        /// <returns>Returns a  SearchProvisionedProductsResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual SearchProvisionedProductsResponse EndSearchProvisionedProducts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchProvisionedProductsResponse>(asyncResult);
         }
 
         #endregion
@@ -3092,7 +3540,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         public virtual TerminateProvisionedProductResponse TerminateProvisionedProduct(TerminateProvisionedProductRequest request)
         {
-            var marshaller = new TerminateProvisionedProductRequestMarshaller();
+            var marshaller = TerminateProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = TerminateProvisionedProductResponseUnmarshaller.Instance;
 
             return Invoke<TerminateProvisionedProductRequest,TerminateProvisionedProductResponse>(request, marshaller, unmarshaller);
@@ -3112,7 +3560,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">REST API Reference for TerminateProvisionedProduct Operation</seealso>
         public virtual IAsyncResult BeginTerminateProvisionedProduct(TerminateProvisionedProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TerminateProvisionedProductRequestMarshaller();
+            var marshaller = TerminateProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = TerminateProvisionedProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<TerminateProvisionedProductRequest>(request, marshaller, unmarshaller,
@@ -3151,7 +3599,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         public virtual UpdateConstraintResponse UpdateConstraint(UpdateConstraintRequest request)
         {
-            var marshaller = new UpdateConstraintRequestMarshaller();
+            var marshaller = UpdateConstraintRequestMarshaller.Instance;
             var unmarshaller = UpdateConstraintResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConstraintRequest,UpdateConstraintResponse>(request, marshaller, unmarshaller);
@@ -3171,7 +3619,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">REST API Reference for UpdateConstraint Operation</seealso>
         public virtual IAsyncResult BeginUpdateConstraint(UpdateConstraintRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConstraintRequestMarshaller();
+            var marshaller = UpdateConstraintRequestMarshaller.Instance;
             var unmarshaller = UpdateConstraintResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConstraintRequest>(request, marshaller, unmarshaller,
@@ -3224,7 +3672,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public virtual UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request)
         {
-            var marshaller = new UpdatePortfolioRequestMarshaller();
+            var marshaller = UpdatePortfolioRequestMarshaller.Instance;
             var unmarshaller = UpdatePortfolioResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePortfolioRequest,UpdatePortfolioResponse>(request, marshaller, unmarshaller);
@@ -3244,7 +3692,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public virtual IAsyncResult BeginUpdatePortfolio(UpdatePortfolioRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdatePortfolioRequestMarshaller();
+            var marshaller = UpdatePortfolioRequestMarshaller.Instance;
             var unmarshaller = UpdatePortfolioResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdatePortfolioRequest>(request, marshaller, unmarshaller,
@@ -3288,7 +3736,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public virtual UpdateProductResponse UpdateProduct(UpdateProductRequest request)
         {
-            var marshaller = new UpdateProductRequestMarshaller();
+            var marshaller = UpdateProductRequestMarshaller.Instance;
             var unmarshaller = UpdateProductResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProductRequest,UpdateProductResponse>(request, marshaller, unmarshaller);
@@ -3308,7 +3756,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public virtual IAsyncResult BeginUpdateProduct(UpdateProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateProductRequestMarshaller();
+            var marshaller = UpdateProductRequestMarshaller.Instance;
             var unmarshaller = UpdateProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateProductRequest>(request, marshaller, unmarshaller,
@@ -3358,7 +3806,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         public virtual UpdateProvisionedProductResponse UpdateProvisionedProduct(UpdateProvisionedProductRequest request)
         {
-            var marshaller = new UpdateProvisionedProductRequestMarshaller();
+            var marshaller = UpdateProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = UpdateProvisionedProductResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProvisionedProductRequest,UpdateProvisionedProductResponse>(request, marshaller, unmarshaller);
@@ -3378,7 +3826,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">REST API Reference for UpdateProvisionedProduct Operation</seealso>
         public virtual IAsyncResult BeginUpdateProvisionedProduct(UpdateProvisionedProductRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateProvisionedProductRequestMarshaller();
+            var marshaller = UpdateProvisionedProductRequestMarshaller.Instance;
             var unmarshaller = UpdateProvisionedProductResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateProvisionedProductRequest>(request, marshaller, unmarshaller,
@@ -3423,7 +3871,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         public virtual UpdateProvisioningArtifactResponse UpdateProvisioningArtifact(UpdateProvisioningArtifactRequest request)
         {
-            var marshaller = new UpdateProvisioningArtifactRequestMarshaller();
+            var marshaller = UpdateProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = UpdateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProvisioningArtifactRequest,UpdateProvisioningArtifactResponse>(request, marshaller, unmarshaller);
@@ -3443,7 +3891,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">REST API Reference for UpdateProvisioningArtifact Operation</seealso>
         public virtual IAsyncResult BeginUpdateProvisioningArtifact(UpdateProvisioningArtifactRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateProvisioningArtifactRequestMarshaller();
+            var marshaller = UpdateProvisioningArtifactRequestMarshaller.Instance;
             var unmarshaller = UpdateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateProvisioningArtifactRequest>(request, marshaller, unmarshaller,
@@ -3490,7 +3938,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
         public virtual UpdateTagOptionResponse UpdateTagOption(UpdateTagOptionRequest request)
         {
-            var marshaller = new UpdateTagOptionRequestMarshaller();
+            var marshaller = UpdateTagOptionRequestMarshaller.Instance;
             var unmarshaller = UpdateTagOptionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTagOptionRequest,UpdateTagOptionResponse>(request, marshaller, unmarshaller);
@@ -3510,7 +3958,7 @@ namespace Amazon.ServiceCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
         public virtual IAsyncResult BeginUpdateTagOption(UpdateTagOptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateTagOptionRequestMarshaller();
+            var marshaller = UpdateTagOptionRequestMarshaller.Instance;
             var unmarshaller = UpdateTagOptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateTagOptionRequest>(request, marshaller, unmarshaller,

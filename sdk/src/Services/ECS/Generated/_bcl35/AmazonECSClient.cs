@@ -280,7 +280,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
@@ -300,7 +300,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateClusterRequest>(request, marshaller, unmarshaller,
@@ -390,10 +390,10 @@ namespace Amazon.ECS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Sort the valid container instances by the fewest number of running tasks for this
-        /// service in the same Availability Zone as the instance. For example, if zone A has
-        /// one running service task and zones B and C each have zero, valid container instances
-        /// in either zone B or C are considered optimal for placement.
+        /// Sort the valid container instances, giving priority to instances that have the fewest
+        /// number of running tasks for this service in their respective Availability Zone. For
+        /// example, if zone A has one running service task and zones B and C each have zero,
+        /// valid container instances in either zone B or C are considered optimal for placement.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -436,7 +436,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var marshaller = new CreateServiceRequestMarshaller();
+            var marshaller = CreateServiceRequestMarshaller.Instance;
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
             return Invoke<CreateServiceRequest,CreateServiceResponse>(request, marshaller, unmarshaller);
@@ -456,7 +456,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateServiceRequestMarshaller();
+            var marshaller = CreateServiceRequestMarshaller.Instance;
             var unmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateServiceRequest>(request, marshaller, unmarshaller,
@@ -501,7 +501,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var marshaller = new DeleteAttributesRequestMarshaller();
+            var marshaller = DeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAttributesRequest,DeleteAttributesResponse>(request, marshaller, unmarshaller);
@@ -521,7 +521,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAttributesRequestMarshaller();
+            var marshaller = DeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAttributesRequest>(request, marshaller, unmarshaller,
@@ -584,7 +584,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var marshaller = new DeleteClusterRequestMarshaller();
+            var marshaller = DeleteClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
@@ -604,7 +604,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteClusterRequestMarshaller();
+            var marshaller = DeleteClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteClusterRequest>(request, marshaller, unmarshaller,
@@ -673,7 +673,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var marshaller = new DeleteServiceRequestMarshaller();
+            var marshaller = DeleteServiceRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteServiceRequest,DeleteServiceResponse>(request, marshaller, unmarshaller);
@@ -693,7 +693,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteServiceRequestMarshaller();
+            var marshaller = DeleteServiceRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteServiceRequest>(request, marshaller, unmarshaller,
@@ -762,7 +762,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
         {
-            var marshaller = new DeregisterContainerInstanceRequestMarshaller();
+            var marshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterContainerInstanceRequest,DeregisterContainerInstanceResponse>(request, marshaller, unmarshaller);
@@ -782,7 +782,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual IAsyncResult BeginDeregisterContainerInstance(DeregisterContainerInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterContainerInstanceRequestMarshaller();
+            var marshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterContainerInstanceRequest>(request, marshaller, unmarshaller,
@@ -846,7 +846,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
         {
-            var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
+            var marshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterTaskDefinitionRequest,DeregisterTaskDefinitionResponse>(request, marshaller, unmarshaller);
@@ -866,7 +866,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTaskDefinition(DeregisterTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterTaskDefinitionRequestMarshaller();
+            var marshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterTaskDefinitionRequest>(request, marshaller, unmarshaller,
@@ -910,7 +910,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var marshaller = new DescribeClustersRequestMarshaller();
+            var marshaller = DescribeClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
@@ -930,7 +930,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeClustersRequestMarshaller();
+            var marshaller = DescribeClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeClustersRequest>(request, marshaller, unmarshaller,
@@ -979,7 +979,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
         {
-            var marshaller = new DescribeContainerInstancesRequestMarshaller();
+            var marshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeContainerInstancesRequest,DescribeContainerInstancesResponse>(request, marshaller, unmarshaller);
@@ -999,7 +999,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeContainerInstances(DescribeContainerInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeContainerInstancesRequestMarshaller();
+            var marshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeContainerInstancesRequest>(request, marshaller, unmarshaller,
@@ -1047,7 +1047,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
@@ -1067,7 +1067,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeServicesRequest>(request, marshaller, unmarshaller,
@@ -1120,7 +1120,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
         {
-            var marshaller = new DescribeTaskDefinitionRequestMarshaller();
+            var marshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTaskDefinitionRequest,DescribeTaskDefinitionResponse>(request, marshaller, unmarshaller);
@@ -1140,7 +1140,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual IAsyncResult BeginDescribeTaskDefinition(DescribeTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTaskDefinitionRequestMarshaller();
+            var marshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTaskDefinitionRequest>(request, marshaller, unmarshaller,
@@ -1188,7 +1188,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
         {
-            var marshaller = new DescribeTasksRequestMarshaller();
+            var marshaller = DescribeTasksRequestMarshaller.Instance;
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTasksRequest,DescribeTasksResponse>(request, marshaller, unmarshaller);
@@ -1208,7 +1208,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeTasks(DescribeTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTasksRequestMarshaller();
+            var marshaller = DescribeTasksRequestMarshaller.Instance;
             var unmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTasksRequest>(request, marshaller, unmarshaller,
@@ -1253,7 +1253,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
         {
-            var marshaller = new ListAttributesRequestMarshaller();
+            var marshaller = ListAttributesRequestMarshaller.Instance;
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttributesRequest,ListAttributesResponse>(request, marshaller, unmarshaller);
@@ -1273,7 +1273,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual IAsyncResult BeginListAttributes(ListAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAttributesRequestMarshaller();
+            var marshaller = ListAttributesRequestMarshaller.Instance;
             var unmarshaller = ListAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAttributesRequest>(request, marshaller, unmarshaller,
@@ -1317,7 +1317,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
@@ -1337,7 +1337,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListClustersRequest>(request, marshaller, unmarshaller,
@@ -1388,7 +1388,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
         {
-            var marshaller = new ListContainerInstancesRequestMarshaller();
+            var marshaller = ListContainerInstancesRequestMarshaller.Instance;
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
             return Invoke<ListContainerInstancesRequest,ListContainerInstancesResponse>(request, marshaller, unmarshaller);
@@ -1408,7 +1408,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual IAsyncResult BeginListContainerInstances(ListContainerInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListContainerInstancesRequestMarshaller();
+            var marshaller = ListContainerInstancesRequestMarshaller.Instance;
             var unmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListContainerInstancesRequest>(request, marshaller, unmarshaller,
@@ -1456,7 +1456,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var marshaller = new ListServicesRequestMarshaller();
+            var marshaller = ListServicesRequestMarshaller.Instance;
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
 
             return Invoke<ListServicesRequest,ListServicesResponse>(request, marshaller, unmarshaller);
@@ -1476,7 +1476,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListServicesRequestMarshaller();
+            var marshaller = ListServicesRequestMarshaller.Instance;
             var unmarshaller = ListServicesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListServicesRequest>(request, marshaller, unmarshaller,
@@ -1529,7 +1529,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
         {
-            var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
+            var marshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
 
             return Invoke<ListTaskDefinitionFamiliesRequest,ListTaskDefinitionFamiliesResponse>(request, marshaller, unmarshaller);
@@ -1549,7 +1549,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual IAsyncResult BeginListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTaskDefinitionFamiliesRequestMarshaller();
+            var marshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             var unmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTaskDefinitionFamiliesRequest>(request, marshaller, unmarshaller,
@@ -1595,7 +1595,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
         {
-            var marshaller = new ListTaskDefinitionsRequestMarshaller();
+            var marshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
 
             return Invoke<ListTaskDefinitionsRequest,ListTaskDefinitionsResponse>(request, marshaller, unmarshaller);
@@ -1615,7 +1615,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListTaskDefinitions(ListTaskDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTaskDefinitionsRequestMarshaller();
+            var marshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             var unmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTaskDefinitionsRequest>(request, marshaller, unmarshaller,
@@ -1676,7 +1676,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var marshaller = new ListTasksRequestMarshaller();
+            var marshaller = ListTasksRequestMarshaller.Instance;
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
 
             return Invoke<ListTasksRequest,ListTasksResponse>(request, marshaller, unmarshaller);
@@ -1696,7 +1696,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTasksRequestMarshaller();
+            var marshaller = ListTasksRequestMarshaller.Instance;
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTasksRequest>(request, marshaller, unmarshaller,
@@ -1750,7 +1750,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var marshaller = new PutAttributesRequestMarshaller();
+            var marshaller = PutAttributesRequestMarshaller.Instance;
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
             return Invoke<PutAttributesRequest,PutAttributesResponse>(request, marshaller, unmarshaller);
@@ -1770,7 +1770,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutAttributesRequestMarshaller();
+            var marshaller = PutAttributesRequestMarshaller.Instance;
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutAttributesRequest>(request, marshaller, unmarshaller,
@@ -1838,7 +1838,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
         {
-            var marshaller = new RegisterTaskDefinitionRequestMarshaller();
+            var marshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
 
             return Invoke<RegisterTaskDefinitionRequest,RegisterTaskDefinitionResponse>(request, marshaller, unmarshaller);
@@ -1858,7 +1858,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual IAsyncResult BeginRegisterTaskDefinition(RegisterTaskDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterTaskDefinitionRequestMarshaller();
+            var marshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             var unmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterTaskDefinitionRequest>(request, marshaller, unmarshaller,
@@ -1933,7 +1933,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your AWS account has been blocked. <a href="http://aws.amazon.com/contact-us/">Contact
-        /// AWS Customer Support</a> for more information.
+        /// AWS Support</a> for more information.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
@@ -1962,7 +1962,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual RunTaskResponse RunTask(RunTaskRequest request)
         {
-            var marshaller = new RunTaskRequestMarshaller();
+            var marshaller = RunTaskRequestMarshaller.Instance;
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
 
             return Invoke<RunTaskRequest,RunTaskResponse>(request, marshaller, unmarshaller);
@@ -1982,7 +1982,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual IAsyncResult BeginRunTask(RunTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RunTaskRequestMarshaller();
+            var marshaller = RunTaskRequestMarshaller.Instance;
             var unmarshaller = RunTaskResponseUnmarshaller.Instance;
 
             return BeginInvoke<RunTaskRequest>(request, marshaller, unmarshaller,
@@ -2038,7 +2038,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual StartTaskResponse StartTask(StartTaskRequest request)
         {
-            var marshaller = new StartTaskRequestMarshaller();
+            var marshaller = StartTaskRequestMarshaller.Instance;
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
 
             return Invoke<StartTaskRequest,StartTaskResponse>(request, marshaller, unmarshaller);
@@ -2058,7 +2058,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual IAsyncResult BeginStartTask(StartTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartTaskRequestMarshaller();
+            var marshaller = StartTaskRequestMarshaller.Instance;
             var unmarshaller = StartTaskResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartTaskRequest>(request, marshaller, unmarshaller,
@@ -2125,7 +2125,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual StopTaskResponse StopTask(StopTaskRequest request)
         {
-            var marshaller = new StopTaskRequestMarshaller();
+            var marshaller = StopTaskRequestMarshaller.Instance;
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return Invoke<StopTaskRequest,StopTaskResponse>(request, marshaller, unmarshaller);
@@ -2145,7 +2145,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual IAsyncResult BeginStopTask(StopTaskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopTaskRequestMarshaller();
+            var marshaller = StopTaskRequestMarshaller.Instance;
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopTaskRequest>(request, marshaller, unmarshaller,
@@ -2224,7 +2224,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
         {
-            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var marshaller = UpdateContainerAgentRequestMarshaller.Instance;
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateContainerAgentRequest,UpdateContainerAgentResponse>(request, marshaller, unmarshaller);
@@ -2244,7 +2244,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual IAsyncResult BeginUpdateContainerAgent(UpdateContainerAgentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateContainerAgentRequestMarshaller();
+            var marshaller = UpdateContainerAgentRequestMarshaller.Instance;
             var unmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateContainerAgentRequest>(request, marshaller, unmarshaller,
@@ -2350,7 +2350,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
         {
-            var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
+            var marshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateContainerInstancesStateRequest,UpdateContainerInstancesStateResponse>(request, marshaller, unmarshaller);
@@ -2370,7 +2370,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual IAsyncResult BeginUpdateContainerInstancesState(UpdateContainerInstancesStateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateContainerInstancesStateRequestMarshaller();
+            var marshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             var unmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateContainerInstancesStateRequest>(request, marshaller, unmarshaller,
@@ -2406,10 +2406,20 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// You can use <a>UpdateService</a> to modify your task definition and deploy a new version
-        /// of your service.
+        /// If you have updated the Docker image of your application, you can create a new task
+        /// definition with that image and deploy it to your service. The service scheduler uses
+        /// the minimum healthy percent and maximum percent parameters (in the service's deployment
+        /// configuration) to determine the deployment strategy.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If your updated Docker image uses the same tag as what is in the existing task definition
+        /// for your service (for example, <code>my_image:latest</code>), you do not need to create
+        /// a new revision of your task definition. You can update the service using the <code>forceNewDeployment</code>
+        /// option. The new tasks launched by the deployment pull the current image/tag combination
+        /// from your repository when they start.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can also update the deployment configuration of a service. When a deployment is
         /// triggered by updating the task definition of a service, the service scheduler uses
@@ -2529,7 +2539,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var marshaller = new UpdateServiceRequestMarshaller();
+            var marshaller = UpdateServiceRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateServiceRequest,UpdateServiceResponse>(request, marshaller, unmarshaller);
@@ -2549,7 +2559,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateServiceRequestMarshaller();
+            var marshaller = UpdateServiceRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateServiceRequest>(request, marshaller, unmarshaller,

@@ -185,6 +185,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceName);
                 }
 
+                if(publicRequest.IsSetServiceRegistries())
+                {
+                    context.Writer.WritePropertyName("serviceRegistries");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestServiceRegistriesListValue in publicRequest.ServiceRegistries)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceRegistryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestServiceRegistriesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskDefinition())
                 {
                     context.Writer.WritePropertyName("taskDefinition");
@@ -200,7 +216,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateServiceRequestMarshaller _instance = new CreateServiceRequestMarshaller();        
 
+        internal static CreateServiceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateServiceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

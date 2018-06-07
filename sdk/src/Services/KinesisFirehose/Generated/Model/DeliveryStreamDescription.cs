@@ -64,7 +64,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the delivery stream.
+        /// The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string DeliveryStreamARN
@@ -126,8 +128,8 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-        /// a source.
+        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
+        /// as a source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -201,7 +203,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>,
-        /// a <a>SourceDescription</a> object describing the source Kinesis stream.
+        /// a <a>SourceDescription</a> object describing the source Kinesis data stream.
         /// </para>
         /// </summary>
         public SourceDescription Source

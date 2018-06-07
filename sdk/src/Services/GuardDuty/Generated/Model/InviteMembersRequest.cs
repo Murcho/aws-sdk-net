@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
     {
         private List<string> _accountIds = new List<string>();
         private string _detectorId;
+        private bool? _disableEmailNotification;
         private string _message;
 
         /// <summary>
@@ -72,8 +73,25 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisableEmailNotification. A boolean value that specifies
+        /// whether you want to disable email notification to the accounts that you’re inviting
+        /// to GuardDuty as members.
+        /// </summary>
+        public bool DisableEmailNotification
+        {
+            get { return this._disableEmailNotification.GetValueOrDefault(); }
+            set { this._disableEmailNotification = value; }
+        }
+
+        // Check to see if DisableEmailNotification property is set
+        internal bool IsSetDisableEmailNotification()
+        {
+            return this._disableEmailNotification.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Message. The invitation message that you want to send to
-        /// the accounts that you're inviting to GuardDuty as members.
+        /// the accounts that you’re inviting to GuardDuty as members.
         /// </summary>
         public string Message
         {

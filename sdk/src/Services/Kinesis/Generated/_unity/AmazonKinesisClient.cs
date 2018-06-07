@@ -33,9 +33,9 @@ namespace Amazon.Kinesis
     /// <summary>
     /// Implementation for accessing Kinesis
     ///
-    /// Amazon Kinesis Streams Service API Reference 
+    /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>
-    /// Amazon Kinesis Streams is a managed service that scales elastically for real time
+    /// Amazon Kinesis Data Streams is a managed service that scales elastically for real-time
     /// processing of streaming big data.
     /// </para>
     /// </summary>
@@ -183,7 +183,7 @@ namespace Amazon.Kinesis
         public virtual void AddTagsToStreamAsync(AddTagsToStreamRequest request, AmazonServiceCallback<AddTagsToStreamRequest, AddTagsToStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AddTagsToStreamRequestMarshaller();
+            var marshaller = AddTagsToStreamRequestMarshaller.Instance;
             var unmarshaller = AddTagsToStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -211,7 +211,7 @@ namespace Amazon.Kinesis
         public virtual void CreateStreamAsync(CreateStreamRequest request, AmazonServiceCallback<CreateStreamRequest, CreateStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateStreamRequestMarshaller();
+            var marshaller = CreateStreamRequestMarshaller.Instance;
             var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -228,9 +228,9 @@ namespace Amazon.Kinesis
         #region  DecreaseStreamRetentionPeriod
 
         /// <summary>
-        /// Decreases the Kinesis stream's retention period, which is the length of time data
-        /// records are accessible after they are added to the stream. The minimum value of a
-        /// stream's retention period is 24 hours.
+        /// Decreases the Kinesis data stream's retention period, which is the length of time
+        /// data records are accessible after they are added to the stream. The minimum value
+        /// of a stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -251,6 +251,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
@@ -281,7 +285,7 @@ namespace Amazon.Kinesis
         public virtual void DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, AmazonServiceCallback<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var marshaller = DecreaseStreamRetentionPeriodRequestMarshaller.Instance;
             var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -309,7 +313,7 @@ namespace Amazon.Kinesis
         public virtual void DeleteStreamAsync(DeleteStreamRequest request, AmazonServiceCallback<DeleteStreamRequest, DeleteStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteStreamRequestMarshaller();
+            var marshaller = DeleteStreamRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -337,7 +341,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeLimitsRequestMarshaller();
+            var marshaller = DescribeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -365,7 +369,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeStreamAsync(DescribeStreamRequest request, AmazonServiceCallback<DescribeStreamRequest, DescribeStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeStreamRequestMarshaller();
+            var marshaller = DescribeStreamRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -393,7 +397,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeStreamSummaryAsync(DescribeStreamSummaryRequest request, AmazonServiceCallback<DescribeStreamSummaryRequest, DescribeStreamSummaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeStreamSummaryRequestMarshaller();
+            var marshaller = DescribeStreamSummaryRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -421,7 +425,7 @@ namespace Amazon.Kinesis
         public virtual void DisableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request, AmazonServiceCallback<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DisableEnhancedMonitoringRequestMarshaller();
+            var marshaller = DisableEnhancedMonitoringRequestMarshaller.Instance;
             var unmarshaller = DisableEnhancedMonitoringResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -449,7 +453,7 @@ namespace Amazon.Kinesis
         public virtual void EnableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest request, AmazonServiceCallback<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new EnableEnhancedMonitoringRequestMarshaller();
+            var marshaller = EnableEnhancedMonitoringRequestMarshaller.Instance;
             var unmarshaller = EnableEnhancedMonitoringResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -477,7 +481,7 @@ namespace Amazon.Kinesis
         public virtual void GetRecordsAsync(GetRecordsRequest request, AmazonServiceCallback<GetRecordsRequest, GetRecordsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetRecordsRequestMarshaller();
+            var marshaller = GetRecordsRequestMarshaller.Instance;
             var unmarshaller = GetRecordsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -505,7 +509,7 @@ namespace Amazon.Kinesis
         public virtual void GetShardIteratorAsync(GetShardIteratorRequest request, AmazonServiceCallback<GetShardIteratorRequest, GetShardIteratorResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetShardIteratorRequestMarshaller();
+            var marshaller = GetShardIteratorRequestMarshaller.Instance;
             var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -522,7 +526,7 @@ namespace Amazon.Kinesis
         #region  IncreaseStreamRetentionPeriod
 
         /// <summary>
-        /// Increases the Amazon Kinesis stream's retention period, which is the length of time
+        /// Increases the Kinesis data stream's retention period, which is the length of time
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 168 hours (7 days).
         /// 
@@ -548,6 +552,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
@@ -578,7 +586,7 @@ namespace Amazon.Kinesis
         public virtual void IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, AmazonServiceCallback<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var marshaller = IncreaseStreamRetentionPeriodRequestMarshaller.Instance;
             var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -592,16 +600,44 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListShards
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListShards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListShards operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">REST API Reference for ListShards Operation</seealso>
+        public virtual void ListShardsAsync(ListShardsRequest request, AmazonServiceCallback<ListShardsRequest, ListShardsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListShardsRequestMarshaller.Instance;
+            var unmarshaller = ListShardsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListShardsRequest,ListShardsResponse> responseObject 
+                            = new AmazonServiceResult<ListShardsRequest,ListShardsResponse>((ListShardsRequest)req, (ListShardsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListShardsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListStreams
 
         /// <summary>
-        /// Lists your Kinesis streams.
+        /// Lists your Kinesis data streams.
         /// 
         ///  
         /// <para>
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Streams
+        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
         /// uses the default limit, which is currently 10.
         /// </para>
         ///  
@@ -616,7 +652,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        ///  <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        ///  <a>ListStreams</a> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -650,7 +686,7 @@ namespace Amazon.Kinesis
         public virtual void ListStreamsAsync(ListStreamsRequest request, AmazonServiceCallback<ListStreamsRequest, ListStreamsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListStreamsRequestMarshaller();
+            var marshaller = ListStreamsRequestMarshaller.Instance;
             var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -678,7 +714,7 @@ namespace Amazon.Kinesis
         public virtual void ListTagsForStreamAsync(ListTagsForStreamRequest request, AmazonServiceCallback<ListTagsForStreamRequest, ListTagsForStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListTagsForStreamRequestMarshaller();
+            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
             var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -706,7 +742,7 @@ namespace Amazon.Kinesis
         public virtual void MergeShardsAsync(MergeShardsRequest request, AmazonServiceCallback<MergeShardsRequest, MergeShardsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new MergeShardsRequestMarshaller();
+            var marshaller = MergeShardsRequestMarshaller.Instance;
             var unmarshaller = MergeShardsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -734,7 +770,7 @@ namespace Amazon.Kinesis
         public virtual void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordRequestMarshaller();
+            var marshaller = PutRecordRequestMarshaller.Instance;
             var unmarshaller = PutRecordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -762,7 +798,7 @@ namespace Amazon.Kinesis
         public virtual void PutRecordsAsync(PutRecordsRequest request, AmazonServiceCallback<PutRecordsRequest, PutRecordsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordsRequestMarshaller();
+            var marshaller = PutRecordsRequestMarshaller.Instance;
             var unmarshaller = PutRecordsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -790,7 +826,7 @@ namespace Amazon.Kinesis
         public virtual void RemoveTagsFromStreamAsync(RemoveTagsFromStreamRequest request, AmazonServiceCallback<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RemoveTagsFromStreamRequestMarshaller();
+            var marshaller = RemoveTagsFromStreamRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -818,7 +854,7 @@ namespace Amazon.Kinesis
         public virtual void SplitShardAsync(SplitShardRequest request, AmazonServiceCallback<SplitShardRequest, SplitShardResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SplitShardRequestMarshaller();
+            var marshaller = SplitShardRequestMarshaller.Instance;
             var unmarshaller = SplitShardResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -846,7 +882,7 @@ namespace Amazon.Kinesis
         public virtual void StartStreamEncryptionAsync(StartStreamEncryptionRequest request, AmazonServiceCallback<StartStreamEncryptionRequest, StartStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StartStreamEncryptionRequestMarshaller();
+            var marshaller = StartStreamEncryptionRequestMarshaller.Instance;
             var unmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -874,7 +910,7 @@ namespace Amazon.Kinesis
         public virtual void StopStreamEncryptionAsync(StopStreamEncryptionRequest request, AmazonServiceCallback<StopStreamEncryptionRequest, StopStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StopStreamEncryptionRequestMarshaller();
+            var marshaller = StopStreamEncryptionRequestMarshaller.Instance;
             var unmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -902,7 +938,7 @@ namespace Amazon.Kinesis
         public virtual void UpdateShardCountAsync(UpdateShardCountRequest request, AmazonServiceCallback<UpdateShardCountRequest, UpdateShardCountResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateShardCountRequestMarshaller();
+            var marshaller = UpdateShardCountRequestMarshaller.Instance;
             var unmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

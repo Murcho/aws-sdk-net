@@ -67,6 +67,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBranchFilter())
+                {
+                    context.Writer.WritePropertyName("branchFilter");
+                    context.Writer.Write(publicRequest.BranchFilter);
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");
@@ -82,7 +88,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateWebhookRequestMarshaller _instance = new CreateWebhookRequestMarshaller();        
 
+        internal static CreateWebhookRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateWebhookRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

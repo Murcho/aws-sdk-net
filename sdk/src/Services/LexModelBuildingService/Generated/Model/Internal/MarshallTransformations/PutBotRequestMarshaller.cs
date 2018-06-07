@@ -102,6 +102,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCreateVersion())
+                {
+                    context.Writer.WritePropertyName("createVersion");
+                    context.Writer.Write(publicRequest.CreateVersion);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -157,7 +163,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutBotRequestMarshaller _instance = new PutBotRequestMarshaller();        
 
+        internal static PutBotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutBotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

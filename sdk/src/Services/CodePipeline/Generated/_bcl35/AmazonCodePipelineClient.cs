@@ -46,13 +46,13 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates,
-    /// and transitions, as described below.
+    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, and
+    /// transitions, as described below.
     /// </para>
     ///  
     /// <para>
     ///  <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely
-    /// named, and consists of actions, gates, and stages. 
+    /// named, and consists of stages, actions, and transitions. 
     /// </para>
     ///  
     /// <para>
@@ -103,16 +103,15 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Pipelines include <i>stages</i>, which are logical groupings of gates and actions.
-    /// Each stage contains one or more actions that must complete before the next stage begins.
-    /// A stage will result in success or failure. If a stage fails, then the pipeline stops
-    /// at that stage and will remain stopped until either a new version of an artifact appears
-    /// in the source location, or a user takes action to re-run the most recent artifact
-    /// through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
-    /// of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>,
-    /// which returns the entire structure of the pipeline, including the stages of that pipeline.
-    /// For more information about the structure of stages and actions, also refer to the
-    /// <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// Pipelines include <i>stages</i>. Each stage contains one or more actions that must
+    /// complete before the next stage begins. A stage will result in success or failure.
+    /// If a stage fails, then the pipeline stops at that stage and will remain stopped until
+    /// either a new version of an artifact appears in the source location, or a user takes
+    /// action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
+    /// which displays the status of a pipeline, including the status of stages in the pipeline,
+    /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
+    /// the stages of that pipeline. For more information about the structure of stages and
+    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -122,9 +121,33 @@ namespace Amazon.CodePipeline
     /// can use a source action to import artifacts into a pipeline from a source such as
     /// Amazon S3. Like stages, you do not work with actions directly in most cases, but you
     /// do define and interact with actions when working with pipeline operations such as
-    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. 
+    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid action categories are:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// Source
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Build
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Test
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Deploy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Approval
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Invoke
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Pipelines also include <i>transitions</i>, which allow the transition of artifacts
     /// from one stage to the next in a pipeline after the actions in one stage complete.
@@ -455,7 +478,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         public virtual AcknowledgeJobResponse AcknowledgeJob(AcknowledgeJobRequest request)
         {
-            var marshaller = new AcknowledgeJobRequestMarshaller();
+            var marshaller = AcknowledgeJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
 
             return Invoke<AcknowledgeJobRequest,AcknowledgeJobResponse>(request, marshaller, unmarshaller);
@@ -475,7 +498,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         public virtual IAsyncResult BeginAcknowledgeJob(AcknowledgeJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AcknowledgeJobRequestMarshaller();
+            var marshaller = AcknowledgeJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<AcknowledgeJobRequest>(request, marshaller, unmarshaller,
@@ -551,7 +574,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         public virtual AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request)
         {
-            var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
+            var marshaller = AcknowledgeThirdPartyJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
 
             return Invoke<AcknowledgeThirdPartyJobRequest,AcknowledgeThirdPartyJobResponse>(request, marshaller, unmarshaller);
@@ -571,7 +594,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         public virtual IAsyncResult BeginAcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
+            var marshaller = AcknowledgeThirdPartyJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<AcknowledgeThirdPartyJobRequest>(request, marshaller, unmarshaller,
@@ -612,7 +635,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         public virtual CreateCustomActionTypeResponse CreateCustomActionType(CreateCustomActionTypeRequest request)
         {
-            var marshaller = new CreateCustomActionTypeRequestMarshaller();
+            var marshaller = CreateCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
 
             return Invoke<CreateCustomActionTypeRequest,CreateCustomActionTypeResponse>(request, marshaller, unmarshaller);
@@ -632,7 +655,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         public virtual IAsyncResult BeginCreateCustomActionType(CreateCustomActionTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateCustomActionTypeRequestMarshaller();
+            var marshaller = CreateCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateCustomActionTypeRequest>(request, marshaller, unmarshaller,
@@ -724,7 +747,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var marshaller = new CreatePipelineRequestMarshaller();
+            var marshaller = CreatePipelineRequestMarshaller.Instance;
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
             return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
@@ -744,7 +767,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePipelineRequestMarshaller();
+            var marshaller = CreatePipelineRequestMarshaller.Instance;
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePipelineRequest>(request, marshaller, unmarshaller,
@@ -774,8 +797,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// You cannot recreate a custom action after it has been deleted unless you increase
-        /// the version number of the action.
+        /// To re-create a custom action after it has been deleted you must use a string in the
+        /// version field that has never been used before. This string can be an incremented version
+        /// number, for example. To restore a deleted custom action, use a JSON file that is identical
+        /// to the deleted action, including the original string in the version field.
         /// </para>
         ///  </important>
         /// </summary>
@@ -788,7 +813,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         public virtual DeleteCustomActionTypeResponse DeleteCustomActionType(DeleteCustomActionTypeRequest request)
         {
-            var marshaller = new DeleteCustomActionTypeRequestMarshaller();
+            var marshaller = DeleteCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCustomActionTypeRequest,DeleteCustomActionTypeResponse>(request, marshaller, unmarshaller);
@@ -808,7 +833,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         public virtual IAsyncResult BeginDeleteCustomActionType(DeleteCustomActionTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteCustomActionTypeRequestMarshaller();
+            var marshaller = DeleteCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteCustomActionTypeRequest>(request, marshaller, unmarshaller,
@@ -862,7 +887,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var marshaller = new DeletePipelineRequestMarshaller();
+            var marshaller = DeletePipelineRequestMarshaller.Instance;
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
             return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
@@ -882,7 +907,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeletePipelineRequestMarshaller();
+            var marshaller = DeletePipelineRequestMarshaller.Instance;
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeletePipelineRequest>(request, marshaller, unmarshaller,
@@ -900,6 +925,127 @@ namespace Amazon.CodePipeline
         public virtual DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWebhook
+
+        /// <summary>
+        /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
+        /// from starting a pipeline every time an external event occurs. The API will return
+        /// successfully when trying to delete a webhook that is already deleted. If a deleted
+        /// webhook is re-created by calling PutWebhook with the same name, it will have a different
+        /// URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
+        {
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteWebhookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebhook.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebhookResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public virtual DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWebhookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeregisterWebhookWithThirdParty
+
+        /// <summary>
+        /// Removes the connection between the webhook that was created by CodePipeline and the
+        /// external tool with events to be detected. Currently only supported for webhooks that
+        /// target an action type of GitHub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        public virtual DeregisterWebhookWithThirdPartyResponse DeregisterWebhookWithThirdParty(DeregisterWebhookWithThirdPartyRequest request)
+        {
+            var marshaller = DeregisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = DeregisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterWebhookWithThirdPartyRequest,DeregisterWebhookWithThirdPartyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterWebhookWithThirdParty
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterWebhookWithThirdParty(DeregisterWebhookWithThirdPartyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeregisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = DeregisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterWebhookWithThirdPartyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterWebhookWithThirdParty.</param>
+        /// 
+        /// <returns>Returns a  DeregisterWebhookWithThirdPartyResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        public virtual DeregisterWebhookWithThirdPartyResponse EndDeregisterWebhookWithThirdParty(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterWebhookWithThirdPartyResponse>(asyncResult);
         }
 
         #endregion
@@ -924,7 +1070,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         public virtual DisableStageTransitionResponse DisableStageTransition(DisableStageTransitionRequest request)
         {
-            var marshaller = new DisableStageTransitionRequestMarshaller();
+            var marshaller = DisableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
 
             return Invoke<DisableStageTransitionRequest,DisableStageTransitionResponse>(request, marshaller, unmarshaller);
@@ -944,7 +1090,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         public virtual IAsyncResult BeginDisableStageTransition(DisableStageTransitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisableStageTransitionRequestMarshaller();
+            var marshaller = DisableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisableStageTransitionRequest>(request, marshaller, unmarshaller,
@@ -986,7 +1132,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         public virtual EnableStageTransitionResponse EnableStageTransition(EnableStageTransitionRequest request)
         {
-            var marshaller = new EnableStageTransitionRequestMarshaller();
+            var marshaller = EnableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
 
             return Invoke<EnableStageTransitionRequest,EnableStageTransitionResponse>(request, marshaller, unmarshaller);
@@ -1006,7 +1152,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         public virtual IAsyncResult BeginEnableStageTransition(EnableStageTransitionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new EnableStageTransitionRequestMarshaller();
+            var marshaller = EnableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
 
             return BeginInvoke<EnableStageTransitionRequest>(request, marshaller, unmarshaller,
@@ -1084,7 +1230,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         public virtual GetJobDetailsResponse GetJobDetails(GetJobDetailsRequest request)
         {
-            var marshaller = new GetJobDetailsRequestMarshaller();
+            var marshaller = GetJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetJobDetailsRequest,GetJobDetailsResponse>(request, marshaller, unmarshaller);
@@ -1104,7 +1250,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         public virtual IAsyncResult BeginGetJobDetails(GetJobDetailsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetJobDetailsRequestMarshaller();
+            var marshaller = GetJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetJobDetailsRequest>(request, marshaller, unmarshaller,
@@ -1202,7 +1348,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual GetPipelineResponse GetPipeline(GetPipelineRequest request)
         {
-            var marshaller = new GetPipelineRequestMarshaller();
+            var marshaller = GetPipelineRequestMarshaller.Instance;
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineRequest,GetPipelineResponse>(request, marshaller, unmarshaller);
@@ -1222,7 +1368,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual IAsyncResult BeginGetPipeline(GetPipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetPipelineRequestMarshaller();
+            var marshaller = GetPipelineRequestMarshaller.Instance;
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetPipelineRequest>(request, marshaller, unmarshaller,
@@ -1266,7 +1412,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         public virtual GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request)
         {
-            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var marshaller = GetPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineExecutionRequest,GetPipelineExecutionResponse>(request, marshaller, unmarshaller);
@@ -1286,7 +1432,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         public virtual IAsyncResult BeginGetPipelineExecution(GetPipelineExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var marshaller = GetPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetPipelineExecutionRequest>(request, marshaller, unmarshaller,
@@ -1346,7 +1492,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         public virtual GetPipelineStateResponse GetPipelineState(GetPipelineStateRequest request)
         {
-            var marshaller = new GetPipelineStateRequestMarshaller();
+            var marshaller = GetPipelineStateRequestMarshaller.Instance;
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineStateRequest,GetPipelineStateResponse>(request, marshaller, unmarshaller);
@@ -1366,7 +1512,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         public virtual IAsyncResult BeginGetPipelineState(GetPipelineStateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetPipelineStateRequestMarshaller();
+            var marshaller = GetPipelineStateRequestMarshaller.Instance;
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetPipelineStateRequest>(request, marshaller, unmarshaller,
@@ -1458,7 +1604,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         public virtual GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request)
         {
-            var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
+            var marshaller = GetThirdPartyJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetThirdPartyJobDetailsRequest,GetThirdPartyJobDetailsResponse>(request, marshaller, unmarshaller);
@@ -1478,7 +1624,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         public virtual IAsyncResult BeginGetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
+            var marshaller = GetThirdPartyJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetThirdPartyJobDetailsRequest>(request, marshaller, unmarshaller,
@@ -1560,7 +1706,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         public virtual ListActionTypesResponse ListActionTypes(ListActionTypesRequest request)
         {
-            var marshaller = new ListActionTypesRequestMarshaller();
+            var marshaller = ListActionTypesRequestMarshaller.Instance;
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
 
             return Invoke<ListActionTypesRequest,ListActionTypesResponse>(request, marshaller, unmarshaller);
@@ -1580,7 +1726,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         public virtual IAsyncResult BeginListActionTypes(ListActionTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListActionTypesRequestMarshaller();
+            var marshaller = ListActionTypesRequestMarshaller.Instance;
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListActionTypesRequest>(request, marshaller, unmarshaller,
@@ -1623,7 +1769,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
         {
-            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var marshaller = ListPipelineExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<ListPipelineExecutionsRequest,ListPipelineExecutionsResponse>(request, marshaller, unmarshaller);
@@ -1643,7 +1789,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual IAsyncResult BeginListPipelineExecutions(ListPipelineExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var marshaller = ListPipelineExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPipelineExecutionsRequest>(request, marshaller, unmarshaller,
@@ -1676,6 +1822,9 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines()
         {
@@ -1694,10 +1843,13 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var marshaller = new ListPipelinesRequestMarshaller();
+            var marshaller = ListPipelinesRequestMarshaller.Instance;
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
             return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
@@ -1717,7 +1869,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPipelinesRequestMarshaller();
+            var marshaller = ListPipelinesRequestMarshaller.Instance;
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPipelinesRequest>(request, marshaller, unmarshaller,
@@ -1739,10 +1891,74 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListWebhooks
+
+        /// <summary>
+        /// Gets a listing of all the webhooks in this region for this account. The output lists
+        /// all webhooks and includes the webhook URL and ARN, as well the configuration for each
+        /// webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        public virtual ListWebhooksResponse ListWebhooks(ListWebhooksRequest request)
+        {
+            var marshaller = ListWebhooksRequestMarshaller.Instance;
+            var unmarshaller = ListWebhooksResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebhooksRequest,ListWebhooksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebhooks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        public virtual IAsyncResult BeginListWebhooks(ListWebhooksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListWebhooksRequestMarshaller.Instance;
+            var unmarshaller = ListWebhooksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListWebhooksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebhooks.</param>
+        /// 
+        /// <returns>Returns a  ListWebhooksResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        public virtual ListWebhooksResponse EndListWebhooks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWebhooksResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PollForJobs
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act upon.
+        /// Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is
+        /// only valid for action types with "Custom" in the owner field. If the action type contains
+        /// "AWS" or "ThirdParty" in the owner field, the PollForJobs action returns an error.
         /// 
         ///  <important> 
         /// <para>
@@ -1765,7 +1981,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         public virtual PollForJobsResponse PollForJobs(PollForJobsRequest request)
         {
-            var marshaller = new PollForJobsRequestMarshaller();
+            var marshaller = PollForJobsRequestMarshaller.Instance;
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
 
             return Invoke<PollForJobsRequest,PollForJobsResponse>(request, marshaller, unmarshaller);
@@ -1785,7 +2001,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         public virtual IAsyncResult BeginPollForJobs(PollForJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PollForJobsRequestMarshaller();
+            var marshaller = PollForJobsRequestMarshaller.Instance;
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PollForJobsRequest>(request, marshaller, unmarshaller,
@@ -1833,7 +2049,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         public virtual PollForThirdPartyJobsResponse PollForThirdPartyJobs(PollForThirdPartyJobsRequest request)
         {
-            var marshaller = new PollForThirdPartyJobsRequestMarshaller();
+            var marshaller = PollForThirdPartyJobsRequestMarshaller.Instance;
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
 
             return Invoke<PollForThirdPartyJobsRequest,PollForThirdPartyJobsResponse>(request, marshaller, unmarshaller);
@@ -1853,7 +2069,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         public virtual IAsyncResult BeginPollForThirdPartyJobs(PollForThirdPartyJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PollForThirdPartyJobsRequestMarshaller();
+            var marshaller = PollForThirdPartyJobsRequestMarshaller.Instance;
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PollForThirdPartyJobsRequest>(request, marshaller, unmarshaller,
@@ -1898,7 +2114,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         public virtual PutActionRevisionResponse PutActionRevision(PutActionRevisionRequest request)
         {
-            var marshaller = new PutActionRevisionRequestMarshaller();
+            var marshaller = PutActionRevisionRequestMarshaller.Instance;
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
 
             return Invoke<PutActionRevisionRequest,PutActionRevisionResponse>(request, marshaller, unmarshaller);
@@ -1918,7 +2134,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         public virtual IAsyncResult BeginPutActionRevision(PutActionRevisionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutActionRevisionRequestMarshaller();
+            var marshaller = PutActionRevisionRequestMarshaller.Instance;
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutActionRevisionRequest>(request, marshaller, unmarshaller,
@@ -1970,7 +2186,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         public virtual PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request)
         {
-            var marshaller = new PutApprovalResultRequestMarshaller();
+            var marshaller = PutApprovalResultRequestMarshaller.Instance;
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
 
             return Invoke<PutApprovalResultRequest,PutApprovalResultResponse>(request, marshaller, unmarshaller);
@@ -1990,7 +2206,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         public virtual IAsyncResult BeginPutApprovalResult(PutApprovalResultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutApprovalResultRequestMarshaller();
+            var marshaller = PutApprovalResultRequestMarshaller.Instance;
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutApprovalResultRequest>(request, marshaller, unmarshaller,
@@ -2060,7 +2276,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         public virtual PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request)
         {
-            var marshaller = new PutJobFailureResultRequestMarshaller();
+            var marshaller = PutJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
 
             return Invoke<PutJobFailureResultRequest,PutJobFailureResultResponse>(request, marshaller, unmarshaller);
@@ -2080,7 +2296,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         public virtual IAsyncResult BeginPutJobFailureResult(PutJobFailureResultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutJobFailureResultRequestMarshaller();
+            var marshaller = PutJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutJobFailureResultRequest>(request, marshaller, unmarshaller,
@@ -2123,7 +2339,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         public virtual PutJobSuccessResultResponse PutJobSuccessResult(PutJobSuccessResultRequest request)
         {
-            var marshaller = new PutJobSuccessResultRequestMarshaller();
+            var marshaller = PutJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
 
             return Invoke<PutJobSuccessResultRequest,PutJobSuccessResultResponse>(request, marshaller, unmarshaller);
@@ -2143,7 +2359,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         public virtual IAsyncResult BeginPutJobSuccessResult(PutJobSuccessResultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutJobSuccessResultRequestMarshaller();
+            var marshaller = PutJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutJobSuccessResultRequest>(request, marshaller, unmarshaller,
@@ -2221,7 +2437,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         public virtual PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request)
         {
-            var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
 
             return Invoke<PutThirdPartyJobFailureResultRequest,PutThirdPartyJobFailureResultResponse>(request, marshaller, unmarshaller);
@@ -2241,7 +2457,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         public virtual IAsyncResult BeginPutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutThirdPartyJobFailureResultRequest>(request, marshaller, unmarshaller,
@@ -2287,7 +2503,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         public virtual PutThirdPartyJobSuccessResultResponse PutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request)
         {
-            var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
 
             return Invoke<PutThirdPartyJobSuccessResultRequest,PutThirdPartyJobSuccessResultResponse>(request, marshaller, unmarshaller);
@@ -2307,7 +2523,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         public virtual IAsyncResult BeginPutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutThirdPartyJobSuccessResultRequest>(request, marshaller, unmarshaller,
@@ -2325,6 +2541,141 @@ namespace Amazon.CodePipeline
         public virtual PutThirdPartyJobSuccessResultResponse EndPutThirdPartyJobSuccessResult(IAsyncResult asyncResult)
         {
             return EndInvoke<PutThirdPartyJobSuccessResultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutWebhook
+
+        /// <summary>
+        /// Defines a webhook and returns a unique webhook URL generated by CodePipeline. This
+        /// URL can be supplied to third party source hosting providers to call every time there's
+        /// a code change. When CodePipeline receives a POST request on this URL, the pipeline
+        /// defined in the webhook is started as long as the POST request satisfied the authentication
+        /// and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
+        /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported
+        /// third parties to call the generated webhook URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
+        /// 
+        /// <returns>The response from the PutWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookAuthenticationParametersException">
+        /// The specified authentication type is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookFilterPatternException">
+        /// The specified event filter rule is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        public virtual PutWebhookResponse PutWebhook(PutWebhookRequest request)
+        {
+            var marshaller = PutWebhookRequestMarshaller.Instance;
+            var unmarshaller = PutWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<PutWebhookRequest,PutWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        public virtual IAsyncResult BeginPutWebhook(PutWebhookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutWebhookRequestMarshaller.Instance;
+            var unmarshaller = PutWebhookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutWebhookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutWebhook.</param>
+        /// 
+        /// <returns>Returns a  PutWebhookResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        public virtual PutWebhookResponse EndPutWebhook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutWebhookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterWebhookWithThirdParty
+
+        /// <summary>
+        /// Configures a connection between the webhook that was created and the external tool
+        /// with events to be detected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty service method.</param>
+        /// 
+        /// <returns>The response from the RegisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        public virtual RegisterWebhookWithThirdPartyResponse RegisterWebhookWithThirdParty(RegisterWebhookWithThirdPartyRequest request)
+        {
+            var marshaller = RegisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = RegisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterWebhookWithThirdPartyRequest,RegisterWebhookWithThirdPartyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterWebhookWithThirdParty
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        public virtual IAsyncResult BeginRegisterWebhookWithThirdParty(RegisterWebhookWithThirdPartyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RegisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = RegisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterWebhookWithThirdPartyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterWebhookWithThirdParty.</param>
+        /// 
+        /// <returns>Returns a  RegisterWebhookWithThirdPartyResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        public virtual RegisterWebhookWithThirdPartyResponse EndRegisterWebhookWithThirdParty(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterWebhookWithThirdPartyResponse>(asyncResult);
         }
 
         #endregion
@@ -2358,7 +2709,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         public virtual RetryStageExecutionResponse RetryStageExecution(RetryStageExecutionRequest request)
         {
-            var marshaller = new RetryStageExecutionRequestMarshaller();
+            var marshaller = RetryStageExecutionRequestMarshaller.Instance;
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
 
             return Invoke<RetryStageExecutionRequest,RetryStageExecutionResponse>(request, marshaller, unmarshaller);
@@ -2378,7 +2729,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         public virtual IAsyncResult BeginRetryStageExecution(RetryStageExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RetryStageExecutionRequestMarshaller();
+            var marshaller = RetryStageExecutionRequestMarshaller.Instance;
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<RetryStageExecutionRequest>(request, marshaller, unmarshaller,
@@ -2440,7 +2791,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
         {
-            var marshaller = new StartPipelineExecutionRequestMarshaller();
+            var marshaller = StartPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartPipelineExecutionRequest,StartPipelineExecutionResponse>(request, marshaller, unmarshaller);
@@ -2460,7 +2811,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual IAsyncResult BeginStartPipelineExecution(StartPipelineExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartPipelineExecutionRequestMarshaller();
+            var marshaller = StartPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartPipelineExecutionRequest>(request, marshaller, unmarshaller,
@@ -2544,7 +2895,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var marshaller = new UpdatePipelineRequestMarshaller();
+            var marshaller = UpdatePipelineRequestMarshaller.Instance;
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
@@ -2564,7 +2915,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdatePipelineRequestMarshaller();
+            var marshaller = UpdatePipelineRequestMarshaller.Instance;
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdatePipelineRequest>(request, marshaller, unmarshaller,

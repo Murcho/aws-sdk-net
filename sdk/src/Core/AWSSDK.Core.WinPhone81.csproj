@@ -87,6 +87,9 @@
     <Compile Include="Amazon.Runtime\Credentials\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Credentials\_pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -166,6 +169,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\Internal\_pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_bcl45+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\_pcl\*.cs">

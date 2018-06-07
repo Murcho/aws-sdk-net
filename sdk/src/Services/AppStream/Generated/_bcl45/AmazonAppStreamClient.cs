@@ -244,6 +244,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -256,7 +260,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         public virtual AssociateFleetResponse AssociateFleet(AssociateFleetRequest request)
         {
-            var marshaller = new AssociateFleetRequestMarshaller();
+            var marshaller = AssociateFleetRequestMarshaller.Instance;
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
 
             return Invoke<AssociateFleetRequest,AssociateFleetResponse>(request, marshaller, unmarshaller);
@@ -274,10 +278,69 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         public virtual Task<AssociateFleetResponse> AssociateFleetAsync(AssociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssociateFleetRequestMarshaller();
+            var marshaller = AssociateFleetRequestMarshaller.Instance;
             var unmarshaller = AssociateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateFleetRequest,AssociateFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CopyImage
+
+
+        /// <summary>
+        /// Copies the image within the same region or to a new region within the same AWS account.
+        /// Note that any tags you added to the image will not be copied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
+        /// 
+        /// <returns>The response from the CopyImage service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image does not support storage connectors.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">REST API Reference for CopyImage Operation</seealso>
+        public virtual CopyImageResponse CopyImage(CopyImageRequest request)
+        {
+            var marshaller = CopyImageRequestMarshaller.Instance;
+            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyImageRequest,CopyImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">REST API Reference for CopyImage Operation</seealso>
+        public virtual Task<CopyImageResponse> CopyImageAsync(CopyImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CopyImageRequestMarshaller.Instance;
+            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyImageRequest,CopyImageResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -292,6 +355,10 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig service method.</param>
         /// 
         /// <returns>The response from the CreateDirectoryConfig service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -301,7 +368,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         public virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)
         {
-            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var marshaller = CreateDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
 
             return Invoke<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, unmarshaller);
@@ -319,7 +386,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         public virtual Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDirectoryConfigRequestMarshaller();
+            var marshaller = CreateDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDirectoryConfigRequest,CreateDirectoryConfigResponse>(request, marshaller, 
@@ -343,6 +410,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
@@ -364,7 +435,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var marshaller = new CreateFleetRequestMarshaller();
+            var marshaller = CreateFleetRequestMarshaller.Instance;
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
             return Invoke<CreateFleetRequest,CreateFleetResponse>(request, marshaller, unmarshaller);
@@ -382,7 +453,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateFleetRequestMarshaller();
+            var marshaller = CreateFleetRequestMarshaller.Instance;
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFleetRequest,CreateFleetResponse>(request, marshaller, 
@@ -412,6 +483,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
@@ -433,7 +508,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
         public virtual CreateImageBuilderResponse CreateImageBuilder(CreateImageBuilderRequest request)
         {
-            var marshaller = new CreateImageBuilderRequestMarshaller();
+            var marshaller = CreateImageBuilderRequestMarshaller.Instance;
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
 
             return Invoke<CreateImageBuilderRequest,CreateImageBuilderResponse>(request, marshaller, unmarshaller);
@@ -451,7 +526,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">REST API Reference for CreateImageBuilder Operation</seealso>
         public virtual Task<CreateImageBuilderResponse> CreateImageBuilderAsync(CreateImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateImageBuilderRequestMarshaller();
+            var marshaller = CreateImageBuilderRequestMarshaller.Instance;
             var unmarshaller = CreateImageBuilderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateImageBuilderRequest,CreateImageBuilderResponse>(request, marshaller, 
@@ -478,7 +553,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
         public virtual CreateImageBuilderStreamingURLResponse CreateImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request)
         {
-            var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
+            var marshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
 
             return Invoke<CreateImageBuilderStreamingURLRequest,CreateImageBuilderStreamingURLResponse>(request, marshaller, unmarshaller);
@@ -496,7 +571,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL">REST API Reference for CreateImageBuilderStreamingURL Operation</seealso>
         public virtual Task<CreateImageBuilderStreamingURLResponse> CreateImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateImageBuilderStreamingURLRequestMarshaller();
+            var marshaller = CreateImageBuilderStreamingURLRequestMarshaller.Instance;
             var unmarshaller = CreateImageBuilderStreamingURLResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateImageBuilderStreamingURLRequest,CreateImageBuilderStreamingURLResponse>(request, marshaller, 
@@ -517,6 +592,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
@@ -535,7 +614,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            var marshaller = new CreateStackRequestMarshaller();
+            var marshaller = CreateStackRequestMarshaller.Instance;
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
@@ -553,7 +632,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStackRequestMarshaller();
+            var marshaller = CreateStackRequestMarshaller.Instance;
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStackRequest,CreateStackResponse>(request, marshaller, 
@@ -586,7 +665,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         public virtual CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request)
         {
-            var marshaller = new CreateStreamingURLRequestMarshaller();
+            var marshaller = CreateStreamingURLRequestMarshaller.Instance;
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
 
             return Invoke<CreateStreamingURLRequest,CreateStreamingURLResponse>(request, marshaller, unmarshaller);
@@ -604,7 +683,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         public virtual Task<CreateStreamingURLResponse> CreateStreamingURLAsync(CreateStreamingURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStreamingURLRequestMarshaller();
+            var marshaller = CreateStreamingURLRequestMarshaller.Instance;
             var unmarshaller = CreateStreamingURLResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStreamingURLRequest,CreateStreamingURLResponse>(request, marshaller, 
@@ -631,7 +710,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
         public virtual DeleteDirectoryConfigResponse DeleteDirectoryConfig(DeleteDirectoryConfigRequest request)
         {
-            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var marshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, unmarshaller);
@@ -649,7 +728,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig">REST API Reference for DeleteDirectoryConfig Operation</seealso>
         public virtual Task<DeleteDirectoryConfigResponse> DeleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDirectoryConfigRequestMarshaller();
+            var marshaller = DeleteDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDirectoryConfigRequest,DeleteDirectoryConfigResponse>(request, marshaller, 
@@ -679,7 +758,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var marshaller = new DeleteFleetRequestMarshaller();
+            var marshaller = DeleteFleetRequestMarshaller.Instance;
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, unmarshaller);
@@ -697,7 +776,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFleetRequestMarshaller();
+            var marshaller = DeleteFleetRequestMarshaller.Instance;
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, 
@@ -731,7 +810,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
         {
-            var marshaller = new DeleteImageRequestMarshaller();
+            var marshaller = DeleteImageRequestMarshaller.Instance;
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
 
             return Invoke<DeleteImageRequest,DeleteImageResponse>(request, marshaller, unmarshaller);
@@ -749,7 +828,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteImageRequestMarshaller();
+            var marshaller = DeleteImageRequestMarshaller.Instance;
             var unmarshaller = DeleteImageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteImageRequest,DeleteImageResponse>(request, marshaller, 
@@ -779,7 +858,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
         public virtual DeleteImageBuilderResponse DeleteImageBuilder(DeleteImageBuilderRequest request)
         {
-            var marshaller = new DeleteImageBuilderRequestMarshaller();
+            var marshaller = DeleteImageBuilderRequestMarshaller.Instance;
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteImageBuilderRequest,DeleteImageBuilderResponse>(request, marshaller, unmarshaller);
@@ -797,7 +876,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder">REST API Reference for DeleteImageBuilder Operation</seealso>
         public virtual Task<DeleteImageBuilderResponse> DeleteImageBuilderAsync(DeleteImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteImageBuilderRequestMarshaller();
+            var marshaller = DeleteImageBuilderRequestMarshaller.Instance;
             var unmarshaller = DeleteImageBuilderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteImageBuilderRequest,DeleteImageBuilderResponse>(request, marshaller, 
@@ -828,7 +907,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            var marshaller = new DeleteStackRequestMarshaller();
+            var marshaller = DeleteStackRequestMarshaller.Instance;
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
@@ -846,7 +925,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteStackRequestMarshaller();
+            var marshaller = DeleteStackRequestMarshaller.Instance;
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStackRequest,DeleteStackResponse>(request, marshaller, 
@@ -859,7 +938,9 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Describes the specified directory configurations.
+        /// Describes the specified directory configurations. Note that although the response
+        /// syntax in this topic includes the account password, this password is not returned
+        /// in the actual response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryConfigs service method.</param>
         /// 
@@ -870,7 +951,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
         public virtual DescribeDirectoryConfigsResponse DescribeDirectoryConfigs(DescribeDirectoryConfigsRequest request)
         {
-            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var marshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, unmarshaller);
@@ -888,7 +969,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
         public virtual Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeDirectoryConfigsRequestMarshaller();
+            var marshaller = DescribeDirectoryConfigsRequestMarshaller.Instance;
             var unmarshaller = DescribeDirectoryConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDirectoryConfigsRequest,DescribeDirectoryConfigsResponse>(request, marshaller, 
@@ -912,7 +993,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
-            var marshaller = new DescribeFleetsRequestMarshaller();
+            var marshaller = DescribeFleetsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, unmarshaller);
@@ -930,7 +1011,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeFleetsRequestMarshaller();
+            var marshaller = DescribeFleetsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, 
@@ -954,7 +1035,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
         public virtual DescribeImageBuildersResponse DescribeImageBuilders(DescribeImageBuildersRequest request)
         {
-            var marshaller = new DescribeImageBuildersRequestMarshaller();
+            var marshaller = DescribeImageBuildersRequestMarshaller.Instance;
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, unmarshaller);
@@ -972,7 +1053,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders">REST API Reference for DescribeImageBuilders Operation</seealso>
         public virtual Task<DescribeImageBuildersResponse> DescribeImageBuildersAsync(DescribeImageBuildersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeImageBuildersRequestMarshaller();
+            var marshaller = DescribeImageBuildersRequestMarshaller.Instance;
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, 
@@ -996,7 +1077,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var marshaller = new DescribeImagesRequestMarshaller();
+            var marshaller = DescribeImagesRequestMarshaller.Instance;
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, unmarshaller);
@@ -1014,7 +1095,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeImagesRequestMarshaller();
+            var marshaller = DescribeImagesRequestMarshaller.Instance;
             var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, 
@@ -1040,7 +1121,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
         {
-            var marshaller = new DescribeSessionsRequestMarshaller();
+            var marshaller = DescribeSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, unmarshaller);
@@ -1058,7 +1139,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         public virtual Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeSessionsRequestMarshaller();
+            var marshaller = DescribeSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, 
@@ -1082,7 +1163,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
-            var marshaller = new DescribeStacksRequestMarshaller();
+            var marshaller = DescribeStacksRequestMarshaller.Instance;
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
@@ -1100,7 +1181,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStacksRequestMarshaller();
+            var marshaller = DescribeStacksRequestMarshaller.Instance;
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, 
@@ -1130,7 +1211,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         public virtual DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request)
         {
-            var marshaller = new DisassociateFleetRequestMarshaller();
+            var marshaller = DisassociateFleetRequestMarshaller.Instance;
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateFleetRequest,DisassociateFleetResponse>(request, marshaller, unmarshaller);
@@ -1148,7 +1229,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         public virtual Task<DisassociateFleetResponse> DisassociateFleetAsync(DisassociateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisassociateFleetRequestMarshaller();
+            var marshaller = DisassociateFleetRequestMarshaller.Instance;
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateFleetRequest,DisassociateFleetResponse>(request, marshaller, 
@@ -1169,7 +1250,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         public virtual ExpireSessionResponse ExpireSession(ExpireSessionRequest request)
         {
-            var marshaller = new ExpireSessionRequestMarshaller();
+            var marshaller = ExpireSessionRequestMarshaller.Instance;
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
 
             return Invoke<ExpireSessionRequest,ExpireSessionResponse>(request, marshaller, unmarshaller);
@@ -1187,7 +1268,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         public virtual Task<ExpireSessionResponse> ExpireSessionAsync(ExpireSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ExpireSessionRequestMarshaller();
+            var marshaller = ExpireSessionRequestMarshaller.Instance;
             var unmarshaller = ExpireSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExpireSessionRequest,ExpireSessionResponse>(request, marshaller, 
@@ -1208,7 +1289,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         public virtual ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request)
         {
-            var marshaller = new ListAssociatedFleetsRequestMarshaller();
+            var marshaller = ListAssociatedFleetsRequestMarshaller.Instance;
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
 
             return Invoke<ListAssociatedFleetsRequest,ListAssociatedFleetsResponse>(request, marshaller, unmarshaller);
@@ -1226,7 +1307,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         public virtual Task<ListAssociatedFleetsResponse> ListAssociatedFleetsAsync(ListAssociatedFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAssociatedFleetsRequestMarshaller();
+            var marshaller = ListAssociatedFleetsRequestMarshaller.Instance;
             var unmarshaller = ListAssociatedFleetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAssociatedFleetsRequest,ListAssociatedFleetsResponse>(request, marshaller, 
@@ -1247,7 +1328,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         public virtual ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request)
         {
-            var marshaller = new ListAssociatedStacksRequestMarshaller();
+            var marshaller = ListAssociatedStacksRequestMarshaller.Instance;
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
 
             return Invoke<ListAssociatedStacksRequest,ListAssociatedStacksResponse>(request, marshaller, unmarshaller);
@@ -1265,7 +1346,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         public virtual Task<ListAssociatedStacksResponse> ListAssociatedStacksAsync(ListAssociatedStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAssociatedStacksRequestMarshaller();
+            var marshaller = ListAssociatedStacksRequestMarshaller.Instance;
             var unmarshaller = ListAssociatedStacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAssociatedStacksRequest,ListAssociatedStacksResponse>(request, marshaller, 
@@ -1283,7 +1364,7 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1296,7 +1377,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -1314,7 +1395,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
@@ -1335,6 +1416,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -1347,7 +1432,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         public virtual StartFleetResponse StartFleet(StartFleetRequest request)
         {
-            var marshaller = new StartFleetRequestMarshaller();
+            var marshaller = StartFleetRequestMarshaller.Instance;
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
 
             return Invoke<StartFleetRequest,StartFleetResponse>(request, marshaller, unmarshaller);
@@ -1365,7 +1450,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         public virtual Task<StartFleetResponse> StartFleetAsync(StartFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartFleetRequestMarshaller();
+            var marshaller = StartFleetRequestMarshaller.Instance;
             var unmarshaller = StartFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartFleetRequest,StartFleetResponse>(request, marshaller, 
@@ -1389,6 +1474,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
         /// </exception>
@@ -1398,7 +1487,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
         public virtual StartImageBuilderResponse StartImageBuilder(StartImageBuilderRequest request)
         {
-            var marshaller = new StartImageBuilderRequestMarshaller();
+            var marshaller = StartImageBuilderRequestMarshaller.Instance;
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
 
             return Invoke<StartImageBuilderRequest,StartImageBuilderResponse>(request, marshaller, unmarshaller);
@@ -1416,7 +1505,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder">REST API Reference for StartImageBuilder Operation</seealso>
         public virtual Task<StartImageBuilderResponse> StartImageBuilderAsync(StartImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartImageBuilderRequestMarshaller();
+            var marshaller = StartImageBuilderRequestMarshaller.Instance;
             var unmarshaller = StartImageBuilderResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartImageBuilderRequest,StartImageBuilderResponse>(request, marshaller, 
@@ -1443,7 +1532,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         public virtual StopFleetResponse StopFleet(StopFleetRequest request)
         {
-            var marshaller = new StopFleetRequestMarshaller();
+            var marshaller = StopFleetRequestMarshaller.Instance;
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
 
             return Invoke<StopFleetRequest,StopFleetResponse>(request, marshaller, unmarshaller);
@@ -1461,7 +1550,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         public virtual Task<StopFleetResponse> StopFleetAsync(StopFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopFleetRequestMarshaller();
+            var marshaller = StopFleetRequestMarshaller.Instance;
             var unmarshaller = StopFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopFleetRequest,StopFleetResponse>(request, marshaller, 
@@ -1491,7 +1580,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
         public virtual StopImageBuilderResponse StopImageBuilder(StopImageBuilderRequest request)
         {
-            var marshaller = new StopImageBuilderRequestMarshaller();
+            var marshaller = StopImageBuilderRequestMarshaller.Instance;
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
 
             return Invoke<StopImageBuilderRequest,StopImageBuilderResponse>(request, marshaller, unmarshaller);
@@ -1509,7 +1598,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder">REST API Reference for StopImageBuilder Operation</seealso>
         public virtual Task<StopImageBuilderResponse> StopImageBuilderAsync(StopImageBuilderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopImageBuilderRequestMarshaller();
+            var marshaller = StopImageBuilderRequestMarshaller.Instance;
             var unmarshaller = StopImageBuilderResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopImageBuilderRequest,StopImageBuilderResponse>(request, marshaller, 
@@ -1537,13 +1626,17 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -1553,7 +1646,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -1571,7 +1664,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
@@ -1592,7 +1685,7 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1605,7 +1698,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -1623,7 +1716,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
@@ -1653,7 +1746,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
         public virtual UpdateDirectoryConfigResponse UpdateDirectoryConfig(UpdateDirectoryConfigRequest request)
         {
-            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var marshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, unmarshaller);
@@ -1671,7 +1764,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
         public virtual Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDirectoryConfigRequestMarshaller();
+            var marshaller = UpdateDirectoryConfigRequestMarshaller.Instance;
             var unmarshaller = UpdateDirectoryConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDirectoryConfigRequest,UpdateDirectoryConfigResponse>(request, marshaller, 
@@ -1703,6 +1796,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
@@ -1727,7 +1824,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
-            var marshaller = new UpdateFleetRequestMarshaller();
+            var marshaller = UpdateFleetRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFleetRequest,UpdateFleetResponse>(request, marshaller, unmarshaller);
@@ -1745,7 +1842,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateFleetRequestMarshaller();
+            var marshaller = UpdateFleetRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFleetRequest,UpdateFleetResponse>(request, marshaller, 
@@ -1766,6 +1863,10 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
         /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
@@ -1784,7 +1885,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            var marshaller = new UpdateStackRequestMarshaller();
+            var marshaller = UpdateStackRequestMarshaller.Instance;
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
             return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
@@ -1802,7 +1903,7 @@ namespace Amazon.AppStream
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateStackRequestMarshaller();
+            var marshaller = UpdateStackRequestMarshaller.Instance;
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStackRequest,UpdateStackResponse>(request, marshaller, 

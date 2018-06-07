@@ -305,7 +305,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         public virtual AssociateWebACLResponse AssociateWebACL(AssociateWebACLRequest request)
         {
-            var marshaller = new AssociateWebACLRequestMarshaller();
+            var marshaller = AssociateWebACLRequestMarshaller.Instance;
             var unmarshaller = AssociateWebACLResponseUnmarshaller.Instance;
 
             return Invoke<AssociateWebACLRequest,AssociateWebACLResponse>(request, marshaller, unmarshaller);
@@ -325,7 +325,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         public virtual IAsyncResult BeginAssociateWebACL(AssociateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateWebACLRequestMarshaller();
+            var marshaller = AssociateWebACLRequestMarshaller.Instance;
             var unmarshaller = AssociateWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateWebACLRequest>(request, marshaller, unmarshaller,
@@ -585,7 +585,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         public virtual CreateByteMatchSetResponse CreateByteMatchSet(CreateByteMatchSetRequest request)
         {
-            var marshaller = new CreateByteMatchSetRequestMarshaller();
+            var marshaller = CreateByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateByteMatchSetRequest,CreateByteMatchSetResponse>(request, marshaller, unmarshaller);
@@ -605,7 +605,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateByteMatchSet(CreateByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateByteMatchSetRequestMarshaller();
+            var marshaller = CreateByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateByteMatchSetRequest>(request, marshaller, unmarshaller,
@@ -741,7 +741,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
         public virtual CreateGeoMatchSetResponse CreateGeoMatchSet(CreateGeoMatchSetRequest request)
         {
-            var marshaller = new CreateGeoMatchSetRequestMarshaller();
+            var marshaller = CreateGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateGeoMatchSetRequest,CreateGeoMatchSetResponse>(request, marshaller, unmarshaller);
@@ -761,7 +761,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateGeoMatchSet(CreateGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateGeoMatchSetRequestMarshaller();
+            var marshaller = CreateGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateGeoMatchSetRequest>(request, marshaller, unmarshaller,
@@ -1019,7 +1019,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
         {
-            var marshaller = new CreateIPSetRequestMarshaller();
+            var marshaller = CreateIPSetRequestMarshaller.Instance;
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateIPSetRequest,CreateIPSetResponse>(request, marshaller, unmarshaller);
@@ -1039,7 +1039,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual IAsyncResult BeginCreateIPSet(CreateIPSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateIPSetRequestMarshaller();
+            var marshaller = CreateIPSetRequestMarshaller.Instance;
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateIPSetRequest>(request, marshaller, unmarshaller,
@@ -1238,7 +1238,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         public virtual CreateRateBasedRuleResponse CreateRateBasedRule(CreateRateBasedRuleRequest request)
         {
-            var marshaller = new CreateRateBasedRuleRequestMarshaller();
+            var marshaller = CreateRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
 
             return Invoke<CreateRateBasedRuleRequest,CreateRateBasedRuleResponse>(request, marshaller, unmarshaller);
@@ -1258,7 +1258,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRateBasedRule(CreateRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRateBasedRuleRequestMarshaller();
+            var marshaller = CreateRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRateBasedRuleRequest>(request, marshaller, unmarshaller,
@@ -1344,7 +1344,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
         public virtual CreateRegexMatchSetResponse CreateRegexMatchSet(CreateRegexMatchSetRequest request)
         {
-            var marshaller = new CreateRegexMatchSetRequestMarshaller();
+            var marshaller = CreateRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateRegexMatchSetRequest,CreateRegexMatchSetResponse>(request, marshaller, unmarshaller);
@@ -1364,7 +1364,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateRegexMatchSet(CreateRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRegexMatchSetRequestMarshaller();
+            var marshaller = CreateRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRegexMatchSetRequest>(request, marshaller, unmarshaller,
@@ -1446,7 +1446,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         public virtual CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request)
         {
-            var marshaller = new CreateRegexPatternSetRequestMarshaller();
+            var marshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateRegexPatternSetRequest,CreateRegexPatternSetResponse>(request, marshaller, unmarshaller);
@@ -1466,7 +1466,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginCreateRegexPatternSet(CreateRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRegexPatternSetRequestMarshaller();
+            var marshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRegexPatternSetRequest>(request, marshaller, unmarshaller,
@@ -1768,7 +1768,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var marshaller = new CreateRuleRequestMarshaller();
+            var marshaller = CreateRuleRequestMarshaller.Instance;
             var unmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
             return Invoke<CreateRuleRequest,CreateRuleResponse>(request, marshaller, unmarshaller);
@@ -1788,7 +1788,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRuleRequestMarshaller();
+            var marshaller = CreateRuleRequestMarshaller.Instance;
             var unmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRuleRequest>(request, marshaller, unmarshaller,
@@ -1863,7 +1863,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
         {
-            var marshaller = new CreateRuleGroupRequestMarshaller();
+            var marshaller = CreateRuleGroupRequestMarshaller.Instance;
             var unmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateRuleGroupRequest,CreateRuleGroupResponse>(request, marshaller, unmarshaller);
@@ -1883,7 +1883,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateRuleGroup(CreateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRuleGroupRequestMarshaller();
+            var marshaller = CreateRuleGroupRequestMarshaller.Instance;
             var unmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRuleGroupRequest>(request, marshaller, unmarshaller,
@@ -2021,7 +2021,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         public virtual CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
         {
-            var marshaller = new CreateSizeConstraintSetRequestMarshaller();
+            var marshaller = CreateSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateSizeConstraintSetRequest,CreateSizeConstraintSetResponse>(request, marshaller, unmarshaller);
@@ -2041,7 +2041,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginCreateSizeConstraintSet(CreateSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSizeConstraintSetRequestMarshaller();
+            var marshaller = CreateSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSizeConstraintSetRequest>(request, marshaller, unmarshaller,
@@ -2295,7 +2295,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         public virtual CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request)
         {
-            var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = CreateSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateSqlInjectionMatchSetRequest,CreateSqlInjectionMatchSetResponse>(request, marshaller, unmarshaller);
@@ -2315,7 +2315,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = CreateSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSqlInjectionMatchSetRequest>(request, marshaller, unmarshaller,
@@ -2467,7 +2467,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual CreateWebACLResponse CreateWebACL(CreateWebACLRequest request)
         {
-            var marshaller = new CreateWebACLRequestMarshaller();
+            var marshaller = CreateWebACLRequestMarshaller.Instance;
             var unmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
             return Invoke<CreateWebACLRequest,CreateWebACLResponse>(request, marshaller, unmarshaller);
@@ -2487,7 +2487,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual IAsyncResult BeginCreateWebACL(CreateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateWebACLRequestMarshaller();
+            var marshaller = CreateWebACLRequestMarshaller.Instance;
             var unmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateWebACLRequest>(request, marshaller, unmarshaller,
@@ -2621,7 +2621,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         public virtual CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
         {
-            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var marshaller = CreateXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateXssMatchSetRequest,CreateXssMatchSetResponse>(request, marshaller, unmarshaller);
@@ -2641,7 +2641,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateXssMatchSet(CreateXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var marshaller = CreateXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateXssMatchSetRequest>(request, marshaller, unmarshaller,
@@ -2851,7 +2851,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         public virtual DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request)
         {
-            var marshaller = new DeleteByteMatchSetRequestMarshaller();
+            var marshaller = DeleteByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteByteMatchSetRequest,DeleteByteMatchSetResponse>(request, marshaller, unmarshaller);
@@ -2871,7 +2871,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteByteMatchSet(DeleteByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteByteMatchSetRequestMarshaller();
+            var marshaller = DeleteByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteByteMatchSetRequest>(request, marshaller, unmarshaller,
@@ -2984,7 +2984,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
         public virtual DeleteGeoMatchSetResponse DeleteGeoMatchSet(DeleteGeoMatchSetRequest request)
         {
-            var marshaller = new DeleteGeoMatchSetRequestMarshaller();
+            var marshaller = DeleteGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGeoMatchSetRequest,DeleteGeoMatchSetResponse>(request, marshaller, unmarshaller);
@@ -3004,7 +3004,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteGeoMatchSet(DeleteGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteGeoMatchSetRequestMarshaller();
+            var marshaller = DeleteGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteGeoMatchSetRequest>(request, marshaller, unmarshaller,
@@ -3210,7 +3210,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
         {
-            var marshaller = new DeleteIPSetRequestMarshaller();
+            var marshaller = DeleteIPSetRequestMarshaller.Instance;
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIPSetRequest,DeleteIPSetResponse>(request, marshaller, unmarshaller);
@@ -3230,7 +3230,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteIPSet(DeleteIPSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIPSetRequestMarshaller();
+            var marshaller = DeleteIPSetRequestMarshaller.Instance;
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIPSetRequest>(request, marshaller, unmarshaller,
@@ -3248,6 +3248,75 @@ namespace Amazon.WAFRegional
         public virtual DeleteIPSetResponse EndDeleteIPSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIPSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePermissionPolicy
+
+        /// <summary>
+        /// Permanently deletes an IAM policy from the specified RuleGroup.
+        /// 
+        ///  
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request)
+        {
+            var marshaller = DeletePermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionPolicyRequest,DeletePermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeletePermissionPolicy(DeletePermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeletePermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual DeletePermissionPolicyResponse EndDeletePermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePermissionPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -3343,7 +3412,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         public virtual DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
         {
-            var marshaller = new DeleteRateBasedRuleRequestMarshaller();
+            var marshaller = DeleteRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRateBasedRuleRequest,DeleteRateBasedRuleResponse>(request, marshaller, unmarshaller);
@@ -3363,7 +3432,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRateBasedRule(DeleteRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRateBasedRuleRequestMarshaller();
+            var marshaller = DeleteRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRateBasedRuleRequest>(request, marshaller, unmarshaller,
@@ -3476,7 +3545,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
         public virtual DeleteRegexMatchSetResponse DeleteRegexMatchSet(DeleteRegexMatchSetRequest request)
         {
-            var marshaller = new DeleteRegexMatchSetRequestMarshaller();
+            var marshaller = DeleteRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRegexMatchSetRequest,DeleteRegexMatchSetResponse>(request, marshaller, unmarshaller);
@@ -3496,7 +3565,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegexMatchSet(DeleteRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRegexMatchSetRequestMarshaller();
+            var marshaller = DeleteRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRegexMatchSetRequest>(request, marshaller, unmarshaller,
@@ -3584,7 +3653,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         public virtual DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request)
         {
-            var marshaller = new DeleteRegexPatternSetRequestMarshaller();
+            var marshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRegexPatternSetRequest,DeleteRegexPatternSetResponse>(request, marshaller, unmarshaller);
@@ -3604,7 +3673,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegexPatternSet(DeleteRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRegexPatternSetRequestMarshaller();
+            var marshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRegexPatternSetRequest>(request, marshaller, unmarshaller,
@@ -3812,7 +3881,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var marshaller = new DeleteRuleRequestMarshaller();
+            var marshaller = DeleteRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRuleRequest,DeleteRuleResponse>(request, marshaller, unmarshaller);
@@ -3832,7 +3901,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRuleRequestMarshaller();
+            var marshaller = DeleteRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRuleRequest>(request, marshaller, unmarshaller,
@@ -3942,7 +4011,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
         {
-            var marshaller = new DeleteRuleGroupRequestMarshaller();
+            var marshaller = DeleteRuleGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRuleGroupRequest,DeleteRuleGroupResponse>(request, marshaller, unmarshaller);
@@ -3962,7 +4031,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteRuleGroup(DeleteRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRuleGroupRequestMarshaller();
+            var marshaller = DeleteRuleGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRuleGroupRequest>(request, marshaller, unmarshaller,
@@ -4075,7 +4144,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         public virtual DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request)
         {
-            var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
+            var marshaller = DeleteSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSizeConstraintSetRequest,DeleteSizeConstraintSetResponse>(request, marshaller, unmarshaller);
@@ -4095,7 +4164,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
+            var marshaller = DeleteSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSizeConstraintSetRequest>(request, marshaller, unmarshaller,
@@ -4307,7 +4376,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         public virtual DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request)
         {
-            var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = DeleteSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSqlInjectionMatchSetRequest,DeleteSqlInjectionMatchSetResponse>(request, marshaller, unmarshaller);
@@ -4327,7 +4396,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = DeleteSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSqlInjectionMatchSetRequest>(request, marshaller, unmarshaller,
@@ -4525,7 +4594,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request)
         {
-            var marshaller = new DeleteWebACLRequestMarshaller();
+            var marshaller = DeleteWebACLRequestMarshaller.Instance;
             var unmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
             return Invoke<DeleteWebACLRequest,DeleteWebACLResponse>(request, marshaller, unmarshaller);
@@ -4545,7 +4614,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual IAsyncResult BeginDeleteWebACL(DeleteWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteWebACLRequestMarshaller();
+            var marshaller = DeleteWebACLRequestMarshaller.Instance;
             var unmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteWebACLRequest>(request, marshaller, unmarshaller,
@@ -4659,7 +4728,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         public virtual DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
         {
-            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var marshaller = DeleteXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteXssMatchSetRequest,DeleteXssMatchSetResponse>(request, marshaller, unmarshaller);
@@ -4679,7 +4748,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteXssMatchSet(DeleteXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var marshaller = DeleteXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteXssMatchSetRequest>(request, marshaller, unmarshaller,
@@ -4772,7 +4841,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL">REST API Reference for DisassociateWebACL Operation</seealso>
         public virtual DisassociateWebACLResponse DisassociateWebACL(DisassociateWebACLRequest request)
         {
-            var marshaller = new DisassociateWebACLRequestMarshaller();
+            var marshaller = DisassociateWebACLRequestMarshaller.Instance;
             var unmarshaller = DisassociateWebACLResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateWebACLRequest,DisassociateWebACLResponse>(request, marshaller, unmarshaller);
@@ -4792,7 +4861,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL">REST API Reference for DisassociateWebACL Operation</seealso>
         public virtual IAsyncResult BeginDisassociateWebACL(DisassociateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateWebACLRequestMarshaller();
+            var marshaller = DisassociateWebACLRequestMarshaller.Instance;
             var unmarshaller = DisassociateWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateWebACLRequest>(request, marshaller, unmarshaller,
@@ -4862,7 +4931,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         public virtual GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request)
         {
-            var marshaller = new GetByteMatchSetRequestMarshaller();
+            var marshaller = GetByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<GetByteMatchSetRequest,GetByteMatchSetResponse>(request, marshaller, unmarshaller);
@@ -4882,7 +4951,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetByteMatchSet(GetByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetByteMatchSetRequestMarshaller();
+            var marshaller = GetByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetByteMatchSetRequest>(request, marshaller, unmarshaller,
@@ -4968,7 +5037,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         public virtual GetChangeTokenResponse GetChangeToken(GetChangeTokenRequest request)
         {
-            var marshaller = new GetChangeTokenRequestMarshaller();
+            var marshaller = GetChangeTokenRequestMarshaller.Instance;
             var unmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetChangeTokenRequest,GetChangeTokenResponse>(request, marshaller, unmarshaller);
@@ -4988,7 +5057,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         public virtual IAsyncResult BeginGetChangeToken(GetChangeTokenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetChangeTokenRequestMarshaller();
+            var marshaller = GetChangeTokenRequestMarshaller.Instance;
             var unmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetChangeTokenRequest>(request, marshaller, unmarshaller,
@@ -5084,7 +5153,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         public virtual GetChangeTokenStatusResponse GetChangeTokenStatus(GetChangeTokenStatusRequest request)
         {
-            var marshaller = new GetChangeTokenStatusRequestMarshaller();
+            var marshaller = GetChangeTokenStatusRequestMarshaller.Instance;
             var unmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
 
             return Invoke<GetChangeTokenStatusRequest,GetChangeTokenStatusResponse>(request, marshaller, unmarshaller);
@@ -5104,7 +5173,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         public virtual IAsyncResult BeginGetChangeTokenStatus(GetChangeTokenStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetChangeTokenStatusRequestMarshaller();
+            var marshaller = GetChangeTokenStatusRequestMarshaller.Instance;
             var unmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetChangeTokenStatusRequest>(request, marshaller, unmarshaller,
@@ -5148,7 +5217,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
         public virtual GetGeoMatchSetResponse GetGeoMatchSet(GetGeoMatchSetRequest request)
         {
-            var marshaller = new GetGeoMatchSetRequestMarshaller();
+            var marshaller = GetGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<GetGeoMatchSetRequest,GetGeoMatchSetResponse>(request, marshaller, unmarshaller);
@@ -5168,7 +5237,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetGeoMatchSet(GetGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGeoMatchSetRequestMarshaller();
+            var marshaller = GetGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGeoMatchSetRequest>(request, marshaller, unmarshaller,
@@ -5238,7 +5307,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
         {
-            var marshaller = new GetIPSetRequestMarshaller();
+            var marshaller = GetIPSetRequestMarshaller.Instance;
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return Invoke<GetIPSetRequest,GetIPSetResponse>(request, marshaller, unmarshaller);
@@ -5258,7 +5327,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual IAsyncResult BeginGetIPSet(GetIPSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIPSetRequestMarshaller();
+            var marshaller = GetIPSetRequestMarshaller.Instance;
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIPSetRequest>(request, marshaller, unmarshaller,
@@ -5276,6 +5345,66 @@ namespace Amazon.WAFRegional
         public virtual GetIPSetResponse EndGetIPSet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIPSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPermissionPolicy
+
+        /// <summary>
+        /// Returns the IAM policy attached to the RuleGroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request)
+        {
+            var marshaller = GetPermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionPolicyRequest,GetPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetPermissionPolicy(GetPermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetPermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual GetPermissionPolicyResponse EndGetPermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPermissionPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -5303,7 +5432,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
         public virtual GetRateBasedRuleResponse GetRateBasedRule(GetRateBasedRuleRequest request)
         {
-            var marshaller = new GetRateBasedRuleRequestMarshaller();
+            var marshaller = GetRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
 
             return Invoke<GetRateBasedRuleRequest,GetRateBasedRuleResponse>(request, marshaller, unmarshaller);
@@ -5323,7 +5452,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginGetRateBasedRule(GetRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRateBasedRuleRequestMarshaller();
+            var marshaller = GetRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRateBasedRuleRequest>(request, marshaller, unmarshaller,
@@ -5419,7 +5548,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
         public virtual GetRateBasedRuleManagedKeysResponse GetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request)
         {
-            var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
+            var marshaller = GetRateBasedRuleManagedKeysRequestMarshaller.Instance;
             var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
 
             return Invoke<GetRateBasedRuleManagedKeysRequest,GetRateBasedRuleManagedKeysResponse>(request, marshaller, unmarshaller);
@@ -5439,7 +5568,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
         public virtual IAsyncResult BeginGetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
+            var marshaller = GetRateBasedRuleManagedKeysRequestMarshaller.Instance;
             var unmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRateBasedRuleManagedKeysRequest>(request, marshaller, unmarshaller,
@@ -5483,7 +5612,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
         public virtual GetRegexMatchSetResponse GetRegexMatchSet(GetRegexMatchSetRequest request)
         {
-            var marshaller = new GetRegexMatchSetRequestMarshaller();
+            var marshaller = GetRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<GetRegexMatchSetRequest,GetRegexMatchSetResponse>(request, marshaller, unmarshaller);
@@ -5503,7 +5632,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetRegexMatchSet(GetRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRegexMatchSetRequestMarshaller();
+            var marshaller = GetRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRegexMatchSetRequest>(request, marshaller, unmarshaller,
@@ -5547,7 +5676,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         public virtual GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request)
         {
-            var marshaller = new GetRegexPatternSetRequestMarshaller();
+            var marshaller = GetRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
             return Invoke<GetRegexPatternSetRequest,GetRegexPatternSetResponse>(request, marshaller, unmarshaller);
@@ -5567,7 +5696,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginGetRegexPatternSet(GetRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRegexPatternSetRequestMarshaller();
+            var marshaller = GetRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRegexPatternSetRequest>(request, marshaller, unmarshaller,
@@ -5639,7 +5768,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
-            var marshaller = new GetRuleRequestMarshaller();
+            var marshaller = GetRuleRequestMarshaller.Instance;
             var unmarshaller = GetRuleResponseUnmarshaller.Instance;
 
             return Invoke<GetRuleRequest,GetRuleResponse>(request, marshaller, unmarshaller);
@@ -5659,7 +5788,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRuleRequestMarshaller();
+            var marshaller = GetRuleRequestMarshaller.Instance;
             var unmarshaller = GetRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRuleRequest>(request, marshaller, unmarshaller,
@@ -5705,7 +5834,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         public virtual GetRuleGroupResponse GetRuleGroup(GetRuleGroupRequest request)
         {
-            var marshaller = new GetRuleGroupRequestMarshaller();
+            var marshaller = GetRuleGroupRequestMarshaller.Instance;
             var unmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
             return Invoke<GetRuleGroupRequest,GetRuleGroupResponse>(request, marshaller, unmarshaller);
@@ -5725,7 +5854,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginGetRuleGroup(GetRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRuleGroupRequestMarshaller();
+            var marshaller = GetRuleGroupRequestMarshaller.Instance;
             var unmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRuleGroupRequest>(request, marshaller, unmarshaller,
@@ -5777,7 +5906,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         public virtual GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
         {
-            var marshaller = new GetSampledRequestsRequestMarshaller();
+            var marshaller = GetSampledRequestsRequestMarshaller.Instance;
             var unmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
             return Invoke<GetSampledRequestsRequest,GetSampledRequestsResponse>(request, marshaller, unmarshaller);
@@ -5797,7 +5926,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         public virtual IAsyncResult BeginGetSampledRequests(GetSampledRequestsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSampledRequestsRequestMarshaller();
+            var marshaller = GetSampledRequestsRequestMarshaller.Instance;
             var unmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSampledRequestsRequest>(request, marshaller, unmarshaller,
@@ -5841,7 +5970,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         public virtual GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request)
         {
-            var marshaller = new GetSizeConstraintSetRequestMarshaller();
+            var marshaller = GetSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
 
             return Invoke<GetSizeConstraintSetRequest,GetSizeConstraintSetResponse>(request, marshaller, unmarshaller);
@@ -5861,7 +5990,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginGetSizeConstraintSet(GetSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSizeConstraintSetRequestMarshaller();
+            var marshaller = GetSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSizeConstraintSetRequest>(request, marshaller, unmarshaller,
@@ -5931,7 +6060,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         public virtual GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request)
         {
-            var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = GetSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<GetSqlInjectionMatchSetRequest,GetSqlInjectionMatchSetResponse>(request, marshaller, unmarshaller);
@@ -5951,7 +6080,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = GetSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSqlInjectionMatchSetRequest>(request, marshaller, unmarshaller,
@@ -6021,7 +6150,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         public virtual GetWebACLResponse GetWebACL(GetWebACLRequest request)
         {
-            var marshaller = new GetWebACLRequestMarshaller();
+            var marshaller = GetWebACLRequestMarshaller.Instance;
             var unmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
             return Invoke<GetWebACLRequest,GetWebACLResponse>(request, marshaller, unmarshaller);
@@ -6041,7 +6170,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         public virtual IAsyncResult BeginGetWebACL(GetWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetWebACLRequestMarshaller();
+            var marshaller = GetWebACLRequestMarshaller.Instance;
             var unmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetWebACLRequest>(request, marshaller, unmarshaller,
@@ -6138,7 +6267,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         public virtual GetWebACLForResourceResponse GetWebACLForResource(GetWebACLForResourceRequest request)
         {
-            var marshaller = new GetWebACLForResourceRequestMarshaller();
+            var marshaller = GetWebACLForResourceRequestMarshaller.Instance;
             var unmarshaller = GetWebACLForResourceResponseUnmarshaller.Instance;
 
             return Invoke<GetWebACLForResourceRequest,GetWebACLForResourceResponse>(request, marshaller, unmarshaller);
@@ -6158,7 +6287,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         public virtual IAsyncResult BeginGetWebACLForResource(GetWebACLForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetWebACLForResourceRequestMarshaller();
+            var marshaller = GetWebACLForResourceRequestMarshaller.Instance;
             var unmarshaller = GetWebACLForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetWebACLForResourceRequest>(request, marshaller, unmarshaller,
@@ -6202,7 +6331,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         public virtual GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
         {
-            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var marshaller = GetXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<GetXssMatchSetRequest,GetXssMatchSetResponse>(request, marshaller, unmarshaller);
@@ -6222,7 +6351,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetXssMatchSet(GetXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var marshaller = GetXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetXssMatchSetRequest>(request, marshaller, unmarshaller,
@@ -6311,7 +6440,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">REST API Reference for ListActivatedRulesInRuleGroup Operation</seealso>
         public virtual ListActivatedRulesInRuleGroupResponse ListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request)
         {
-            var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
+            var marshaller = ListActivatedRulesInRuleGroupRequestMarshaller.Instance;
             var unmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
 
             return Invoke<ListActivatedRulesInRuleGroupRequest,ListActivatedRulesInRuleGroupResponse>(request, marshaller, unmarshaller);
@@ -6331,7 +6460,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">REST API Reference for ListActivatedRulesInRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
+            var marshaller = ListActivatedRulesInRuleGroupRequestMarshaller.Instance;
             var unmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListActivatedRulesInRuleGroupRequest>(request, marshaller, unmarshaller,
@@ -6372,7 +6501,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         public virtual ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
         {
-            var marshaller = new ListByteMatchSetsRequestMarshaller();
+            var marshaller = ListByteMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListByteMatchSetsRequest,ListByteMatchSetsResponse>(request, marshaller, unmarshaller);
@@ -6392,7 +6521,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListByteMatchSets(ListByteMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListByteMatchSetsRequestMarshaller();
+            var marshaller = ListByteMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListByteMatchSetsRequest>(request, marshaller, unmarshaller,
@@ -6433,7 +6562,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
         public virtual ListGeoMatchSetsResponse ListGeoMatchSets(ListGeoMatchSetsRequest request)
         {
-            var marshaller = new ListGeoMatchSetsRequestMarshaller();
+            var marshaller = ListGeoMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListGeoMatchSetsRequest,ListGeoMatchSetsResponse>(request, marshaller, unmarshaller);
@@ -6453,7 +6582,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListGeoMatchSets(ListGeoMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListGeoMatchSetsRequestMarshaller();
+            var marshaller = ListGeoMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListGeoMatchSetsRequest>(request, marshaller, unmarshaller,
@@ -6494,7 +6623,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
         {
-            var marshaller = new ListIPSetsRequestMarshaller();
+            var marshaller = ListIPSetsRequestMarshaller.Instance;
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListIPSetsRequest,ListIPSetsResponse>(request, marshaller, unmarshaller);
@@ -6514,7 +6643,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual IAsyncResult BeginListIPSets(ListIPSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIPSetsRequestMarshaller();
+            var marshaller = ListIPSetsRequestMarshaller.Instance;
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIPSetsRequest>(request, marshaller, unmarshaller,
@@ -6555,7 +6684,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
         public virtual ListRateBasedRulesResponse ListRateBasedRules(ListRateBasedRulesRequest request)
         {
-            var marshaller = new ListRateBasedRulesRequestMarshaller();
+            var marshaller = ListRateBasedRulesRequestMarshaller.Instance;
             var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
 
             return Invoke<ListRateBasedRulesRequest,ListRateBasedRulesResponse>(request, marshaller, unmarshaller);
@@ -6575,7 +6704,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
         public virtual IAsyncResult BeginListRateBasedRules(ListRateBasedRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRateBasedRulesRequestMarshaller();
+            var marshaller = ListRateBasedRulesRequestMarshaller.Instance;
             var unmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRateBasedRulesRequest>(request, marshaller, unmarshaller,
@@ -6616,7 +6745,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
         public virtual ListRegexMatchSetsResponse ListRegexMatchSets(ListRegexMatchSetsRequest request)
         {
-            var marshaller = new ListRegexMatchSetsRequestMarshaller();
+            var marshaller = ListRegexMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListRegexMatchSetsRequest,ListRegexMatchSetsResponse>(request, marshaller, unmarshaller);
@@ -6636,7 +6765,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListRegexMatchSets(ListRegexMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRegexMatchSetsRequestMarshaller();
+            var marshaller = ListRegexMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRegexMatchSetsRequest>(request, marshaller, unmarshaller,
@@ -6677,7 +6806,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
         public virtual ListRegexPatternSetsResponse ListRegexPatternSets(ListRegexPatternSetsRequest request)
         {
-            var marshaller = new ListRegexPatternSetsRequestMarshaller();
+            var marshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             var unmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListRegexPatternSetsRequest,ListRegexPatternSetsResponse>(request, marshaller, unmarshaller);
@@ -6697,7 +6826,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
         public virtual IAsyncResult BeginListRegexPatternSets(ListRegexPatternSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRegexPatternSetsRequestMarshaller();
+            var marshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             var unmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRegexPatternSetsRequest>(request, marshaller, unmarshaller,
@@ -6741,7 +6870,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL">REST API Reference for ListResourcesForWebACL Operation</seealso>
         public virtual ListResourcesForWebACLResponse ListResourcesForWebACL(ListResourcesForWebACLRequest request)
         {
-            var marshaller = new ListResourcesForWebACLRequestMarshaller();
+            var marshaller = ListResourcesForWebACLRequestMarshaller.Instance;
             var unmarshaller = ListResourcesForWebACLResponseUnmarshaller.Instance;
 
             return Invoke<ListResourcesForWebACLRequest,ListResourcesForWebACLResponse>(request, marshaller, unmarshaller);
@@ -6761,7 +6890,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL">REST API Reference for ListResourcesForWebACL Operation</seealso>
         public virtual IAsyncResult BeginListResourcesForWebACL(ListResourcesForWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListResourcesForWebACLRequestMarshaller();
+            var marshaller = ListResourcesForWebACLRequestMarshaller.Instance;
             var unmarshaller = ListResourcesForWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListResourcesForWebACLRequest>(request, marshaller, unmarshaller,
@@ -6798,7 +6927,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
         {
-            var marshaller = new ListRuleGroupsRequestMarshaller();
+            var marshaller = ListRuleGroupsRequestMarshaller.Instance;
             var unmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListRuleGroupsRequest,ListRuleGroupsResponse>(request, marshaller, unmarshaller);
@@ -6818,7 +6947,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual IAsyncResult BeginListRuleGroups(ListRuleGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRuleGroupsRequestMarshaller();
+            var marshaller = ListRuleGroupsRequestMarshaller.Instance;
             var unmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRuleGroupsRequest>(request, marshaller, unmarshaller,
@@ -6859,7 +6988,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var marshaller = new ListRulesRequestMarshaller();
+            var marshaller = ListRulesRequestMarshaller.Instance;
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
 
             return Invoke<ListRulesRequest,ListRulesResponse>(request, marshaller, unmarshaller);
@@ -6879,7 +7008,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRulesRequestMarshaller();
+            var marshaller = ListRulesRequestMarshaller.Instance;
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRulesRequest>(request, marshaller, unmarshaller,
@@ -6920,7 +7049,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         public virtual ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request)
         {
-            var marshaller = new ListSizeConstraintSetsRequestMarshaller();
+            var marshaller = ListSizeConstraintSetsRequestMarshaller.Instance;
             var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListSizeConstraintSetsRequest,ListSizeConstraintSetsResponse>(request, marshaller, unmarshaller);
@@ -6940,7 +7069,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         public virtual IAsyncResult BeginListSizeConstraintSets(ListSizeConstraintSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListSizeConstraintSetsRequestMarshaller();
+            var marshaller = ListSizeConstraintSetsRequestMarshaller.Instance;
             var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListSizeConstraintSetsRequest>(request, marshaller, unmarshaller,
@@ -6981,7 +7110,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         public virtual ListSqlInjectionMatchSetsResponse ListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request)
         {
-            var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
+            var marshaller = ListSqlInjectionMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListSqlInjectionMatchSetsRequest,ListSqlInjectionMatchSetsResponse>(request, marshaller, unmarshaller);
@@ -7001,7 +7130,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
+            var marshaller = ListSqlInjectionMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListSqlInjectionMatchSetsRequest>(request, marshaller, unmarshaller,
@@ -7041,7 +7170,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">REST API Reference for ListSubscribedRuleGroups Operation</seealso>
         public virtual ListSubscribedRuleGroupsResponse ListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request)
         {
-            var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
+            var marshaller = ListSubscribedRuleGroupsRequestMarshaller.Instance;
             var unmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListSubscribedRuleGroupsRequest,ListSubscribedRuleGroupsResponse>(request, marshaller, unmarshaller);
@@ -7061,7 +7190,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">REST API Reference for ListSubscribedRuleGroups Operation</seealso>
         public virtual IAsyncResult BeginListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
+            var marshaller = ListSubscribedRuleGroupsRequestMarshaller.Instance;
             var unmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListSubscribedRuleGroupsRequest>(request, marshaller, unmarshaller,
@@ -7102,7 +7231,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         public virtual ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
         {
-            var marshaller = new ListWebACLsRequestMarshaller();
+            var marshaller = ListWebACLsRequestMarshaller.Instance;
             var unmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
             return Invoke<ListWebACLsRequest,ListWebACLsResponse>(request, marshaller, unmarshaller);
@@ -7122,7 +7251,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         public virtual IAsyncResult BeginListWebACLs(ListWebACLsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListWebACLsRequestMarshaller();
+            var marshaller = ListWebACLsRequestMarshaller.Instance;
             var unmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListWebACLsRequest>(request, marshaller, unmarshaller,
@@ -7163,7 +7292,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         public virtual ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
         {
-            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var marshaller = ListXssMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListXssMatchSetsRequest,ListXssMatchSetsResponse>(request, marshaller, unmarshaller);
@@ -7183,7 +7312,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListXssMatchSets(ListXssMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var marshaller = ListXssMatchSetsRequestMarshaller.Instance;
             var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListXssMatchSetsRequest>(request, marshaller, unmarshaller,
@@ -7201,6 +7330,164 @@ namespace Amazon.WAFRegional
         public virtual ListXssMatchSetsResponse EndListXssMatchSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListXssMatchSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutPermissionPolicy
+
+        /// <summary>
+        /// Attaches a IAM policy to the specified resource. The only supported use for this action
+        /// is to share a RuleGroup across accounts.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+        /// Policies</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An example of a valid policy parameter is shown in the Examples section below.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidPermissionPolicyException">
+        /// The operation failed because the specified policy is not in the proper format. 
+        /// 
+        ///  
+        /// <para>
+        /// The policy is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request)
+        {
+            var marshaller = PutPermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPermissionPolicyRequest,PutPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutPermissionPolicy(PutPermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutPermissionPolicyRequestMarshaller.Instance;
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutPermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutPermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual PutPermissionPolicyResponse EndPutPermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutPermissionPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -7613,7 +7900,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         public virtual UpdateByteMatchSetResponse UpdateByteMatchSet(UpdateByteMatchSetRequest request)
         {
-            var marshaller = new UpdateByteMatchSetRequestMarshaller();
+            var marshaller = UpdateByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateByteMatchSetRequest,UpdateByteMatchSetResponse>(request, marshaller, unmarshaller);
@@ -7633,7 +7920,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateByteMatchSet(UpdateByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateByteMatchSetRequestMarshaller();
+            var marshaller = UpdateByteMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateByteMatchSetRequest>(request, marshaller, unmarshaller,
@@ -7857,7 +8144,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
         public virtual UpdateGeoMatchSetResponse UpdateGeoMatchSet(UpdateGeoMatchSetRequest request)
         {
-            var marshaller = new UpdateGeoMatchSetRequestMarshaller();
+            var marshaller = UpdateGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGeoMatchSetRequest,UpdateGeoMatchSetResponse>(request, marshaller, unmarshaller);
@@ -7877,7 +8164,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateGeoMatchSet(UpdateGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGeoMatchSetRequestMarshaller();
+            var marshaller = UpdateGeoMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGeoMatchSetRequest>(request, marshaller, unmarshaller,
@@ -8381,7 +8668,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
         {
-            var marshaller = new UpdateIPSetRequestMarshaller();
+            var marshaller = UpdateIPSetRequestMarshaller.Instance;
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIPSetRequest,UpdateIPSetResponse>(request, marshaller, unmarshaller);
@@ -8401,7 +8688,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateIPSet(UpdateIPSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateIPSetRequestMarshaller();
+            var marshaller = UpdateIPSetRequestMarshaller.Instance;
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateIPSetRequest>(request, marshaller, unmarshaller,
@@ -8641,7 +8928,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
         public virtual UpdateRateBasedRuleResponse UpdateRateBasedRule(UpdateRateBasedRuleRequest request)
         {
-            var marshaller = new UpdateRateBasedRuleRequestMarshaller();
+            var marshaller = UpdateRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRateBasedRuleRequest,UpdateRateBasedRuleResponse>(request, marshaller, unmarshaller);
@@ -8661,7 +8948,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRateBasedRule(UpdateRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRateBasedRuleRequestMarshaller();
+            var marshaller = UpdateRateBasedRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRateBasedRuleRequest>(request, marshaller, unmarshaller,
@@ -8833,7 +9120,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
         public virtual UpdateRegexMatchSetResponse UpdateRegexMatchSet(UpdateRegexMatchSetRequest request)
         {
-            var marshaller = new UpdateRegexMatchSetRequestMarshaller();
+            var marshaller = UpdateRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRegexMatchSetRequest,UpdateRegexMatchSetResponse>(request, marshaller, unmarshaller);
@@ -8853,7 +9140,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateRegexMatchSet(UpdateRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRegexMatchSetRequestMarshaller();
+            var marshaller = UpdateRegexMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRegexMatchSetRequest>(request, marshaller, unmarshaller,
@@ -9028,7 +9315,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
         public virtual UpdateRegexPatternSetResponse UpdateRegexPatternSet(UpdateRegexPatternSetRequest request)
         {
-            var marshaller = new UpdateRegexPatternSetRequestMarshaller();
+            var marshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRegexPatternSetRequest,UpdateRegexPatternSetResponse>(request, marshaller, unmarshaller);
@@ -9048,7 +9335,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateRegexPatternSet(UpdateRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRegexPatternSetRequestMarshaller();
+            var marshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             var unmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRegexPatternSetRequest>(request, marshaller, unmarshaller,
@@ -9504,7 +9791,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var marshaller = new UpdateRuleRequestMarshaller();
+            var marshaller = UpdateRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRuleRequest,UpdateRuleResponse>(request, marshaller, unmarshaller);
@@ -9524,7 +9811,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRuleRequestMarshaller();
+            var marshaller = UpdateRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRuleRequest>(request, marshaller, unmarshaller,
@@ -9726,7 +10013,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
         {
-            var marshaller = new UpdateRuleGroupRequestMarshaller();
+            var marshaller = UpdateRuleGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRuleGroupRequest,UpdateRuleGroupResponse>(request, marshaller, unmarshaller);
@@ -9746,7 +10033,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateRuleGroup(UpdateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRuleGroupRequestMarshaller();
+            var marshaller = UpdateRuleGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRuleGroupRequest>(request, marshaller, unmarshaller,
@@ -9984,7 +10271,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         public virtual UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request)
         {
-            var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
+            var marshaller = UpdateSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSizeConstraintSetRequest,UpdateSizeConstraintSetResponse>(request, marshaller, unmarshaller);
@@ -10004,7 +10291,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
+            var marshaller = UpdateSizeConstraintSetRequestMarshaller.Instance;
             var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateSizeConstraintSetRequest>(request, marshaller, unmarshaller,
@@ -10418,7 +10705,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         public virtual UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request)
         {
-            var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = UpdateSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSqlInjectionMatchSetRequest,UpdateSqlInjectionMatchSetResponse>(request, marshaller, unmarshaller);
@@ -10438,7 +10725,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
+            var marshaller = UpdateSqlInjectionMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateSqlInjectionMatchSetRequest>(request, marshaller, unmarshaller,
@@ -10692,7 +10979,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         public virtual UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request)
         {
-            var marshaller = new UpdateWebACLRequestMarshaller();
+            var marshaller = UpdateWebACLRequestMarshaller.Instance;
             var unmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
             return Invoke<UpdateWebACLRequest,UpdateWebACLResponse>(request, marshaller, unmarshaller);
@@ -10712,7 +10999,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         public virtual IAsyncResult BeginUpdateWebACL(UpdateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateWebACLRequestMarshaller();
+            var marshaller = UpdateWebACLRequestMarshaller.Instance;
             var unmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateWebACLRequest>(request, marshaller, unmarshaller,
@@ -10925,7 +11212,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         public virtual UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
         {
-            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var marshaller = UpdateXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateXssMatchSetRequest,UpdateXssMatchSetResponse>(request, marshaller, unmarshaller);
@@ -10945,7 +11232,7 @@ namespace Amazon.WAFRegional
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateXssMatchSet(UpdateXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var marshaller = UpdateXssMatchSetRequestMarshaller.Instance;
             var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateXssMatchSetRequest>(request, marshaller, unmarshaller,

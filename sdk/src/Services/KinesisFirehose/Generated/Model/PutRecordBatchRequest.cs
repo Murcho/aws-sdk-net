@@ -40,7 +40,7 @@ namespace Amazon.KinesisFirehose.Model
     /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
     /// the limits are an aggregate across these two operations for each delivery stream.
     /// For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-    /// Kinesis Firehose Limits</a>.
+    /// Kinesis Data Firehose Limits</a>.
     /// </para>
     ///  
     /// <para>
@@ -53,15 +53,15 @@ namespace Amazon.KinesisFirehose.Model
     /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
     /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
     /// kind of data. For example, it could be a segment from a log file, geographic location
-    /// data, web site clickstream data, and so on.
+    /// data, website clickstream data, and so on.
     /// </para>
     ///  
     /// <para>
-    /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
-    /// the data blobs at the destination, a common solution is to use delimiters in the data,
-    /// such as a newline (<code>\n</code>) or some other character unique within the data.
-    /// This allows the consumer application to parse individual data items when reading the
-    /// data from the destination.
+    /// Kinesis Data Firehose buffers records before delivering them to the destination. To
+    /// disambiguate the data blobs at the destination, a common solution is to use delimiters
+    /// in the data, such as a newline (<code>\n</code>) or some other character unique within
+    /// the data. This allows the consumer application to parse individual data items when
+    /// reading the data from the destination.
     /// </para>
     ///  
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.KinesisFirehose.Model
     /// with a record in the request array using the same ordering, from the top to the bottom.
     /// The response array always includes the same number of records as the request array.
     /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
-    /// Kinesis Firehose attempts to process all records in each <a>PutRecordBatch</a> request.
+    /// Kinesis Data Firehose tries to process all records in each <a>PutRecordBatch</a> request.
     /// A single record failure does not stop the processing of subsequent records.
     /// </para>
     ///  
@@ -98,8 +98,8 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
-    /// added to a delivery stream as it attempts to send the records to the destination.
+    /// Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they
+    /// are added to a delivery stream as it attempts to send the records to the destination.
     /// If the destination is unreachable for more than 24 hours, the data is no longer available.
     /// </para>
     /// </summary>

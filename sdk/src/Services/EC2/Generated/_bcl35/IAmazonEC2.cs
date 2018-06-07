@@ -32,7 +32,7 @@ namespace Amazon.EC2
     /// Amazon Elastic Compute Cloud 
     /// <para>
     /// Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in
-    /// the AWS Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front,
+    /// the AWS Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front,
     /// so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
@@ -1430,10 +1430,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
-        /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
-        /// Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Cancels one or more Spot Instance requests.
         /// 
         ///  <important> 
         /// <para>
@@ -1980,6 +1977,57 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateFleet
+
+
+        /// <summary>
+        /// Launches an EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a single EC2 Fleet that includes multiple launch specifications that
+        /// vary by instance type, AMI, Availability Zone, or subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
+        /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        CreateFleetResponse CreateFleet(CreateFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFleet.</param>
+        /// 
+        /// <returns>Returns a  CreateFleetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateFlowLogs
 
 
@@ -1995,6 +2043,11 @@ namespace Amazon.EC2
         /// <para>
         /// In your request, you must also specify an IAM role that has permission to publish
         /// logs to CloudWatch Logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+        /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs service method.</param>
@@ -2398,10 +2451,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a NAT gateway in the specified subnet. A NAT gateway can be used to enable
-        /// instances in a private subnet to connect to the Internet. This action creates a network
+        /// Creates a NAT gateway in the specified public subnet. This action creates a network
         /// interface in the specified subnet with a private IP address from the IP address range
-        /// of the subnet. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+        /// of the subnet. Internet-bound traffic from a private subnet can be routed to the NAT
+        /// gateway, therefore enabling instances in the private subnet to connect to the internet.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
         /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
@@ -2598,8 +2652,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Grants an AWS authorized partner account permission to attach the specified network
-        /// interface to an instance in their account.
+        /// Grants an AWS-authorized account permission to attach the specified network interface
+        /// to an instance in their account.
         /// 
         ///  
         /// <para>
@@ -2998,6 +3052,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// You can tag your snapshots during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// Your Amazon EC2 Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
         /// Elastic Block Store</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3043,7 +3102,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// 
@@ -3845,6 +3904,55 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteEgressOnlyInternetGatewayResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         DeleteEgressOnlyInternetGatewayResponse EndDeleteEgressOnlyInternetGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFleets
+
+
+        /// <summary>
+        /// Deletes the specified EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete an EC2 Fleet, the EC2 Fleet launches no new instances. You must specify
+        /// whether the EC2 Fleet should also terminate its instances. If you terminate the instances,
+        /// the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
+        /// Fleet enters the <code>deleted_running</code> state, and the instances continue to
+        /// run until they are interrupted or you terminate them manually. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        DeleteFleetsResponse DeleteFleets(DeleteFleetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        IAsyncResult BeginDeleteFleets(DeleteFleetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleets.</param>
+        /// 
+        /// <returns>Returns a  DeleteFleetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        DeleteFleetsResponse EndDeleteFleets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4890,6 +4998,7 @@ namespace Amazon.EC2
         /// Deletes a VPC peering connection. Either the owner of the requester VPC or the owner
         /// of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code>
         /// state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code>
+        /// state. You cannot delete a VPC peering connection that's in the <code>failed</code>
         /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
@@ -5131,7 +5240,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
@@ -5171,7 +5280,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
@@ -5284,6 +5393,67 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeAddressesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         DescribeAddressesResponse EndDescribeAddresses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAggregateIdFormat
+
+
+        /// <summary>
+        /// Describes the longer ID format settings for all resource types in a specific region.
+        /// This request is useful for performing a quick audit to determine whether a specific
+        /// region is fully opted in for longer IDs (17-character IDs).
+        /// 
+        ///  
+        /// <para>
+        /// This request only returns information about resource types that support longer IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
+        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
+        /// | <code>vpn-gateway</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregateIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        DescribeAggregateIdFormatResponse DescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregateIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAggregateIdFormat
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        IAsyncResult BeginDescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAggregateIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAggregateIdFormat.</param>
+        /// 
+        /// <returns>Returns a  DescribeAggregateIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        DescribeAggregateIdFormatResponse EndDescribeAggregateIdFormat(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5773,6 +5943,126 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeFleetHistory
+
+
+        /// <summary>
+        /// Describes the events for the specified EC2 Fleet during the specified time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        IAsyncResult BeginDescribeFleetHistory(DescribeFleetHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetHistory.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetHistoryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        DescribeFleetHistoryResponse EndDescribeFleetHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFleetInstances
+
+
+        /// <summary>
+        /// Describes the running instances for the specified EC2 Fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        DescribeFleetInstancesResponse DescribeFleetInstances(DescribeFleetInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        IAsyncResult BeginDescribeFleetInstances(DescribeFleetInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        DescribeFleetInstancesResponse EndDescribeFleetInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFleets
+
+
+        /// <summary>
+        /// Describes the specified EC2 Fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleets.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        DescribeFleetsResponse EndDescribeFleets(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFlowLogs
 
 
@@ -6088,8 +6378,17 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. 
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
+        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
+        /// | <code>vpn-gateway</code>. 
         /// </para>
         ///  
         /// <para>
@@ -6142,8 +6441,17 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. 
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
+        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
+        /// | <code>vpn-gateway</code>. 
         /// </para>
         ///  
         /// <para>
@@ -7234,6 +7542,68 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribePrincipalIdFormat
+
+
+        /// <summary>
+        /// Describes the ID format settings for the root user and all IAM roles and IAM users
+        /// that have explicitly specified a longer ID (17-character ID) preference. 
+        /// 
+        ///  
+        /// <para>
+        /// By default, all IAM roles and IAM users default to the same ID settings as the root
+        /// user, unless they explicitly override the settings. This request is useful for identifying
+        /// those IAM users and IAM roles that have overridden the default ID settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
+        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
+        /// | <code>vpn-gateway</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrincipalIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        DescribePrincipalIdFormatResponse DescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrincipalIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePrincipalIdFormat
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        IAsyncResult BeginDescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePrincipalIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePrincipalIdFormat.</param>
+        /// 
+        /// <returns>Returns a  DescribePrincipalIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        DescribePrincipalIdFormatResponse EndDescribePrincipalIdFormat(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeRegions
 
 
@@ -8102,7 +8472,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -8111,7 +8481,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// 
@@ -8283,10 +8653,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -8298,7 +8665,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -8308,10 +8675,7 @@ namespace Amazon.EC2
         DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests();
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -8323,7 +8687,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -8366,7 +8730,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -8383,7 +8747,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -10263,32 +10627,27 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Gets the console output for the specified instance.
+        /// Gets the console output for the specified instance. For Linux instances, the instance
+        /// console output displays the exact console output that would normally be displayed
+        /// on a physical monitor attached to a computer. For Windows instances, the instance
+        /// console output includes output from the EC2Config service.
         /// 
         ///  
         /// <para>
-        /// Instances do not have a physical monitor through which you can view their console
-        /// output. They also lack physical controls that allow you to power up, reboot, or shut
-        /// them down. To allow these actions, we provide them through the Amazon EC2 API and
-        /// command line interface.
+        ///  <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly after it's
+        /// generated by the instance.
         /// </para>
         ///  
         /// <para>
-        /// Instance console output is buffered and posted shortly after instance boot, reboot,
-        /// and termination. Amazon EC2 preserves the most recent 64 KB output, which is available
-        /// for at least one hour after the most recent post.
+        /// By default, the console output returns buffered information that was posted shortly
+        /// after an instance transition state (start, stop, reboot, or terminate). This information
+        /// is available for at least one hour after the most recent post.
         /// </para>
         ///  
         /// <para>
-        /// For Linux instances, the instance console output displays the exact console output
-        /// that would normally be displayed on a physical monitor attached to a computer. This
-        /// output is buffered because the instance produces it and then posts it to a store where
-        /// the instance's owner can retrieve it.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Windows instances, the instance console output includes output from the EC2Config
-        /// service.
+        /// You can optionally retrieve the latest serial console output at any time during the
+        /// instance lifecycle. This option is only supported on C5, M5, and <code>i3.metal</code>
+        /// instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
@@ -10796,6 +11155,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyFleet
+
+
+        /// <summary>
+        /// Modifies the specified EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet service method.</param>
+        /// 
+        /// <returns>The response from the ModifyFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        ModifyFleetResponse ModifyFleet(ModifyFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        IAsyncResult BeginModifyFleet(ModifyFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyFleet.</param>
+        /// 
+        /// <returns>Returns a  ModifyFleetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        ModifyFleetResponse EndModifyFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyFpgaImageAttribute
 
 
@@ -10893,8 +11297,21 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// This request can only be used to modify longer ID settings for resource types that
+        /// are within the opt-in period. Resources currently in their opt-in period include:
+        /// <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code>
+        /// | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+        /// | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code>
+        /// | <code>vpn-connection</code> | <code>vpn-gateway</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
         /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         ///  
@@ -10949,9 +11366,21 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>.
         /// 
+        ///  
+        /// <para>
+        /// This request can only be used to modify longer ID settings for resource types that
+        /// are within the opt-in period. Resources currently in their opt-in period include:
+        /// <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code>
+        /// | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code>
+        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+        /// | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code>
+        /// | <code>vpn-connection</code> | <code>vpn-gateway</code>.
+        /// </para>
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
@@ -11065,6 +11494,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
+        /// network interface (ENI) attached to an instance in a VPC can result in an error if
+        /// the instance has more than one ENI. To change the security groups associated with
+        /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
+        /// <a>ModifyNetworkInterfaceAttribute</a> action.
+        /// </para>
+        ///  
+        /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
         /// Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -11155,31 +11592,39 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Set the instance affinity value for a specific stopped instance and modify the instance
-        /// tenancy setting.
+        /// Modifies the placement attributes for a specified instance. You can do the following:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Instance affinity is disabled by default. When instance affinity is <code>host</code>
-        /// and it is not associated with a specific Dedicated Host, the next time it is launched
-        /// it will automatically be associated with the host it lands on. This relationship will
-        /// persist if the instance is stopped/started, or rebooted.
+        /// Modify the affinity between an instance and a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// Host</a>. When affinity is set to <code>host</code> and the instance is not associated
+        /// with a specific Dedicated Host, the next time the instance is launched, it is automatically
+        /// associated with the host on which it lands. If the instance is restarted or rebooted,
+        /// this relationship persists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change the Dedicated Host with which an instance is associated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>,
+        /// or from <code>dedicated</code> to <code>host</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Move an instance to or from a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
+        /// group</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// At least one attribute for affinity, host ID, tenancy, or placement group name must
+        /// be specified in the request. Affinity and tenancy can be modified in the same request.
         /// </para>
         ///  
         /// <para>
-        /// You can modify the host ID associated with a stopped instance. If a stopped instance
-        /// has a new host ID association, the instance will target that host when restarted.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can modify the tenancy of a stopped instance with a tenancy of <code>host</code>
-        /// or <code>dedicated</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Affinity, hostID, and tenancy are not required parameters, but at least one of them
-        /// must be specified in the request. Affinity and tenancy can be modified in the same
-        /// request, but tenancy can only be modified on instances that are stopped.
+        /// To modify the host ID, tenancy, or placement group for an instance, the instance must
+        /// be in the <code>stopped</code> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement service method.</param>
@@ -11877,7 +12322,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses
+        /// Enable/disable the ability to resolve public DNS hostnames to private IP addresses
         /// when queried from instances in the peer VPC.
         /// </para>
         ///  </li> </ul> 
@@ -12849,6 +13294,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// The Spot Fleet request specifies the total target capacity and the On-Demand target
+        /// capacity. Amazon EC2 calculates the difference between the total capacity and On-Demand
+        /// capacity, and launches the difference as Spot capacity.
+        /// </para>
+        ///  
+        /// <para>
         /// You can submit a single request that includes multiple launch specifications that
         /// vary by instance type, AMI, Availability Zone, or subnet.
         /// </para>
@@ -12868,12 +13319,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can specify tags for the Spot Instances. You cannot tag other resource types in
-        /// a Spot Fleet request; only the <code>instance</code> resource type is supported.
+        /// a Spot Fleet request because only the <code>instance</code> resource type is supported.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-        /// Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
@@ -12914,10 +13365,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
-        /// when the maximum price that you specify exceeds the current Spot price. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Creates a Spot Instance request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 

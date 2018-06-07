@@ -50,6 +50,7 @@ namespace Amazon.Lambda.Model
         private bool? _dryRun;
         private string _functionName;
         private bool? _publish;
+        private string _revisionId;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3ObjectVersion;
@@ -123,6 +124,28 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// An optional value you can use to ensure you are updating the latest update of the
+        /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
+        /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
+        /// message, advising you to retrieve the latest function version or alias <code>RevisionID</code>
+        /// using either or .
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// Amazon S3 bucket name where the .zip file containing your deployment package is stored.
@@ -184,7 +207,7 @@ namespace Amazon.Lambda.Model
         /// the web API directly, the contents of the zip file must be base64-encoded. If you
         /// are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for you.
         /// For more information about creating a .zip file, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
-        /// Permissions</a> in the <i>AWS Lambda Developer Guide</i>. 
+        /// Permissions</a>. 
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

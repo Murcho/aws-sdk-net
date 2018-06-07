@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2017-03-25/streaming-distribution";
+            string uriResourcePath = "/2017-10-30/streaming-distribution";
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
@@ -69,7 +69,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListStreamingDistributionsRequestMarshaller _instance = new ListStreamingDistributionsRequestMarshaller();        
 
-        
+        internal static ListStreamingDistributionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListStreamingDistributionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

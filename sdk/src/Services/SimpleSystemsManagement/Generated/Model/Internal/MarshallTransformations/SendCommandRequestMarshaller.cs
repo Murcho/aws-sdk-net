@@ -91,6 +91,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentName);
                 }
 
+                if(publicRequest.IsSetDocumentVersion())
+                {
+                    context.Writer.WritePropertyName("DocumentVersion");
+                    context.Writer.Write(publicRequest.DocumentVersion);
+                }
+
                 if(publicRequest.IsSetInstanceIds())
                 {
                     context.Writer.WritePropertyName("InstanceIds");
@@ -199,7 +205,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendCommandRequestMarshaller _instance = new SendCommandRequestMarshaller();        
 
+        internal static SendCommandRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendCommandRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -43,12 +43,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private PatchRuleGroup _approvalRules;
         private List<string> _approvedPatches = new List<string>();
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
+        private bool? _approvedPatchesEnableNonSecurity;
         private string _clientToken;
         private string _description;
         private PatchFilterGroup _globalFilters;
         private string _name;
         private OperatingSystem _operatingSystem;
         private List<string> _rejectedPatches = new List<string>();
+        private List<PatchSource> _sources = new List<PatchSource>();
 
         /// <summary>
         /// Gets and sets the property ApprovalRules. 
@@ -73,6 +75,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A list of explicitly approved patches for the baseline.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about accepted formats for lists of approved patches and rejected
+        /// patches, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         public List<string> ApprovedPatches
         {
@@ -90,9 +99,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApprovedPatchesComplianceLevel. 
         /// <para>
         /// Defines the compliance level for approved patches. This means that if an approved
-        /// patch is reported as missing, this is the severity of the compliance violation. Valid
-        /// compliance severity levels include the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL,
-        /// UNSPECIFIED. The default value is UNSPECIFIED.
+        /// patch is reported as missing, this is the severity of the compliance violation. The
+        /// default value is UNSPECIFIED.
         /// </para>
         /// </summary>
         public PatchComplianceLevel ApprovedPatchesComplianceLevel
@@ -105,6 +113,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatchesComplianceLevel()
         {
             return this._approvedPatchesComplianceLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovedPatchesEnableNonSecurity. 
+        /// <para>
+        /// Indicates whether the list of approved patches includes non-security updates that
+        /// should be applied to the instances. The default value is 'false'. Applies to Linux
+        /// instances only.
+        /// </para>
+        /// </summary>
+        public bool ApprovedPatchesEnableNonSecurity
+        {
+            get { return this._approvedPatchesEnableNonSecurity.GetValueOrDefault(); }
+            set { this._approvedPatchesEnableNonSecurity = value; }
+        }
+
+        // Check to see if ApprovedPatchesEnableNonSecurity property is set
+        internal bool IsSetApprovedPatchesEnableNonSecurity()
+        {
+            return this._approvedPatchesEnableNonSecurity.HasValue; 
         }
 
         /// <summary>
@@ -202,6 +230,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A list of explicitly rejected patches for the baseline.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about accepted formats for lists of approved patches and rejected
+        /// patches, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         public List<string> RejectedPatches
         {
@@ -213,6 +248,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRejectedPatches()
         {
             return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// Information about the patches to use to update the instances, including target operating
+        /// systems and source repositories. Applies to Linux instances only.
+        /// </para>
+        /// </summary>
+        public List<PatchSource> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

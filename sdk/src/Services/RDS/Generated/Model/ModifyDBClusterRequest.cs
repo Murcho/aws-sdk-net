@@ -37,10 +37,13 @@ namespace Amazon.RDS.Model
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
         private bool? _applyImmediately;
+        private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
+        private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _enableIAMDatabaseAuthentication;
+        private string _engineVersion;
         private string _masterUserPassword;
         private string _newDBClusterIdentifier;
         private string _optionGroupName;
@@ -84,6 +87,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BacktrackWindow. 
+        /// <para>
+        /// The target backtrack window, in seconds. To disable backtracking, set this value to
+        /// 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long BacktrackWindow
+        {
+            get { return this._backtrackWindow.GetValueOrDefault(); }
+            set { this._backtrackWindow = value; }
+        }
+
+        // Check to see if BacktrackWindow property is set
+        internal bool IsSetBacktrackWindow()
+        {
+            return this._backtrackWindow.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
         /// The number of days for which automated backups are retained. You must specify a minimum
@@ -113,6 +148,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchLogsExportConfiguration. 
+        /// <para>
+        /// The configuration setting for the log types to be enabled for export to CloudWatch
+        /// Logs for a specific DB cluster.
+        /// </para>
+        /// </summary>
+        public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
+        {
+            get { return this._cloudwatchLogsExportConfiguration; }
+            set { this._cloudwatchLogsExportConfiguration = value; }
+        }
+
+        // Check to see if CloudwatchLogsExportConfiguration property is set
+        internal bool IsSetCloudwatchLogsExportConfiguration()
+        {
+            return this._cloudwatchLogsExportConfiguration != null;
         }
 
         /// <summary>
@@ -184,6 +238,30 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless the ApplyImmediately parameter is set to true.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The new password for the master database user. This password can contain any printable
@@ -249,7 +327,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// A value that indicates that the DB cluster should be associated with the specified
-        /// option group. Changing this parameter does not result in an outage except in the following
+        /// option group. Changing this parameter doesn't result in an outage except in the following
         /// case, and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
         /// parameter is set to <code>true</code> for this request. If the parameter change results
         /// in an option group that enables OEM, this change can cause a brief (sub-second) period

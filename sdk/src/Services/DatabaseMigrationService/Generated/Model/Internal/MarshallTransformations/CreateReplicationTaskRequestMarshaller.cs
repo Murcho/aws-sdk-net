@@ -67,10 +67,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCdcStartPosition())
+                {
+                    context.Writer.WritePropertyName("CdcStartPosition");
+                    context.Writer.Write(publicRequest.CdcStartPosition);
+                }
+
                 if(publicRequest.IsSetCdcStartTime())
                 {
                     context.Writer.WritePropertyName("CdcStartTime");
                     context.Writer.Write(publicRequest.CdcStartTime);
+                }
+
+                if(publicRequest.IsSetCdcStopPosition())
+                {
+                    context.Writer.WritePropertyName("CdcStopPosition");
+                    context.Writer.Write(publicRequest.CdcStopPosition);
                 }
 
                 if(publicRequest.IsSetMigrationType())
@@ -140,7 +152,23 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateReplicationTaskRequestMarshaller _instance = new CreateReplicationTaskRequestMarshaller();        
 
+        internal static CreateReplicationTaskRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateReplicationTaskRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

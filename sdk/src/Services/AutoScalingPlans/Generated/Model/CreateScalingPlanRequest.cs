@@ -47,7 +47,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ApplicationSource. 
         /// <para>
-        /// The source for the application.
+        /// A CloudFormation stack or set of tags. You can create one scaling plan per application
+        /// source.
         /// </para>
         /// </summary>
         public ApplicationSource ApplicationSource
@@ -83,7 +84,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanName. 
         /// <para>
-        /// The name of the scaling plan.
+        /// The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
+        /// slashes.
         /// </para>
         /// </summary>
         public string ScalingPlanName

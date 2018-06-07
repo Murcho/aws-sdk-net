@@ -230,11 +230,75 @@ namespace Amazon.TranscribeService
         #endregion
 
         
+        #region  CreateVocabulary
+
+        internal virtual CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest request)
+        {
+            var marshaller = CreateVocabularyRequestMarshaller.Instance;
+            var unmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVocabularyRequest,CreateVocabularyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual Task<CreateVocabularyResponse> CreateVocabularyAsync(CreateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateVocabularyRequestMarshaller.Instance;
+            var unmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVocabularyRequest,CreateVocabularyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVocabulary
+
+        internal virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
+        {
+            var marshaller = DeleteVocabularyRequestMarshaller.Instance;
+            var unmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVocabularyRequest,DeleteVocabularyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteVocabularyRequestMarshaller.Instance;
+            var unmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVocabularyRequest,DeleteVocabularyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTranscriptionJob
 
         internal virtual GetTranscriptionJobResponse GetTranscriptionJob(GetTranscriptionJobRequest request)
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<GetTranscriptionJobRequest,GetTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -253,10 +317,42 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual Task<GetTranscriptionJobResponse> GetTranscriptionJobAsync(GetTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTranscriptionJobRequest,GetTranscriptionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVocabulary
+
+        internal virtual GetVocabularyResponse GetVocabulary(GetVocabularyRequest request)
+        {
+            var marshaller = GetVocabularyRequestMarshaller.Instance;
+            var unmarshaller = GetVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<GetVocabularyRequest,GetVocabularyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVocabulary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
+        public virtual Task<GetVocabularyResponse> GetVocabularyAsync(GetVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetVocabularyRequestMarshaller.Instance;
+            var unmarshaller = GetVocabularyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVocabularyRequest,GetVocabularyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -266,7 +362,7 @@ namespace Amazon.TranscribeService
 
         internal virtual ListTranscriptionJobsResponse ListTranscriptionJobs(ListTranscriptionJobsRequest request)
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListTranscriptionJobsRequest,ListTranscriptionJobsResponse>(request, marshaller, unmarshaller);
@@ -285,10 +381,42 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual Task<ListTranscriptionJobsResponse> ListTranscriptionJobsAsync(ListTranscriptionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTranscriptionJobsRequest,ListTranscriptionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVocabularies
+
+        internal virtual ListVocabulariesResponse ListVocabularies(ListVocabulariesRequest request)
+        {
+            var marshaller = ListVocabulariesRequestMarshaller.Instance;
+            var unmarshaller = ListVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVocabulariesRequest,ListVocabulariesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVocabularies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
+        public virtual Task<ListVocabulariesResponse> ListVocabulariesAsync(ListVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListVocabulariesRequestMarshaller.Instance;
+            var unmarshaller = ListVocabulariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVocabulariesRequest,ListVocabulariesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -298,7 +426,7 @@ namespace Amazon.TranscribeService
 
         internal virtual StartTranscriptionJobResponse StartTranscriptionJob(StartTranscriptionJobRequest request)
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<StartTranscriptionJobRequest,StartTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -317,10 +445,42 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual Task<StartTranscriptionJobResponse> StartTranscriptionJobAsync(StartTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTranscriptionJobRequest,StartTranscriptionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVocabulary
+
+        internal virtual UpdateVocabularyResponse UpdateVocabulary(UpdateVocabularyRequest request)
+        {
+            var marshaller = UpdateVocabularyRequestMarshaller.Instance;
+            var unmarshaller = UpdateVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVocabularyRequest,UpdateVocabularyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
+        public virtual Task<UpdateVocabularyResponse> UpdateVocabularyAsync(UpdateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateVocabularyRequestMarshaller.Instance;
+            var unmarshaller = UpdateVocabularyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVocabularyRequest,UpdateVocabularyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

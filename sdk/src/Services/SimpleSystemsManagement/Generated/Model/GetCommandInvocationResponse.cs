@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _commandId;
         private string _comment;
         private string _documentName;
+        private string _documentVersion;
         private string _executionElapsedTime;
         private string _executionEndDateTime;
         private string _executionStartDateTime;
@@ -100,6 +101,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentName()
         {
             return this._documentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The SSM document version used in the request.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>
@@ -317,8 +336,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the parent command for this invocation. This status can be different
-        /// than StatusDetails.
+        /// The status of this invocation plugin. This status can be different than StatusDetails.
         /// </para>
         /// </summary>
         public CommandInvocationStatus Status

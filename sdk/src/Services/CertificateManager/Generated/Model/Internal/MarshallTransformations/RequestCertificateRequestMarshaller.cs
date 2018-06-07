@@ -67,6 +67,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateAuthorityArn())
+                {
+                    context.Writer.WritePropertyName("CertificateAuthorityArn");
+                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");
@@ -95,6 +101,17 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                if(publicRequest.IsSetOptions())
+                {
+                    context.Writer.WritePropertyName("Options");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Options, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSubjectAlternativeNames())
                 {
                     context.Writer.WritePropertyName("SubjectAlternativeNames");
@@ -121,7 +138,23 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RequestCertificateRequestMarshaller _instance = new RequestCertificateRequestMarshaller();        
 
+        internal static RequestCertificateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RequestCertificateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

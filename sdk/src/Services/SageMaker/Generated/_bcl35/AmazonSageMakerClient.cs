@@ -244,7 +244,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
@@ -264,7 +264,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
@@ -331,7 +331,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var marshaller = new CreateEndpointRequestMarshaller();
+            var marshaller = CreateEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
             return Invoke<CreateEndpointRequest,CreateEndpointResponse>(request, marshaller, unmarshaller);
@@ -351,7 +351,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateEndpointRequestMarshaller();
+            var marshaller = CreateEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateEndpointRequest>(request, marshaller, unmarshaller,
@@ -380,7 +380,7 @@ namespace Amazon.SageMaker
         /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
         /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
         /// you call the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-        /// API. 
+        /// API.
         /// 
         ///  <note> 
         /// <para>
@@ -413,7 +413,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">REST API Reference for CreateEndpointConfig Operation</seealso>
         public virtual CreateEndpointConfigResponse CreateEndpointConfig(CreateEndpointConfigRequest request)
         {
-            var marshaller = new CreateEndpointConfigRequestMarshaller();
+            var marshaller = CreateEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
 
             return Invoke<CreateEndpointConfigRequest,CreateEndpointConfigResponse>(request, marshaller, unmarshaller);
@@ -433,7 +433,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">REST API Reference for CreateEndpointConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateEndpointConfig(CreateEndpointConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateEndpointConfigRequestMarshaller();
+            var marshaller = CreateEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = CreateEndpointConfigResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateEndpointConfigRequest>(request, marshaller, unmarshaller,
@@ -451,6 +451,66 @@ namespace Amazon.SageMaker
         public virtual CreateEndpointConfigResponse EndCreateEndpointConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEndpointConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateHyperParameterTuningJob
+
+        /// <summary>
+        /// Starts a hyperparameter tuning job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        public virtual CreateHyperParameterTuningJobResponse CreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request)
+        {
+            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHyperParameterTuningJobRequest,CreateHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateHyperParameterTuningJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  CreateHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        public virtual CreateHyperParameterTuningJobResponse EndCreateHyperParameterTuningJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHyperParameterTuningJobResponse>(asyncResult);
         }
 
         #endregion
@@ -498,7 +558,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var marshaller = new CreateModelRequestMarshaller();
+            var marshaller = CreateModelRequestMarshaller.Instance;
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
 
             return Invoke<CreateModelRequest,CreateModelResponse>(request, marshaller, unmarshaller);
@@ -518,7 +578,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateModelRequestMarshaller();
+            var marshaller = CreateModelRequestMarshaller.Instance;
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateModelRequest>(request, marshaller, unmarshaller,
@@ -543,21 +603,21 @@ namespace Amazon.SageMaker
         #region  CreateNotebookInstance
 
         /// <summary>
-        /// Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute
-        /// instance running on a Jupyter notebook. 
+        /// Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning
+        /// (ML) compute instance running on a Jupyter notebook. 
         /// 
         ///  
         /// <para>
-        /// In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute
-        /// instance that you want to run. Amazon SageMaker launches the instance, installs common
-        /// libraries that you can use to explore datasets for model training, and attaches an
-        /// ML storage volume to the notebook instance. 
+        /// In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance
+        /// that you want to run. Amazon SageMaker launches the instance, installs common libraries
+        /// that you can use to explore datasets for model training, and attaches an ML storage
+        /// volume to the notebook instance. 
         /// </para>
         ///  
         /// <para>
         /// Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates
-        /// how to use Amazon SageMaker with a specific an algorithm or with a machine learning
-        /// framework. 
+        /// how to use Amazon SageMaker with a specific algorithm or with a machine learning framework.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -569,10 +629,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Option) If you specified <code>SubnetId</code>, creates a network interface in your
-        /// own VPC, which is inferred from the subnet ID that you provide in the input. When
-        /// creating this network interface, Amazon SageMaker attaches the security group that
-        /// you specified in the request to the network interface that it creates in your VPC.
+        /// (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network
+        /// interface in your own VPC, which is inferred from the subnet ID that you provide in
+        /// the input. When creating this network interface, Amazon SageMaker attaches the security
+        /// group that you specified in the request to the network interface that it creates in
+        /// your VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -610,7 +671,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">REST API Reference for CreateNotebookInstance Operation</seealso>
         public virtual CreateNotebookInstanceResponse CreateNotebookInstance(CreateNotebookInstanceRequest request)
         {
-            var marshaller = new CreateNotebookInstanceRequestMarshaller();
+            var marshaller = CreateNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<CreateNotebookInstanceRequest,CreateNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -630,7 +691,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">REST API Reference for CreateNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateNotebookInstance(CreateNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateNotebookInstanceRequestMarshaller();
+            var marshaller = CreateNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -652,10 +713,94 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Creates a lifecycle configuration that you can associate with a notebook instance.
+        /// A <i>lifecycle configuration</i> is a collection of shell scripts that run when you
+        /// create or start a notebook instance.
+        /// 
+        ///  
+        /// <para>
+        /// Each lifecycle configuration script has a limit of 16384 characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of the <code>$PATH</code> environment variable that is available to both
+        /// scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code>
+        /// in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script
+        /// runs for longer than 5 minutes, it fails and the notebook instance is not created
+        /// or started.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual CreateNotebookInstanceLifecycleConfigResponse CreateNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotebookInstanceLifecycleConfigRequest,CreateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual CreateNotebookInstanceLifecycleConfigResponse EndCreateNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePresignedNotebookInstanceUrl
 
         /// <summary>
-        /// Returns a URL that you can use to connect to the Juypter server from a notebook instance.
+        /// Returns a URL that you can use to connect to the Jupyter server from a notebook instance.
         /// In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook
         /// instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from
         /// the notebook instance. The console uses this API to get the URL and show the page.
@@ -666,7 +811,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">REST API Reference for CreatePresignedNotebookInstanceUrl Operation</seealso>
         public virtual CreatePresignedNotebookInstanceUrlResponse CreatePresignedNotebookInstanceUrl(CreatePresignedNotebookInstanceUrlRequest request)
         {
-            var marshaller = new CreatePresignedNotebookInstanceUrlRequestMarshaller();
+            var marshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
             var unmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
 
             return Invoke<CreatePresignedNotebookInstanceUrlRequest,CreatePresignedNotebookInstanceUrlResponse>(request, marshaller, unmarshaller);
@@ -686,7 +831,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">REST API Reference for CreatePresignedNotebookInstanceUrl Operation</seealso>
         public virtual IAsyncResult BeginCreatePresignedNotebookInstanceUrl(CreatePresignedNotebookInstanceUrlRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePresignedNotebookInstanceUrlRequestMarshaller();
+            var marshaller = CreatePresignedNotebookInstanceUrlRequestMarshaller.Instance;
             var unmarshaller = CreatePresignedNotebookInstanceUrlResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePresignedNotebookInstanceUrlRequest>(request, marshaller, unmarshaller,
@@ -783,7 +928,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         public virtual CreateTrainingJobResponse CreateTrainingJob(CreateTrainingJobRequest request)
         {
-            var marshaller = new CreateTrainingJobRequestMarshaller();
+            var marshaller = CreateTrainingJobRequestMarshaller.Instance;
             var unmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
 
             return Invoke<CreateTrainingJobRequest,CreateTrainingJobResponse>(request, marshaller, unmarshaller);
@@ -803,7 +948,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         public virtual IAsyncResult BeginCreateTrainingJob(CreateTrainingJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTrainingJobRequestMarshaller();
+            var marshaller = CreateTrainingJobRequestMarshaller.Instance;
             var unmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTrainingJobRequest>(request, marshaller, unmarshaller,
@@ -837,7 +982,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = new DeleteEndpointRequestMarshaller();
+            var marshaller = DeleteEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
@@ -857,7 +1002,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteEndpointRequestMarshaller();
+            var marshaller = DeleteEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteEndpointRequest>(request, marshaller, unmarshaller,
@@ -882,7 +1027,7 @@ namespace Amazon.SageMaker
         #region  DeleteEndpointConfig
 
         /// <summary>
-        /// Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes
+        /// Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes
         /// only the specified configuration. It does not delete endpoints created using the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointConfig service method.</param>
@@ -891,7 +1036,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">REST API Reference for DeleteEndpointConfig Operation</seealso>
         public virtual DeleteEndpointConfigResponse DeleteEndpointConfig(DeleteEndpointConfigRequest request)
         {
-            var marshaller = new DeleteEndpointConfigRequestMarshaller();
+            var marshaller = DeleteEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEndpointConfigRequest,DeleteEndpointConfigResponse>(request, marshaller, unmarshaller);
@@ -911,7 +1056,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">REST API Reference for DeleteEndpointConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpointConfig(DeleteEndpointConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteEndpointConfigRequestMarshaller();
+            var marshaller = DeleteEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointConfigResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteEndpointConfigRequest>(request, marshaller, unmarshaller,
@@ -947,7 +1092,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var marshaller = new DeleteModelRequestMarshaller();
+            var marshaller = DeleteModelRequestMarshaller.Instance;
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteModelRequest,DeleteModelResponse>(request, marshaller, unmarshaller);
@@ -967,7 +1112,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteModelRequestMarshaller();
+            var marshaller = DeleteModelRequestMarshaller.Instance;
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteModelRequest>(request, marshaller, unmarshaller,
@@ -1009,7 +1154,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">REST API Reference for DeleteNotebookInstance Operation</seealso>
         public virtual DeleteNotebookInstanceResponse DeleteNotebookInstance(DeleteNotebookInstanceRequest request)
         {
-            var marshaller = new DeleteNotebookInstanceRequestMarshaller();
+            var marshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNotebookInstanceRequest,DeleteNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -1029,7 +1174,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">REST API Reference for DeleteNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotebookInstance(DeleteNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteNotebookInstanceRequestMarshaller();
+            var marshaller = DeleteNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -1051,6 +1196,59 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Deletes a notebook instance lifecycle configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DeleteNotebookInstanceLifecycleConfigResponse DeleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotebookInstanceLifecycleConfigRequest,DeleteNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DeleteNotebookInstanceLifecycleConfigResponse EndDeleteNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTags
 
         /// <summary>
@@ -1067,7 +1265,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
@@ -1087,7 +1285,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteTagsRequest>(request, marshaller, unmarshaller,
@@ -1120,7 +1318,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
-            var marshaller = new DescribeEndpointRequestMarshaller();
+            var marshaller = DescribeEndpointRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEndpointRequest,DescribeEndpointResponse>(request, marshaller, unmarshaller);
@@ -1140,7 +1338,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEndpointRequestMarshaller();
+            var marshaller = DescribeEndpointRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEndpointRequest>(request, marshaller, unmarshaller,
@@ -1174,7 +1372,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpointConfig">REST API Reference for DescribeEndpointConfig Operation</seealso>
         public virtual DescribeEndpointConfigResponse DescribeEndpointConfig(DescribeEndpointConfigRequest request)
         {
-            var marshaller = new DescribeEndpointConfigRequestMarshaller();
+            var marshaller = DescribeEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEndpointConfigRequest,DescribeEndpointConfigResponse>(request, marshaller, unmarshaller);
@@ -1194,7 +1392,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpointConfig">REST API Reference for DescribeEndpointConfig Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpointConfig(DescribeEndpointConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEndpointConfigRequestMarshaller();
+            var marshaller = DescribeEndpointConfigRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointConfigResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEndpointConfigRequest>(request, marshaller, unmarshaller,
@@ -1216,6 +1414,62 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeHyperParameterTuningJob
+
+        /// <summary>
+        /// Gets a description of a hyperparameter tuning job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        public virtual DescribeHyperParameterTuningJobResponse DescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request)
+        {
+            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHyperParameterTuningJobRequest,DescribeHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeHyperParameterTuningJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        public virtual DescribeHyperParameterTuningJobResponse EndDescribeHyperParameterTuningJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHyperParameterTuningJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeModel
 
         /// <summary>
@@ -1227,7 +1481,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
         {
-            var marshaller = new DescribeModelRequestMarshaller();
+            var marshaller = DescribeModelRequestMarshaller.Instance;
             var unmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
             return Invoke<DescribeModelRequest,DescribeModelResponse>(request, marshaller, unmarshaller);
@@ -1247,7 +1501,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeModel(DescribeModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeModelRequestMarshaller();
+            var marshaller = DescribeModelRequestMarshaller.Instance;
             var unmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeModelRequest>(request, marshaller, unmarshaller,
@@ -1280,7 +1534,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstance">REST API Reference for DescribeNotebookInstance Operation</seealso>
         public virtual DescribeNotebookInstanceResponse DescribeNotebookInstance(DescribeNotebookInstanceRequest request)
         {
-            var marshaller = new DescribeNotebookInstanceRequestMarshaller();
+            var marshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DescribeNotebookInstanceRequest,DescribeNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -1300,7 +1554,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstance">REST API Reference for DescribeNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginDescribeNotebookInstance(DescribeNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeNotebookInstanceRequestMarshaller();
+            var marshaller = DescribeNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = DescribeNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -1322,6 +1576,64 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Returns a description of a notebook instance lifecycle configuration.
+        /// 
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DescribeNotebookInstanceLifecycleConfigResponse DescribeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotebookInstanceLifecycleConfigRequest,DescribeNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DescribeNotebookInstanceLifecycleConfigResponse EndDescribeNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTrainingJob
 
         /// <summary>
@@ -1336,7 +1648,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         public virtual DescribeTrainingJobResponse DescribeTrainingJob(DescribeTrainingJobRequest request)
         {
-            var marshaller = new DescribeTrainingJobRequestMarshaller();
+            var marshaller = DescribeTrainingJobRequestMarshaller.Instance;
             var unmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrainingJobRequest,DescribeTrainingJobResponse>(request, marshaller, unmarshaller);
@@ -1356,7 +1668,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrainingJob(DescribeTrainingJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTrainingJobRequestMarshaller();
+            var marshaller = DescribeTrainingJobRequestMarshaller.Instance;
             var unmarshaller = DescribeTrainingJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTrainingJobRequest>(request, marshaller, unmarshaller,
@@ -1389,7 +1701,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpointConfigs">REST API Reference for ListEndpointConfigs Operation</seealso>
         public virtual ListEndpointConfigsResponse ListEndpointConfigs(ListEndpointConfigsRequest request)
         {
-            var marshaller = new ListEndpointConfigsRequestMarshaller();
+            var marshaller = ListEndpointConfigsRequestMarshaller.Instance;
             var unmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
 
             return Invoke<ListEndpointConfigsRequest,ListEndpointConfigsResponse>(request, marshaller, unmarshaller);
@@ -1409,7 +1721,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpointConfigs">REST API Reference for ListEndpointConfigs Operation</seealso>
         public virtual IAsyncResult BeginListEndpointConfigs(ListEndpointConfigsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListEndpointConfigsRequestMarshaller();
+            var marshaller = ListEndpointConfigsRequestMarshaller.Instance;
             var unmarshaller = ListEndpointConfigsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListEndpointConfigsRequest>(request, marshaller, unmarshaller,
@@ -1442,7 +1754,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
         {
-            var marshaller = new ListEndpointsRequestMarshaller();
+            var marshaller = ListEndpointsRequestMarshaller.Instance;
             var unmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
             return Invoke<ListEndpointsRequest,ListEndpointsResponse>(request, marshaller, unmarshaller);
@@ -1462,7 +1774,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListEndpoints(ListEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListEndpointsRequestMarshaller();
+            var marshaller = ListEndpointsRequestMarshaller.Instance;
             var unmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListEndpointsRequest>(request, marshaller, unmarshaller,
@@ -1484,6 +1796,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListHyperParameterTuningJobs
+
+        /// <summary>
+        /// Gets a list of objects that describe the hyperparameter tuning jobs launched in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListHyperParameterTuningJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        public virtual ListHyperParameterTuningJobsResponse ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request)
+        {
+            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHyperParameterTuningJobsRequest,ListHyperParameterTuningJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHyperParameterTuningJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHyperParameterTuningJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        public virtual IAsyncResult BeginListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListHyperParameterTuningJobsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHyperParameterTuningJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHyperParameterTuningJobs.</param>
+        /// 
+        /// <returns>Returns a  ListHyperParameterTuningJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        public virtual ListHyperParameterTuningJobsResponse EndListHyperParameterTuningJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHyperParameterTuningJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListModels
 
         /// <summary>
@@ -1496,7 +1862,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual ListModelsResponse ListModels(ListModelsRequest request)
         {
-            var marshaller = new ListModelsRequestMarshaller();
+            var marshaller = ListModelsRequestMarshaller.Instance;
             var unmarshaller = ListModelsResponseUnmarshaller.Instance;
 
             return Invoke<ListModelsRequest,ListModelsResponse>(request, marshaller, unmarshaller);
@@ -1516,7 +1882,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual IAsyncResult BeginListModels(ListModelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListModelsRequestMarshaller();
+            var marshaller = ListModelsRequestMarshaller.Instance;
             var unmarshaller = ListModelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListModelsRequest>(request, marshaller, unmarshaller,
@@ -1538,6 +1904,59 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListNotebookInstanceLifecycleConfigs
+
+        /// <summary>
+        /// Lists notebook instance lifestyle configurations created with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookInstanceLifecycleConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual ListNotebookInstanceLifecycleConfigsResponse ListNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request)
+        {
+            var marshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebookInstanceLifecycleConfigsRequest,ListNotebookInstanceLifecycleConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotebookInstanceLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotebookInstanceLifecycleConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListNotebookInstanceLifecycleConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListNotebookInstanceLifecycleConfigsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotebookInstanceLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotebookInstanceLifecycleConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListNotebookInstanceLifecycleConfigsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual ListNotebookInstanceLifecycleConfigsResponse EndListNotebookInstanceLifecycleConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNotebookInstanceLifecycleConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListNotebookInstances
 
         /// <summary>
@@ -1550,7 +1969,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">REST API Reference for ListNotebookInstances Operation</seealso>
         public virtual ListNotebookInstancesResponse ListNotebookInstances(ListNotebookInstancesRequest request)
         {
-            var marshaller = new ListNotebookInstancesRequestMarshaller();
+            var marshaller = ListNotebookInstancesRequestMarshaller.Instance;
             var unmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
             return Invoke<ListNotebookInstancesRequest,ListNotebookInstancesResponse>(request, marshaller, unmarshaller);
@@ -1570,7 +1989,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">REST API Reference for ListNotebookInstances Operation</seealso>
         public virtual IAsyncResult BeginListNotebookInstances(ListNotebookInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListNotebookInstancesRequestMarshaller();
+            var marshaller = ListNotebookInstancesRequestMarshaller.Instance;
             var unmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListNotebookInstancesRequest>(request, marshaller, unmarshaller,
@@ -1603,7 +2022,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
@@ -1623,7 +2042,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
@@ -1656,7 +2075,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">REST API Reference for ListTrainingJobs Operation</seealso>
         public virtual ListTrainingJobsResponse ListTrainingJobs(ListTrainingJobsRequest request)
         {
-            var marshaller = new ListTrainingJobsRequestMarshaller();
+            var marshaller = ListTrainingJobsRequestMarshaller.Instance;
             var unmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListTrainingJobsRequest,ListTrainingJobsResponse>(request, marshaller, unmarshaller);
@@ -1676,7 +2095,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">REST API Reference for ListTrainingJobs Operation</seealso>
         public virtual IAsyncResult BeginListTrainingJobs(ListTrainingJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTrainingJobsRequestMarshaller();
+            var marshaller = ListTrainingJobsRequestMarshaller.Instance;
             var unmarshaller = ListTrainingJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTrainingJobsRequest>(request, marshaller, unmarshaller,
@@ -1694,6 +2113,63 @@ namespace Amazon.SageMaker
         public virtual ListTrainingJobsResponse EndListTrainingJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTrainingJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrainingJobsForHyperParameterTuningJob
+
+        /// <summary>
+        /// Gets a list of objects that describe the training jobs that a hyperparameter tuning
+        /// job launched.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainingJobsForHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        public virtual ListTrainingJobsForHyperParameterTuningJobResponse ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request)
+        {
+            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrainingJobsForHyperParameterTuningJobRequest,ListTrainingJobsForHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainingJobsForHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainingJobsForHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        public virtual IAsyncResult BeginListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTrainingJobsForHyperParameterTuningJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainingJobsForHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainingJobsForHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  ListTrainingJobsForHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        public virtual ListTrainingJobsForHyperParameterTuningJobResponse EndListTrainingJobsForHyperParameterTuningJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrainingJobsForHyperParameterTuningJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1716,7 +2192,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         public virtual StartNotebookInstanceResponse StartNotebookInstance(StartNotebookInstanceRequest request)
         {
-            var marshaller = new StartNotebookInstanceRequestMarshaller();
+            var marshaller = StartNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StartNotebookInstanceRequest,StartNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -1736,7 +2212,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginStartNotebookInstance(StartNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartNotebookInstanceRequestMarshaller();
+            var marshaller = StartNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -1754,6 +2230,71 @@ namespace Amazon.SageMaker
         public virtual StartNotebookInstanceResponse EndStartNotebookInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<StartNotebookInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopHyperParameterTuningJob
+
+        /// <summary>
+        /// Stops a running hyperparameter tuning job and all running training jobs that the tuning
+        /// job launched.
+        /// 
+        ///  
+        /// <para>
+        /// All model artifacts output from the training jobs are stored in Amazon Simple Storage
+        /// Service (Amazon S3). All data that the training jobs write toAmazon CloudWatch Logs
+        /// are still available in CloudWatch. After the tuning job moves to the <code>Stopped</code>
+        /// state, it releases all reserved resources for the tuning job.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the StopHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        public virtual StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request)
+        {
+            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        public virtual IAsyncResult BeginStopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopHyperParameterTuningJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  StopHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        public virtual StopHyperParameterTuningJobResponse EndStopHyperParameterTuningJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopHyperParameterTuningJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1779,7 +2320,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">REST API Reference for StopNotebookInstance Operation</seealso>
         public virtual StopNotebookInstanceResponse StopNotebookInstance(StopNotebookInstanceRequest request)
         {
-            var marshaller = new StopNotebookInstanceRequestMarshaller();
+            var marshaller = StopNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StopNotebookInstanceRequest,StopNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -1799,7 +2340,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">REST API Reference for StopNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginStopNotebookInstance(StopNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopNotebookInstanceRequestMarshaller();
+            var marshaller = StopNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -1851,7 +2392,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         public virtual StopTrainingJobResponse StopTrainingJob(StopTrainingJobRequest request)
         {
-            var marshaller = new StopTrainingJobRequestMarshaller();
+            var marshaller = StopTrainingJobRequestMarshaller.Instance;
             var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
             return Invoke<StopTrainingJobRequest,StopTrainingJobResponse>(request, marshaller, unmarshaller);
@@ -1871,7 +2412,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         public virtual IAsyncResult BeginStopTrainingJob(StopTrainingJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopTrainingJobRequestMarshaller();
+            var marshaller = StopTrainingJobRequestMarshaller.Instance;
             var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopTrainingJobRequest>(request, marshaller, unmarshaller,
@@ -1918,7 +2459,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var marshaller = new UpdateEndpointRequestMarshaller();
+            var marshaller = UpdateEndpointRequestMarshaller.Instance;
             var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEndpointRequest,UpdateEndpointResponse>(request, marshaller, unmarshaller);
@@ -1938,7 +2479,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateEndpointRequestMarshaller();
+            var marshaller = UpdateEndpointRequestMarshaller.Instance;
             var unmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateEndpointRequest>(request, marshaller, unmarshaller,
@@ -1980,7 +2521,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">REST API Reference for UpdateEndpointWeightsAndCapacities Operation</seealso>
         public virtual UpdateEndpointWeightsAndCapacitiesResponse UpdateEndpointWeightsAndCapacities(UpdateEndpointWeightsAndCapacitiesRequest request)
         {
-            var marshaller = new UpdateEndpointWeightsAndCapacitiesRequestMarshaller();
+            var marshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
             var unmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEndpointWeightsAndCapacitiesRequest,UpdateEndpointWeightsAndCapacitiesResponse>(request, marshaller, unmarshaller);
@@ -2000,7 +2541,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">REST API Reference for UpdateEndpointWeightsAndCapacities Operation</seealso>
         public virtual IAsyncResult BeginUpdateEndpointWeightsAndCapacities(UpdateEndpointWeightsAndCapacitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateEndpointWeightsAndCapacitiesRequestMarshaller();
+            var marshaller = UpdateEndpointWeightsAndCapacitiesRequestMarshaller.Instance;
             var unmarshaller = UpdateEndpointWeightsAndCapacitiesResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateEndpointWeightsAndCapacitiesRequest>(request, marshaller, unmarshaller,
@@ -2039,7 +2580,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">REST API Reference for UpdateNotebookInstance Operation</seealso>
         public virtual UpdateNotebookInstanceResponse UpdateNotebookInstance(UpdateNotebookInstanceRequest request)
         {
-            var marshaller = new UpdateNotebookInstanceRequestMarshaller();
+            var marshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateNotebookInstanceRequest,UpdateNotebookInstanceResponse>(request, marshaller, unmarshaller);
@@ -2059,7 +2600,7 @@ namespace Amazon.SageMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">REST API Reference for UpdateNotebookInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateNotebookInstance(UpdateNotebookInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateNotebookInstanceRequestMarshaller();
+            var marshaller = UpdateNotebookInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateNotebookInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateNotebookInstanceRequest>(request, marshaller, unmarshaller,
@@ -2077,6 +2618,63 @@ namespace Amazon.SageMaker
         public virtual UpdateNotebookInstanceResponse EndUpdateNotebookInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotebookInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Updates a notebook instance lifecycle configuration created with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual UpdateNotebookInstanceLifecycleConfigResponse UpdateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotebookInstanceLifecycleConfigRequest,UpdateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateNotebookInstanceLifecycleConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual UpdateNotebookInstanceLifecycleConfigResponse EndUpdateNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNotebookInstanceLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion

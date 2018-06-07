@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// If your intent is to replace your original DB instance with the new, restored DB instance,
     /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
-    /// action. RDS does not allow two DB instances with the same name. Once you have renamed
+    /// action. RDS doesn't allow two DB instances with the same name. Once you have renamed
     /// your original DB instance with a different identifier, then you can pass the original
     /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
     /// action. The result is that you will replace the original DB instance with the DB instance
@@ -51,6 +51,12 @@ namespace Amazon.RDS.Model
     /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
     /// must be the ARN of the shared DB snapshot.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+    /// <a>RestoreDBClusterFromSnapshot</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
@@ -72,11 +78,13 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private string _optionGroupName;
         private int? _port;
+        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
+        private bool? _useDefaultProcessorFeatures;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -381,10 +389,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default: <code>false</code> 
@@ -421,14 +425,6 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>aurora</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-postgresql</code> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>
@@ -619,6 +615,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
+        /// </summary>
+        public List<ProcessorFeature> ProcessorFeatures
+        {
+            get { return this._processorFeatures; }
+            set { this._processorFeatures = value; }
+        }
+
+        // Check to see if ProcessorFeatures property is set
+        internal bool IsSetProcessorFeatures()
+        {
+            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// Specifies the accessibility options for the DB instance. A value of true specifies
@@ -740,6 +755,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetTdeCredentialPassword()
         {
             return this._tdeCredentialPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultProcessorFeatures. 
+        /// <para>
+        /// A value that specifies that the DB instance class of the DB instance uses its default
+        /// processor features.
+        /// </para>
+        /// </summary>
+        public bool UseDefaultProcessorFeatures
+        {
+            get { return this._useDefaultProcessorFeatures.GetValueOrDefault(); }
+            set { this._useDefaultProcessorFeatures = value; }
+        }
+
+        // Check to see if UseDefaultProcessorFeatures property is set
+        internal bool IsSetUseDefaultProcessorFeatures()
+        {
+            return this._useDefaultProcessorFeatures.HasValue; 
         }
 
     }

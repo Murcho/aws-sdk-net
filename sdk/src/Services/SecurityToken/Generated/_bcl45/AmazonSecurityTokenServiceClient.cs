@@ -330,9 +330,18 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// The temporary security credentials are valid for the duration that you specified when
-        /// calling <code>AssumeRole</code>, which can be from 900 seconds (15 minutes) to a maximum
-        /// of 3600 seconds (1 hour). The default is 1 hour. 
+        /// By default, the temporary security credentials created by <code>AssumeRole</code>
+        /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
+        /// parameter to specify the duration of your session. You can provide a value from 900
+        /// seconds (15 minutes) up to the maximum session duration setting for the role. This
+        /// setting can have a value from 1 hour to 12 hours. To learn how to view the maximum
+        /// value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+        /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
+        /// API operations or the <code>assume-role*</code> CLI operations but does not apply
+        /// when you use those operations to create a console URL. For more information, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -360,7 +369,7 @@ namespace Amazon.SecurityToken
         /// <para>
         /// To assume a role, your AWS account must be trusted by the role. The trust relationship
         /// is defined in the role's trust policy when the role is created. That trust policy
-        /// states which accounts are allowed to delegate access to this account's role.
+        /// states which accounts are allowed to delegate access to this account's role. 
         /// </para>
         ///  
         /// <para>
@@ -370,7 +379,11 @@ namespace Amazon.SecurityToken
         /// on the ARN of the role in the other account. If the user is in the same account as
         /// the role, then you can either attach a policy to the user (identical to the previous
         /// different account user), or you can add the user as a principal directly in the role's
-        /// trust policy
+        /// trust policy. In this case, the trust policy acts as the only resource-based policy
+        /// in IAM, and users in the same account as the role do not need explicit permission
+        /// to assume the role. For more information about trust policies and resource-based policies,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+        /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -424,7 +437,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
@@ -442,7 +455,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, 
@@ -471,11 +484,20 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// The temporary security credentials are valid for the duration that you specified when
-        /// calling <code>AssumeRole</code>, or until the time specified in the SAML authentication
-        /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter. The duration
-        /// can be from 900 seconds (15 minutes) to a maximum of 3600 seconds (1 hour). The default
-        /// is 1 hour.
+        /// By default, the temporary security credentials created by <code>AssumeRoleWithSAML</code>
+        /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
+        /// parameter to specify the duration of your session. Your role session lasts for the
+        /// duration that you specify, or until the time specified in the SAML authentication
+        /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter. You can provide
+        /// a <code>DurationSeconds</code> value from 900 seconds (15 minutes) up to the maximum
+        /// session duration setting for the role. This setting can have a value from 1 hour to
+        /// 12 hours. To learn how to view the maximum value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+        /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
+        /// API operations or the <code>assume-role*</code> CLI operations but does not apply
+        /// when you use those operations to create a console URL. For more information, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -587,7 +609,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
@@ -605,7 +627,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, 
@@ -657,9 +679,18 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// The credentials are valid for the duration that you specified when calling <code>AssumeRoleWithWebIdentity</code>,
-        /// which can be from 900 seconds (15 minutes) to a maximum of 3600 seconds (1 hour).
-        /// The default is 1 hour. 
+        /// By default, the temporary security credentials created by <code>AssumeRoleWithWebIdentity</code>
+        /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
+        /// parameter to specify the duration of your session. You can provide a value from 900
+        /// seconds (15 minutes) up to the maximum session duration setting for the role. This
+        /// setting can have a value from 1 hour to 12 hours. To learn how to view the maximum
+        /// value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+        /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
+        /// API operations or the <code>assume-role*</code> CLI operations but does not apply
+        /// when you use those operations to create a console URL. For more information, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// Roles</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -728,10 +759,10 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
-        /// with Mobile Applications</a>. This article discusses web identity federation and shows
-        /// an example of how to use web identity federation to get access to content in Amazon
-        /// S3. 
+        ///  <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
+        /// Identity Federation with Mobile Applications</a>. This article discusses web identity
+        /// federation and shows an example of how to use web identity federation to get access
+        /// to content in Amazon S3. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -781,7 +812,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
@@ -799,7 +830,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, 
@@ -874,7 +905,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
             return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
@@ -892,7 +923,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, 
@@ -913,7 +944,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
             return Invoke<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, unmarshaller);
@@ -931,7 +962,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual Task<GetCallerIdentityResponse> GetCallerIdentityAsync(GetCallerIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, 
@@ -1069,7 +1100,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
@@ -1087,7 +1118,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
@@ -1250,7 +1281,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
@@ -1347,7 +1378,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, 

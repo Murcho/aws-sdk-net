@@ -266,7 +266,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -285,7 +285,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         public virtual AllocateStaticIpResponse AllocateStaticIp(AllocateStaticIpRequest request)
         {
-            var marshaller = new AllocateStaticIpRequestMarshaller();
+            var marshaller = AllocateStaticIpRequestMarshaller.Instance;
             var unmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<AllocateStaticIpRequest,AllocateStaticIpResponse>(request, marshaller, unmarshaller);
@@ -303,7 +303,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         public virtual Task<AllocateStaticIpResponse> AllocateStaticIpAsync(AllocateStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AllocateStaticIpRequestMarshaller();
+            var marshaller = AllocateStaticIpRequestMarshaller.Instance;
             var unmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
             return InvokeAsync<AllocateStaticIpRequest,AllocateStaticIpResponse>(request, marshaller, 
@@ -337,7 +337,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -356,7 +356,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
         public virtual AttachDiskResponse AttachDisk(AttachDiskRequest request)
         {
-            var marshaller = new AttachDiskRequestMarshaller();
+            var marshaller = AttachDiskRequestMarshaller.Instance;
             var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
             return Invoke<AttachDiskRequest,AttachDiskResponse>(request, marshaller, unmarshaller);
@@ -374,7 +374,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
         public virtual Task<AttachDiskResponse> AttachDiskAsync(AttachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachDiskRequestMarshaller();
+            var marshaller = AttachDiskRequestMarshaller.Instance;
             var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachDiskRequest,AttachDiskResponse>(request, marshaller, 
@@ -388,6 +388,12 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Attaches one or more Lightsail instances to a load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// After some time, the instances are attached to the load balancer and the health check
+        /// status is available.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInstancesToLoadBalancer service method.</param>
         /// 
@@ -407,7 +413,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -426,7 +432,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
         public virtual AttachInstancesToLoadBalancerResponse AttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request)
         {
-            var marshaller = new AttachInstancesToLoadBalancerRequestMarshaller();
+            var marshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<AttachInstancesToLoadBalancerRequest,AttachInstancesToLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -444,7 +450,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
         public virtual Task<AttachInstancesToLoadBalancerResponse> AttachInstancesToLoadBalancerAsync(AttachInstancesToLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachInstancesToLoadBalancerRequestMarshaller();
+            var marshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachInstancesToLoadBalancerRequest,AttachInstancesToLoadBalancerResponse>(request, marshaller, 
@@ -457,11 +463,15 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+        /// Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is
+        /// just an updated, more secure version of Secure Socket Layer (SSL).
         /// 
         ///  
         /// <para>
-        /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// Once you create and validate your certificate, you can attach it to your load balancer.
+        /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
+        /// operation with the non-attached certificate, and it will replace the existing one
+        /// and become the attached certificate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTlsCertificate service method.</param>
@@ -482,7 +492,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -501,7 +511,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
         public virtual AttachLoadBalancerTlsCertificateResponse AttachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new AttachLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<AttachLoadBalancerTlsCertificateRequest,AttachLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -519,7 +529,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<AttachLoadBalancerTlsCertificateResponse> AttachLoadBalancerTlsCertificateAsync(AttachLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachLoadBalancerTlsCertificateRequest,AttachLoadBalancerTlsCertificateResponse>(request, marshaller, 
@@ -552,7 +562,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -571,7 +581,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         public virtual AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request)
         {
-            var marshaller = new AttachStaticIpRequestMarshaller();
+            var marshaller = AttachStaticIpRequestMarshaller.Instance;
             var unmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<AttachStaticIpRequest,AttachStaticIpResponse>(request, marshaller, unmarshaller);
@@ -589,7 +599,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         public virtual Task<AttachStaticIpResponse> AttachStaticIpAsync(AttachStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachStaticIpRequestMarshaller();
+            var marshaller = AttachStaticIpRequestMarshaller.Instance;
             var unmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachStaticIpRequest,AttachStaticIpResponse>(request, marshaller, 
@@ -622,7 +632,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -641,7 +651,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         public virtual CloseInstancePublicPortsResponse CloseInstancePublicPorts(CloseInstancePublicPortsRequest request)
         {
-            var marshaller = new CloseInstancePublicPortsRequestMarshaller();
+            var marshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<CloseInstancePublicPortsRequest,CloseInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -659,7 +669,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         public virtual Task<CloseInstancePublicPortsResponse> CloseInstancePublicPortsAsync(CloseInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CloseInstancePublicPortsRequestMarshaller();
+            var marshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CloseInstancePublicPortsRequest,CloseInstancePublicPortsResponse>(request, marshaller, 
@@ -695,7 +705,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -714,7 +724,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
         public virtual CreateDiskResponse CreateDisk(CreateDiskRequest request)
         {
-            var marshaller = new CreateDiskRequestMarshaller();
+            var marshaller = CreateDiskRequestMarshaller.Instance;
             var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskRequest,CreateDiskResponse>(request, marshaller, unmarshaller);
@@ -732,7 +742,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
         public virtual Task<CreateDiskResponse> CreateDiskAsync(CreateDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDiskRequestMarshaller();
+            var marshaller = CreateDiskRequestMarshaller.Instance;
             var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDiskRequest,CreateDiskResponse>(request, marshaller, 
@@ -769,7 +779,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -788,7 +798,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
         public virtual CreateDiskFromSnapshotResponse CreateDiskFromSnapshot(CreateDiskFromSnapshotRequest request)
         {
-            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var marshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskFromSnapshotRequest,CreateDiskFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -806,7 +816,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
         public virtual Task<CreateDiskFromSnapshotResponse> CreateDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var marshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDiskFromSnapshotRequest,CreateDiskFromSnapshotResponse>(request, marshaller, 
@@ -853,7 +863,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -872,7 +882,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
         public virtual CreateDiskSnapshotResponse CreateDiskSnapshot(CreateDiskSnapshotRequest request)
         {
-            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var marshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskSnapshotRequest,CreateDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -890,7 +900,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
         public virtual Task<CreateDiskSnapshotResponse> CreateDiskSnapshotAsync(CreateDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var marshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDiskSnapshotRequest,CreateDiskSnapshotResponse>(request, marshaller, 
@@ -923,7 +933,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -942,7 +952,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
@@ -960,7 +970,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDomainRequest,CreateDomainResponse>(request, marshaller, 
@@ -994,7 +1004,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1013,7 +1023,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         public virtual CreateDomainEntryResponse CreateDomainEntry(CreateDomainEntryRequest request)
         {
-            var marshaller = new CreateDomainEntryRequestMarshaller();
+            var marshaller = CreateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainEntryRequest,CreateDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -1031,7 +1041,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         public virtual Task<CreateDomainEntryResponse> CreateDomainEntryAsync(CreateDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDomainEntryRequestMarshaller();
+            var marshaller = CreateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDomainEntryRequest,CreateDomainEntryResponse>(request, marshaller, 
@@ -1064,7 +1074,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1083,7 +1093,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         public virtual CreateInstancesResponse CreateInstances(CreateInstancesRequest request)
         {
-            var marshaller = new CreateInstancesRequestMarshaller();
+            var marshaller = CreateInstancesRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstancesRequest,CreateInstancesResponse>(request, marshaller, unmarshaller);
@@ -1101,7 +1111,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         public virtual Task<CreateInstancesResponse> CreateInstancesAsync(CreateInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInstancesRequestMarshaller();
+            var marshaller = CreateInstancesRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInstancesRequest,CreateInstancesResponse>(request, marshaller, 
@@ -1135,7 +1145,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1154,7 +1164,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         public virtual CreateInstancesFromSnapshotResponse CreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request)
         {
-            var marshaller = new CreateInstancesFromSnapshotRequestMarshaller();
+            var marshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstancesFromSnapshotRequest,CreateInstancesFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1172,7 +1182,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         public virtual Task<CreateInstancesFromSnapshotResponse> CreateInstancesFromSnapshotAsync(CreateInstancesFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInstancesFromSnapshotRequestMarshaller();
+            var marshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInstancesFromSnapshotRequest,CreateInstancesFromSnapshotResponse>(request, marshaller, 
@@ -1206,7 +1216,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1225,7 +1235,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         public virtual CreateInstanceSnapshotResponse CreateInstanceSnapshot(CreateInstanceSnapshotRequest request)
         {
-            var marshaller = new CreateInstanceSnapshotRequestMarshaller();
+            var marshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstanceSnapshotRequest,CreateInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1243,7 +1253,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         public virtual Task<CreateInstanceSnapshotResponse> CreateInstanceSnapshotAsync(CreateInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInstanceSnapshotRequestMarshaller();
+            var marshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInstanceSnapshotRequest,CreateInstanceSnapshotResponse>(request, marshaller, 
@@ -1276,7 +1286,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1295,7 +1305,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
-            var marshaller = new CreateKeyPairRequestMarshaller();
+            var marshaller = CreateKeyPairRequestMarshaller.Instance;
             var unmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<CreateKeyPairRequest,CreateKeyPairResponse>(request, marshaller, unmarshaller);
@@ -1313,7 +1323,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateKeyPairRequestMarshaller();
+            var marshaller = CreateKeyPairRequestMarshaller.Instance;
             var unmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateKeyPairRequest,CreateKeyPairResponse>(request, marshaller, 
@@ -1326,12 +1336,16 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Creates a Lightsail load balancer.
+        /// Creates a Lightsail load balancer. To learn more about deciding whether to load balance
+        /// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+        /// your Lightsail instances for load balancing</a>. You can create up to 5 load balancers
+        /// per AWS Region in your account.
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify certificates and port settings. You
-        /// can create up to 5 load balancers per AWS Region in your account.
+        /// When you create a load balancer, you can specify a unique name and port settings.
+        /// To change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -1352,7 +1366,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1371,7 +1385,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var marshaller = CreateLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<CreateLoadBalancerRequest,CreateLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -1389,7 +1403,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var marshaller = CreateLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLoadBalancerRequest,CreateLoadBalancerResponse>(request, marshaller, 
@@ -1427,7 +1441,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1446,7 +1460,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
         public virtual CreateLoadBalancerTlsCertificateResponse CreateLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new CreateLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<CreateLoadBalancerTlsCertificateRequest,CreateLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -1464,7 +1478,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<CreateLoadBalancerTlsCertificateResponse> CreateLoadBalancerTlsCertificateAsync(CreateLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLoadBalancerTlsCertificateRequest,CreateLoadBalancerTlsCertificateResponse>(request, marshaller, 
@@ -1504,7 +1518,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1523,7 +1537,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
         public virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
         {
-            var marshaller = new DeleteDiskRequestMarshaller();
+            var marshaller = DeleteDiskRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDiskRequest,DeleteDiskResponse>(request, marshaller, unmarshaller);
@@ -1541,7 +1555,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
         public virtual Task<DeleteDiskResponse> DeleteDiskAsync(DeleteDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDiskRequestMarshaller();
+            var marshaller = DeleteDiskRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDiskRequest,DeleteDiskResponse>(request, marshaller, 
@@ -1583,7 +1597,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1602,7 +1616,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
         public virtual DeleteDiskSnapshotResponse DeleteDiskSnapshot(DeleteDiskSnapshotRequest request)
         {
-            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var marshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDiskSnapshotRequest,DeleteDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1620,7 +1634,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
         public virtual Task<DeleteDiskSnapshotResponse> DeleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var marshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDiskSnapshotRequest,DeleteDiskSnapshotResponse>(request, marshaller, 
@@ -1653,7 +1667,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1672,7 +1686,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
@@ -1690,7 +1704,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, 
@@ -1723,7 +1737,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1742,7 +1756,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         public virtual DeleteDomainEntryResponse DeleteDomainEntry(DeleteDomainEntryRequest request)
         {
-            var marshaller = new DeleteDomainEntryRequestMarshaller();
+            var marshaller = DeleteDomainEntryRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainEntryRequest,DeleteDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -1760,7 +1774,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         public virtual Task<DeleteDomainEntryResponse> DeleteDomainEntryAsync(DeleteDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDomainEntryRequestMarshaller();
+            var marshaller = DeleteDomainEntryRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainEntryRequest,DeleteDomainEntryResponse>(request, marshaller, 
@@ -1793,7 +1807,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1812,7 +1826,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, unmarshaller);
@@ -1830,7 +1844,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, 
@@ -1863,7 +1877,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1882,7 +1896,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         public virtual DeleteInstanceSnapshotResponse DeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request)
         {
-            var marshaller = new DeleteInstanceSnapshotRequestMarshaller();
+            var marshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceSnapshotRequest,DeleteInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1900,7 +1914,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         public virtual Task<DeleteInstanceSnapshotResponse> DeleteInstanceSnapshotAsync(DeleteInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInstanceSnapshotRequestMarshaller();
+            var marshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInstanceSnapshotRequest,DeleteInstanceSnapshotResponse>(request, marshaller, 
@@ -1933,7 +1947,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1952,7 +1966,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
-            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var marshaller = DeleteKeyPairRequestMarshaller.Instance;
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<DeleteKeyPairRequest,DeleteKeyPairResponse>(request, marshaller, unmarshaller);
@@ -1970,7 +1984,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var marshaller = DeleteKeyPairRequestMarshaller.Instance;
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKeyPairRequest,DeleteKeyPairResponse>(request, marshaller, 
@@ -1983,7 +1997,9 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Deletes a Lightsail load balancer.
+        /// Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once
+        /// the load balancer is deleted, you will need to create a new load balancer, create
+        /// a new certificate, and verify domain ownership again.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
@@ -2003,7 +2019,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2022,7 +2038,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var marshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLoadBalancerRequest,DeleteLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -2040,7 +2056,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var marshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoadBalancerRequest,DeleteLoadBalancerResponse>(request, marshaller, 
@@ -2053,7 +2069,7 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+        /// Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerTlsCertificate service method.</param>
         /// 
@@ -2073,7 +2089,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2092,7 +2108,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
         public virtual DeleteLoadBalancerTlsCertificateResponse DeleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new DeleteLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLoadBalancerTlsCertificateRequest,DeleteLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -2110,7 +2126,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<DeleteLoadBalancerTlsCertificateResponse> DeleteLoadBalancerTlsCertificateAsync(DeleteLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoadBalancerTlsCertificateRequest,DeleteLoadBalancerTlsCertificateResponse>(request, marshaller, 
@@ -2145,7 +2161,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2164,7 +2180,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         public virtual DetachDiskResponse DetachDisk(DetachDiskRequest request)
         {
-            var marshaller = new DetachDiskRequestMarshaller();
+            var marshaller = DetachDiskRequestMarshaller.Instance;
             var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
             return Invoke<DetachDiskRequest,DetachDiskResponse>(request, marshaller, unmarshaller);
@@ -2182,7 +2198,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         public virtual Task<DetachDiskResponse> DetachDiskAsync(DetachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachDiskRequestMarshaller();
+            var marshaller = DetachDiskRequestMarshaller.Instance;
             var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachDiskRequest,DetachDiskResponse>(request, marshaller, 
@@ -2196,6 +2212,12 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Detaches the specified instances from a Lightsail load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// This operation waits until the instances are no longer needed before they are detached
+        /// from the load balancer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachInstancesFromLoadBalancer service method.</param>
         /// 
@@ -2215,7 +2237,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2234,7 +2256,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
         public virtual DetachInstancesFromLoadBalancerResponse DetachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request)
         {
-            var marshaller = new DetachInstancesFromLoadBalancerRequestMarshaller();
+            var marshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<DetachInstancesFromLoadBalancerRequest,DetachInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -2252,7 +2274,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
         public virtual Task<DetachInstancesFromLoadBalancerResponse> DetachInstancesFromLoadBalancerAsync(DetachInstancesFromLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachInstancesFromLoadBalancerRequestMarshaller();
+            var marshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachInstancesFromLoadBalancerRequest,DetachInstancesFromLoadBalancerResponse>(request, marshaller, 
@@ -2285,7 +2307,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2304,7 +2326,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         public virtual DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request)
         {
-            var marshaller = new DetachStaticIpRequestMarshaller();
+            var marshaller = DetachStaticIpRequestMarshaller.Instance;
             var unmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<DetachStaticIpRequest,DetachStaticIpResponse>(request, marshaller, unmarshaller);
@@ -2322,7 +2344,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         public virtual Task<DetachStaticIpResponse> DetachStaticIpAsync(DetachStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachStaticIpRequestMarshaller();
+            var marshaller = DetachStaticIpRequestMarshaller.Instance;
             var unmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachStaticIpRequest,DetachStaticIpResponse>(request, marshaller, 
@@ -2355,7 +2377,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2374,7 +2396,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         public virtual DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request)
         {
-            var marshaller = new DownloadDefaultKeyPairRequestMarshaller();
+            var marshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             var unmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<DownloadDefaultKeyPairRequest,DownloadDefaultKeyPairResponse>(request, marshaller, unmarshaller);
@@ -2392,7 +2414,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         public virtual Task<DownloadDefaultKeyPairResponse> DownloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DownloadDefaultKeyPairRequestMarshaller();
+            var marshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             var unmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<DownloadDefaultKeyPairRequest,DownloadDefaultKeyPairResponse>(request, marshaller, 
@@ -2425,7 +2447,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2444,7 +2466,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         public virtual GetActiveNamesResponse GetActiveNames(GetActiveNamesRequest request)
         {
-            var marshaller = new GetActiveNamesRequestMarshaller();
+            var marshaller = GetActiveNamesRequestMarshaller.Instance;
             var unmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
             return Invoke<GetActiveNamesRequest,GetActiveNamesResponse>(request, marshaller, unmarshaller);
@@ -2462,7 +2484,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         public virtual Task<GetActiveNamesResponse> GetActiveNamesAsync(GetActiveNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetActiveNamesRequestMarshaller();
+            var marshaller = GetActiveNamesRequestMarshaller.Instance;
             var unmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetActiveNamesRequest,GetActiveNamesResponse>(request, marshaller, 
@@ -2498,7 +2520,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2517,7 +2539,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         public virtual GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request)
         {
-            var marshaller = new GetBlueprintsRequestMarshaller();
+            var marshaller = GetBlueprintsRequestMarshaller.Instance;
             var unmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
             return Invoke<GetBlueprintsRequest,GetBlueprintsResponse>(request, marshaller, unmarshaller);
@@ -2535,7 +2557,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         public virtual Task<GetBlueprintsResponse> GetBlueprintsAsync(GetBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBlueprintsRequestMarshaller();
+            var marshaller = GetBlueprintsRequestMarshaller.Instance;
             var unmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBlueprintsRequest,GetBlueprintsResponse>(request, marshaller, 
@@ -2569,7 +2591,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2588,7 +2610,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         public virtual GetBundlesResponse GetBundles(GetBundlesRequest request)
         {
-            var marshaller = new GetBundlesRequestMarshaller();
+            var marshaller = GetBundlesRequestMarshaller.Instance;
             var unmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
             return Invoke<GetBundlesRequest,GetBundlesResponse>(request, marshaller, unmarshaller);
@@ -2606,7 +2628,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         public virtual Task<GetBundlesResponse> GetBundlesAsync(GetBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBundlesRequestMarshaller();
+            var marshaller = GetBundlesRequestMarshaller.Instance;
             var unmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBundlesRequest,GetBundlesResponse>(request, marshaller, 
@@ -2639,7 +2661,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2658,7 +2680,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
         public virtual GetDiskResponse GetDisk(GetDiskRequest request)
         {
-            var marshaller = new GetDiskRequestMarshaller();
+            var marshaller = GetDiskRequestMarshaller.Instance;
             var unmarshaller = GetDiskResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskRequest,GetDiskResponse>(request, marshaller, unmarshaller);
@@ -2676,7 +2698,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
         public virtual Task<GetDiskResponse> GetDiskAsync(GetDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDiskRequestMarshaller();
+            var marshaller = GetDiskRequestMarshaller.Instance;
             var unmarshaller = GetDiskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDiskRequest,GetDiskResponse>(request, marshaller, 
@@ -2716,7 +2738,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2735,7 +2757,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
         public virtual GetDisksResponse GetDisks(GetDisksRequest request)
         {
-            var marshaller = new GetDisksRequestMarshaller();
+            var marshaller = GetDisksRequestMarshaller.Instance;
             var unmarshaller = GetDisksResponseUnmarshaller.Instance;
 
             return Invoke<GetDisksRequest,GetDisksResponse>(request, marshaller, unmarshaller);
@@ -2753,7 +2775,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
         public virtual Task<GetDisksResponse> GetDisksAsync(GetDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDisksRequestMarshaller();
+            var marshaller = GetDisksRequestMarshaller.Instance;
             var unmarshaller = GetDisksResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDisksRequest,GetDisksResponse>(request, marshaller, 
@@ -2786,7 +2808,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2805,7 +2827,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
         public virtual GetDiskSnapshotResponse GetDiskSnapshot(GetDiskSnapshotRequest request)
         {
-            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var marshaller = GetDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskSnapshotRequest,GetDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -2823,7 +2845,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
         public virtual Task<GetDiskSnapshotResponse> GetDiskSnapshotAsync(GetDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var marshaller = GetDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDiskSnapshotRequest,GetDiskSnapshotResponse>(request, marshaller, 
@@ -2864,7 +2886,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2883,7 +2905,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
         public virtual GetDiskSnapshotsResponse GetDiskSnapshots(GetDiskSnapshotsRequest request)
         {
-            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var marshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskSnapshotsRequest,GetDiskSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -2901,7 +2923,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
         public virtual Task<GetDiskSnapshotsResponse> GetDiskSnapshotsAsync(GetDiskSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var marshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDiskSnapshotsRequest,GetDiskSnapshotsResponse>(request, marshaller, 
@@ -2934,7 +2956,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2953,7 +2975,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var marshaller = new GetDomainRequestMarshaller();
+            var marshaller = GetDomainRequestMarshaller.Instance;
             var unmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainRequest,GetDomainResponse>(request, marshaller, unmarshaller);
@@ -2971,7 +2993,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDomainRequestMarshaller();
+            var marshaller = GetDomainRequestMarshaller.Instance;
             var unmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDomainRequest,GetDomainResponse>(request, marshaller, 
@@ -3004,7 +3026,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3023,7 +3045,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         public virtual GetDomainsResponse GetDomains(GetDomainsRequest request)
         {
-            var marshaller = new GetDomainsRequestMarshaller();
+            var marshaller = GetDomainsRequestMarshaller.Instance;
             var unmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainsRequest,GetDomainsResponse>(request, marshaller, unmarshaller);
@@ -3041,7 +3063,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         public virtual Task<GetDomainsResponse> GetDomainsAsync(GetDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDomainsRequestMarshaller();
+            var marshaller = GetDomainsRequestMarshaller.Instance;
             var unmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDomainsRequest,GetDomainsResponse>(request, marshaller, 
@@ -3075,7 +3097,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3094,7 +3116,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
         {
-            var marshaller = new GetInstanceRequestMarshaller();
+            var marshaller = GetInstanceRequestMarshaller.Instance;
             var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceRequest,GetInstanceResponse>(request, marshaller, unmarshaller);
@@ -3112,7 +3134,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceRequestMarshaller();
+            var marshaller = GetInstanceRequestMarshaller.Instance;
             var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceRequest,GetInstanceResponse>(request, marshaller, 
@@ -3146,7 +3168,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3165,7 +3187,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         public virtual GetInstanceAccessDetailsResponse GetInstanceAccessDetails(GetInstanceAccessDetailsRequest request)
         {
-            var marshaller = new GetInstanceAccessDetailsRequestMarshaller();
+            var marshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceAccessDetailsRequest,GetInstanceAccessDetailsResponse>(request, marshaller, unmarshaller);
@@ -3183,7 +3205,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         public virtual Task<GetInstanceAccessDetailsResponse> GetInstanceAccessDetailsAsync(GetInstanceAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceAccessDetailsRequestMarshaller();
+            var marshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceAccessDetailsRequest,GetInstanceAccessDetailsResponse>(request, marshaller, 
@@ -3217,7 +3239,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3236,7 +3258,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         public virtual GetInstanceMetricDataResponse GetInstanceMetricData(GetInstanceMetricDataRequest request)
         {
-            var marshaller = new GetInstanceMetricDataRequestMarshaller();
+            var marshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceMetricDataRequest,GetInstanceMetricDataResponse>(request, marshaller, unmarshaller);
@@ -3254,7 +3276,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         public virtual Task<GetInstanceMetricDataResponse> GetInstanceMetricDataAsync(GetInstanceMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceMetricDataRequestMarshaller();
+            var marshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceMetricDataRequest,GetInstanceMetricDataResponse>(request, marshaller, 
@@ -3287,7 +3309,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3306,7 +3328,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         public virtual GetInstancePortStatesResponse GetInstancePortStates(GetInstancePortStatesRequest request)
         {
-            var marshaller = new GetInstancePortStatesRequestMarshaller();
+            var marshaller = GetInstancePortStatesRequestMarshaller.Instance;
             var unmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
             return Invoke<GetInstancePortStatesRequest,GetInstancePortStatesResponse>(request, marshaller, unmarshaller);
@@ -3324,7 +3346,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         public virtual Task<GetInstancePortStatesResponse> GetInstancePortStatesAsync(GetInstancePortStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstancePortStatesRequestMarshaller();
+            var marshaller = GetInstancePortStatesRequestMarshaller.Instance;
             var unmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstancePortStatesRequest,GetInstancePortStatesResponse>(request, marshaller, 
@@ -3357,7 +3379,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3376,7 +3398,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         public virtual GetInstancesResponse GetInstances(GetInstancesRequest request)
         {
-            var marshaller = new GetInstancesRequestMarshaller();
+            var marshaller = GetInstancesRequestMarshaller.Instance;
             var unmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
             return Invoke<GetInstancesRequest,GetInstancesResponse>(request, marshaller, unmarshaller);
@@ -3394,7 +3416,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         public virtual Task<GetInstancesResponse> GetInstancesAsync(GetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstancesRequestMarshaller();
+            var marshaller = GetInstancesRequestMarshaller.Instance;
             var unmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstancesRequest,GetInstancesResponse>(request, marshaller, 
@@ -3427,7 +3449,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3446,7 +3468,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         public virtual GetInstanceSnapshotResponse GetInstanceSnapshot(GetInstanceSnapshotRequest request)
         {
-            var marshaller = new GetInstanceSnapshotRequestMarshaller();
+            var marshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceSnapshotRequest,GetInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -3464,7 +3486,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         public virtual Task<GetInstanceSnapshotResponse> GetInstanceSnapshotAsync(GetInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceSnapshotRequestMarshaller();
+            var marshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceSnapshotRequest,GetInstanceSnapshotResponse>(request, marshaller, 
@@ -3497,7 +3519,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3516,7 +3538,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         public virtual GetInstanceSnapshotsResponse GetInstanceSnapshots(GetInstanceSnapshotsRequest request)
         {
-            var marshaller = new GetInstanceSnapshotsRequestMarshaller();
+            var marshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceSnapshotsRequest,GetInstanceSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -3534,7 +3556,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         public virtual Task<GetInstanceSnapshotsResponse> GetInstanceSnapshotsAsync(GetInstanceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceSnapshotsRequestMarshaller();
+            var marshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceSnapshotsRequest,GetInstanceSnapshotsResponse>(request, marshaller, 
@@ -3567,7 +3589,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3586,7 +3608,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         public virtual GetInstanceStateResponse GetInstanceState(GetInstanceStateRequest request)
         {
-            var marshaller = new GetInstanceStateRequestMarshaller();
+            var marshaller = GetInstanceStateRequestMarshaller.Instance;
             var unmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceStateRequest,GetInstanceStateResponse>(request, marshaller, unmarshaller);
@@ -3604,7 +3626,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         public virtual Task<GetInstanceStateResponse> GetInstanceStateAsync(GetInstanceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceStateRequestMarshaller();
+            var marshaller = GetInstanceStateRequestMarshaller.Instance;
             var unmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceStateRequest,GetInstanceStateResponse>(request, marshaller, 
@@ -3637,7 +3659,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3656,7 +3678,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         public virtual GetKeyPairResponse GetKeyPair(GetKeyPairRequest request)
         {
-            var marshaller = new GetKeyPairRequestMarshaller();
+            var marshaller = GetKeyPairRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<GetKeyPairRequest,GetKeyPairResponse>(request, marshaller, unmarshaller);
@@ -3674,7 +3696,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         public virtual Task<GetKeyPairResponse> GetKeyPairAsync(GetKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetKeyPairRequestMarshaller();
+            var marshaller = GetKeyPairRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetKeyPairRequest,GetKeyPairResponse>(request, marshaller, 
@@ -3707,7 +3729,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3726,7 +3748,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         public virtual GetKeyPairsResponse GetKeyPairs(GetKeyPairsRequest request)
         {
-            var marshaller = new GetKeyPairsRequestMarshaller();
+            var marshaller = GetKeyPairsRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
             return Invoke<GetKeyPairsRequest,GetKeyPairsResponse>(request, marshaller, unmarshaller);
@@ -3744,7 +3766,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         public virtual Task<GetKeyPairsResponse> GetKeyPairsAsync(GetKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetKeyPairsRequestMarshaller();
+            var marshaller = GetKeyPairsRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetKeyPairsRequest,GetKeyPairsResponse>(request, marshaller, 
@@ -3777,7 +3799,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3796,7 +3818,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
         public virtual GetLoadBalancerResponse GetLoadBalancer(GetLoadBalancerRequest request)
         {
-            var marshaller = new GetLoadBalancerRequestMarshaller();
+            var marshaller = GetLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerRequest,GetLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -3814,7 +3836,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
         public virtual Task<GetLoadBalancerResponse> GetLoadBalancerAsync(GetLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLoadBalancerRequestMarshaller();
+            var marshaller = GetLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoadBalancerRequest,GetLoadBalancerResponse>(request, marshaller, 
@@ -3847,7 +3869,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3866,7 +3888,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
         public virtual GetLoadBalancerMetricDataResponse GetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request)
         {
-            var marshaller = new GetLoadBalancerMetricDataRequestMarshaller();
+            var marshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerMetricDataRequest,GetLoadBalancerMetricDataResponse>(request, marshaller, unmarshaller);
@@ -3884,7 +3906,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
         public virtual Task<GetLoadBalancerMetricDataResponse> GetLoadBalancerMetricDataAsync(GetLoadBalancerMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLoadBalancerMetricDataRequestMarshaller();
+            var marshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoadBalancerMetricDataRequest,GetLoadBalancerMetricDataResponse>(request, marshaller, 
@@ -3924,7 +3946,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3943,7 +3965,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
         public virtual GetLoadBalancersResponse GetLoadBalancers(GetLoadBalancersRequest request)
         {
-            var marshaller = new GetLoadBalancersRequestMarshaller();
+            var marshaller = GetLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancersRequest,GetLoadBalancersResponse>(request, marshaller, unmarshaller);
@@ -3961,7 +3983,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
         public virtual Task<GetLoadBalancersResponse> GetLoadBalancersAsync(GetLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLoadBalancersRequestMarshaller();
+            var marshaller = GetLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoadBalancersRequest,GetLoadBalancersResponse>(request, marshaller, 
@@ -3980,6 +4002,11 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have a maximum of 2 certificates associated with a Lightsail load balancer.
+        /// One is active and the other is inactive.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerTlsCertificates service method.</param>
@@ -4000,7 +4027,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4019,7 +4046,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
         public virtual GetLoadBalancerTlsCertificatesResponse GetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request)
         {
-            var marshaller = new GetLoadBalancerTlsCertificatesRequestMarshaller();
+            var marshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerTlsCertificatesRequest,GetLoadBalancerTlsCertificatesResponse>(request, marshaller, unmarshaller);
@@ -4037,7 +4064,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
         public virtual Task<GetLoadBalancerTlsCertificatesResponse> GetLoadBalancerTlsCertificatesAsync(GetLoadBalancerTlsCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLoadBalancerTlsCertificatesRequestMarshaller();
+            var marshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoadBalancerTlsCertificatesRequest,GetLoadBalancerTlsCertificatesResponse>(request, marshaller, 
@@ -4071,7 +4098,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4090,7 +4117,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
-            var marshaller = new GetOperationRequestMarshaller();
+            var marshaller = GetOperationRequestMarshaller.Instance;
             var unmarshaller = GetOperationResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationRequest,GetOperationResponse>(request, marshaller, unmarshaller);
@@ -4108,7 +4135,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetOperationRequestMarshaller();
+            var marshaller = GetOperationRequestMarshaller.Instance;
             var unmarshaller = GetOperationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOperationRequest,GetOperationResponse>(request, marshaller, 
@@ -4148,7 +4175,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4167,7 +4194,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         public virtual GetOperationsResponse GetOperations(GetOperationsRequest request)
         {
-            var marshaller = new GetOperationsRequestMarshaller();
+            var marshaller = GetOperationsRequestMarshaller.Instance;
             var unmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationsRequest,GetOperationsResponse>(request, marshaller, unmarshaller);
@@ -4185,7 +4212,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         public virtual Task<GetOperationsResponse> GetOperationsAsync(GetOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetOperationsRequestMarshaller();
+            var marshaller = GetOperationsRequestMarshaller.Instance;
             var unmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOperationsRequest,GetOperationsResponse>(request, marshaller, 
@@ -4218,7 +4245,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4237,7 +4264,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         public virtual GetOperationsForResourceResponse GetOperationsForResource(GetOperationsForResourceRequest request)
         {
-            var marshaller = new GetOperationsForResourceRequestMarshaller();
+            var marshaller = GetOperationsForResourceRequestMarshaller.Instance;
             var unmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationsForResourceRequest,GetOperationsForResourceResponse>(request, marshaller, unmarshaller);
@@ -4255,7 +4282,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         public virtual Task<GetOperationsForResourceResponse> GetOperationsForResourceAsync(GetOperationsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetOperationsForResourceRequestMarshaller();
+            var marshaller = GetOperationsForResourceRequestMarshaller.Instance;
             var unmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOperationsForResourceRequest,GetOperationsForResourceResponse>(request, marshaller, 
@@ -4289,7 +4316,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4308,7 +4335,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         public virtual GetRegionsResponse GetRegions(GetRegionsRequest request)
         {
-            var marshaller = new GetRegionsRequestMarshaller();
+            var marshaller = GetRegionsRequestMarshaller.Instance;
             var unmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
             return Invoke<GetRegionsRequest,GetRegionsResponse>(request, marshaller, unmarshaller);
@@ -4326,7 +4353,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         public virtual Task<GetRegionsResponse> GetRegionsAsync(GetRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetRegionsRequestMarshaller();
+            var marshaller = GetRegionsRequestMarshaller.Instance;
             var unmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRegionsRequest,GetRegionsResponse>(request, marshaller, 
@@ -4359,7 +4386,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4378,7 +4405,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         public virtual GetStaticIpResponse GetStaticIp(GetStaticIpRequest request)
         {
-            var marshaller = new GetStaticIpRequestMarshaller();
+            var marshaller = GetStaticIpRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<GetStaticIpRequest,GetStaticIpResponse>(request, marshaller, unmarshaller);
@@ -4396,7 +4423,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         public virtual Task<GetStaticIpResponse> GetStaticIpAsync(GetStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetStaticIpRequestMarshaller();
+            var marshaller = GetStaticIpRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetStaticIpRequest,GetStaticIpResponse>(request, marshaller, 
@@ -4429,7 +4456,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4448,7 +4475,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         public virtual GetStaticIpsResponse GetStaticIps(GetStaticIpsRequest request)
         {
-            var marshaller = new GetStaticIpsRequestMarshaller();
+            var marshaller = GetStaticIpsRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
             return Invoke<GetStaticIpsRequest,GetStaticIpsResponse>(request, marshaller, unmarshaller);
@@ -4466,7 +4493,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         public virtual Task<GetStaticIpsResponse> GetStaticIpsAsync(GetStaticIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetStaticIpsRequestMarshaller();
+            var marshaller = GetStaticIpsRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetStaticIpsRequest,GetStaticIpsResponse>(request, marshaller, 
@@ -4499,7 +4526,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4518,7 +4545,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
-            var marshaller = new ImportKeyPairRequestMarshaller();
+            var marshaller = ImportKeyPairRequestMarshaller.Instance;
             var unmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<ImportKeyPairRequest,ImportKeyPairResponse>(request, marshaller, unmarshaller);
@@ -4536,7 +4563,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ImportKeyPairRequestMarshaller();
+            var marshaller = ImportKeyPairRequestMarshaller.Instance;
             var unmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportKeyPairRequest,ImportKeyPairResponse>(request, marshaller, 
@@ -4569,7 +4596,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4588,7 +4615,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         public virtual IsVpcPeeredResponse IsVpcPeered(IsVpcPeeredRequest request)
         {
-            var marshaller = new IsVpcPeeredRequestMarshaller();
+            var marshaller = IsVpcPeeredRequestMarshaller.Instance;
             var unmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
             return Invoke<IsVpcPeeredRequest,IsVpcPeeredResponse>(request, marshaller, unmarshaller);
@@ -4606,7 +4633,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         public virtual Task<IsVpcPeeredResponse> IsVpcPeeredAsync(IsVpcPeeredRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new IsVpcPeeredRequestMarshaller();
+            var marshaller = IsVpcPeeredRequestMarshaller.Instance;
             var unmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
             return InvokeAsync<IsVpcPeeredRequest,IsVpcPeeredResponse>(request, marshaller, 
@@ -4639,7 +4666,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4658,7 +4685,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         public virtual OpenInstancePublicPortsResponse OpenInstancePublicPorts(OpenInstancePublicPortsRequest request)
         {
-            var marshaller = new OpenInstancePublicPortsRequestMarshaller();
+            var marshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<OpenInstancePublicPortsRequest,OpenInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -4676,7 +4703,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         public virtual Task<OpenInstancePublicPortsResponse> OpenInstancePublicPortsAsync(OpenInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new OpenInstancePublicPortsRequestMarshaller();
+            var marshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
             return InvokeAsync<OpenInstancePublicPortsRequest,OpenInstancePublicPortsResponse>(request, marshaller, 
@@ -4709,7 +4736,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4728,7 +4755,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         public virtual PeerVpcResponse PeerVpc(PeerVpcRequest request)
         {
-            var marshaller = new PeerVpcRequestMarshaller();
+            var marshaller = PeerVpcRequestMarshaller.Instance;
             var unmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
             return Invoke<PeerVpcRequest,PeerVpcResponse>(request, marshaller, unmarshaller);
@@ -4746,7 +4773,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         public virtual Task<PeerVpcResponse> PeerVpcAsync(PeerVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PeerVpcRequestMarshaller();
+            var marshaller = PeerVpcRequestMarshaller.Instance;
             var unmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<PeerVpcRequest,PeerVpcResponse>(request, marshaller, 
@@ -4780,7 +4807,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4799,7 +4826,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
         public virtual PutInstancePublicPortsResponse PutInstancePublicPorts(PutInstancePublicPortsRequest request)
         {
-            var marshaller = new PutInstancePublicPortsRequestMarshaller();
+            var marshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<PutInstancePublicPortsRequest,PutInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -4817,7 +4844,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
         public virtual Task<PutInstancePublicPortsResponse> PutInstancePublicPortsAsync(PutInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutInstancePublicPortsRequestMarshaller();
+            var marshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutInstancePublicPortsRequest,PutInstancePublicPortsResponse>(request, marshaller, 
@@ -4852,7 +4879,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4871,7 +4898,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, unmarshaller);
@@ -4889,7 +4916,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, 
@@ -4922,7 +4949,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4941,7 +4968,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         public virtual ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request)
         {
-            var marshaller = new ReleaseStaticIpRequestMarshaller();
+            var marshaller = ReleaseStaticIpRequestMarshaller.Instance;
             var unmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<ReleaseStaticIpRequest,ReleaseStaticIpResponse>(request, marshaller, unmarshaller);
@@ -4959,7 +4986,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         public virtual Task<ReleaseStaticIpResponse> ReleaseStaticIpAsync(ReleaseStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ReleaseStaticIpRequestMarshaller();
+            var marshaller = ReleaseStaticIpRequestMarshaller.Instance;
             var unmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReleaseStaticIpRequest,ReleaseStaticIpResponse>(request, marshaller, 
@@ -4993,7 +5020,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5012,7 +5039,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StartInstanceRequest,StartInstanceResponse>(request, marshaller, unmarshaller);
@@ -5030,7 +5057,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartInstanceRequest,StartInstanceResponse>(request, marshaller, 
@@ -5063,7 +5090,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5082,7 +5109,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StopInstanceRequest,StopInstanceResponse>(request, marshaller, unmarshaller);
@@ -5100,7 +5127,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopInstanceRequest,StopInstanceResponse>(request, marshaller, 
@@ -5133,7 +5160,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5152,7 +5179,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         public virtual UnpeerVpcResponse UnpeerVpc(UnpeerVpcRequest request)
         {
-            var marshaller = new UnpeerVpcRequestMarshaller();
+            var marshaller = UnpeerVpcRequestMarshaller.Instance;
             var unmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
             return Invoke<UnpeerVpcRequest,UnpeerVpcResponse>(request, marshaller, unmarshaller);
@@ -5170,7 +5197,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         public virtual Task<UnpeerVpcResponse> UnpeerVpcAsync(UnpeerVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UnpeerVpcRequestMarshaller();
+            var marshaller = UnpeerVpcRequestMarshaller.Instance;
             var unmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<UnpeerVpcRequest,UnpeerVpcResponse>(request, marshaller, 
@@ -5203,7 +5230,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5222,7 +5249,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         public virtual UpdateDomainEntryResponse UpdateDomainEntry(UpdateDomainEntryRequest request)
         {
-            var marshaller = new UpdateDomainEntryRequestMarshaller();
+            var marshaller = UpdateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDomainEntryRequest,UpdateDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -5240,7 +5267,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         public virtual Task<UpdateDomainEntryResponse> UpdateDomainEntryAsync(UpdateDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDomainEntryRequestMarshaller();
+            var marshaller = UpdateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDomainEntryRequest,UpdateDomainEntryResponse>(request, marshaller, 
@@ -5253,7 +5280,8 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Updates the specified attribute for a load balancer.
+        /// Updates the specified attribute for a load balancer. You can only update one attribute
+        /// at a time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoadBalancerAttribute service method.</param>
         /// 
@@ -5273,7 +5301,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5292,7 +5320,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
         public virtual UpdateLoadBalancerAttributeResponse UpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request)
         {
-            var marshaller = new UpdateLoadBalancerAttributeRequestMarshaller();
+            var marshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             var unmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
             return Invoke<UpdateLoadBalancerAttributeRequest,UpdateLoadBalancerAttributeResponse>(request, marshaller, unmarshaller);
@@ -5310,7 +5338,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
         public virtual Task<UpdateLoadBalancerAttributeResponse> UpdateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateLoadBalancerAttributeRequestMarshaller();
+            var marshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             var unmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLoadBalancerAttributeRequest,UpdateLoadBalancerAttributeResponse>(request, marshaller, 

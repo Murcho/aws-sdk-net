@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2017-03-25/distributionsByWebACLId/{WebACLId}";
+            string uriResourcePath = "/2017-10-30/distributionsByWebACLId/{WebACLId}";
             if (!publicRequest.IsSetWebACLId())
                 throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
             uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromString(publicRequest.WebACLId));
@@ -72,7 +72,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListDistributionsByWebACLIdRequestMarshaller _instance = new ListDistributionsByWebACLIdRequestMarshaller();        
 
-        
+        internal static ListDistributionsByWebACLIdRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDistributionsByWebACLIdRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

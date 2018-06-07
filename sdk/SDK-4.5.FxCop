@@ -22,6 +22,7 @@
   </ProjectOptions>
   <Targets>
     <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/src/Services/acmpca/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
@@ -60,6 +61,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/comprehend/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/connect/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
@@ -72,6 +74,7 @@
       <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecr/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/eks/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticache/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net45/</Directory>
@@ -80,6 +83,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glue/bin/Release/net45/</Directory>
@@ -89,6 +93,9 @@
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iot/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iot1clickdevicesservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iot1clickprojects/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iotanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotjobsdataplane/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net45/</Directory>
@@ -109,14 +116,17 @@
       <Directory>$(ProjectDir)/src/Services/mediapackage/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastore/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastoredata/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediatailor/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mq/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mturk/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/neptune/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/organizations/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/pi/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pinpoint/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pricing/bin/Release/net45/</Directory>
@@ -130,6 +140,7 @@
       <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/secretsmanager/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/serverlessapplicationrepository/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net45/</Directory>
@@ -155,6 +166,7 @@
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
     </AssemblyReferenceDirectories>
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ACMPCA.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -193,6 +205,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Comprehend.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Connect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -205,6 +218,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ECR.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EKS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -213,6 +227,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glue.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -222,6 +237,9 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoT.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoT1ClickDevicesService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoT1ClickProjects.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoTAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoTJobsDataPlane.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -242,14 +260,17 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaPackage.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaStore.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaStoreData.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaTailor.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MQ.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MTurk.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Neptune.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Organizations.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PI.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pricing.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -263,6 +284,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecretsManager.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerlessApplicationRepository.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />

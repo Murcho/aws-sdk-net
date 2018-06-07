@@ -97,6 +97,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPolicyType())
+                {
+                    context.Writer.WritePropertyName("PolicyType");
+                    context.Writer.Write(publicRequest.PolicyType);
+                }
+
                 if(publicRequest.IsSetScalingAdjustment())
                 {
                     context.Writer.WritePropertyName("ScalingAdjustment");
@@ -107,6 +113,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ScalingAdjustmentType");
                     context.Writer.Write(publicRequest.ScalingAdjustmentType);
+                }
+
+                if(publicRequest.IsSetTargetConfiguration())
+                {
+                    context.Writer.WritePropertyName("TargetConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetThreshold())
@@ -124,7 +141,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutScalingPolicyRequestMarshaller _instance = new PutScalingPolicyRequestMarshaller();        
 
+        internal static PutScalingPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutScalingPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -37,12 +37,14 @@ namespace Amazon.RDS.Model
     public partial class RestoreDBClusterFromS3Request : AmazonRDSRequest
     {
         private List<string> _availabilityZones = new List<string>();
+        private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private string _databaseName;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineVersion;
@@ -79,6 +81,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BacktrackWindow. 
+        /// <para>
+        /// The target backtrack window, in seconds. To disable backtracking, set this value to
+        /// 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long BacktrackWindow
+        {
+            get { return this._backtrackWindow.GetValueOrDefault(); }
+            set { this._backtrackWindow = value; }
+        }
+
+        // Check to see if BacktrackWindow property is set
+        internal bool IsSetBacktrackWindow()
+        {
+            return this._backtrackWindow.HasValue; 
         }
 
         /// <summary>
@@ -244,6 +278,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
@@ -295,11 +347,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Aurora</b> 
+        ///  <b>Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
         /// Example: <code>5.6.10a</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.6.3</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

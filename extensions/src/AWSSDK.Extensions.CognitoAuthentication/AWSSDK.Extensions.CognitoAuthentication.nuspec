@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AWSSDK.Extensions.CognitoAuthentication</id>
-    <version>0.9.1</version>
+    <version>0.9.4</version>
     <title>CognitoAuthentication</title>
     <authors>Amazon Web Services</authors>
     <description>An extension library to assist in the Amazon Cognito User Pools authentication process.</description>
@@ -10,7 +10,7 @@
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon aws-sdk-v3</tags>
-    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
 
     <dependencies>
         <group targetFramework="net45">

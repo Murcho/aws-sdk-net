@@ -58,6 +58,19 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAccounts())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Accounts)
+                    {
+                        request.Parameters.Add("Accounts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetAdministrationRoleARN())
+                {
+                    request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -70,6 +83,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetExecutionRoleName())
+                {
+                    request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
                 }
                 if(publicRequest.IsSetOperationId())
                 {
@@ -131,6 +148,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetRegions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Regions)
+                    {
+                        request.Parameters.Add("Regions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
@@ -166,5 +192,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateStackSetRequestMarshaller _instance = new UpdateStackSetRequestMarshaller();        
+
+        internal static UpdateStackSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateStackSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

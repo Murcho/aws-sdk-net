@@ -5,7 +5,7 @@
             "targetFramework": "net35",
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "template": "VS2017ProjectFile",
-            "excludeFolders": [ "_android", "_async", "_bcl45", "_bcl45+coreclr", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "excludeFolders": [ "_android", "_async", "_bcl45", "_bcl45+coreclr", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8", "obj"],
             "nugetTargetPlatform": "net35",
             "frameworkPathOverride" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v3.5\\Profile\\Client",
             "frameworkReferences" : [
@@ -18,11 +18,10 @@
             "targetFramework": "net45",
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "template": "VS2017ProjectFile",
-            "excludeFolders": [ "_android", "_bcl35", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "excludeFolders": [ "_android", "_bcl35", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8", "obj"],
             "nugetTargetPlatform": "net45",
             "frameworkReferences" : [
-                {"name": "System.Configuration"},
-                {"name": "System.Net.Http"}
+                {"name": "System.Configuration"}
             ]
         },
         {
@@ -32,7 +31,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl"  ],
             "nugetTargetPlatform": "portable-net45+win8+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
             "sharedNugetTargetFrameworks": ["portable-net45+win8+wpa81+wp8", "MonoAndroid10", "Xamarin.iOS10", "MonoTouch10", "uap"],
 
@@ -58,7 +57,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -69,7 +68,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -80,7 +79,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "win8"
         },
@@ -91,7 +90,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -102,7 +101,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl", "_bcl45+coreclr+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
         },
@@ -122,7 +121,7 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager"]
+            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager", "obj"]
         }
     ],
     "unittestprojects":[
@@ -130,21 +129,21 @@
             "name": "Net35",
             "targetFramework" : "net45",
             "defineConstants": "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE",
-            "excludeFolders": ["_bcl45"],
+            "excludeFolders": ["_bcl45", "obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
             "packageReferences" : [
                 {
                     "include" : "MSTest.TestAdapter",
-                    "version" : "1.1.18"
+                    "version" : "1.2.0"
                 },
                 {
                     "include" : "Microsoft.NET.Test.Sdk",
-                    "version" : "15.0.0"
+                    "version" : "15.6.2"
                 },
                 {
                     "include" : "MSTest.TestFramework",
-                    "version" : "1.1.18"
+                    "version" : "1.2.0"
                 }
             ],
             "frameworkReferences" : [
@@ -159,21 +158,21 @@
             "name": "Net45",
             "targetFramework" : "net45",
             "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE",
-            "references": ["System.Net.Http"],
+			"excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
             "packageReferences" : [
                 {
                     "include" : "MSTest.TestAdapter",
-                    "version" : "1.1.18"
+                    "version" : "1.2.0"
                 },
                 {
                     "include" : "Microsoft.NET.Test.Sdk",
-                    "version" : "15.0.0"
+                    "version" : "15.6.2"
                 },
                 {
                     "include" : "MSTest.TestFramework",
-                    "version" : "1.1.18"
+                    "version" : "1.2.0"
                 }
             ],
             "frameworkReferences" : [

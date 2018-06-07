@@ -40,9 +40,11 @@ namespace Amazon.DeviceFarm.Model
         private DeviceFormFactor _formFactor;
         private long? _heapSize;
         private string _image;
+        private List<DeviceInstance> _instances = new List<DeviceInstance>();
         private string _manufacturer;
         private long? _memory;
         private string _model;
+        private string _modelId;
         private string _name;
         private string _os;
         private DevicePlatform _platform;
@@ -210,6 +212,24 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// The instances belonging to this device.
+        /// </para>
+        /// </summary>
+        public List<DeviceInstance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Manufacturer. 
         /// <para>
         /// The device's manufacturer name.
@@ -261,6 +281,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetModel()
         {
             return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelId. 
+        /// <para>
+        /// The device's model ID.
+        /// </para>
+        /// </summary>
+        public string ModelId
+        {
+            get { return this._modelId; }
+            set { this._modelId = value; }
+        }
+
+        // Check to see if ModelId property is set
+        internal bool IsSetModelId()
+        {
+            return this._modelId != null;
         }
 
         /// <summary>

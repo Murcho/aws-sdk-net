@@ -118,6 +118,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("interactionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InteractionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -136,10 +148,28 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.RemoteDebugEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("remoteRecordAppArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemoteRecordAppArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("remoteRecordEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RemoteRecordEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("skipAppResign", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SkipAppResign = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("started", targetDepth))

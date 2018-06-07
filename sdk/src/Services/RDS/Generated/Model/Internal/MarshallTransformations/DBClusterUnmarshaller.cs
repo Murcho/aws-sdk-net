@@ -74,6 +74,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("BacktrackConsumedChangeRecords", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.BacktrackConsumedChangeRecords = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BacktrackWindow", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.BacktrackWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -148,10 +160,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EarliestBacktrackTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EarliestBacktrackTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EarliestRestorableTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.EarliestRestorableTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnabledCloudwatchLogsExports/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EnabledCloudwatchLogsExports.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Endpoint", targetDepth))

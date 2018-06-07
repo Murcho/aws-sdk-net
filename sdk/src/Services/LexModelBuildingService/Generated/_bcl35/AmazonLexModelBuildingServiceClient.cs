@@ -278,7 +278,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
         public virtual CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
         {
-            var marshaller = new CreateBotVersionRequestMarshaller();
+            var marshaller = CreateBotVersionRequestMarshaller.Instance;
             var unmarshaller = CreateBotVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreateBotVersionRequest,CreateBotVersionResponse>(request, marshaller, unmarshaller);
@@ -298,7 +298,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateBotVersion(CreateBotVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateBotVersionRequestMarshaller();
+            var marshaller = CreateBotVersionRequestMarshaller.Instance;
             var unmarshaller = CreateBotVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateBotVersionRequest>(request, marshaller, unmarshaller,
@@ -370,7 +370,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
         public virtual CreateIntentVersionResponse CreateIntentVersion(CreateIntentVersionRequest request)
         {
-            var marshaller = new CreateIntentVersionRequestMarshaller();
+            var marshaller = CreateIntentVersionRequestMarshaller.Instance;
             var unmarshaller = CreateIntentVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreateIntentVersionRequest,CreateIntentVersionResponse>(request, marshaller, unmarshaller);
@@ -390,7 +390,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateIntentVersion(CreateIntentVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateIntentVersionRequestMarshaller();
+            var marshaller = CreateIntentVersionRequestMarshaller.Instance;
             var unmarshaller = CreateIntentVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateIntentVersionRequest>(request, marshaller, unmarshaller,
@@ -463,7 +463,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
         public virtual CreateSlotTypeVersionResponse CreateSlotTypeVersion(CreateSlotTypeVersionRequest request)
         {
-            var marshaller = new CreateSlotTypeVersionRequestMarshaller();
+            var marshaller = CreateSlotTypeVersionRequestMarshaller.Instance;
             var unmarshaller = CreateSlotTypeVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreateSlotTypeVersionRequest,CreateSlotTypeVersionResponse>(request, marshaller, unmarshaller);
@@ -483,7 +483,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateSlotTypeVersion(CreateSlotTypeVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSlotTypeVersionRequestMarshaller();
+            var marshaller = CreateSlotTypeVersionRequestMarshaller.Instance;
             var unmarshaller = CreateSlotTypeVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSlotTypeVersionRequest>(request, marshaller, unmarshaller,
@@ -567,7 +567,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
         public virtual DeleteBotResponse DeleteBot(DeleteBotRequest request)
         {
-            var marshaller = new DeleteBotRequestMarshaller();
+            var marshaller = DeleteBotRequestMarshaller.Instance;
             var unmarshaller = DeleteBotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBotRequest,DeleteBotResponse>(request, marshaller, unmarshaller);
@@ -587,7 +587,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
         public virtual IAsyncResult BeginDeleteBot(DeleteBotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBotRequestMarshaller();
+            var marshaller = DeleteBotRequestMarshaller.Instance;
             var unmarshaller = DeleteBotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBotRequest>(request, marshaller, unmarshaller,
@@ -668,7 +668,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
         public virtual DeleteBotAliasResponse DeleteBotAlias(DeleteBotAliasRequest request)
         {
-            var marshaller = new DeleteBotAliasRequestMarshaller();
+            var marshaller = DeleteBotAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteBotAliasResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBotAliasRequest,DeleteBotAliasResponse>(request, marshaller, unmarshaller);
@@ -688,7 +688,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteBotAlias(DeleteBotAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBotAliasRequestMarshaller();
+            var marshaller = DeleteBotAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteBotAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBotAliasRequest>(request, marshaller, unmarshaller,
@@ -743,7 +743,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
         public virtual DeleteBotChannelAssociationResponse DeleteBotChannelAssociation(DeleteBotChannelAssociationRequest request)
         {
-            var marshaller = new DeleteBotChannelAssociationRequestMarshaller();
+            var marshaller = DeleteBotChannelAssociationRequestMarshaller.Instance;
             var unmarshaller = DeleteBotChannelAssociationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBotChannelAssociationRequest,DeleteBotChannelAssociationResponse>(request, marshaller, unmarshaller);
@@ -763,7 +763,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteBotChannelAssociation(DeleteBotChannelAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBotChannelAssociationRequestMarshaller();
+            var marshaller = DeleteBotChannelAssociationRequestMarshaller.Instance;
             var unmarshaller = DeleteBotChannelAssociationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBotChannelAssociationRequest>(request, marshaller, unmarshaller,
@@ -839,7 +839,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
         public virtual DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
         {
-            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var marshaller = DeleteBotVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBotVersionRequest,DeleteBotVersionResponse>(request, marshaller, unmarshaller);
@@ -859,7 +859,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteBotVersion(DeleteBotVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBotVersionRequestMarshaller();
+            var marshaller = DeleteBotVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteBotVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBotVersionRequest>(request, marshaller, unmarshaller,
@@ -950,7 +950,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
         public virtual DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
         {
-            var marshaller = new DeleteIntentRequestMarshaller();
+            var marshaller = DeleteIntentRequestMarshaller.Instance;
             var unmarshaller = DeleteIntentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIntentRequest,DeleteIntentResponse>(request, marshaller, unmarshaller);
@@ -970,7 +970,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntent(DeleteIntentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIntentRequestMarshaller();
+            var marshaller = DeleteIntentRequestMarshaller.Instance;
             var unmarshaller = DeleteIntentResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIntentRequest>(request, marshaller, unmarshaller,
@@ -1046,7 +1046,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
         public virtual DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
         {
-            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var marshaller = DeleteIntentVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIntentVersionRequest,DeleteIntentVersionResponse>(request, marshaller, unmarshaller);
@@ -1066,7 +1066,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntentVersion(DeleteIntentVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIntentVersionRequestMarshaller();
+            var marshaller = DeleteIntentVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteIntentVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIntentVersionRequest>(request, marshaller, unmarshaller,
@@ -1158,7 +1158,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
         public virtual DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
         {
-            var marshaller = new DeleteSlotTypeRequestMarshaller();
+            var marshaller = DeleteSlotTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteSlotTypeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSlotTypeRequest,DeleteSlotTypeResponse>(request, marshaller, unmarshaller);
@@ -1178,7 +1178,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
         public virtual IAsyncResult BeginDeleteSlotType(DeleteSlotTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSlotTypeRequestMarshaller();
+            var marshaller = DeleteSlotTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteSlotTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSlotTypeRequest>(request, marshaller, unmarshaller,
@@ -1255,7 +1255,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
         public virtual DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
         {
-            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var marshaller = DeleteSlotTypeVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSlotTypeVersionRequest,DeleteSlotTypeVersionResponse>(request, marshaller, unmarshaller);
@@ -1275,7 +1275,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSlotTypeVersionRequestMarshaller();
+            var marshaller = DeleteSlotTypeVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteSlotTypeVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSlotTypeVersionRequest>(request, marshaller, unmarshaller,
@@ -1304,10 +1304,9 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code>
-        /// field in the bot is set to <code>true</code>. Utterances are stored for 15 days for
-        /// use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for
-        /// use in improving the ability of your bot to respond to user input.
+        /// Amazon Lex stores the utterances that users send to your bot. Utterances are stored
+        /// for 15 days for use with the <a>GetUtterancesView</a> operation, and then stored indefinitely
+        /// for use in improving the ability of your bot to respond to user input.
         /// </para>
         ///  
         /// <para>
@@ -1338,7 +1337,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
         public virtual DeleteUtterancesResponse DeleteUtterances(DeleteUtterancesRequest request)
         {
-            var marshaller = new DeleteUtterancesRequestMarshaller();
+            var marshaller = DeleteUtterancesRequestMarshaller.Instance;
             var unmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUtterancesRequest,DeleteUtterancesResponse>(request, marshaller, unmarshaller);
@@ -1358,7 +1357,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
         public virtual IAsyncResult BeginDeleteUtterances(DeleteUtterancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUtterancesRequestMarshaller();
+            var marshaller = DeleteUtterancesRequestMarshaller.Instance;
             var unmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUtterancesRequest>(request, marshaller, unmarshaller,
@@ -1410,7 +1409,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
         public virtual GetBotResponse GetBot(GetBotRequest request)
         {
-            var marshaller = new GetBotRequestMarshaller();
+            var marshaller = GetBotRequestMarshaller.Instance;
             var unmarshaller = GetBotResponseUnmarshaller.Instance;
 
             return Invoke<GetBotRequest,GetBotResponse>(request, marshaller, unmarshaller);
@@ -1430,7 +1429,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
         public virtual IAsyncResult BeginGetBot(GetBotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotRequestMarshaller();
+            var marshaller = GetBotRequestMarshaller.Instance;
             var unmarshaller = GetBotResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotRequest>(request, marshaller, unmarshaller,
@@ -1482,7 +1481,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
         public virtual GetBotAliasResponse GetBotAlias(GetBotAliasRequest request)
         {
-            var marshaller = new GetBotAliasRequestMarshaller();
+            var marshaller = GetBotAliasRequestMarshaller.Instance;
             var unmarshaller = GetBotAliasResponseUnmarshaller.Instance;
 
             return Invoke<GetBotAliasRequest,GetBotAliasResponse>(request, marshaller, unmarshaller);
@@ -1502,7 +1501,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
         public virtual IAsyncResult BeginGetBotAlias(GetBotAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotAliasRequestMarshaller();
+            var marshaller = GetBotAliasRequestMarshaller.Instance;
             var unmarshaller = GetBotAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotAliasRequest>(request, marshaller, unmarshaller,
@@ -1550,7 +1549,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
         public virtual GetBotAliasesResponse GetBotAliases(GetBotAliasesRequest request)
         {
-            var marshaller = new GetBotAliasesRequestMarshaller();
+            var marshaller = GetBotAliasesRequestMarshaller.Instance;
             var unmarshaller = GetBotAliasesResponseUnmarshaller.Instance;
 
             return Invoke<GetBotAliasesRequest,GetBotAliasesResponse>(request, marshaller, unmarshaller);
@@ -1570,7 +1569,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
         public virtual IAsyncResult BeginGetBotAliases(GetBotAliasesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotAliasesRequestMarshaller();
+            var marshaller = GetBotAliasesRequestMarshaller.Instance;
             var unmarshaller = GetBotAliasesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotAliasesRequest>(request, marshaller, unmarshaller,
@@ -1623,7 +1622,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
         public virtual GetBotChannelAssociationResponse GetBotChannelAssociation(GetBotChannelAssociationRequest request)
         {
-            var marshaller = new GetBotChannelAssociationRequestMarshaller();
+            var marshaller = GetBotChannelAssociationRequestMarshaller.Instance;
             var unmarshaller = GetBotChannelAssociationResponseUnmarshaller.Instance;
 
             return Invoke<GetBotChannelAssociationRequest,GetBotChannelAssociationResponse>(request, marshaller, unmarshaller);
@@ -1643,7 +1642,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetBotChannelAssociation(GetBotChannelAssociationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotChannelAssociationRequestMarshaller();
+            var marshaller = GetBotChannelAssociationRequestMarshaller.Instance;
             var unmarshaller = GetBotChannelAssociationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotChannelAssociationRequest>(request, marshaller, unmarshaller,
@@ -1692,7 +1691,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
         public virtual GetBotChannelAssociationsResponse GetBotChannelAssociations(GetBotChannelAssociationsRequest request)
         {
-            var marshaller = new GetBotChannelAssociationsRequestMarshaller();
+            var marshaller = GetBotChannelAssociationsRequestMarshaller.Instance;
             var unmarshaller = GetBotChannelAssociationsResponseUnmarshaller.Instance;
 
             return Invoke<GetBotChannelAssociationsRequest,GetBotChannelAssociationsResponse>(request, marshaller, unmarshaller);
@@ -1712,7 +1711,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetBotChannelAssociations(GetBotChannelAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotChannelAssociationsRequestMarshaller();
+            var marshaller = GetBotChannelAssociationsRequestMarshaller.Instance;
             var unmarshaller = GetBotChannelAssociationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotChannelAssociationsRequest>(request, marshaller, unmarshaller,
@@ -1774,7 +1773,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
         public virtual GetBotsResponse GetBots(GetBotsRequest request)
         {
-            var marshaller = new GetBotsRequestMarshaller();
+            var marshaller = GetBotsRequestMarshaller.Instance;
             var unmarshaller = GetBotsResponseUnmarshaller.Instance;
 
             return Invoke<GetBotsRequest,GetBotsResponse>(request, marshaller, unmarshaller);
@@ -1794,7 +1793,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
         public virtual IAsyncResult BeginGetBots(GetBotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotsRequestMarshaller();
+            var marshaller = GetBotsRequestMarshaller.Instance;
             var unmarshaller = GetBotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotsRequest>(request, marshaller, unmarshaller,
@@ -1858,7 +1857,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
         public virtual GetBotVersionsResponse GetBotVersions(GetBotVersionsRequest request)
         {
-            var marshaller = new GetBotVersionsRequestMarshaller();
+            var marshaller = GetBotVersionsRequestMarshaller.Instance;
             var unmarshaller = GetBotVersionsResponseUnmarshaller.Instance;
 
             return Invoke<GetBotVersionsRequest,GetBotVersionsResponse>(request, marshaller, unmarshaller);
@@ -1878,7 +1877,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
         public virtual IAsyncResult BeginGetBotVersions(GetBotVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBotVersionsRequestMarshaller();
+            var marshaller = GetBotVersionsRequestMarshaller.Instance;
             var unmarshaller = GetBotVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBotVersionsRequest>(request, marshaller, unmarshaller,
@@ -1929,7 +1928,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
         public virtual GetBuiltinIntentResponse GetBuiltinIntent(GetBuiltinIntentRequest request)
         {
-            var marshaller = new GetBuiltinIntentRequestMarshaller();
+            var marshaller = GetBuiltinIntentRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinIntentResponseUnmarshaller.Instance;
 
             return Invoke<GetBuiltinIntentRequest,GetBuiltinIntentResponse>(request, marshaller, unmarshaller);
@@ -1949,7 +1948,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
         public virtual IAsyncResult BeginGetBuiltinIntent(GetBuiltinIntentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBuiltinIntentRequestMarshaller();
+            var marshaller = GetBuiltinIntentRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinIntentResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBuiltinIntentRequest>(request, marshaller, unmarshaller,
@@ -1997,7 +1996,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
         public virtual GetBuiltinIntentsResponse GetBuiltinIntents(GetBuiltinIntentsRequest request)
         {
-            var marshaller = new GetBuiltinIntentsRequestMarshaller();
+            var marshaller = GetBuiltinIntentsRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinIntentsResponseUnmarshaller.Instance;
 
             return Invoke<GetBuiltinIntentsRequest,GetBuiltinIntentsResponse>(request, marshaller, unmarshaller);
@@ -2017,7 +2016,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
         public virtual IAsyncResult BeginGetBuiltinIntents(GetBuiltinIntentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBuiltinIntentsRequestMarshaller();
+            var marshaller = GetBuiltinIntentsRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinIntentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBuiltinIntentsRequest>(request, marshaller, unmarshaller,
@@ -2070,7 +2069,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
         public virtual GetBuiltinSlotTypesResponse GetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request)
         {
-            var marshaller = new GetBuiltinSlotTypesRequestMarshaller();
+            var marshaller = GetBuiltinSlotTypesRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinSlotTypesResponseUnmarshaller.Instance;
 
             return Invoke<GetBuiltinSlotTypesRequest,GetBuiltinSlotTypesResponse>(request, marshaller, unmarshaller);
@@ -2090,7 +2089,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
         public virtual IAsyncResult BeginGetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBuiltinSlotTypesRequestMarshaller();
+            var marshaller = GetBuiltinSlotTypesRequestMarshaller.Instance;
             var unmarshaller = GetBuiltinSlotTypesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBuiltinSlotTypesRequest>(request, marshaller, unmarshaller,
@@ -2136,7 +2135,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
-            var marshaller = new GetExportRequestMarshaller();
+            var marshaller = GetExportRequestMarshaller.Instance;
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
 
             return Invoke<GetExportRequest,GetExportResponse>(request, marshaller, unmarshaller);
@@ -2156,7 +2155,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetExportRequestMarshaller();
+            var marshaller = GetExportRequestMarshaller.Instance;
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetExportRequest>(request, marshaller, unmarshaller,
@@ -2174,6 +2173,72 @@ namespace Amazon.LexModelBuildingService
         public virtual GetExportResponse EndGetExport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetImport
+
+        /// <summary>
+        /// Gets information about an import job started with the <code>StartImport</code> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
+        /// 
+        /// <returns>The response from the GetImport service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual GetImportResponse GetImport(GetImportRequest request)
+        {
+            var marshaller = GetImportRequestMarshaller.Instance;
+            var unmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportRequest,GetImportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImport operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual IAsyncResult BeginGetImport(GetImportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetImportRequestMarshaller.Instance;
+            var unmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetImportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImport.</param>
+        /// 
+        /// <returns>Returns a  GetImportResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual GetImportResponse EndGetImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImportResponse>(asyncResult);
         }
 
         #endregion
@@ -2209,7 +2274,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
         public virtual GetIntentResponse GetIntent(GetIntentRequest request)
         {
-            var marshaller = new GetIntentRequestMarshaller();
+            var marshaller = GetIntentRequestMarshaller.Instance;
             var unmarshaller = GetIntentResponseUnmarshaller.Instance;
 
             return Invoke<GetIntentRequest,GetIntentResponse>(request, marshaller, unmarshaller);
@@ -2229,7 +2294,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
         public virtual IAsyncResult BeginGetIntent(GetIntentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIntentRequestMarshaller();
+            var marshaller = GetIntentRequestMarshaller.Instance;
             var unmarshaller = GetIntentResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIntentRequest>(request, marshaller, unmarshaller,
@@ -2290,7 +2355,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
         public virtual GetIntentsResponse GetIntents(GetIntentsRequest request)
         {
-            var marshaller = new GetIntentsRequestMarshaller();
+            var marshaller = GetIntentsRequestMarshaller.Instance;
             var unmarshaller = GetIntentsResponseUnmarshaller.Instance;
 
             return Invoke<GetIntentsRequest,GetIntentsResponse>(request, marshaller, unmarshaller);
@@ -2310,7 +2375,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
         public virtual IAsyncResult BeginGetIntents(GetIntentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIntentsRequestMarshaller();
+            var marshaller = GetIntentsRequestMarshaller.Instance;
             var unmarshaller = GetIntentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIntentsRequest>(request, marshaller, unmarshaller,
@@ -2374,7 +2439,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
         public virtual GetIntentVersionsResponse GetIntentVersions(GetIntentVersionsRequest request)
         {
-            var marshaller = new GetIntentVersionsRequestMarshaller();
+            var marshaller = GetIntentVersionsRequestMarshaller.Instance;
             var unmarshaller = GetIntentVersionsResponseUnmarshaller.Instance;
 
             return Invoke<GetIntentVersionsRequest,GetIntentVersionsResponse>(request, marshaller, unmarshaller);
@@ -2394,7 +2459,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
         public virtual IAsyncResult BeginGetIntentVersions(GetIntentVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIntentVersionsRequestMarshaller();
+            var marshaller = GetIntentVersionsRequestMarshaller.Instance;
             var unmarshaller = GetIntentVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIntentVersionsRequest>(request, marshaller, unmarshaller,
@@ -2446,7 +2511,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
         public virtual GetSlotTypeResponse GetSlotType(GetSlotTypeRequest request)
         {
-            var marshaller = new GetSlotTypeRequestMarshaller();
+            var marshaller = GetSlotTypeRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypeResponseUnmarshaller.Instance;
 
             return Invoke<GetSlotTypeRequest,GetSlotTypeResponse>(request, marshaller, unmarshaller);
@@ -2466,7 +2531,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
         public virtual IAsyncResult BeginGetSlotType(GetSlotTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSlotTypeRequestMarshaller();
+            var marshaller = GetSlotTypeRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSlotTypeRequest>(request, marshaller, unmarshaller,
@@ -2527,7 +2592,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
         public virtual GetSlotTypesResponse GetSlotTypes(GetSlotTypesRequest request)
         {
-            var marshaller = new GetSlotTypesRequestMarshaller();
+            var marshaller = GetSlotTypesRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypesResponseUnmarshaller.Instance;
 
             return Invoke<GetSlotTypesRequest,GetSlotTypesResponse>(request, marshaller, unmarshaller);
@@ -2547,7 +2612,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
         public virtual IAsyncResult BeginGetSlotTypes(GetSlotTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSlotTypesRequestMarshaller();
+            var marshaller = GetSlotTypesRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSlotTypesRequest>(request, marshaller, unmarshaller,
@@ -2611,7 +2676,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
         public virtual GetSlotTypeVersionsResponse GetSlotTypeVersions(GetSlotTypeVersionsRequest request)
         {
-            var marshaller = new GetSlotTypeVersionsRequestMarshaller();
+            var marshaller = GetSlotTypeVersionsRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypeVersionsResponseUnmarshaller.Instance;
 
             return Invoke<GetSlotTypeVersionsRequest,GetSlotTypeVersionsResponse>(request, marshaller, unmarshaller);
@@ -2631,7 +2696,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
         public virtual IAsyncResult BeginGetSlotTypeVersions(GetSlotTypeVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSlotTypeVersionsRequestMarshaller();
+            var marshaller = GetSlotTypeVersionsRequestMarshaller.Instance;
             var unmarshaller = GetSlotTypeVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSlotTypeVersionsRequest>(request, marshaller, unmarshaller,
@@ -2674,19 +2739,13 @@ namespace Amazon.LexModelBuildingService
         /// After you publish a new version of a bot, you can get information about the old version
         /// and the new so that you can compare the performance across the two versions. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Data is available for the last 15 days. You can request information for up to 5 versions
-        /// in each request. The response contains information about a maximum of 100 utterances
-        /// for each version.
+        /// Utterance statistics are generated once a day. Data is available for the last 15 days.
+        /// You can request information for up to 5 versions in each request. The response contains
+        /// information about a maximum of 100 utterances for each version.
         /// </para>
-        ///  
-        /// <para>
-        /// If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances
-        /// for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code>
-        /// operation. For more information, see <a>PutBot</a>.
-        /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
         /// </para>
@@ -2707,7 +2766,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
         public virtual GetUtterancesViewResponse GetUtterancesView(GetUtterancesViewRequest request)
         {
-            var marshaller = new GetUtterancesViewRequestMarshaller();
+            var marshaller = GetUtterancesViewRequestMarshaller.Instance;
             var unmarshaller = GetUtterancesViewResponseUnmarshaller.Instance;
 
             return Invoke<GetUtterancesViewRequest,GetUtterancesViewResponse>(request, marshaller, unmarshaller);
@@ -2727,7 +2786,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
         public virtual IAsyncResult BeginGetUtterancesView(GetUtterancesViewRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUtterancesViewRequestMarshaller();
+            var marshaller = GetUtterancesViewRequestMarshaller.Instance;
             var unmarshaller = GetUtterancesViewResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUtterancesViewRequest>(request, marshaller, unmarshaller,
@@ -2753,11 +2812,12 @@ namespace Amazon.LexModelBuildingService
 
         /// <summary>
         /// Creates an Amazon Lex conversational bot or replaces an existing bot. When you create
-        /// or update a bot you are only required to specify a name. You can use this to add intents
-        /// later, or to remove intents from an existing bot. When you create a bot with a name
-        /// only, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>.
-        /// You can build the bot after you add one or more intents. For more information about
-        /// Amazon Lex bots, see <a>how-it-works</a>. 
+        /// or update a bot you are only required to specify a name, a locale, and whether the
+        /// bot is directed toward children under age 13. You can use this to add intents later,
+        /// or to remove intents from an existing bot. When you create a bot with the minimum
+        /// information, the bot is created or updated but Amazon Lex returns the <code/> response
+        /// <code>FAILED</code>. You can build the bot after you add one or more intents. For
+        /// more information about Amazon Lex bots, see <a>how-it-works</a>. 
         /// 
         ///  
         /// <para>
@@ -2796,7 +2856,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
         public virtual PutBotResponse PutBot(PutBotRequest request)
         {
-            var marshaller = new PutBotRequestMarshaller();
+            var marshaller = PutBotRequestMarshaller.Instance;
             var unmarshaller = PutBotResponseUnmarshaller.Instance;
 
             return Invoke<PutBotRequest,PutBotResponse>(request, marshaller, unmarshaller);
@@ -2816,7 +2876,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
         public virtual IAsyncResult BeginPutBot(PutBotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutBotRequestMarshaller();
+            var marshaller = PutBotRequestMarshaller.Instance;
             var unmarshaller = PutBotResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutBotRequest>(request, marshaller, unmarshaller,
@@ -2873,7 +2933,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
         public virtual PutBotAliasResponse PutBotAlias(PutBotAliasRequest request)
         {
-            var marshaller = new PutBotAliasRequestMarshaller();
+            var marshaller = PutBotAliasRequestMarshaller.Instance;
             var unmarshaller = PutBotAliasResponseUnmarshaller.Instance;
 
             return Invoke<PutBotAliasRequest,PutBotAliasResponse>(request, marshaller, unmarshaller);
@@ -2893,7 +2953,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
         public virtual IAsyncResult BeginPutBotAlias(PutBotAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutBotAliasRequestMarshaller();
+            var marshaller = PutBotAliasRequestMarshaller.Instance;
             var unmarshaller = PutBotAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutBotAliasRequest>(request, marshaller, unmarshaller,
@@ -3013,7 +3073,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
         public virtual PutIntentResponse PutIntent(PutIntentRequest request)
         {
-            var marshaller = new PutIntentRequestMarshaller();
+            var marshaller = PutIntentRequestMarshaller.Instance;
             var unmarshaller = PutIntentResponseUnmarshaller.Instance;
 
             return Invoke<PutIntentRequest,PutIntentResponse>(request, marshaller, unmarshaller);
@@ -3033,7 +3093,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
         public virtual IAsyncResult BeginPutIntent(PutIntentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutIntentRequestMarshaller();
+            var marshaller = PutIntentRequestMarshaller.Instance;
             var unmarshaller = PutIntentResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutIntentRequest>(request, marshaller, unmarshaller,
@@ -3103,7 +3163,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
         public virtual PutSlotTypeResponse PutSlotType(PutSlotTypeRequest request)
         {
-            var marshaller = new PutSlotTypeRequestMarshaller();
+            var marshaller = PutSlotTypeRequestMarshaller.Instance;
             var unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;
 
             return Invoke<PutSlotTypeRequest,PutSlotTypeResponse>(request, marshaller, unmarshaller);
@@ -3123,7 +3183,7 @@ namespace Amazon.LexModelBuildingService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
         public virtual IAsyncResult BeginPutSlotType(PutSlotTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutSlotTypeRequestMarshaller();
+            var marshaller = PutSlotTypeRequestMarshaller.Instance;
             var unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutSlotTypeRequest>(request, marshaller, unmarshaller,
@@ -3141,6 +3201,69 @@ namespace Amazon.LexModelBuildingService
         public virtual PutSlotTypeResponse EndPutSlotType(IAsyncResult asyncResult)
         {
             return EndInvoke<PutSlotTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+        /// <summary>
+        /// Starts a job to import a resource to Amazon Lex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var marshaller = StartImportRequestMarshaller.Instance;
+            var unmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportRequest,StartImportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation on AmazonLexModelBuildingServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual IAsyncResult BeginStartImport(StartImportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartImportRequestMarshaller.Instance;
+            var unmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartImportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImport.</param>
+        /// 
+        /// <returns>Returns a  StartImportResult from LexModelBuildingService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse EndStartImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportResponse>(asyncResult);
         }
 
         #endregion

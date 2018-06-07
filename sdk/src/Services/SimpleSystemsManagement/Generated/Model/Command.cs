@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _comment;
         private int? _completedCount;
         private string _documentName;
+        private string _documentVersion;
         private int? _errorCount;
         private DateTime? _expiresAfter;
         private List<string> _instanceIds = new List<string>();
@@ -129,6 +130,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The SSM document version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorCount. 
         /// <para>
         /// The number of targets for which the status is Failed or Execution Timed Out.
@@ -150,8 +169,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
         /// If this time is reached and the command has not already started executing, it will
-        /// not execute. Calculated based on the ExpiresAfter user input provided as part of the
-        /// SendCommand API.
+        /// not run. Calculated based on the ExpiresAfter user input provided as part of the SendCommand
+        /// API.
         /// </para>
         /// </summary>
         public DateTime ExpiresAfter
@@ -211,7 +230,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
-        /// or errors, such as 10%. The default value is 50. For more information about how to
+        /// or errors, such as 10%. The default value is 0. For more information about how to
         /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>

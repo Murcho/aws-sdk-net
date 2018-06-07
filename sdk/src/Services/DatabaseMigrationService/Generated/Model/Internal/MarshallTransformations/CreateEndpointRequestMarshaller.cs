@@ -108,6 +108,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineName);
                 }
 
+                if(publicRequest.IsSetExternalTableDefinition())
+                {
+                    context.Writer.WritePropertyName("ExternalTableDefinition");
+                    context.Writer.Write(publicRequest.ExternalTableDefinition);
+                }
+
                 if(publicRequest.IsSetExtraConnectionAttributes())
                 {
                     context.Writer.WritePropertyName("ExtraConnectionAttributes");
@@ -160,6 +166,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerName);
                 }
 
+                if(publicRequest.IsSetServiceAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
+                }
+
                 if(publicRequest.IsSetSslMode())
                 {
                     context.Writer.WritePropertyName("SslMode");
@@ -197,7 +209,23 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateEndpointRequestMarshaller _instance = new CreateEndpointRequestMarshaller();        
 
+        internal static CreateEndpointRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateEndpointRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

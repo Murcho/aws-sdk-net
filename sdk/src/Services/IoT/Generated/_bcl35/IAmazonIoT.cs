@@ -31,12 +31,12 @@ namespace Amazon.IoT
     ///
     /// AWS IoT 
     /// <para>
-    /// AWS IoT provides secure, bi-directional communication between Internet-connected things
+    /// AWS IoT provides secure, bi-directional communication between Internet-connected devices
     /// (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
     /// You can discover your custom IoT-Data endpoint to communicate with, configure rules
     /// for data processing and integration with other services, organize resources associated
-    /// with each thing (Thing Registry), configure logging, and create and manage policies
-    /// and credentials to authenticate things.
+    /// with each device (Registry), configure logging, and create and manage policies and
+    /// credentials to authenticate devices.
     /// </para>
     ///  
     /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -253,7 +253,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -320,7 +320,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -356,7 +356,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -509,7 +509,7 @@ namespace Amazon.IoT
         /// PENDING_TRANSFER to INACTIVE.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// 
         /// <returns>The response from the CancelCertificateTransfer service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -659,6 +659,66 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CancelJobExecution
+
+
+        /// <summary>
+        /// Cancels the execution of a job for a given thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution service method.</param>
+        /// 
+        /// <returns>The response from the CancelJobExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        CancelJobExecutionResponse CancelJobExecution(CancelJobExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJobExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        IAsyncResult BeginCancelJobExecution(CancelJobExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJobExecution.</param>
+        /// 
+        /// <returns>Returns a  CancelJobExecutionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        CancelJobExecutionResponse EndCancelJobExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ClearDefaultAuthorizer
 
 
@@ -733,7 +793,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -1096,7 +1156,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -1610,7 +1670,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -1726,7 +1786,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a thing record in the thing registry.
+        /// Creates a thing record in the registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// 
@@ -2085,7 +2145,7 @@ namespace Amazon.IoT
         /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -2181,6 +2241,134 @@ namespace Amazon.IoT
         /// <returns>Returns a  DeleteCertificateResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteJob
+
+
+        /// <summary>
+        /// Deletes a job and its related job executions.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a job may take time, depending on the number of job executions created for
+        /// the job and various other factors. While the job is being deleted, the status of the
+        /// job will be shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job
+        /// whose status is already "DELETION_IN_PROGRESS" will result in an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException
+        /// will occur.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        DeleteJobResponse DeleteJob(DeleteJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        IAsyncResult BeginDeleteJob(DeleteJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        DeleteJobResponse EndDeleteJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteJobExecution
+
+
+        /// <summary>
+        /// Deletes a job execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        DeleteJobExecutionResponse DeleteJobExecution(DeleteJobExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        IAsyncResult BeginDeleteJobExecution(DeleteJobExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobExecution.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobExecutionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        DeleteJobExecutionResponse EndDeleteJobExecution(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2668,8 +2856,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         DeleteThingResponse DeleteThing(string thingName);
@@ -2699,8 +2887,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         DeleteThingResponse DeleteThing(DeleteThingRequest request);
@@ -2752,8 +2940,8 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">REST API Reference for DeleteThingGroup Operation</seealso>
         DeleteThingGroupResponse DeleteThingGroup(DeleteThingGroupRequest request);
@@ -3150,7 +3338,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified certificate.
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -3949,7 +4137,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -4285,7 +4473,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets effective policies.
+        /// Gets a list of the policies that have an effect on the authorization behavior of the
+        /// specified device when it connects to the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies service method.</param>
         /// 
@@ -4297,7 +4486,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -4922,7 +5111,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -6092,7 +6281,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -6755,7 +6944,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.RegistrationCodeValidationException">
         /// The registration code is invalid.
@@ -6954,7 +7143,7 @@ namespace Amazon.IoT
         /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// 
         /// <returns>The response from the RejectCertificateTransfer service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -7239,6 +7428,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -7634,7 +7826,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Test custom authorization.
+        /// Tests if a specified principal is authorized to perform an AWS IoT action on a specified
+        /// resource. Use this to test and debug the authorization behavior of devices that connect
+        /// to the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestAuthorization service method.</param>
         /// 
@@ -7646,7 +7840,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -7695,7 +7889,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Invoke the specified custom authorizer for testing purposes.
+        /// Tests a custom authorization behavior by invoking a specified custom authorizer. Use
+        /// this to test and debug the custom authorization behavior of devices that connect to
+        /// the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -7778,7 +7974,7 @@ namespace Amazon.IoT
         /// API to detach them.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="targetAwsAccount">The AWS account.</param>
         /// 
         /// <returns>The response from the TransferCertificate service method, as returned by IoT.</returns>
@@ -7906,7 +8102,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -8026,7 +8222,7 @@ namespace Amazon.IoT
         /// certificate.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
@@ -8371,8 +8567,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         UpdateThingResponse UpdateThing(UpdateThingRequest request);
@@ -8427,8 +8623,8 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">REST API Reference for UpdateThingGroup Operation</seealso>
         UpdateThingGroupResponse UpdateThingGroup(UpdateThingGroupRequest request);

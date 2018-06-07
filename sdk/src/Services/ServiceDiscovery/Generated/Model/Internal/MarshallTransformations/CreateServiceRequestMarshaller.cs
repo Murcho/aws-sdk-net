@@ -106,6 +106,17 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHealthCheckCustomConfig())
+                {
+                    context.Writer.WritePropertyName("HealthCheckCustomConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HealthCheckCustomConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
@@ -121,7 +132,23 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateServiceRequestMarshaller _instance = new CreateServiceRequestMarshaller();        
 
+        internal static CreateServiceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateServiceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

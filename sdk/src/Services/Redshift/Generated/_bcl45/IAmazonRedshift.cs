@@ -822,7 +822,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// A resource can have up to 10 tags. If you try to create more than 10 tags for a resource,
+        /// A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
         /// you will receive an error and the attempt will fail.
         /// </para>
         ///  
@@ -1711,6 +1711,9 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -1745,6 +1748,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
@@ -1781,6 +1787,9 @@ namespace Amazon.Redshift
         /// </param>
         /// 
         /// <returns>The response from the DescribeClusterSnapshots service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>

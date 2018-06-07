@@ -117,6 +117,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPolicy())
+                {
+                    context.Writer.WritePropertyName("policy");
+                    context.Writer.Write(publicRequest.Policy);
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("version");
@@ -132,7 +138,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRestApiRequestMarshaller _instance = new CreateRestApiRequestMarshaller();        
 
+        internal static CreateRestApiRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRestApiRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -1097,6 +1097,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationScheme.
+    /// </summary>
+    public class AuthenticationScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AKAMAI for AuthenticationScheme
+        /// </summary>
+        public static readonly AuthenticationScheme AKAMAI = new AuthenticationScheme("AKAMAI");
+        /// <summary>
+        /// Constant COMMON for AuthenticationScheme
+        /// </summary>
+        public static readonly AuthenticationScheme COMMON = new AuthenticationScheme("COMMON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationScheme FindValue(string value)
+        {
+            return FindValue<AuthenticationScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailBlankingState.
     /// </summary>
     public class AvailBlankingState : ConstantClass
@@ -5225,6 +5275,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputCodec.
+    /// </summary>
+    public class InputCodec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVC for InputCodec
+        /// </summary>
+        public static readonly InputCodec AVC = new InputCodec("AVC");
+        /// <summary>
+        /// Constant HEVC for InputCodec
+        /// </summary>
+        public static readonly InputCodec HEVC = new InputCodec("HEVC");
+        /// <summary>
+        /// Constant MPEG2 for InputCodec
+        /// </summary>
+        public static readonly InputCodec MPEG2 = new InputCodec("MPEG2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputCodec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputCodec FindValue(string value)
+        {
+            return FindValue<InputCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputDeblockFilter.
     /// </summary>
     public class InputDeblockFilter : ConstantClass
@@ -5576,6 +5680,172 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputLossImageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputMaximumBitrate.
+    /// </summary>
+    public class InputMaximumBitrate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_10_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_10_MBPS = new InputMaximumBitrate("MAX_10_MBPS");
+        /// <summary>
+        /// Constant MAX_20_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_20_MBPS = new InputMaximumBitrate("MAX_20_MBPS");
+        /// <summary>
+        /// Constant MAX_50_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_50_MBPS = new InputMaximumBitrate("MAX_50_MBPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputMaximumBitrate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputMaximumBitrate FindValue(string value)
+        {
+            return FindValue<InputMaximumBitrate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputMaximumBitrate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputResolution.
+    /// </summary>
+    public class InputResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HD for InputResolution
+        /// </summary>
+        public static readonly InputResolution HD = new InputResolution("HD");
+        /// <summary>
+        /// Constant SD for InputResolution
+        /// </summary>
+        public static readonly InputResolution SD = new InputResolution("SD");
+        /// <summary>
+        /// Constant UHD for InputResolution
+        /// </summary>
+        public static readonly InputResolution UHD = new InputResolution("UHD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputResolution FindValue(string value)
+        {
+            return FindValue<InputResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputSecurityGroupState.
+    /// </summary>
+    public class InputSecurityGroupState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for InputSecurityGroupState
+        /// </summary>
+        public static readonly InputSecurityGroupState DELETED = new InputSecurityGroupState("DELETED");
+        /// <summary>
+        /// Constant IDLE for InputSecurityGroupState
+        /// </summary>
+        public static readonly InputSecurityGroupState IDLE = new InputSecurityGroupState("IDLE");
+        /// <summary>
+        /// Constant IN_USE for InputSecurityGroupState
+        /// </summary>
+        public static readonly InputSecurityGroupState IN_USE = new InputSecurityGroupState("IN_USE");
+        /// <summary>
+        /// Constant UPDATING for InputSecurityGroupState
+        /// </summary>
+        public static readonly InputSecurityGroupState UPDATING = new InputSecurityGroupState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputSecurityGroupState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputSecurityGroupState FindValue(string value)
+        {
+            return FindValue<InputSecurityGroupState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputSecurityGroupState(string value)
         {
             return FindValue(value);
         }
@@ -6916,6 +7186,160 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInputServerValidation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RtmpCacheFullBehavior.
+    /// </summary>
+    public class RtmpCacheFullBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISCONNECT_IMMEDIATELY for RtmpCacheFullBehavior
+        /// </summary>
+        public static readonly RtmpCacheFullBehavior DISCONNECT_IMMEDIATELY = new RtmpCacheFullBehavior("DISCONNECT_IMMEDIATELY");
+        /// <summary>
+        /// Constant WAIT_FOR_SERVER for RtmpCacheFullBehavior
+        /// </summary>
+        public static readonly RtmpCacheFullBehavior WAIT_FOR_SERVER = new RtmpCacheFullBehavior("WAIT_FOR_SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RtmpCacheFullBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RtmpCacheFullBehavior FindValue(string value)
+        {
+            return FindValue<RtmpCacheFullBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RtmpCacheFullBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RtmpCaptionData.
+    /// </summary>
+    public class RtmpCaptionData : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RtmpCaptionData
+        /// </summary>
+        public static readonly RtmpCaptionData ALL = new RtmpCaptionData("ALL");
+        /// <summary>
+        /// Constant FIELD1_608 for RtmpCaptionData
+        /// </summary>
+        public static readonly RtmpCaptionData FIELD1_608 = new RtmpCaptionData("FIELD1_608");
+        /// <summary>
+        /// Constant FIELD1_AND_FIELD2_608 for RtmpCaptionData
+        /// </summary>
+        public static readonly RtmpCaptionData FIELD1_AND_FIELD2_608 = new RtmpCaptionData("FIELD1_AND_FIELD2_608");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RtmpCaptionData(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RtmpCaptionData FindValue(string value)
+        {
+            return FindValue<RtmpCaptionData>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RtmpCaptionData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RtmpOutputCertificateMode.
+    /// </summary>
+    public class RtmpOutputCertificateMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SELF_SIGNED for RtmpOutputCertificateMode
+        /// </summary>
+        public static readonly RtmpOutputCertificateMode SELF_SIGNED = new RtmpOutputCertificateMode("SELF_SIGNED");
+        /// <summary>
+        /// Constant VERIFY_AUTHENTICITY for RtmpOutputCertificateMode
+        /// </summary>
+        public static readonly RtmpOutputCertificateMode VERIFY_AUTHENTICITY = new RtmpOutputCertificateMode("VERIFY_AUTHENTICITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RtmpOutputCertificateMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RtmpOutputCertificateMode FindValue(string value)
+        {
+            return FindValue<RtmpOutputCertificateMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RtmpOutputCertificateMode(string value)
         {
             return FindValue(value);
         }

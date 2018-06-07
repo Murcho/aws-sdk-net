@@ -235,7 +235,8 @@ namespace Amazon.CloudDirectory
         #region  AddFacetToObject
 
         /// <summary>
-        /// Adds a new <a>Facet</a> to an object.
+        /// Adds a new <a>Facet</a> to an object. An object can have more than one facet applied
+        /// on it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddFacetToObject service method.</param>
         /// 
@@ -244,7 +245,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -280,7 +281,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         public virtual AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
         {
-            var marshaller = new AddFacetToObjectRequestMarshaller();
+            var marshaller = AddFacetToObjectRequestMarshaller.Instance;
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
 
             return Invoke<AddFacetToObjectRequest,AddFacetToObjectResponse>(request, marshaller, unmarshaller);
@@ -300,7 +301,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         public virtual IAsyncResult BeginAddFacetToObject(AddFacetToObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddFacetToObjectRequestMarshaller();
+            var marshaller = AddFacetToObjectRequestMarshaller.Instance;
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddFacetToObjectRequest>(request, marshaller, unmarshaller,
@@ -369,7 +370,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         public virtual ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
         {
-            var marshaller = new ApplySchemaRequestMarshaller();
+            var marshaller = ApplySchemaRequestMarshaller.Instance;
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
 
             return Invoke<ApplySchemaRequest,ApplySchemaResponse>(request, marshaller, unmarshaller);
@@ -389,7 +390,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         public virtual IAsyncResult BeginApplySchema(ApplySchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ApplySchemaRequestMarshaller();
+            var marshaller = ApplySchemaRequestMarshaller.Instance;
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<ApplySchemaRequest>(request, marshaller, unmarshaller,
@@ -433,7 +434,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -481,7 +482,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public virtual AttachObjectResponse AttachObject(AttachObjectRequest request)
         {
-            var marshaller = new AttachObjectRequestMarshaller();
+            var marshaller = AttachObjectRequestMarshaller.Instance;
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
 
             return Invoke<AttachObjectRequest,AttachObjectResponse>(request, marshaller, unmarshaller);
@@ -501,7 +502,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public virtual IAsyncResult BeginAttachObject(AttachObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachObjectRequestMarshaller();
+            var marshaller = AttachObjectRequestMarshaller.Instance;
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachObjectRequest>(request, marshaller, unmarshaller,
@@ -536,16 +537,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -574,7 +572,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
-            var marshaller = new AttachPolicyRequestMarshaller();
+            var marshaller = AttachPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
             return Invoke<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, unmarshaller);
@@ -594,7 +592,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual IAsyncResult BeginAttachPolicy(AttachPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachPolicyRequestMarshaller();
+            var marshaller = AttachPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachPolicyRequest>(request, marshaller, unmarshaller,
@@ -628,7 +626,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.IndexedAttributeMissingException">
         /// An object has been attempted to be attached to an object that does not have the appropriate
@@ -642,6 +640,11 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
+        /// Indicates that an attempt to attach an object with the same link name or to apply
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -671,7 +674,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         public virtual AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
         {
-            var marshaller = new AttachToIndexRequestMarshaller();
+            var marshaller = AttachToIndexRequestMarshaller.Instance;
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
 
             return Invoke<AttachToIndexRequest,AttachToIndexResponse>(request, marshaller, unmarshaller);
@@ -691,7 +694,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         public virtual IAsyncResult BeginAttachToIndex(AttachToIndexRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachToIndexRequestMarshaller();
+            var marshaller = AttachToIndexRequestMarshaller.Instance;
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachToIndexRequest>(request, marshaller, unmarshaller,
@@ -727,7 +730,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -771,7 +774,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         public virtual AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
         {
-            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var marshaller = AttachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
 
             return Invoke<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, unmarshaller);
@@ -791,7 +794,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         public virtual IAsyncResult BeginAttachTypedLink(AttachTypedLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var marshaller = AttachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachTypedLinkRequest>(request, marshaller, unmarshaller,
@@ -825,7 +828,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -854,7 +857,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
         public virtual BatchReadResponse BatchRead(BatchReadRequest request)
         {
-            var marshaller = new BatchReadRequestMarshaller();
+            var marshaller = BatchReadRequestMarshaller.Instance;
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
 
             return Invoke<BatchReadRequest,BatchReadResponse>(request, marshaller, unmarshaller);
@@ -874,7 +877,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
         public virtual IAsyncResult BeginBatchRead(BatchReadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchReadRequestMarshaller();
+            var marshaller = BatchReadRequestMarshaller.Instance;
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchReadRequest>(request, marshaller, unmarshaller,
@@ -912,7 +915,7 @@ namespace Amazon.CloudDirectory
         /// A <code>BatchWrite</code> exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -941,7 +944,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         public virtual BatchWriteResponse BatchWrite(BatchWriteRequest request)
         {
-            var marshaller = new BatchWriteRequestMarshaller();
+            var marshaller = BatchWriteRequestMarshaller.Instance;
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
 
             return Invoke<BatchWriteRequest,BatchWriteResponse>(request, marshaller, unmarshaller);
@@ -961,7 +964,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         public virtual IAsyncResult BeginBatchWrite(BatchWriteRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchWriteRequestMarshaller();
+            var marshaller = BatchWriteRequestMarshaller.Instance;
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchWriteRequest>(request, marshaller, unmarshaller,
@@ -1008,9 +1011,6 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
-        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
@@ -1032,7 +1032,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, unmarshaller);
@@ -1052,7 +1052,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDirectoryRequest>(request, marshaller, unmarshaller,
@@ -1126,7 +1126,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         public virtual CreateFacetResponse CreateFacet(CreateFacetRequest request)
         {
-            var marshaller = new CreateFacetRequestMarshaller();
+            var marshaller = CreateFacetRequestMarshaller.Instance;
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
 
             return Invoke<CreateFacetRequest,CreateFacetResponse>(request, marshaller, unmarshaller);
@@ -1146,7 +1146,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         public virtual IAsyncResult BeginCreateFacet(CreateFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateFacetRequestMarshaller();
+            var marshaller = CreateFacetRequestMarshaller.Instance;
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateFacetRequest>(request, marshaller, unmarshaller,
@@ -1181,7 +1181,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -1224,7 +1224,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var marshaller = new CreateIndexRequestMarshaller();
+            var marshaller = CreateIndexRequestMarshaller.Instance;
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
             return Invoke<CreateIndexRequest,CreateIndexResponse>(request, marshaller, unmarshaller);
@@ -1244,7 +1244,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateIndexRequestMarshaller();
+            var marshaller = CreateIndexRequestMarshaller.Instance;
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateIndexRequest>(request, marshaller, unmarshaller,
@@ -1281,7 +1281,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -1292,9 +1292,6 @@ namespace Amazon.CloudDirectory
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -1327,7 +1324,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
         public virtual CreateObjectResponse CreateObject(CreateObjectRequest request)
         {
-            var marshaller = new CreateObjectRequestMarshaller();
+            var marshaller = CreateObjectRequestMarshaller.Instance;
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateObjectRequest,CreateObjectResponse>(request, marshaller, unmarshaller);
@@ -1347,7 +1344,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
         public virtual IAsyncResult BeginCreateObject(CreateObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateObjectRequestMarshaller();
+            var marshaller = CreateObjectRequestMarshaller.Instance;
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateObjectRequest>(request, marshaller, unmarshaller,
@@ -1432,7 +1429,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var marshaller = new CreateSchemaRequestMarshaller();
+            var marshaller = CreateSchemaRequestMarshaller.Instance;
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
             return Invoke<CreateSchemaRequest,CreateSchemaResponse>(request, marshaller, unmarshaller);
@@ -1452,7 +1449,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSchemaRequestMarshaller();
+            var marshaller = CreateSchemaRequestMarshaller.Instance;
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSchemaRequest>(request, marshaller, unmarshaller,
@@ -1526,7 +1523,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         public virtual CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
         {
-            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var marshaller = CreateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -1546,7 +1543,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         public virtual IAsyncResult BeginCreateTypedLinkFacet(CreateTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var marshaller = CreateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTypedLinkFacetRequest>(request, marshaller, unmarshaller,
@@ -1617,7 +1614,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, unmarshaller);
@@ -1637,7 +1634,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDirectoryRequest>(request, marshaller, unmarshaller,
@@ -1708,7 +1705,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         public virtual DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
         {
-            var marshaller = new DeleteFacetRequestMarshaller();
+            var marshaller = DeleteFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFacetRequest,DeleteFacetResponse>(request, marshaller, unmarshaller);
@@ -1728,7 +1725,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         public virtual IAsyncResult BeginDeleteFacet(DeleteFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteFacetRequestMarshaller();
+            var marshaller = DeleteFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteFacetRequest>(request, marshaller, unmarshaller,
@@ -1763,7 +1760,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1799,7 +1796,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
@@ -1819,7 +1816,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteObjectRequest>(request, marshaller, unmarshaller,
@@ -1886,7 +1883,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var marshaller = new DeleteSchemaRequestMarshaller();
+            var marshaller = DeleteSchemaRequestMarshaller.Instance;
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSchemaRequest,DeleteSchemaResponse>(request, marshaller, unmarshaller);
@@ -1906,7 +1903,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSchemaRequestMarshaller();
+            var marshaller = DeleteSchemaRequestMarshaller.Instance;
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSchemaRequest>(request, marshaller, unmarshaller,
@@ -1973,7 +1970,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         public virtual DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
         {
-            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var marshaller = DeleteTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -1993,7 +1990,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         public virtual IAsyncResult BeginDeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var marshaller = DeleteTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteTypedLinkFacetRequest>(request, marshaller, unmarshaller,
@@ -2027,7 +2024,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2065,7 +2062,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         public virtual DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
         {
-            var marshaller = new DetachFromIndexRequestMarshaller();
+            var marshaller = DetachFromIndexRequestMarshaller.Instance;
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
 
             return Invoke<DetachFromIndexRequest,DetachFromIndexResponse>(request, marshaller, unmarshaller);
@@ -2085,7 +2082,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         public virtual IAsyncResult BeginDetachFromIndex(DetachFromIndexRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachFromIndexRequestMarshaller();
+            var marshaller = DetachFromIndexRequestMarshaller.Instance;
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachFromIndexRequest>(request, marshaller, unmarshaller,
@@ -2120,7 +2117,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2134,6 +2131,10 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
+        /// Occurs when any invalid operations are performed on an object that is not a node,
+        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -2152,7 +2153,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
         public virtual DetachObjectResponse DetachObject(DetachObjectRequest request)
         {
-            var marshaller = new DetachObjectRequestMarshaller();
+            var marshaller = DetachObjectRequestMarshaller.Instance;
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
 
             return Invoke<DetachObjectRequest,DetachObjectResponse>(request, marshaller, unmarshaller);
@@ -2172,7 +2173,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
         public virtual IAsyncResult BeginDetachObject(DetachObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachObjectRequestMarshaller();
+            var marshaller = DetachObjectRequestMarshaller.Instance;
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachObjectRequest>(request, marshaller, unmarshaller,
@@ -2206,16 +2207,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -2244,7 +2242,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
-            var marshaller = new DetachPolicyRequestMarshaller();
+            var marshaller = DetachPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, unmarshaller);
@@ -2264,7 +2262,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual IAsyncResult BeginDetachPolicy(DetachPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachPolicyRequestMarshaller();
+            var marshaller = DetachPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachPolicyRequest>(request, marshaller, unmarshaller,
@@ -2300,7 +2298,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -2336,7 +2334,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         public virtual DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
         {
-            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var marshaller = DetachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
 
             return Invoke<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, unmarshaller);
@@ -2356,7 +2354,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         public virtual IAsyncResult BeginDetachTypedLink(DetachTypedLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var marshaller = DetachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachTypedLinkRequest>(request, marshaller, unmarshaller,
@@ -2424,7 +2422,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         public virtual DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
         {
-            var marshaller = new DisableDirectoryRequestMarshaller();
+            var marshaller = DisableDirectoryRequestMarshaller.Instance;
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<DisableDirectoryRequest,DisableDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2444,7 +2442,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         public virtual IAsyncResult BeginDisableDirectory(DisableDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisableDirectoryRequestMarshaller();
+            var marshaller = DisableDirectoryRequestMarshaller.Instance;
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisableDirectoryRequest>(request, marshaller, unmarshaller,
@@ -2512,7 +2510,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         public virtual EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
         {
-            var marshaller = new EnableDirectoryRequestMarshaller();
+            var marshaller = EnableDirectoryRequestMarshaller.Instance;
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<EnableDirectoryRequest,EnableDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2532,7 +2530,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         public virtual IAsyncResult BeginEnableDirectory(EnableDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new EnableDirectoryRequestMarshaller();
+            var marshaller = EnableDirectoryRequestMarshaller.Instance;
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<EnableDirectoryRequest>(request, marshaller, unmarshaller,
@@ -2595,7 +2593,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         public virtual GetAppliedSchemaVersionResponse GetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request)
         {
-            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var marshaller = GetAppliedSchemaVersionRequestMarshaller.Instance;
             var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetAppliedSchemaVersionRequest,GetAppliedSchemaVersionResponse>(request, marshaller, unmarshaller);
@@ -2615,7 +2613,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         public virtual IAsyncResult BeginGetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var marshaller = GetAppliedSchemaVersionRequestMarshaller.Instance;
             var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAppliedSchemaVersionRequest>(request, marshaller, unmarshaller,
@@ -2675,7 +2673,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         public virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
         {
-            var marshaller = new GetDirectoryRequestMarshaller();
+            var marshaller = GetDirectoryRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<GetDirectoryRequest,GetDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2695,7 +2693,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         public virtual IAsyncResult BeginGetDirectory(GetDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDirectoryRequestMarshaller();
+            var marshaller = GetDirectoryRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDirectoryRequest>(request, marshaller, unmarshaller,
@@ -2763,7 +2761,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
         public virtual GetFacetResponse GetFacet(GetFacetRequest request)
         {
-            var marshaller = new GetFacetRequestMarshaller();
+            var marshaller = GetFacetRequestMarshaller.Instance;
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
 
             return Invoke<GetFacetRequest,GetFacetResponse>(request, marshaller, unmarshaller);
@@ -2783,7 +2781,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
         public virtual IAsyncResult BeginGetFacet(GetFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetFacetRequestMarshaller();
+            var marshaller = GetFacetRequestMarshaller.Instance;
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetFacetRequest>(request, marshaller, unmarshaller,
@@ -2805,6 +2803,96 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetObjectAttributes
+
+        /// <summary>
+        /// Retrieves attributes within a facet that are associated with an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectAttributesRequest,GetObjectAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual IAsyncResult BeginGetObjectAttributes(GetObjectAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetObjectAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetObjectAttributesResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual GetObjectAttributesResponse EndGetObjectAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetObjectAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetObjectInformation
 
         /// <summary>
@@ -2817,7 +2905,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2849,7 +2937,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         public virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
         {
-            var marshaller = new GetObjectInformationRequestMarshaller();
+            var marshaller = GetObjectInformationRequestMarshaller.Instance;
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectInformationRequest,GetObjectInformationResponse>(request, marshaller, unmarshaller);
@@ -2869,7 +2957,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         public virtual IAsyncResult BeginGetObjectInformation(GetObjectInformationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetObjectInformationRequestMarshaller();
+            var marshaller = GetObjectInformationRequestMarshaller.Instance;
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetObjectInformationRequest>(request, marshaller, unmarshaller,
@@ -2936,7 +3024,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         public virtual GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
         {
-            var marshaller = new GetSchemaAsJsonRequestMarshaller();
+            var marshaller = GetSchemaAsJsonRequestMarshaller.Instance;
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
 
             return Invoke<GetSchemaAsJsonRequest,GetSchemaAsJsonResponse>(request, marshaller, unmarshaller);
@@ -2956,7 +3044,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         public virtual IAsyncResult BeginGetSchemaAsJson(GetSchemaAsJsonRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSchemaAsJsonRequestMarshaller();
+            var marshaller = GetSchemaAsJsonRequestMarshaller.Instance;
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSchemaAsJsonRequest>(request, marshaller, unmarshaller,
@@ -3027,7 +3115,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         public virtual GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
         {
-            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var marshaller = GetTypedLinkFacetInformationRequestMarshaller.Instance;
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
 
             return Invoke<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, unmarshaller);
@@ -3047,7 +3135,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         public virtual IAsyncResult BeginGetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var marshaller = GetTypedLinkFacetInformationRequestMarshaller.Instance;
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTypedLinkFacetInformationRequest>(request, marshaller, unmarshaller,
@@ -3114,7 +3202,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         public virtual ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
         {
-            var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
+            var marshaller = ListAppliedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListAppliedSchemaArnsRequest,ListAppliedSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -3134,7 +3222,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         public virtual IAsyncResult BeginListAppliedSchemaArns(ListAppliedSchemaArnsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
+            var marshaller = ListAppliedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAppliedSchemaArnsRequest>(request, marshaller, unmarshaller,
@@ -3168,7 +3256,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3200,7 +3288,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         public virtual ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
         {
-            var marshaller = new ListAttachedIndicesRequestMarshaller();
+            var marshaller = ListAttachedIndicesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttachedIndicesRequest,ListAttachedIndicesResponse>(request, marshaller, unmarshaller);
@@ -3220,7 +3308,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         public virtual IAsyncResult BeginListAttachedIndices(ListAttachedIndicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAttachedIndicesRequestMarshaller();
+            var marshaller = ListAttachedIndicesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAttachedIndicesRequest>(request, marshaller, unmarshaller,
@@ -3286,7 +3374,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         public virtual ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
         {
-            var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
+            var marshaller = ListDevelopmentSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListDevelopmentSchemaArnsRequest,ListDevelopmentSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -3306,7 +3394,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         public virtual IAsyncResult BeginListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
+            var marshaller = ListDevelopmentSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDevelopmentSchemaArnsRequest>(request, marshaller, unmarshaller,
@@ -3369,7 +3457,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         public virtual ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
         {
-            var marshaller = new ListDirectoriesRequestMarshaller();
+            var marshaller = ListDirectoriesRequestMarshaller.Instance;
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
 
             return Invoke<ListDirectoriesRequest,ListDirectoriesResponse>(request, marshaller, unmarshaller);
@@ -3389,7 +3477,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         public virtual IAsyncResult BeginListDirectories(ListDirectoriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDirectoriesRequestMarshaller();
+            var marshaller = ListDirectoriesRequestMarshaller.Instance;
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDirectoriesRequest>(request, marshaller, unmarshaller,
@@ -3458,7 +3546,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         public virtual ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
         {
-            var marshaller = new ListFacetAttributesRequestMarshaller();
+            var marshaller = ListFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListFacetAttributesRequest,ListFacetAttributesResponse>(request, marshaller, unmarshaller);
@@ -3478,7 +3566,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         public virtual IAsyncResult BeginListFacetAttributes(ListFacetAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListFacetAttributesRequestMarshaller();
+            var marshaller = ListFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListFacetAttributesRequest>(request, marshaller, unmarshaller,
@@ -3544,7 +3632,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         public virtual ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
         {
-            var marshaller = new ListFacetNamesRequestMarshaller();
+            var marshaller = ListFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListFacetNamesRequest,ListFacetNamesResponse>(request, marshaller, unmarshaller);
@@ -3564,7 +3652,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         public virtual IAsyncResult BeginListFacetNames(ListFacetNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListFacetNamesRequestMarshaller();
+            var marshaller = ListFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListFacetNamesRequest>(request, marshaller, unmarshaller,
@@ -3601,7 +3689,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -3640,7 +3728,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         public virtual ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
         {
-            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var marshaller = ListIncomingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
 
             return Invoke<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, unmarshaller);
@@ -3660,7 +3748,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         public virtual IAsyncResult BeginListIncomingTypedLinks(ListIncomingTypedLinksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var marshaller = ListIncomingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIncomingTypedLinksRequest>(request, marshaller, unmarshaller,
@@ -3685,7 +3773,7 @@ namespace Amazon.CloudDirectory
         #region  ListIndex
 
         /// <summary>
-        /// Lists objects and indexed values attached to the index.
+        /// Lists objects attached to the specified index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndex service method.</param>
         /// 
@@ -3694,7 +3782,11 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3704,6 +3796,9 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -3729,7 +3824,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
         public virtual ListIndexResponse ListIndex(ListIndexRequest request)
         {
-            var marshaller = new ListIndexRequestMarshaller();
+            var marshaller = ListIndexRequestMarshaller.Instance;
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
 
             return Invoke<ListIndexRequest,ListIndexResponse>(request, marshaller, unmarshaller);
@@ -3749,7 +3844,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
         public virtual IAsyncResult BeginListIndex(ListIndexRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIndexRequestMarshaller();
+            var marshaller = ListIndexRequestMarshaller.Instance;
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIndexRequest>(request, marshaller, unmarshaller,
@@ -3783,7 +3878,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -3794,9 +3889,6 @@ namespace Amazon.CloudDirectory
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3825,7 +3917,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         public virtual ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
         {
-            var marshaller = new ListObjectAttributesRequestMarshaller();
+            var marshaller = ListObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectAttributesRequest,ListObjectAttributesResponse>(request, marshaller, unmarshaller);
@@ -3845,7 +3937,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         public virtual IAsyncResult BeginListObjectAttributes(ListObjectAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListObjectAttributesRequestMarshaller();
+            var marshaller = ListObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListObjectAttributesRequest>(request, marshaller, unmarshaller,
@@ -3879,16 +3971,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3921,7 +4010,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         public virtual ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
         {
-            var marshaller = new ListObjectChildrenRequestMarshaller();
+            var marshaller = ListObjectChildrenRequestMarshaller.Instance;
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectChildrenRequest,ListObjectChildrenResponse>(request, marshaller, unmarshaller);
@@ -3941,7 +4030,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         public virtual IAsyncResult BeginListObjectChildren(ListObjectChildrenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListObjectChildrenRequestMarshaller();
+            var marshaller = ListObjectChildrenRequestMarshaller.Instance;
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListObjectChildrenRequest>(request, marshaller, unmarshaller,
@@ -3987,7 +4076,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4022,7 +4111,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         public virtual ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
         {
-            var marshaller = new ListObjectParentPathsRequestMarshaller();
+            var marshaller = ListObjectParentPathsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectParentPathsRequest,ListObjectParentPathsResponse>(request, marshaller, unmarshaller);
@@ -4042,7 +4131,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         public virtual IAsyncResult BeginListObjectParentPaths(ListObjectParentPathsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListObjectParentPathsRequestMarshaller();
+            var marshaller = ListObjectParentPathsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListObjectParentPathsRequest>(request, marshaller, unmarshaller,
@@ -4079,16 +4168,13 @@ namespace Amazon.CloudDirectory
         /// Cannot list the parents of a <a>Directory</a> root.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -4117,7 +4203,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         public virtual ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
         {
-            var marshaller = new ListObjectParentsRequestMarshaller();
+            var marshaller = ListObjectParentsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectParentsRequest,ListObjectParentsResponse>(request, marshaller, unmarshaller);
@@ -4137,7 +4223,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         public virtual IAsyncResult BeginListObjectParents(ListObjectParentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListObjectParentsRequestMarshaller();
+            var marshaller = ListObjectParentsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListObjectParentsRequest>(request, marshaller, unmarshaller,
@@ -4171,7 +4257,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -4206,7 +4292,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         public virtual ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
         {
-            var marshaller = new ListObjectPoliciesRequestMarshaller();
+            var marshaller = ListObjectPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectPoliciesRequest,ListObjectPoliciesResponse>(request, marshaller, unmarshaller);
@@ -4226,7 +4312,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         public virtual IAsyncResult BeginListObjectPolicies(ListObjectPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListObjectPoliciesRequestMarshaller();
+            var marshaller = ListObjectPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListObjectPoliciesRequest>(request, marshaller, unmarshaller,
@@ -4263,7 +4349,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -4302,7 +4388,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         public virtual ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
         {
-            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var marshaller = ListOutgoingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
 
             return Invoke<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, unmarshaller);
@@ -4322,7 +4408,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         public virtual IAsyncResult BeginListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var marshaller = ListOutgoingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListOutgoingTypedLinksRequest>(request, marshaller, unmarshaller,
@@ -4356,16 +4442,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -4397,7 +4480,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         public virtual ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
         {
-            var marshaller = new ListPolicyAttachmentsRequestMarshaller();
+            var marshaller = ListPolicyAttachmentsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
 
             return Invoke<ListPolicyAttachmentsRequest,ListPolicyAttachmentsResponse>(request, marshaller, unmarshaller);
@@ -4417,7 +4500,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         public virtual IAsyncResult BeginListPolicyAttachments(ListPolicyAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPolicyAttachmentsRequestMarshaller();
+            var marshaller = ListPolicyAttachmentsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPolicyAttachmentsRequest>(request, marshaller, unmarshaller,
@@ -4442,8 +4525,9 @@ namespace Amazon.CloudDirectory
         #region  ListPublishedSchemaArns
 
         /// <summary>
-        /// Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided,
-        /// lists the minor version.
+        /// Lists the major version families of each published schema. If a major version ARN
+        /// is provided as <code>SchemaArn</code>, the minor version revisions in that family
+        /// are listed instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// 
@@ -4484,7 +4568,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         public virtual ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
         {
-            var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
+            var marshaller = ListPublishedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListPublishedSchemaArnsRequest,ListPublishedSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -4504,7 +4588,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         public virtual IAsyncResult BeginListPublishedSchemaArns(ListPublishedSchemaArnsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
+            var marshaller = ListPublishedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPublishedSchemaArnsRequest>(request, marshaller, unmarshaller,
@@ -4574,7 +4658,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -4594,7 +4678,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
@@ -4665,7 +4749,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         public virtual ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
         {
-            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, unmarshaller);
@@ -4685,7 +4769,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         public virtual IAsyncResult BeginListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTypedLinkFacetAttributesRequest>(request, marshaller, unmarshaller,
@@ -4753,7 +4837,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         public virtual ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
         {
-            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, unmarshaller);
@@ -4773,7 +4857,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         public virtual IAsyncResult BeginListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTypedLinkFacetNamesRequest>(request, marshaller, unmarshaller,
@@ -4812,16 +4896,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -4850,7 +4931,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         public virtual LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
         {
-            var marshaller = new LookupPolicyRequestMarshaller();
+            var marshaller = LookupPolicyRequestMarshaller.Instance;
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<LookupPolicyRequest,LookupPolicyResponse>(request, marshaller, unmarshaller);
@@ -4870,7 +4951,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         public virtual IAsyncResult BeginLookupPolicy(LookupPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new LookupPolicyRequestMarshaller();
+            var marshaller = LookupPolicyRequestMarshaller.Instance;
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<LookupPolicyRequest>(request, marshaller, unmarshaller,
@@ -4936,7 +5017,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         public virtual PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
         {
-            var marshaller = new PublishSchemaRequestMarshaller();
+            var marshaller = PublishSchemaRequestMarshaller.Instance;
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
 
             return Invoke<PublishSchemaRequest,PublishSchemaResponse>(request, marshaller, unmarshaller);
@@ -4956,7 +5037,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         public virtual IAsyncResult BeginPublishSchema(PublishSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PublishSchemaRequestMarshaller();
+            var marshaller = PublishSchemaRequestMarshaller.Instance;
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<PublishSchemaRequest>(request, marshaller, unmarshaller,
@@ -5024,7 +5105,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         public virtual PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
         {
-            var marshaller = new PutSchemaFromJsonRequestMarshaller();
+            var marshaller = PutSchemaFromJsonRequestMarshaller.Instance;
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
 
             return Invoke<PutSchemaFromJsonRequest,PutSchemaFromJsonResponse>(request, marshaller, unmarshaller);
@@ -5044,7 +5125,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         public virtual IAsyncResult BeginPutSchemaFromJson(PutSchemaFromJsonRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutSchemaFromJsonRequestMarshaller();
+            var marshaller = PutSchemaFromJsonRequestMarshaller.Instance;
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutSchemaFromJsonRequest>(request, marshaller, unmarshaller,
@@ -5078,7 +5159,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -5114,7 +5195,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         public virtual RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
         {
-            var marshaller = new RemoveFacetFromObjectRequestMarshaller();
+            var marshaller = RemoveFacetFromObjectRequestMarshaller.Instance;
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
 
             return Invoke<RemoveFacetFromObjectRequest,RemoveFacetFromObjectResponse>(request, marshaller, unmarshaller);
@@ -5134,7 +5215,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         public virtual IAsyncResult BeginRemoveFacetFromObject(RemoveFacetFromObjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveFacetFromObjectRequestMarshaller();
+            var marshaller = RemoveFacetFromObjectRequestMarshaller.Instance;
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveFacetFromObjectRequest>(request, marshaller, unmarshaller,
@@ -5202,7 +5283,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -5222,7 +5303,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
@@ -5290,7 +5371,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -5310,7 +5391,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
@@ -5396,7 +5477,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         public virtual UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
         {
-            var marshaller = new UpdateFacetRequestMarshaller();
+            var marshaller = UpdateFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFacetRequest,UpdateFacetResponse>(request, marshaller, unmarshaller);
@@ -5416,7 +5497,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         public virtual IAsyncResult BeginUpdateFacet(UpdateFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateFacetRequestMarshaller();
+            var marshaller = UpdateFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateFacetRequest>(request, marshaller, unmarshaller,
@@ -5450,7 +5531,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -5486,7 +5567,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         public virtual UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
         {
-            var marshaller = new UpdateObjectAttributesRequestMarshaller();
+            var marshaller = UpdateObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateObjectAttributesRequest,UpdateObjectAttributesResponse>(request, marshaller, unmarshaller);
@@ -5506,7 +5587,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         public virtual IAsyncResult BeginUpdateObjectAttributes(UpdateObjectAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateObjectAttributesRequestMarshaller();
+            var marshaller = UpdateObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateObjectAttributesRequest>(request, marshaller, unmarshaller,
@@ -5569,7 +5650,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
-            var marshaller = new UpdateSchemaRequestMarshaller();
+            var marshaller = UpdateSchemaRequestMarshaller.Instance;
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSchemaRequest,UpdateSchemaResponse>(request, marshaller, unmarshaller);
@@ -5589,7 +5670,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual IAsyncResult BeginUpdateSchema(UpdateSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateSchemaRequestMarshaller();
+            var marshaller = UpdateSchemaRequestMarshaller.Instance;
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateSchemaRequest>(request, marshaller, unmarshaller,
@@ -5666,7 +5747,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         public virtual UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
         {
-            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var marshaller = UpdateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -5686,7 +5767,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         public virtual IAsyncResult BeginUpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var marshaller = UpdateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateTypedLinkFacetRequest>(request, marshaller, unmarshaller,
@@ -5759,7 +5840,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         public virtual UpgradeAppliedSchemaResponse UpgradeAppliedSchema(UpgradeAppliedSchemaRequest request)
         {
-            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var marshaller = UpgradeAppliedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpgradeAppliedSchemaRequest,UpgradeAppliedSchemaResponse>(request, marshaller, unmarshaller);
@@ -5779,7 +5860,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         public virtual IAsyncResult BeginUpgradeAppliedSchema(UpgradeAppliedSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var marshaller = UpgradeAppliedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpgradeAppliedSchemaRequest>(request, marshaller, unmarshaller,
@@ -5852,7 +5933,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         public virtual UpgradePublishedSchemaResponse UpgradePublishedSchema(UpgradePublishedSchemaRequest request)
         {
-            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var marshaller = UpgradePublishedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpgradePublishedSchemaRequest,UpgradePublishedSchemaResponse>(request, marshaller, unmarshaller);
@@ -5872,7 +5953,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         public virtual IAsyncResult BeginUpgradePublishedSchema(UpgradePublishedSchemaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var marshaller = UpgradePublishedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpgradePublishedSchemaRequest>(request, marshaller, unmarshaller,

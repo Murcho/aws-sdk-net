@@ -6,6 +6,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <PackageId>AWSSDK.Core</PackageId>
+    <BaseIntermediateOutputPath>./obj/net35</BaseIntermediateOutputPath>
+
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -15,7 +17,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-
+    
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
@@ -36,19 +38,21 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_android/**"/>
-    <Compile Remove="**/_async/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_coreclr/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_mobile/**"/>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_unity/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="**/_android/**" />
+    <Compile Remove="**/_async/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/_coreclr/**" />
+    <Compile Remove="**/_ios/**" />
+    <Compile Remove="**/_mobile/**" />
+    <Compile Remove="**/_pcl/**" />
+    <Compile Remove="**/_pcl-sl/**" />
+    <Compile Remove="**/_pclReference/**" />
+    <Compile Remove="**/_unity/**" />
+    <Compile Remove="**/_win8/**" />
+    <Compile Remove="**/_winPhone81/**" />
+    <Compile Remove="**/_winPhoneSilverlight8/**" />
+    <Compile Remove="**/_bcl45+coreclr+pcl/**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +62,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 </Project>

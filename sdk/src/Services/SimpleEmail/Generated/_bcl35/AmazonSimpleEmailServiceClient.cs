@@ -35,16 +35,16 @@ namespace Amazon.SimpleEmail
     ///
     /// Amazon Simple Email Service 
     /// <para>
-    ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
-    /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
+    /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
+    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
     /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>. 
+    /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -270,7 +270,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public virtual CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request)
         {
-            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var marshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<CloneReceiptRuleSetRequest,CloneReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -290,7 +290,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginCloneReceiptRuleSet(CloneReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CloneReceiptRuleSetRequestMarshaller();
+            var marshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CloneReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -345,7 +345,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
@@ -365,7 +365,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var marshaller = CreateConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateConfigurationSetRequest>(request, marshaller, unmarshaller,
@@ -395,8 +395,8 @@ namespace Amazon.SimpleEmail
         ///  <note> 
         /// <para>
         /// When you create or update an event destination, you must provide one, and only one,
-        /// destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose, or
-        /// Amazon Simple Notification Service (Amazon SNS).
+        /// destination. The destination can be CloudWatch, Amazon Kinesis Firehose, or Amazon
+        /// Simple Notification Service (Amazon SNS).
         /// </para>
         ///  </note> 
         /// <para>
@@ -439,7 +439,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
@@ -459,7 +459,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
@@ -491,8 +491,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -523,7 +522,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">REST API Reference for CreateConfigurationSetTrackingOptions Operation</seealso>
         public virtual CreateConfigurationSetTrackingOptionsResponse CreateConfigurationSetTrackingOptions(CreateConfigurationSetTrackingOptionsRequest request)
         {
-            var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return Invoke<CreateConfigurationSetTrackingOptionsRequest,CreateConfigurationSetTrackingOptionsResponse>(request, marshaller, unmarshaller);
@@ -543,7 +542,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">REST API Reference for CreateConfigurationSetTrackingOptions Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationSetTrackingOptions(CreateConfigurationSetTrackingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller,
@@ -572,7 +571,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -602,7 +601,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
         public virtual CreateCustomVerificationEmailTemplateResponse CreateCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request)
         {
-            var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return Invoke<CreateCustomVerificationEmailTemplateRequest,CreateCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
@@ -622,7 +621,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller,
@@ -673,7 +672,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public virtual CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
         {
-            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var marshaller = CreateReceiptFilterRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
 
             return Invoke<CreateReceiptFilterRequest,CreateReceiptFilterResponse>(request, marshaller, unmarshaller);
@@ -693,7 +692,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public virtual IAsyncResult BeginCreateReceiptFilter(CreateReceiptFilterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateReceiptFilterRequestMarshaller();
+            var marshaller = CreateReceiptFilterRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateReceiptFilterRequest>(request, marshaller, unmarshaller,
@@ -768,7 +767,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public virtual CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request)
         {
-            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var marshaller = CreateReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
 
             return Invoke<CreateReceiptRuleRequest,CreateReceiptRuleResponse>(request, marshaller, unmarshaller);
@@ -788,7 +787,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public virtual IAsyncResult BeginCreateReceiptRule(CreateReceiptRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateReceiptRuleRequestMarshaller();
+            var marshaller = CreateReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateReceiptRuleRequest>(request, marshaller, unmarshaller,
@@ -839,7 +838,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public virtual CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request)
         {
-            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var marshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -859,7 +858,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginCreateReceiptRuleSet(CreateReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateReceiptRuleSetRequestMarshaller();
+            var marshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -901,7 +900,8 @@ namespace Amazon.SimpleEmail
         /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
-        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// Indicates that the template that you specified could not be rendered. This issue may
+        /// occur when a template refers to a partial that does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
@@ -911,7 +911,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var marshaller = new CreateTemplateRequestMarshaller();
+            var marshaller = CreateTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
             return Invoke<CreateTemplateRequest,CreateTemplateResponse>(request, marshaller, unmarshaller);
@@ -931,7 +931,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateTemplate(CreateTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTemplateRequestMarshaller();
+            var marshaller = CreateTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTemplateRequest>(request, marshaller, unmarshaller,
@@ -974,7 +974,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
@@ -994,7 +994,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var marshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConfigurationSetRequest>(request, marshaller, unmarshaller,
@@ -1041,7 +1041,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
@@ -1061,7 +1061,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
@@ -1093,8 +1093,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
@@ -1116,7 +1115,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">REST API Reference for DeleteConfigurationSetTrackingOptions Operation</seealso>
         public virtual DeleteConfigurationSetTrackingOptionsResponse DeleteConfigurationSetTrackingOptions(DeleteConfigurationSetTrackingOptionsRequest request)
         {
-            var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigurationSetTrackingOptionsRequest,DeleteConfigurationSetTrackingOptionsResponse>(request, marshaller, unmarshaller);
@@ -1136,7 +1135,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">REST API Reference for DeleteConfigurationSetTrackingOptions Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationSetTrackingOptions(DeleteConfigurationSetTrackingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller,
@@ -1165,7 +1164,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1179,7 +1178,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
         public virtual DeleteCustomVerificationEmailTemplateResponse DeleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request)
         {
-            var marshaller = new DeleteCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCustomVerificationEmailTemplateRequest,DeleteCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
@@ -1199,7 +1198,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller,
@@ -1238,7 +1237,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public virtual DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
         {
-            var marshaller = new DeleteIdentityRequestMarshaller();
+            var marshaller = DeleteIdentityRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIdentityRequest,DeleteIdentityResponse>(request, marshaller, unmarshaller);
@@ -1258,7 +1257,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentity(DeleteIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIdentityRequestMarshaller();
+            var marshaller = DeleteIdentityRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIdentityRequest>(request, marshaller, unmarshaller,
@@ -1310,7 +1309,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public virtual DeleteIdentityPolicyResponse DeleteIdentityPolicy(DeleteIdentityPolicyRequest request)
         {
-            var marshaller = new DeleteIdentityPolicyRequestMarshaller();
+            var marshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIdentityPolicyRequest,DeleteIdentityPolicyResponse>(request, marshaller, unmarshaller);
@@ -1330,7 +1329,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentityPolicy(DeleteIdentityPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIdentityPolicyRequestMarshaller();
+            var marshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIdentityPolicyRequest>(request, marshaller, unmarshaller,
@@ -1373,7 +1372,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public virtual DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request)
         {
-            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var marshaller = DeleteReceiptFilterRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteReceiptFilterRequest,DeleteReceiptFilterResponse>(request, marshaller, unmarshaller);
@@ -1393,7 +1392,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public virtual IAsyncResult BeginDeleteReceiptFilter(DeleteReceiptFilterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteReceiptFilterRequestMarshaller();
+            var marshaller = DeleteReceiptFilterRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteReceiptFilterRequest>(request, marshaller, unmarshaller,
@@ -1439,7 +1438,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public virtual DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request)
         {
-            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var marshaller = DeleteReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteReceiptRuleRequest,DeleteReceiptRuleResponse>(request, marshaller, unmarshaller);
@@ -1459,7 +1458,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteReceiptRule(DeleteReceiptRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteReceiptRuleRequestMarshaller();
+            var marshaller = DeleteReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteReceiptRuleRequest>(request, marshaller, unmarshaller,
@@ -1509,7 +1508,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public virtual DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request)
         {
-            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var marshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteReceiptRuleSetRequest,DeleteReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -1529,7 +1528,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
+            var marshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -1567,7 +1566,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var marshaller = new DeleteTemplateRequestMarshaller();
+            var marshaller = DeleteTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTemplateRequest,DeleteTemplateResponse>(request, marshaller, unmarshaller);
@@ -1587,7 +1586,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteTemplate(DeleteTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteTemplateRequestMarshaller();
+            var marshaller = DeleteTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteTemplateRequest>(request, marshaller, unmarshaller,
@@ -1621,7 +1620,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public virtual DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
         {
-            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
+            var marshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
             var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVerifiedEmailAddressRequest,DeleteVerifiedEmailAddressResponse>(request, marshaller, unmarshaller);
@@ -1641,7 +1640,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public virtual IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
+            var marshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
             var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteVerifiedEmailAddressRequest>(request, marshaller, unmarshaller,
@@ -1685,7 +1684,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public virtual DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request)
         {
-            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var marshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -1705,7 +1704,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginDescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
+            var marshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -1748,7 +1747,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public virtual DescribeConfigurationSetResponse DescribeConfigurationSet(DescribeConfigurationSetRequest request)
         {
-            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var marshaller = DescribeConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse>(request, marshaller, unmarshaller);
@@ -1768,7 +1767,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationSet(DescribeConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var marshaller = DescribeConfigurationSetRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigurationSetRequest>(request, marshaller, unmarshaller,
@@ -1817,7 +1816,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public virtual DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request)
         {
-            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var marshaller = DescribeReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeReceiptRuleRequest,DescribeReceiptRuleResponse>(request, marshaller, unmarshaller);
@@ -1837,7 +1836,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public virtual IAsyncResult BeginDescribeReceiptRule(DescribeReceiptRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeReceiptRuleRequestMarshaller();
+            var marshaller = DescribeReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeReceiptRuleRequest>(request, marshaller, unmarshaller,
@@ -1883,7 +1882,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public virtual DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request)
         {
-            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var marshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<DescribeReceiptRuleSetRequest,DescribeReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -1903,7 +1902,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginDescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
+            var marshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -1928,7 +1927,7 @@ namespace Amazon.SimpleEmail
         #region  GetAccountSendingEnabled
 
         /// <summary>
-        /// Returns the email sending status of the Amazon SES account.
+        /// Returns the email sending status of the Amazon SES account for the current region.
         /// 
         ///  
         /// <para>
@@ -1941,7 +1940,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
         public virtual GetAccountSendingEnabledResponse GetAccountSendingEnabled(GetAccountSendingEnabledRequest request)
         {
-            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var marshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
 
             return Invoke<GetAccountSendingEnabledRequest,GetAccountSendingEnabledResponse>(request, marshaller, unmarshaller);
@@ -1961,7 +1960,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSendingEnabled(GetAccountSendingEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAccountSendingEnabledRequestMarshaller();
+            var marshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAccountSendingEnabledRequest>(request, marshaller, unmarshaller,
@@ -1990,7 +1989,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2008,7 +2007,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
         public virtual GetCustomVerificationEmailTemplateResponse GetCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request)
         {
-            var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return Invoke<GetCustomVerificationEmailTemplateRequest,GetCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
@@ -2028,7 +2027,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller,
@@ -2093,7 +2092,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public virtual GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
         {
-            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
+            var marshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityDkimAttributesRequest,GetIdentityDkimAttributesResponse>(request, marshaller, unmarshaller);
@@ -2113,7 +2112,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
+            var marshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIdentityDkimAttributesRequest>(request, marshaller, unmarshaller,
@@ -2153,7 +2152,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public virtual GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request)
         {
-            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var marshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>(request, marshaller, unmarshaller);
@@ -2173,7 +2172,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var marshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIdentityMailFromDomainAttributesRequest>(request, marshaller, unmarshaller,
@@ -2218,7 +2217,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public virtual GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
         {
-            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
+            var marshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityNotificationAttributesRequest,GetIdentityNotificationAttributesResponse>(request, marshaller, unmarshaller);
@@ -2238,7 +2237,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
+            var marshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIdentityNotificationAttributesRequest>(request, marshaller, unmarshaller,
@@ -2290,7 +2289,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public virtual GetIdentityPoliciesResponse GetIdentityPolicies(GetIdentityPoliciesRequest request)
         {
-            var marshaller = new GetIdentityPoliciesRequestMarshaller();
+            var marshaller = GetIdentityPoliciesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityPoliciesRequest,GetIdentityPoliciesResponse>(request, marshaller, unmarshaller);
@@ -2310,7 +2309,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityPolicies(GetIdentityPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIdentityPoliciesRequestMarshaller();
+            var marshaller = GetIdentityPoliciesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIdentityPoliciesRequest>(request, marshaller, unmarshaller,
@@ -2368,7 +2367,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public virtual GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
         {
-            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
+            var marshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityVerificationAttributesRequest,GetIdentityVerificationAttributesResponse>(request, marshaller, unmarshaller);
@@ -2388,7 +2387,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
+            var marshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIdentityVerificationAttributesRequest>(request, marshaller, unmarshaller,
@@ -2442,7 +2441,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public virtual GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
         {
-            var marshaller = new GetSendQuotaRequestMarshaller();
+            var marshaller = GetSendQuotaRequestMarshaller.Instance;
             var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
 
             return Invoke<GetSendQuotaRequest,GetSendQuotaResponse>(request, marshaller, unmarshaller);
@@ -2462,7 +2461,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public virtual IAsyncResult BeginGetSendQuota(GetSendQuotaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSendQuotaRequestMarshaller();
+            var marshaller = GetSendQuotaRequestMarshaller.Instance;
             var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSendQuotaRequest>(request, marshaller, unmarshaller,
@@ -2487,7 +2486,7 @@ namespace Amazon.SimpleEmail
         #region  GetSendStatistics
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -2505,7 +2504,7 @@ namespace Amazon.SimpleEmail
         }
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -2520,7 +2519,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public virtual GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
         {
-            var marshaller = new GetSendStatisticsRequestMarshaller();
+            var marshaller = GetSendStatisticsRequestMarshaller.Instance;
             var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
 
             return Invoke<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, unmarshaller);
@@ -2540,7 +2539,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetSendStatistics(GetSendStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSendStatisticsRequestMarshaller();
+            var marshaller = GetSendStatisticsRequestMarshaller.Instance;
             var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSendStatisticsRequest>(request, marshaller, unmarshaller,
@@ -2583,7 +2582,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var marshaller = new GetTemplateRequestMarshaller();
+            var marshaller = GetTemplateRequestMarshaller.Instance;
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
             return Invoke<GetTemplateRequest,GetTemplateResponse>(request, marshaller, unmarshaller);
@@ -2603,7 +2602,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTemplateRequestMarshaller();
+            var marshaller = GetTemplateRequestMarshaller.Instance;
             var unmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTemplateRequest>(request, marshaller, unmarshaller,
@@ -2628,8 +2627,9 @@ namespace Amazon.SimpleEmail
         #region  ListConfigurationSets
 
         /// <summary>
-        /// Provides a list of the configuration sets associated with your Amazon SES account.
-        /// For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// Provides a list of the configuration sets associated with your Amazon SES account
+        /// in the current AWS Region. For information about using configuration sets, see <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -2648,7 +2648,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
             var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, unmarshaller);
@@ -2668,7 +2668,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var marshaller = ListConfigurationSetsRequestMarshaller.Instance;
             var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListConfigurationSetsRequest>(request, marshaller, unmarshaller,
@@ -2693,11 +2693,12 @@ namespace Amazon.SimpleEmail
         #region  ListCustomVerificationEmailTemplates
 
         /// <summary>
-        /// Lists the existing custom verification email templates for your account.
+        /// Lists the existing custom verification email templates for your account in the current
+        /// AWS Region.
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2711,7 +2712,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
         public virtual ListCustomVerificationEmailTemplatesResponse ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request)
         {
-            var marshaller = new ListCustomVerificationEmailTemplatesRequestMarshaller();
+            var marshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
 
             return Invoke<ListCustomVerificationEmailTemplatesRequest,ListCustomVerificationEmailTemplatesResponse>(request, marshaller, unmarshaller);
@@ -2731,7 +2732,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
         public virtual IAsyncResult BeginListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListCustomVerificationEmailTemplatesRequestMarshaller();
+            var marshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListCustomVerificationEmailTemplatesRequest>(request, marshaller, unmarshaller,
@@ -2757,7 +2758,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -2774,7 +2775,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -2787,7 +2788,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            var marshaller = new ListIdentitiesRequestMarshaller();
+            var marshaller = ListIdentitiesRequestMarshaller.Instance;
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
             return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
@@ -2807,7 +2808,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public virtual IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIdentitiesRequestMarshaller();
+            var marshaller = ListIdentitiesRequestMarshaller.Instance;
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIdentitiesRequest>(request, marshaller, unmarshaller,
@@ -2859,7 +2860,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public virtual ListIdentityPoliciesResponse ListIdentityPolicies(ListIdentityPoliciesRequest request)
         {
-            var marshaller = new ListIdentityPoliciesRequestMarshaller();
+            var marshaller = ListIdentityPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListIdentityPoliciesRequest,ListIdentityPoliciesResponse>(request, marshaller, unmarshaller);
@@ -2879,7 +2880,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public virtual IAsyncResult BeginListIdentityPolicies(ListIdentityPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIdentityPoliciesRequestMarshaller();
+            var marshaller = ListIdentityPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIdentityPoliciesRequest>(request, marshaller, unmarshaller,
@@ -2904,7 +2905,7 @@ namespace Amazon.SimpleEmail
         #region  ListReceiptFilters
 
         /// <summary>
-        /// Lists the IP address filters associated with your AWS account.
+        /// Lists the IP address filters associated with your AWS account in the current AWS Region.
         /// 
         ///  
         /// <para>
@@ -2922,7 +2923,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public virtual ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request)
         {
-            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var marshaller = ListReceiptFiltersRequestMarshaller.Instance;
             var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
 
             return Invoke<ListReceiptFiltersRequest,ListReceiptFiltersResponse>(request, marshaller, unmarshaller);
@@ -2942,7 +2943,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public virtual IAsyncResult BeginListReceiptFilters(ListReceiptFiltersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListReceiptFiltersRequestMarshaller();
+            var marshaller = ListReceiptFiltersRequestMarshaller.Instance;
             var unmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListReceiptFiltersRequest>(request, marshaller, unmarshaller,
@@ -2967,10 +2968,10 @@ namespace Amazon.SimpleEmail
         #region  ListReceiptRuleSets
 
         /// <summary>
-        /// Lists the receipt rule sets that exist under your AWS account. If there are additional
-        /// receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that
-        /// you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the
-        /// additional entries.
+        /// Lists the receipt rule sets that exist under your AWS account in the current AWS Region.
+        /// If there are additional receipt rule sets to be retrieved, you will receive a <code>NextToken</code>
+        /// that you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve
+        /// the additional entries.
         /// 
         ///  
         /// <para>
@@ -2988,7 +2989,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public virtual ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request)
         {
-            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var marshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
             var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListReceiptRuleSetsRequest,ListReceiptRuleSetsResponse>(request, marshaller, unmarshaller);
@@ -3008,7 +3009,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public virtual IAsyncResult BeginListReceiptRuleSets(ListReceiptRuleSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListReceiptRuleSetsRequestMarshaller();
+            var marshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
             var unmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListReceiptRuleSetsRequest>(request, marshaller, unmarshaller,
@@ -3033,7 +3034,7 @@ namespace Amazon.SimpleEmail
         #region  ListTemplates
 
         /// <summary>
-        /// Lists the email templates present in your Amazon SES account.
+        /// Lists the email templates present in your Amazon SES account in the current AWS Region.
         /// 
         ///  
         /// <para>
@@ -3046,7 +3047,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var marshaller = new ListTemplatesRequestMarshaller();
+            var marshaller = ListTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
             return Invoke<ListTemplatesRequest,ListTemplatesResponse>(request, marshaller, unmarshaller);
@@ -3066,7 +3067,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual IAsyncResult BeginListTemplates(ListTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTemplatesRequestMarshaller();
+            var marshaller = ListTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTemplatesRequest>(request, marshaller, unmarshaller,
@@ -3112,7 +3113,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public virtual ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
         {
-            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
+            var marshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
             var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
 
             return Invoke<ListVerifiedEmailAddressesRequest,ListVerifiedEmailAddressesResponse>(request, marshaller, unmarshaller);
@@ -3132,7 +3133,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public virtual IAsyncResult BeginListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
+            var marshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
             var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListVerifiedEmailAddressesRequest>(request, marshaller, unmarshaller,
@@ -3187,7 +3188,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public virtual PutIdentityPolicyResponse PutIdentityPolicy(PutIdentityPolicyRequest request)
         {
-            var marshaller = new PutIdentityPolicyRequestMarshaller();
+            var marshaller = PutIdentityPolicyRequestMarshaller.Instance;
             var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutIdentityPolicyRequest,PutIdentityPolicyResponse>(request, marshaller, unmarshaller);
@@ -3207,7 +3208,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutIdentityPolicy(PutIdentityPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutIdentityPolicyRequestMarshaller();
+            var marshaller = PutIdentityPolicyRequestMarshaller.Instance;
             var unmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutIdentityPolicyRequest>(request, marshaller, unmarshaller,
@@ -3262,7 +3263,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public virtual ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request)
         {
-            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var marshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<ReorderReceiptRuleSetRequest,ReorderReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -3282,7 +3283,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
+            var marshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<ReorderReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -3336,7 +3337,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public virtual SendBounceResponse SendBounce(SendBounceRequest request)
         {
-            var marshaller = new SendBounceRequestMarshaller();
+            var marshaller = SendBounceRequestMarshaller.Instance;
             var unmarshaller = SendBounceResponseUnmarshaller.Instance;
 
             return Invoke<SendBounceRequest,SendBounceResponse>(request, marshaller, unmarshaller);
@@ -3356,7 +3357,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public virtual IAsyncResult BeginSendBounce(SendBounceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendBounceRequestMarshaller();
+            var marshaller = SendBounceRequestMarshaller.Instance;
             var unmarshaller = SendBounceResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendBounceRequest>(request, marshaller, unmarshaller,
@@ -3458,7 +3459,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
         public virtual SendBulkTemplatedEmailResponse SendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request)
         {
-            var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
+            var marshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
             var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
 
             return Invoke<SendBulkTemplatedEmailRequest,SendBulkTemplatedEmailResponse>(request, marshaller, unmarshaller);
@@ -3478,7 +3479,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
         public virtual IAsyncResult BeginSendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
+            var marshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
             var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendBulkTemplatedEmailRequest>(request, marshaller, unmarshaller,
@@ -3503,15 +3504,15 @@ namespace Amazon.SimpleEmail
         #region  SendCustomVerificationEmail
 
         /// <summary>
-        /// Adds an email address to the list of identities for your Amazon SES account and attempts
-        /// to verify it. As a result of executing this operation, a customized verification email
-        /// is sent to the specified address.
+        /// Adds an email address to the list of identities for your Amazon SES account in the
+        /// current AWS Region and attempts to verify it. As a result of executing this operation,
+        /// a customized verification email is sent to the specified address.
         /// 
         ///  
         /// <para>
         /// To use this operation, you must first create a custom verification email template.
         /// For more information about creating and using custom verification email templates,
-        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -3543,7 +3544,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
         public virtual SendCustomVerificationEmailResponse SendCustomVerificationEmail(SendCustomVerificationEmailRequest request)
         {
-            var marshaller = new SendCustomVerificationEmailRequestMarshaller();
+            var marshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
             var unmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
 
             return Invoke<SendCustomVerificationEmailRequest,SendCustomVerificationEmailResponse>(request, marshaller, unmarshaller);
@@ -3563,7 +3564,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
         public virtual IAsyncResult BeginSendCustomVerificationEmail(SendCustomVerificationEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendCustomVerificationEmailRequestMarshaller();
+            var marshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
             var unmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendCustomVerificationEmailRequest>(request, marshaller, unmarshaller,
@@ -3669,7 +3670,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public virtual SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var marshaller = new SendEmailRequestMarshaller();
+            var marshaller = SendEmailRequestMarshaller.Instance;
             var unmarshaller = SendEmailResponseUnmarshaller.Instance;
 
             return Invoke<SendEmailRequest,SendEmailResponse>(request, marshaller, unmarshaller);
@@ -3689,7 +3690,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public virtual IAsyncResult BeginSendEmail(SendEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendEmailRequestMarshaller();
+            var marshaller = SendEmailRequestMarshaller.Instance;
             var unmarshaller = SendEmailResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendEmailRequest>(request, marshaller, unmarshaller,
@@ -3849,7 +3850,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public virtual SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
         {
-            var marshaller = new SendRawEmailRequestMarshaller();
+            var marshaller = SendRawEmailRequestMarshaller.Instance;
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
             return Invoke<SendRawEmailRequest,SendRawEmailResponse>(request, marshaller, unmarshaller);
@@ -3869,7 +3870,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public virtual IAsyncResult BeginSendRawEmail(SendRawEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendRawEmailRequestMarshaller();
+            var marshaller = SendRawEmailRequestMarshaller.Instance;
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendRawEmailRequest>(request, marshaller, unmarshaller,
@@ -3936,7 +3937,22 @@ namespace Amazon.SimpleEmail
         /// the entire message will be rejected, even if the message contains other recipients
         /// that are valid.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If your call to the <code>SendTemplatedEmail</code> operation includes all of the
+        /// required parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon
+        /// SES can't render the email because the template contains errors, it doesn't send the
+        /// email. Additionally, because it already accepted the message, Amazon SES doesn't return
+        /// a message stating that it was unable to send the email.
+        /// </para>
+        ///  
+        /// <para>
+        /// For these reasons, we highly recommend that you set up Amazon SES to send you notifications
+        /// when Rendering Failure events occur. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
+        /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail service method.</param>
         /// 
@@ -3977,7 +3993,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
         public virtual SendTemplatedEmailResponse SendTemplatedEmail(SendTemplatedEmailRequest request)
         {
-            var marshaller = new SendTemplatedEmailRequestMarshaller();
+            var marshaller = SendTemplatedEmailRequestMarshaller.Instance;
             var unmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
 
             return Invoke<SendTemplatedEmailRequest,SendTemplatedEmailResponse>(request, marshaller, unmarshaller);
@@ -3997,7 +4013,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
         public virtual IAsyncResult BeginSendTemplatedEmail(SendTemplatedEmailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SendTemplatedEmailRequestMarshaller();
+            var marshaller = SendTemplatedEmailRequestMarshaller.Instance;
             var unmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
 
             return BeginInvoke<SendTemplatedEmailRequest>(request, marshaller, unmarshaller,
@@ -4048,7 +4064,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public virtual SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request)
         {
-            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var marshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<SetActiveReceiptRuleSetRequest,SetActiveReceiptRuleSetResponse>(request, marshaller, unmarshaller);
@@ -4068,7 +4084,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public virtual IAsyncResult BeginSetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
+            var marshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
             var unmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller,
@@ -4129,7 +4145,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public virtual SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
         {
-            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
+            var marshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityDkimEnabledRequest,SetIdentityDkimEnabledResponse>(request, marshaller, unmarshaller);
@@ -4149,7 +4165,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
+            var marshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetIdentityDkimEnabledRequest>(request, marshaller, unmarshaller,
@@ -4200,7 +4216,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public virtual SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
         {
-            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
+            var marshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, unmarshaller);
@@ -4220,7 +4236,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
+            var marshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetIdentityFeedbackForwardingEnabledRequest>(request, marshaller, unmarshaller,
@@ -4265,7 +4281,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public virtual SetIdentityHeadersInNotificationsEnabledResponse SetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request)
         {
-            var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
+            var marshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityHeadersInNotificationsEnabledRequest,SetIdentityHeadersInNotificationsEnabledResponse>(request, marshaller, unmarshaller);
@@ -4285,7 +4301,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
+            var marshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
             var unmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetIdentityHeadersInNotificationsEnabledRequest>(request, marshaller, unmarshaller,
@@ -4332,7 +4348,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public virtual SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request)
         {
-            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var marshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
             var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>(request, marshaller, unmarshaller);
@@ -4352,7 +4368,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var marshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
             var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetIdentityMailFromDomainRequest>(request, marshaller, unmarshaller,
@@ -4402,7 +4418,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public virtual SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
         {
-            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
+            var marshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
             var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityNotificationTopicRequest,SetIdentityNotificationTopicResponse>(request, marshaller, unmarshaller);
@@ -4422,7 +4438,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public virtual IAsyncResult BeginSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
+            var marshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
             var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetIdentityNotificationTopicRequest>(request, marshaller, unmarshaller,
@@ -4471,7 +4487,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public virtual SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request)
         {
-            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var marshaller = SetReceiptRulePositionRequestMarshaller.Instance;
             var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
 
             return Invoke<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>(request, marshaller, unmarshaller);
@@ -4491,7 +4507,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public virtual IAsyncResult BeginSetReceiptRulePosition(SetReceiptRulePositionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetReceiptRulePositionRequestMarshaller();
+            var marshaller = SetReceiptRulePositionRequestMarshaller.Instance;
             var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetReceiptRulePositionRequest>(request, marshaller, unmarshaller,
@@ -4543,7 +4559,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
         public virtual TestRenderTemplateResponse TestRenderTemplate(TestRenderTemplateRequest request)
         {
-            var marshaller = new TestRenderTemplateRequestMarshaller();
+            var marshaller = TestRenderTemplateRequestMarshaller.Instance;
             var unmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
 
             return Invoke<TestRenderTemplateRequest,TestRenderTemplateResponse>(request, marshaller, unmarshaller);
@@ -4563,7 +4579,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
         public virtual IAsyncResult BeginTestRenderTemplate(TestRenderTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TestRenderTemplateRequestMarshaller();
+            var marshaller = TestRenderTemplateRequestMarshaller.Instance;
             var unmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<TestRenderTemplateRequest>(request, marshaller, unmarshaller,
@@ -4588,10 +4604,10 @@ namespace Amazon.SimpleEmail
         #region  UpdateAccountSendingEnabled
 
         /// <summary>
-        /// Enables or disables email sending across your entire Amazon SES account. You can use
-        /// this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email
-        /// sending across your Amazon SES account when reputation metrics (such as your bounce
-        /// on complaint rate) reach certain thresholds.
+        /// Enables or disables email sending across your entire Amazon SES account in the current
+        /// AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms
+        /// to temporarily pause email sending across your Amazon SES account in a given AWS Region
+        /// when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.
         /// 
         ///  
         /// <para>
@@ -4604,7 +4620,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
         public virtual UpdateAccountSendingEnabledResponse UpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request)
         {
-            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var marshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAccountSendingEnabledRequest,UpdateAccountSendingEnabledResponse>(request, marshaller, unmarshaller);
@@ -4624,7 +4640,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
+            var marshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAccountSendingEnabledRequest>(request, marshaller, unmarshaller,
@@ -4690,7 +4706,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
@@ -4710,7 +4726,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var marshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller,
@@ -4736,9 +4752,9 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Enables or disables the publishing of reputation metrics for emails sent using a specific
-        /// configuration set. Reputation metrics include bounce and complaint rates. These metrics
-        /// are published to Amazon CloudWatch. By using Amazon CloudWatch, you can create alarms
-        /// when bounce or complaint rates exceed a certain threshold.
+        /// configuration set in a given AWS Region. Reputation metrics include bounce and complaint
+        /// rates. These metrics are published to Amazon CloudWatch. By using CloudWatch, you
+        /// can create alarms when bounce or complaint rates exceed certain thresholds.
         /// 
         ///  
         /// <para>
@@ -4754,7 +4770,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
         public virtual UpdateConfigurationSetReputationMetricsEnabledResponse UpdateConfigurationSetReputationMetricsEnabled(UpdateConfigurationSetReputationMetricsEnabledRequest request)
         {
-            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var marshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConfigurationSetReputationMetricsEnabledRequest,UpdateConfigurationSetReputationMetricsEnabledResponse>(request, marshaller, unmarshaller);
@@ -4774,7 +4790,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationSetReputationMetricsEnabled(UpdateConfigurationSetReputationMetricsEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
+            var marshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConfigurationSetReputationMetricsEnabledRequest>(request, marshaller, unmarshaller,
@@ -4800,9 +4816,10 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Enables or disables email sending for messages sent using a specific configuration
-        /// set. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily
-        /// pause email sending for a configuration set when the reputation metrics for that configuration
-        /// set (such as your bounce on complaint rate) reach certain thresholds.
+        /// set in a given AWS Region. You can use this operation in conjunction with Amazon CloudWatch
+        /// alarms to temporarily pause email sending for a configuration set when the reputation
+        /// metrics for that configuration set (such as your bounce on complaint rate) exceed
+        /// certain thresholds.
         /// 
         ///  
         /// <para>
@@ -4818,7 +4835,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
         public virtual UpdateConfigurationSetSendingEnabledResponse UpdateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request)
         {
-            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var marshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConfigurationSetSendingEnabledRequest,UpdateConfigurationSetSendingEnabledResponse>(request, marshaller, unmarshaller);
@@ -4838,7 +4855,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
+            var marshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConfigurationSetSendingEnabledRequest>(request, marshaller, unmarshaller,
@@ -4870,8 +4887,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4901,7 +4917,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">REST API Reference for UpdateConfigurationSetTrackingOptions Operation</seealso>
         public virtual UpdateConfigurationSetTrackingOptionsResponse UpdateConfigurationSetTrackingOptions(UpdateConfigurationSetTrackingOptionsRequest request)
         {
-            var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConfigurationSetTrackingOptionsRequest,UpdateConfigurationSetTrackingOptionsResponse>(request, marshaller, unmarshaller);
@@ -4921,7 +4937,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">REST API Reference for UpdateConfigurationSetTrackingOptions Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationSetTrackingOptions(UpdateConfigurationSetTrackingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
+            var marshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConfigurationSetTrackingOptionsRequest>(request, marshaller, unmarshaller,
@@ -4950,7 +4966,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -4975,7 +4991,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
         public virtual UpdateCustomVerificationEmailTemplateResponse UpdateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request)
         {
-            var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateCustomVerificationEmailTemplateRequest,UpdateCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
@@ -4995,7 +5011,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
+            var marshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateCustomVerificationEmailTemplateRequest>(request, marshaller, unmarshaller,
@@ -5067,7 +5083,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public virtual UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request)
         {
-            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var marshaller = UpdateReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateReceiptRuleRequest,UpdateReceiptRuleResponse>(request, marshaller, unmarshaller);
@@ -5087,7 +5103,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateReceiptRule(UpdateReceiptRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateReceiptRuleRequestMarshaller();
+            var marshaller = UpdateReceiptRuleRequestMarshaller.Instance;
             var unmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateReceiptRuleRequest>(request, marshaller, unmarshaller,
@@ -5126,7 +5142,8 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the UpdateTemplate service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
-        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// Indicates that the template that you specified could not be rendered. This issue may
+        /// occur when a template refers to a partial that does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
         /// Indicates that the Template object you specified does not exist in your Amazon SES
@@ -5135,7 +5152,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var marshaller = new UpdateTemplateRequestMarshaller();
+            var marshaller = UpdateTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTemplateRequest,UpdateTemplateResponse>(request, marshaller, unmarshaller);
@@ -5155,7 +5172,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateTemplate(UpdateTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateTemplateRequestMarshaller();
+            var marshaller = UpdateTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateTemplateRequest>(request, marshaller, unmarshaller,
@@ -5208,7 +5225,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public virtual VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
         {
-            var marshaller = new VerifyDomainDkimRequestMarshaller();
+            var marshaller = VerifyDomainDkimRequestMarshaller.Instance;
             var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
 
             return Invoke<VerifyDomainDkimRequest,VerifyDomainDkimResponse>(request, marshaller, unmarshaller);
@@ -5228,7 +5245,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public virtual IAsyncResult BeginVerifyDomainDkim(VerifyDomainDkimRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new VerifyDomainDkimRequestMarshaller();
+            var marshaller = VerifyDomainDkimRequestMarshaller.Instance;
             var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
 
             return BeginInvoke<VerifyDomainDkimRequest>(request, marshaller, unmarshaller,
@@ -5253,8 +5270,9 @@ namespace Amazon.SimpleEmail
         #region  VerifyDomainIdentity
 
         /// <summary>
-        /// Adds a domain to the list of identities for your Amazon SES account and attempts to
-        /// verify it. For more information about verifying domains, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Adds a domain to the list of identities for your Amazon SES account in the current
+        /// AWS Region and attempts to verify it. For more information about verifying domains,
+        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -5268,7 +5286,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public virtual VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
         {
-            var marshaller = new VerifyDomainIdentityRequestMarshaller();
+            var marshaller = VerifyDomainIdentityRequestMarshaller.Instance;
             var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
 
             return Invoke<VerifyDomainIdentityRequest,VerifyDomainIdentityResponse>(request, marshaller, unmarshaller);
@@ -5288,7 +5306,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public virtual IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new VerifyDomainIdentityRequestMarshaller();
+            var marshaller = VerifyDomainIdentityRequestMarshaller.Instance;
             var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
 
             return BeginInvoke<VerifyDomainIdentityRequest>(request, marshaller, unmarshaller,
@@ -5322,7 +5340,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public virtual VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
         {
-            var marshaller = new VerifyEmailAddressRequestMarshaller();
+            var marshaller = VerifyEmailAddressRequestMarshaller.Instance;
             var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
 
             return Invoke<VerifyEmailAddressRequest,VerifyEmailAddressResponse>(request, marshaller, unmarshaller);
@@ -5342,7 +5360,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public virtual IAsyncResult BeginVerifyEmailAddress(VerifyEmailAddressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new VerifyEmailAddressRequestMarshaller();
+            var marshaller = VerifyEmailAddressRequestMarshaller.Instance;
             var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
 
             return BeginInvoke<VerifyEmailAddressRequest>(request, marshaller, unmarshaller,
@@ -5367,9 +5385,9 @@ namespace Amazon.SimpleEmail
         #region  VerifyEmailIdentity
 
         /// <summary>
-        /// Adds an email address to the list of identities for your Amazon SES account and attempts
-        /// to verify it. As a result of executing this operation, a verification email is sent
-        /// to the specified address.
+        /// Adds an email address to the list of identities for your Amazon SES account in the
+        /// current AWS region and attempts to verify it. As a result of executing this operation,
+        /// a verification email is sent to the specified address.
         /// 
         ///  
         /// <para>
@@ -5382,7 +5400,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public virtual VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
         {
-            var marshaller = new VerifyEmailIdentityRequestMarshaller();
+            var marshaller = VerifyEmailIdentityRequestMarshaller.Instance;
             var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
 
             return Invoke<VerifyEmailIdentityRequest,VerifyEmailIdentityResponse>(request, marshaller, unmarshaller);
@@ -5402,7 +5420,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public virtual IAsyncResult BeginVerifyEmailIdentity(VerifyEmailIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new VerifyEmailIdentityRequestMarshaller();
+            var marshaller = VerifyEmailIdentityRequestMarshaller.Instance;
             var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
 
             return BeginInvoke<VerifyEmailIdentityRequest>(request, marshaller, unmarshaller,

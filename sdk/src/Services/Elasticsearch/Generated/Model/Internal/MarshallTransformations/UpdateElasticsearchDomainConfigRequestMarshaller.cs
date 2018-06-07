@@ -88,6 +88,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCognitoOptions())
+                {
+                    context.Writer.WritePropertyName("CognitoOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CognitoOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CognitoOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEBSOptions())
                 {
                     context.Writer.WritePropertyName("EBSOptions");
@@ -160,7 +171,23 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateElasticsearchDomainConfigRequestMarshaller _instance = new UpdateElasticsearchDomainConfigRequestMarshaller();        
 
+        internal static UpdateElasticsearchDomainConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateElasticsearchDomainConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

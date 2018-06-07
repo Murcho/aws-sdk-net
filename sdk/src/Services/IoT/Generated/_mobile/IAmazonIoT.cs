@@ -33,12 +33,12 @@ namespace Amazon.IoT
     ///
     /// AWS IoT 
     /// <para>
-    /// AWS IoT provides secure, bi-directional communication between Internet-connected things
+    /// AWS IoT provides secure, bi-directional communication between Internet-connected devices
     /// (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
     /// You can discover your custom IoT-Data endpoint to communicate with, configure rules
     /// for data processing and integration with other services, organize resources associated
-    /// with each thing (Thing Registry), configure logging, and create and manage policies
-    /// and credentials to authenticate things.
+    /// with each device (Registry), configure logging, and create and manage policies and
+    /// credentials to authenticate devices.
     /// </para>
     ///  
     /// <para>
@@ -142,7 +142,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -242,7 +242,7 @@ namespace Amazon.IoT
         /// PENDING_TRANSFER to INACTIVE.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -300,6 +300,23 @@ namespace Amazon.IoT
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelJobExecution
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        Task<CancelJobExecutionResponse> CancelJobExecutionAsync(CancelJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -981,7 +998,7 @@ namespace Amazon.IoT
         /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1025,6 +1042,40 @@ namespace Amazon.IoT
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteJobExecution
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        Task<DeleteJobExecutionResponse> DeleteJobExecutionAsync(DeleteJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1247,8 +1298,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1416,7 +1467,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified certificate.
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2924,7 +2975,7 @@ namespace Amazon.IoT
         /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3231,7 +3282,7 @@ namespace Amazon.IoT
         /// API to detach them.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="targetAwsAccount">The AWS account.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3330,7 +3381,7 @@ namespace Amazon.IoT
         /// certificate.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

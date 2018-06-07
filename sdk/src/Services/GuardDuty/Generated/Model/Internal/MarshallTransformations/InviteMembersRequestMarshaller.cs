@@ -79,6 +79,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDisableEmailNotification())
+                {
+                    context.Writer.WritePropertyName("disableEmailNotification");
+                    context.Writer.Write(publicRequest.DisableEmailNotification);
+                }
+
                 if(publicRequest.IsSetMessage())
                 {
                     context.Writer.WritePropertyName("message");
@@ -94,7 +100,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InviteMembersRequestMarshaller _instance = new InviteMembersRequestMarshaller();        
 
+        internal static InviteMembersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InviteMembersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

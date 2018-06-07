@@ -83,6 +83,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionVersion);
                 }
 
+                if(publicRequest.IsSetRevisionId())
+                {
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
+                }
+
                 if(publicRequest.IsSetRoutingConfig())
                 {
                     context.Writer.WritePropertyName("RoutingConfig");
@@ -103,7 +109,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateAliasRequestMarshaller _instance = new UpdateAliasRequestMarshaller();        
 
+        internal static UpdateAliasRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateAliasRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

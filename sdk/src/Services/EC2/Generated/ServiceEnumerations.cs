@@ -1067,6 +1067,114 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultTargetCapacityType.
+    /// </summary>
+    public class DefaultTargetCapacityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType OnDemand = new DefaultTargetCapacityType("on-demand");
+        /// <summary>
+        /// Constant Spot for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType Spot = new DefaultTargetCapacityType("spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultTargetCapacityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultTargetCapacityType FindValue(string value)
+        {
+            return FindValue<DefaultTargetCapacityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultTargetCapacityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeleteFleetErrorCode.
+    /// </summary>
+    public class DeleteFleetErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FleetIdDoesNotExist for DeleteFleetErrorCode
+        /// </summary>
+        public static readonly DeleteFleetErrorCode FleetIdDoesNotExist = new DeleteFleetErrorCode("fleetIdDoesNotExist");
+        /// <summary>
+        /// Constant FleetIdMalformed for DeleteFleetErrorCode
+        /// </summary>
+        public static readonly DeleteFleetErrorCode FleetIdMalformed = new DeleteFleetErrorCode("fleetIdMalformed");
+        /// <summary>
+        /// Constant FleetNotInDeletableState for DeleteFleetErrorCode
+        /// </summary>
+        public static readonly DeleteFleetErrorCode FleetNotInDeletableState = new DeleteFleetErrorCode("fleetNotInDeletableState");
+        /// <summary>
+        /// Constant UnexpectedError for DeleteFleetErrorCode
+        /// </summary>
+        public static readonly DeleteFleetErrorCode UnexpectedError = new DeleteFleetErrorCode("unexpectedError");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteFleetErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteFleetErrorCode FindValue(string value)
+        {
+            return FindValue<DeleteFleetErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteFleetErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceType.
     /// </summary>
     public class DeviceType : ConstantClass
@@ -1588,6 +1696,238 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetActivityStatus.
+    /// </summary>
+    public class FleetActivityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for FleetActivityStatus
+        /// </summary>
+        public static readonly FleetActivityStatus Error = new FleetActivityStatus("error");
+        /// <summary>
+        /// Constant Fulfilled for FleetActivityStatus
+        /// </summary>
+        public static readonly FleetActivityStatus Fulfilled = new FleetActivityStatus("fulfilled");
+        /// <summary>
+        /// Constant PendingFulfillment for FleetActivityStatus
+        /// </summary>
+        public static readonly FleetActivityStatus PendingFulfillment = new FleetActivityStatus("pending-fulfillment");
+        /// <summary>
+        /// Constant PendingTermination for FleetActivityStatus
+        /// </summary>
+        public static readonly FleetActivityStatus PendingTermination = new FleetActivityStatus("pending-termination");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetActivityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetActivityStatus FindValue(string value)
+        {
+            return FindValue<FleetActivityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetActivityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetEventType.
+    /// </summary>
+    public class FleetEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FleetChange for FleetEventType
+        /// </summary>
+        public static readonly FleetEventType FleetChange = new FleetEventType("fleet-change");
+        /// <summary>
+        /// Constant InstanceChange for FleetEventType
+        /// </summary>
+        public static readonly FleetEventType InstanceChange = new FleetEventType("instance-change");
+        /// <summary>
+        /// Constant ServiceError for FleetEventType
+        /// </summary>
+        public static readonly FleetEventType ServiceError = new FleetEventType("service-error");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetEventType FindValue(string value)
+        {
+            return FindValue<FleetEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetExcessCapacityTerminationPolicy.
+    /// </summary>
+    public class FleetExcessCapacityTerminationPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoTermination for FleetExcessCapacityTerminationPolicy
+        /// </summary>
+        public static readonly FleetExcessCapacityTerminationPolicy NoTermination = new FleetExcessCapacityTerminationPolicy("no-termination");
+        /// <summary>
+        /// Constant Termination for FleetExcessCapacityTerminationPolicy
+        /// </summary>
+        public static readonly FleetExcessCapacityTerminationPolicy Termination = new FleetExcessCapacityTerminationPolicy("termination");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetExcessCapacityTerminationPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetExcessCapacityTerminationPolicy FindValue(string value)
+        {
+            return FindValue<FleetExcessCapacityTerminationPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetExcessCapacityTerminationPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetStateCode.
+    /// </summary>
+    public class FleetStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode Active = new FleetStateCode("active");
+        /// <summary>
+        /// Constant Deleted for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode Deleted = new FleetStateCode("deleted");
+        /// <summary>
+        /// Constant DeletedRunning for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode DeletedRunning = new FleetStateCode("deleted-running");
+        /// <summary>
+        /// Constant DeletedTerminating for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode DeletedTerminating = new FleetStateCode("deleted-terminating");
+        /// <summary>
+        /// Constant Failed for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode Failed = new FleetStateCode("failed");
+        /// <summary>
+        /// Constant Modifying for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode Modifying = new FleetStateCode("modifying");
+        /// <summary>
+        /// Constant Submitted for FleetStateCode
+        /// </summary>
+        public static readonly FleetStateCode Submitted = new FleetStateCode("submitted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetStateCode FindValue(string value)
+        {
+            return FindValue<FleetStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetStateCode(string value)
         {
             return FindValue(value);
         }
@@ -2601,6 +2941,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C59xlarge = new InstanceType("c5.9xlarge");
         /// <summary>
+        /// Constant C5d18xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d18xlarge = new InstanceType("c5d.18xlarge");
+        /// <summary>
+        /// Constant C5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d2xlarge = new InstanceType("c5d.2xlarge");
+        /// <summary>
+        /// Constant C5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d4xlarge = new InstanceType("c5d.4xlarge");
+        /// <summary>
+        /// Constant C5d9xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d9xlarge = new InstanceType("c5d.9xlarge");
+        /// <summary>
+        /// Constant C5dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5dLarge = new InstanceType("c5d.large");
+        /// <summary>
+        /// Constant C5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5dXlarge = new InstanceType("c5d.xlarge");
+        /// <summary>
         /// Constant C5Large for InstanceType
         /// </summary>
         public static readonly InstanceType C5Large = new InstanceType("c5.large");
@@ -2729,6 +3093,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3Large = new InstanceType("i3.large");
         /// <summary>
+        /// Constant I3Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType I3Metal = new InstanceType("i3.metal");
+        /// <summary>
         /// Constant I3Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I3Xlarge = new InstanceType("i3.xlarge");
@@ -2816,6 +3184,30 @@ namespace Amazon.EC2
         /// Constant M54xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M54xlarge = new InstanceType("m5.4xlarge");
+        /// <summary>
+        /// Constant M5d12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d12xlarge = new InstanceType("m5d.12xlarge");
+        /// <summary>
+        /// Constant M5d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d24xlarge = new InstanceType("m5d.24xlarge");
+        /// <summary>
+        /// Constant M5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d2xlarge = new InstanceType("m5d.2xlarge");
+        /// <summary>
+        /// Constant M5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5d4xlarge = new InstanceType("m5d.4xlarge");
+        /// <summary>
+        /// Constant M5dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dLarge = new InstanceType("m5d.large");
+        /// <summary>
+        /// Constant M5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5dXlarge = new InstanceType("m5d.xlarge");
         /// <summary>
         /// Constant M5Large for InstanceType
         /// </summary>
@@ -3562,6 +3954,10 @@ namespace Amazon.EC2
     public class NetworkInterfaceStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Associated for NetworkInterfaceStatus
+        /// </summary>
+        public static readonly NetworkInterfaceStatus Associated = new NetworkInterfaceStatus("associated");
         /// <summary>
         /// Constant Attaching for NetworkInterfaceStatus
         /// </summary>
@@ -5214,6 +5610,110 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnapshotState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpotAllocationStrategy.
+    /// </summary>
+    public class SpotAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Diversified for SpotAllocationStrategy
+        /// </summary>
+        public static readonly SpotAllocationStrategy Diversified = new SpotAllocationStrategy("diversified");
+        /// <summary>
+        /// Constant LowestPrice for SpotAllocationStrategy
+        /// </summary>
+        public static readonly SpotAllocationStrategy LowestPrice = new SpotAllocationStrategy("lowest-price");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpotAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpotAllocationStrategy FindValue(string value)
+        {
+            return FindValue<SpotAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpotAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpotInstanceInterruptionBehavior.
+    /// </summary>
+    public class SpotInstanceInterruptionBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hibernate for SpotInstanceInterruptionBehavior
+        /// </summary>
+        public static readonly SpotInstanceInterruptionBehavior Hibernate = new SpotInstanceInterruptionBehavior("hibernate");
+        /// <summary>
+        /// Constant Stop for SpotInstanceInterruptionBehavior
+        /// </summary>
+        public static readonly SpotInstanceInterruptionBehavior Stop = new SpotInstanceInterruptionBehavior("stop");
+        /// <summary>
+        /// Constant Terminate for SpotInstanceInterruptionBehavior
+        /// </summary>
+        public static readonly SpotInstanceInterruptionBehavior Terminate = new SpotInstanceInterruptionBehavior("terminate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpotInstanceInterruptionBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpotInstanceInterruptionBehavior FindValue(string value)
+        {
+            return FindValue<SpotInstanceInterruptionBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpotInstanceInterruptionBehavior(string value)
         {
             return FindValue(value);
         }

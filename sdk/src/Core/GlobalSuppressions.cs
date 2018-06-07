@@ -15,7 +15,15 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+// Don't reference RegionEndpoints in the SDK unless absolutely necessary.
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Runtime.AssumeRoleAWSCredentials.#.ctor(Amazon.Runtime.AWSCredentials,System.String,System.String,Amazon.Runtime.AssumeRoleAWSCredentialsOptions)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Runtime.FederatedAWSCredentials.#.cctor()")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Runtime.StoredProfileFederatedCredentials.#.ctor(System.String,System.String,System.Net.WebProxy)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Runtime.Internal.Util.S3Uri.#.ctor(System.Uri)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#DetermineRegion(System.String)")]
 
+// This private static logger variable is used for testing.
+[module: SuppressMessage("AwsSdkRules", "CR1002:PreventStaticLoggersRule", Scope="member", Target="Amazon.Runtime.Internal.HttpWebRequestFactory.#_logger")]
 
 // Avoid empty interfaces
 [module: SuppressMessage("Microsoft.Design", "CA1040:AvoidEmptyInterfaces", Scope="type", Target="Amazon.Runtime.IAsyncResponseContext")]
@@ -65,6 +73,8 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#GetParametersToCanonicalize(Amazon.Runtime.Internal.IRequest)")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeQueryParameters(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>,System.Boolean)")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeQueryParameters(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Util.AWSHttpClient.#GetResponseHeadersAsync(System.String,System.String)")]
+
 
 // Suppressions for exceptions in setters
 [module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.Runtime.Internal.HttpRequest.#WriteToRequestBody(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.String>,Amazon.Runtime.IRequestContext)")]
@@ -257,6 +267,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.PersistenceManager.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackCredentialsFactory.#.cctor()")]
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.Internal.HttpWebRequestFactory.#.cctor()")]
 
 // Abstract types should not have constructors
 [module: SuppressMessage("Microsoft.Design", "CA1012:AbstractTypesShouldNotHaveConstructors", Scope = "type", Target = "Amazon.Runtime.ClientConfig")]
@@ -336,6 +347,9 @@ using System.Diagnostics.CodeAnalysis;
 
 // Passing Uri instead of string (in these cases, the uri overload is called by the string overload)
 [module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.S3.Internal.AmazonS3RedirectHandler.#FinalizeForRedirect(Amazon.Runtime.IExecutionContext,System.String)")]
+[module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.Util.AWSHttpClient.#GetResponseHeadersAsync(System.String,System.String)")]
+[module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.Util.AWSHttpClient.#GetStreamAsync(System.String)")]
+[module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope="member", Target="Amazon.Util.AWSHttpClient.#PutRequestUriAsync(System.String,Amazon.Util.AWSStreamContent,System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
 
 // Move PInvoke to separate file
 [module: SuppressMessage("Microsoft.Design", "CA1060:MovePInvokesToNativeMethodsClass", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.UserCrypto.#CryptUnprotectData(Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.String,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&,System.IntPtr,Amazon.Runtime.Internal.Settings.UserCrypto+CRYPTPROTECT_PROMPTSTRUCT&,Amazon.Runtime.Internal.Settings.UserCrypto+CryptProtectFlags,Amazon.Runtime.Internal.Settings.UserCrypto+DATA_BLOB&)")]

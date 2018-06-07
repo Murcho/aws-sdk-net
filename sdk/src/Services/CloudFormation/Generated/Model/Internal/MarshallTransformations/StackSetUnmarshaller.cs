@@ -54,6 +54,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdministrationRoleARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdministrationRoleARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -67,11 +73,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExecutionRoleName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExecutionRoleName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Parameters.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("StackSetARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackSetARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackSetId", targetDepth))

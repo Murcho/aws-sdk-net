@@ -42,7 +42,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filters to use to list a specified set of devices. Supported filter keys are DeviceName,
-        /// DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+        /// DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly,
+        /// and ConnectionStatus (ONLINE and OFFLINE).
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -101,7 +102,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property SortCriteria. 
         /// <para>
         /// The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, and DeviceSerialNumber.
+        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
         /// </para>
         /// </summary>
         public List<Sort> SortCriteria

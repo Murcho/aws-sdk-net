@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private EncoderSettings _encoderSettings;
         private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
+        private InputSpecification _inputSpecification;
         private string _name;
         private string _requestId;
         private string _reserved;
@@ -87,6 +88,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputSpecification. Specification of input for this channel
+        /// (max. bitrate, resolution, codec, etc.)
+        /// </summary>
+        public InputSpecification InputSpecification
+        {
+            get { return this._inputSpecification; }
+            set { this._inputSpecification = value; }
+        }
+
+        // Check to see if InputSpecification property is set
+        internal bool IsSetInputSpecification()
+        {
+            return this._inputSpecification != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. Name of channel.
         /// </summary>
         public string Name
@@ -118,7 +135,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reserved. Reserved for future use.
+        /// Gets and sets the property Reserved. Deprecated field that's only usable by whitelisted
+        /// customers.
         /// </summary>
         public string Reserved
         {

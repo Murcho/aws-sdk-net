@@ -50,6 +50,7 @@ namespace Amazon.ECS.Model
         private int? _runningCount;
         private string _serviceArn;
         private string _serviceName;
+        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _status;
         private string _taskDefinition;
 
@@ -207,6 +208,15 @@ namespace Amazon.ECS.Model
         /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
         /// name, the container name (as it appears in a container definition), and the container
         /// port to access from the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
+        /// with the Fargate launch type) only support Application Load Balancers and Network
+        /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+        /// target groups for these services, you must choose <code>ip</code> as the target type,
+        /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -391,6 +401,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegistries.
+        /// </summary>
+        public List<ServiceRegistry> ServiceRegistries
+        {
+            get { return this._serviceRegistries; }
+            set { this._serviceRegistries = value; }
+        }
+
+        // Check to see if ServiceRegistries property is set
+        internal bool IsSetServiceRegistries()
+        {
+            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
         }
 
         /// <summary>

@@ -95,6 +95,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
                 }
 
+                if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
+                {
+                    context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
+                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity);
+                }
+
                 if(publicRequest.IsSetBaselineId())
                 {
                     context.Writer.WritePropertyName("BaselineId");
@@ -135,6 +141,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetReplace())
+                {
+                    context.Writer.WritePropertyName("Replace");
+                    context.Writer.Write(publicRequest.Replace);
+                }
+
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("Sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PatchSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -144,7 +172,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdatePatchBaselineRequestMarshaller _instance = new UpdatePatchBaselineRequestMarshaller();        
 
+        internal static UpdatePatchBaselineRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdatePatchBaselineRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

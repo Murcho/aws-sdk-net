@@ -25,6 +25,110 @@ namespace Amazon.ConfigService
 {
 
     /// <summary>
+    /// Constants used for properties of type AggregatedSourceStatusType.
+    /// </summary>
+    public class AggregatedSourceStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType FAILED = new AggregatedSourceStatusType("FAILED");
+        /// <summary>
+        /// Constant OUTDATED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType OUTDATED = new AggregatedSourceStatusType("OUTDATED");
+        /// <summary>
+        /// Constant SUCCEEDED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType SUCCEEDED = new AggregatedSourceStatusType("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedSourceStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedSourceStatusType FindValue(string value)
+        {
+            return FindValue<AggregatedSourceStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedSourceStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AggregatedSourceType.
+    /// </summary>
+    public class AggregatedSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for AggregatedSourceType
+        /// </summary>
+        public static readonly AggregatedSourceType ACCOUNT = new AggregatedSourceType("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATION for AggregatedSourceType
+        /// </summary>
+        public static readonly AggregatedSourceType ORGANIZATION = new AggregatedSourceType("ORGANIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedSourceType FindValue(string value)
+        {
+            return FindValue<AggregatedSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChronologicalOrder.
     /// </summary>
     public class ChronologicalOrder : ConstantClass
@@ -133,6 +237,56 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigRuleComplianceSummaryGroupKey.
+    /// </summary>
+    public class ConfigRuleComplianceSummaryGroupKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for ConfigRuleComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly ConfigRuleComplianceSummaryGroupKey ACCOUNT_ID = new ConfigRuleComplianceSummaryGroupKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant AWS_REGION for ConfigRuleComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly ConfigRuleComplianceSummaryGroupKey AWS_REGION = new ConfigRuleComplianceSummaryGroupKey("AWS_REGION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigRuleComplianceSummaryGroupKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigRuleComplianceSummaryGroupKey FindValue(string value)
+        {
+            return FindValue<ConfigRuleComplianceSummaryGroupKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigRuleComplianceSummaryGroupKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigRuleState.
     /// </summary>
     public class ConfigRuleState : ConstantClass
@@ -197,21 +351,25 @@ namespace Amazon.ConfigService
     {
 
         /// <summary>
-        /// Constant Deleted for ConfigurationItemStatus
+        /// Constant OK for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Deleted = new ConfigurationItemStatus("Deleted");
+        public static readonly ConfigurationItemStatus OK = new ConfigurationItemStatus("OK");
         /// <summary>
-        /// Constant Discovered for ConfigurationItemStatus
+        /// Constant ResourceDeleted for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Discovered = new ConfigurationItemStatus("Discovered");
+        public static readonly ConfigurationItemStatus ResourceDeleted = new ConfigurationItemStatus("ResourceDeleted");
         /// <summary>
-        /// Constant Failed for ConfigurationItemStatus
+        /// Constant ResourceDeletedNotRecorded for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Failed = new ConfigurationItemStatus("Failed");
+        public static readonly ConfigurationItemStatus ResourceDeletedNotRecorded = new ConfigurationItemStatus("ResourceDeletedNotRecorded");
         /// <summary>
-        /// Constant Ok for ConfigurationItemStatus
+        /// Constant ResourceDiscovered for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Ok = new ConfigurationItemStatus("Ok");
+        public static readonly ConfigurationItemStatus ResourceDiscovered = new ConfigurationItemStatus("ResourceDiscovered");
+        /// <summary>
+        /// Constant ResourceNotRecorded for ConfigurationItemStatus
+        /// </summary>
+        public static readonly ConfigurationItemStatus ResourceNotRecorded = new ConfigurationItemStatus("ResourceNotRecorded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -683,6 +841,22 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
         /// <summary>
+        /// Constant AWSElasticBeanstalkApplication for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkApplication = new ResourceType("AWS::ElasticBeanstalk::Application");
+        /// <summary>
+        /// Constant AWSElasticBeanstalkApplicationVersion for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkApplicationVersion = new ResourceType("AWS::ElasticBeanstalk::ApplicationVersion");
+        /// <summary>
+        /// Constant AWSElasticBeanstalkEnvironment for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkEnvironment = new ResourceType("AWS::ElasticBeanstalk::Environment");
+        /// <summary>
+        /// Constant AWSElasticLoadBalancingLoadBalancer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticLoadBalancingLoadBalancer = new ResourceType("AWS::ElasticLoadBalancing::LoadBalancer");
+        /// <summary>
         /// Constant AWSElasticLoadBalancingV2LoadBalancer for ResourceType
         /// </summary>
         public static readonly ResourceType AWSElasticLoadBalancingV2LoadBalancer = new ResourceType("AWS::ElasticLoadBalancingV2::LoadBalancer");
@@ -702,6 +876,10 @@ namespace Amazon.ConfigService
         /// Constant AWSIAMUser for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
+        /// <summary>
+        /// Constant AWSLambdaFunction for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSLambdaFunction = new ResourceType("AWS::Lambda::Function");
         /// <summary>
         /// Constant AWSRDSDBInstance for ResourceType
         /// </summary>
@@ -767,6 +945,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSWAFRegionalRule = new ResourceType("AWS::WAFRegional::Rule");
         /// <summary>
+        /// Constant AWSWAFRegionalRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRegionalRuleGroup = new ResourceType("AWS::WAFRegional::RuleGroup");
+        /// <summary>
         /// Constant AWSWAFRegionalWebACL for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFRegionalWebACL = new ResourceType("AWS::WAFRegional::WebACL");
@@ -775,9 +957,17 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSWAFRule = new ResourceType("AWS::WAF::Rule");
         /// <summary>
+        /// Constant AWSWAFRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRuleGroup = new ResourceType("AWS::WAF::RuleGroup");
+        /// <summary>
         /// Constant AWSWAFWebACL for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFWebACL = new ResourceType("AWS::WAF::WebACL");
+        /// <summary>
+        /// Constant AWSXRayEncryptionConfig for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSXRayEncryptionConfig = new ResourceType("AWS::XRay::EncryptionConfig");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

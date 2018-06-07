@@ -25,6 +25,68 @@ namespace Amazon.AppStream
 {
 
     /// <summary>
+    /// Constants used for properties of type Action.
+    /// </summary>
+    public class Action : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIPBOARD_COPY_FROM_LOCAL_DEVICE for Action
+        /// </summary>
+        public static readonly Action CLIPBOARD_COPY_FROM_LOCAL_DEVICE = new Action("CLIPBOARD_COPY_FROM_LOCAL_DEVICE");
+        /// <summary>
+        /// Constant CLIPBOARD_COPY_TO_LOCAL_DEVICE for Action
+        /// </summary>
+        public static readonly Action CLIPBOARD_COPY_TO_LOCAL_DEVICE = new Action("CLIPBOARD_COPY_TO_LOCAL_DEVICE");
+        /// <summary>
+        /// Constant FILE_DOWNLOAD for Action
+        /// </summary>
+        public static readonly Action FILE_DOWNLOAD = new Action("FILE_DOWNLOAD");
+        /// <summary>
+        /// Constant FILE_UPLOAD for Action
+        /// </summary>
+        public static readonly Action FILE_UPLOAD = new Action("FILE_UPLOAD");
+        /// <summary>
+        /// Constant PRINTING_TO_LOCAL_DEVICE for Action
+        /// </summary>
+        public static readonly Action PRINTING_TO_LOCAL_DEVICE = new Action("PRINTING_TO_LOCAL_DEVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Action(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Action FindValue(string value)
+        {
+            return FindValue<Action>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Action(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -525,6 +587,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageState AVAILABLE = new ImageState("AVAILABLE");
         /// <summary>
+        /// Constant COPYING for ImageState
+        /// </summary>
+        public static readonly ImageState COPYING = new ImageState("COPYING");
+        /// <summary>
         /// Constant DELETING for ImageState
         /// </summary>
         public static readonly ImageState DELETING = new ImageState("DELETING");
@@ -583,6 +649,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageStateChangeReasonCode IMAGE_BUILDER_NOT_AVAILABLE = new ImageStateChangeReasonCode("IMAGE_BUILDER_NOT_AVAILABLE");
         /// <summary>
+        /// Constant IMAGE_COPY_FAILURE for ImageStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageStateChangeReasonCode IMAGE_COPY_FAILURE = new ImageStateChangeReasonCode("IMAGE_COPY_FAILURE");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ImageStateChangeReasonCode
         /// </summary>
         public static readonly ImageStateChangeReasonCode INTERNAL_ERROR = new ImageStateChangeReasonCode("INTERNAL_ERROR");
@@ -616,6 +686,56 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Permission.
+    /// </summary>
+    public class Permission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Permission
+        /// </summary>
+        public static readonly Permission DISABLED = new Permission("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Permission
+        /// </summary>
+        public static readonly Permission ENABLED = new Permission("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Permission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Permission FindValue(string value)
+        {
+            return FindValue<Permission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Permission(string value)
         {
             return FindValue(value);
         }
@@ -662,6 +782,76 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PlatformType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackAttribute.
+    /// </summary>
+    public class StackAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FEEDBACK_URL for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute FEEDBACK_URL = new StackAttribute("FEEDBACK_URL");
+        /// <summary>
+        /// Constant REDIRECT_URL for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute REDIRECT_URL = new StackAttribute("REDIRECT_URL");
+        /// <summary>
+        /// Constant STORAGE_CONNECTOR_GOOGLE_DRIVE for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_GOOGLE_DRIVE = new StackAttribute("STORAGE_CONNECTOR_GOOGLE_DRIVE");
+        /// <summary>
+        /// Constant STORAGE_CONNECTOR_HOMEFOLDERS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_HOMEFOLDERS = new StackAttribute("STORAGE_CONNECTOR_HOMEFOLDERS");
+        /// <summary>
+        /// Constant STORAGE_CONNECTORS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTORS = new StackAttribute("STORAGE_CONNECTORS");
+        /// <summary>
+        /// Constant THEME_NAME for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute THEME_NAME = new StackAttribute("THEME_NAME");
+        /// <summary>
+        /// Constant USER_SETTINGS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute USER_SETTINGS = new StackAttribute("USER_SETTINGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackAttribute FindValue(string value)
+        {
+            return FindValue<StackAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackAttribute(string value)
         {
             return FindValue(value);
         }
@@ -724,6 +914,10 @@ namespace Amazon.AppStream
     public class StorageConnectorType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GOOGLE_DRIVE for StorageConnectorType
+        /// </summary>
+        public static readonly StorageConnectorType GOOGLE_DRIVE = new StorageConnectorType("GOOGLE_DRIVE");
         /// <summary>
         /// Constant HOMEFOLDERS for StorageConnectorType
         /// </summary>

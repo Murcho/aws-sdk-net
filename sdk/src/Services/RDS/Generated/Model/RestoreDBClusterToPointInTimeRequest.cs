@@ -51,8 +51,10 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
     {
+        private long? _backtrackWindow;
         private string _dbClusterIdentifier;
         private string _dbSubnetGroupName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _kmsKeyId;
         private string _optionGroupName;
@@ -63,6 +65,38 @@ namespace Amazon.RDS.Model
         private List<Tag> _tags = new List<Tag>();
         private bool? _useLatestRestorableTime;
         private List<string> _vpcSecurityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property BacktrackWindow. 
+        /// <para>
+        /// The target backtrack window, in seconds. To disable backtracking, set this value to
+        /// 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long BacktrackWindow
+        {
+            get { return this._backtrackWindow.GetValueOrDefault(); }
+            set { this._backtrackWindow = value; }
+        }
+
+        // Check to see if BacktrackWindow property is set
+        internal bool IsSetBacktrackWindow()
+        {
+            return this._backtrackWindow.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -123,6 +157,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>
@@ -224,11 +276,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: A value from <code>1150-65535</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Default: The same port as the original DB cluster.
+        /// Default: The default port for the engine.
         /// </para>
         /// </summary>
         public int Port

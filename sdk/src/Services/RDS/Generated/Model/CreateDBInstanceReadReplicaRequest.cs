@@ -36,14 +36,14 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
+    /// Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code>
     /// action to create a DB instance for an Aurora DB cluster. 
     /// </para>
     ///  
     /// <para>
     /// All Read Replica DB instances are created with backups disabled. All other DB instance
     /// attributes (including DB security groups and DB parameter groups) are inherited from
-    /// the source DB instance, except as specified below. 
+    /// the source DB instance, except as specified following. 
     /// </para>
     ///  <important> 
     /// <para>
@@ -71,10 +71,12 @@ namespace Amazon.RDS.Model
         private string _performanceInsightsKMSKeyId;
         private int? _port;
         private string _preSignedUrl;
+        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private string _sourceDBInstanceIdentifier;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
+        private bool? _useDefaultProcessorFeatures;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -324,6 +326,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// True to enable Performance Insights for the read replica, and otherwise false. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
+        /// Guide</i>. 
+        /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
         {
@@ -451,7 +459,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies whether the read replica is in a Multi-AZ deployment. 
+        /// Specifies whether the Read Replica is in a Multi-AZ deployment. 
         /// </para>
         ///  
         /// <para>
@@ -460,11 +468,6 @@ namespace Amazon.RDS.Model
         /// your Read Replica as a Multi-AZ DB instance is independent of whether the source database
         /// is a Multi-AZ DB instance. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool MultiAZ
         {
@@ -614,6 +617,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
+        /// </summary>
+        public List<ProcessorFeature> ProcessorFeatures
+        {
+            get { return this._processorFeatures; }
+            set { this._processorFeatures = value; }
+        }
+
+        // Check to see if ProcessorFeatures property is set
+        internal bool IsSetProcessorFeatures()
+        {
+            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// Specifies the accessibility options for the DB instance. A value of true specifies
@@ -753,6 +775,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultProcessorFeatures. 
+        /// <para>
+        /// A value that specifies that the DB instance class of the DB instance uses its default
+        /// processor features.
+        /// </para>
+        /// </summary>
+        public bool UseDefaultProcessorFeatures
+        {
+            get { return this._useDefaultProcessorFeatures.GetValueOrDefault(); }
+            set { this._useDefaultProcessorFeatures = value; }
+        }
+
+        // Check to see if UseDefaultProcessorFeatures property is set
+        internal bool IsSetUseDefaultProcessorFeatures()
+        {
+            return this._useDefaultProcessorFeatures.HasValue; 
         }
 
     }

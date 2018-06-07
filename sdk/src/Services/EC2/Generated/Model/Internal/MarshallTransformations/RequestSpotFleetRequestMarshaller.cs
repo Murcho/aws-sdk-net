@@ -429,6 +429,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                         }
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandFulfilledCapacity())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandFulfilledCapacity", StringUtils.FromDouble(publicRequest.SpotFleetRequestConfig.OnDemandFulfilledCapacity));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandTargetCapacity())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandTargetCapacity", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.OnDemandTargetCapacity));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));
@@ -461,5 +469,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RequestSpotFleetRequestMarshaller _instance = new RequestSpotFleetRequestMarshaller();        
+
+        internal static RequestSpotFleetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RequestSpotFleetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

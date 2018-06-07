@@ -261,7 +261,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var marshaller = new CreateChannelRequestMarshaller();
+            var marshaller = CreateChannelRequestMarshaller.Instance;
             var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
             return Invoke<CreateChannelRequest,CreateChannelResponse>(request, marshaller, unmarshaller);
@@ -279,7 +279,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateChannelRequestMarshaller();
+            var marshaller = CreateChannelRequestMarshaller.Instance;
             var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateChannelRequest,CreateChannelResponse>(request, marshaller, 
@@ -318,7 +318,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual CreateInputResponse CreateInput(CreateInputRequest request)
         {
-            var marshaller = new CreateInputRequestMarshaller();
+            var marshaller = CreateInputRequestMarshaller.Instance;
             var unmarshaller = CreateInputResponseUnmarshaller.Instance;
 
             return Invoke<CreateInputRequest,CreateInputResponse>(request, marshaller, unmarshaller);
@@ -336,7 +336,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual Task<CreateInputResponse> CreateInputAsync(CreateInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInputRequestMarshaller();
+            var marshaller = CreateInputRequestMarshaller.Instance;
             var unmarshaller = CreateInputResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInputRequest,CreateInputResponse>(request, marshaller, 
@@ -375,7 +375,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup">REST API Reference for CreateInputSecurityGroup Operation</seealso>
         public virtual CreateInputSecurityGroupResponse CreateInputSecurityGroup(CreateInputSecurityGroupRequest request)
         {
-            var marshaller = new CreateInputSecurityGroupRequestMarshaller();
+            var marshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateInputSecurityGroupRequest,CreateInputSecurityGroupResponse>(request, marshaller, unmarshaller);
@@ -393,7 +393,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup">REST API Reference for CreateInputSecurityGroup Operation</seealso>
         public virtual Task<CreateInputSecurityGroupResponse> CreateInputSecurityGroupAsync(CreateInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInputSecurityGroupRequestMarshaller();
+            var marshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInputSecurityGroupRequest,CreateInputSecurityGroupResponse>(request, marshaller, 
@@ -438,7 +438,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var marshaller = new DeleteChannelRequestMarshaller();
+            var marshaller = DeleteChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, unmarshaller);
@@ -456,7 +456,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteChannelRequestMarshaller();
+            var marshaller = DeleteChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, 
@@ -501,7 +501,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual DeleteInputResponse DeleteInput(DeleteInputRequest request)
         {
-            var marshaller = new DeleteInputRequestMarshaller();
+            var marshaller = DeleteInputRequestMarshaller.Instance;
             var unmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInputRequest,DeleteInputResponse>(request, marshaller, unmarshaller);
@@ -519,7 +519,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual Task<DeleteInputResponse> DeleteInputAsync(DeleteInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInputRequestMarshaller();
+            var marshaller = DeleteInputRequestMarshaller.Instance;
             var unmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInputRequest,DeleteInputResponse>(request, marshaller, 
@@ -552,13 +552,16 @@ namespace Amazon.MediaLive
         /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
         /// Placeholder documentation for InternalServerErrorException
         /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
         /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
         /// Placeholder documentation for TooManyRequestsException
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup">REST API Reference for DeleteInputSecurityGroup Operation</seealso>
         public virtual DeleteInputSecurityGroupResponse DeleteInputSecurityGroup(DeleteInputSecurityGroupRequest request)
         {
-            var marshaller = new DeleteInputSecurityGroupRequestMarshaller();
+            var marshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInputSecurityGroupRequest,DeleteInputSecurityGroupResponse>(request, marshaller, unmarshaller);
@@ -576,7 +579,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup">REST API Reference for DeleteInputSecurityGroup Operation</seealso>
         public virtual Task<DeleteInputSecurityGroupResponse> DeleteInputSecurityGroupAsync(DeleteInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInputSecurityGroupRequestMarshaller();
+            var marshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInputSecurityGroupRequest,DeleteInputSecurityGroupResponse>(request, marshaller, 
@@ -618,7 +621,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var marshaller = new DescribeChannelRequestMarshaller();
+            var marshaller = DescribeChannelRequestMarshaller.Instance;
             var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
             return Invoke<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, unmarshaller);
@@ -636,7 +639,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeChannelRequestMarshaller();
+            var marshaller = DescribeChannelRequestMarshaller.Instance;
             var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, 
@@ -678,7 +681,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual DescribeInputResponse DescribeInput(DescribeInputRequest request)
         {
-            var marshaller = new DescribeInputRequestMarshaller();
+            var marshaller = DescribeInputRequestMarshaller.Instance;
             var unmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
             return Invoke<DescribeInputRequest,DescribeInputResponse>(request, marshaller, unmarshaller);
@@ -696,7 +699,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual Task<DescribeInputResponse> DescribeInputAsync(DescribeInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeInputRequestMarshaller();
+            var marshaller = DescribeInputRequestMarshaller.Instance;
             var unmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInputRequest,DescribeInputResponse>(request, marshaller, 
@@ -738,7 +741,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup">REST API Reference for DescribeInputSecurityGroup Operation</seealso>
         public virtual DescribeInputSecurityGroupResponse DescribeInputSecurityGroup(DescribeInputSecurityGroupRequest request)
         {
-            var marshaller = new DescribeInputSecurityGroupRequestMarshaller();
+            var marshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
             return Invoke<DescribeInputSecurityGroupRequest,DescribeInputSecurityGroupResponse>(request, marshaller, unmarshaller);
@@ -756,7 +759,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup">REST API Reference for DescribeInputSecurityGroup Operation</seealso>
         public virtual Task<DescribeInputSecurityGroupResponse> DescribeInputSecurityGroupAsync(DescribeInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeInputSecurityGroupRequestMarshaller();
+            var marshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInputSecurityGroupRequest,DescribeInputSecurityGroupResponse>(request, marshaller, 
@@ -795,7 +798,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var marshaller = new ListChannelsRequestMarshaller();
+            var marshaller = ListChannelsRequestMarshaller.Instance;
             var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return Invoke<ListChannelsRequest,ListChannelsResponse>(request, marshaller, unmarshaller);
@@ -813,7 +816,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListChannelsRequestMarshaller();
+            var marshaller = ListChannelsRequestMarshaller.Instance;
             var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsRequest,ListChannelsResponse>(request, marshaller, 
@@ -852,7 +855,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual ListInputsResponse ListInputs(ListInputsRequest request)
         {
-            var marshaller = new ListInputsRequestMarshaller();
+            var marshaller = ListInputsRequestMarshaller.Instance;
             var unmarshaller = ListInputsResponseUnmarshaller.Instance;
 
             return Invoke<ListInputsRequest,ListInputsResponse>(request, marshaller, unmarshaller);
@@ -870,7 +873,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual Task<ListInputsResponse> ListInputsAsync(ListInputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListInputsRequestMarshaller();
+            var marshaller = ListInputsRequestMarshaller.Instance;
             var unmarshaller = ListInputsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInputsRequest,ListInputsResponse>(request, marshaller, 
@@ -909,7 +912,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups">REST API Reference for ListInputSecurityGroups Operation</seealso>
         public virtual ListInputSecurityGroupsResponse ListInputSecurityGroups(ListInputSecurityGroupsRequest request)
         {
-            var marshaller = new ListInputSecurityGroupsRequestMarshaller();
+            var marshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListInputSecurityGroupsRequest,ListInputSecurityGroupsResponse>(request, marshaller, unmarshaller);
@@ -927,7 +930,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups">REST API Reference for ListInputSecurityGroups Operation</seealso>
         public virtual Task<ListInputSecurityGroupsResponse> ListInputSecurityGroupsAsync(ListInputSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListInputSecurityGroupsRequestMarshaller();
+            var marshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInputSecurityGroupsRequest,ListInputSecurityGroupsResponse>(request, marshaller, 
@@ -972,7 +975,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual StartChannelResponse StartChannel(StartChannelRequest request)
         {
-            var marshaller = new StartChannelRequestMarshaller();
+            var marshaller = StartChannelRequestMarshaller.Instance;
             var unmarshaller = StartChannelResponseUnmarshaller.Instance;
 
             return Invoke<StartChannelRequest,StartChannelResponse>(request, marshaller, unmarshaller);
@@ -990,7 +993,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual Task<StartChannelResponse> StartChannelAsync(StartChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartChannelRequestMarshaller();
+            var marshaller = StartChannelRequestMarshaller.Instance;
             var unmarshaller = StartChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartChannelRequest,StartChannelResponse>(request, marshaller, 
@@ -1035,7 +1038,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual StopChannelResponse StopChannel(StopChannelRequest request)
         {
-            var marshaller = new StopChannelRequestMarshaller();
+            var marshaller = StopChannelRequestMarshaller.Instance;
             var unmarshaller = StopChannelResponseUnmarshaller.Instance;
 
             return Invoke<StopChannelRequest,StopChannelResponse>(request, marshaller, unmarshaller);
@@ -1053,10 +1056,190 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual Task<StopChannelResponse> StopChannelAsync(StopChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopChannelRequestMarshaller();
+            var marshaller = StopChannelRequestMarshaller.Instance;
             var unmarshaller = StopChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopChannelRequest,StopChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateChannel
+
+
+        /// <summary>
+        /// Updates a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
+        {
+            var marshaller = UpdateChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInput
+
+
+        /// <summary>
+        /// Updates an input.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInput service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInput service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
+        public virtual UpdateInputResponse UpdateInput(UpdateInputRequest request)
+        {
+            var marshaller = UpdateInputRequestMarshaller.Instance;
+            var unmarshaller = UpdateInputResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInputRequest,UpdateInputResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInput operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInput operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
+        public virtual Task<UpdateInputResponse> UpdateInputAsync(UpdateInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateInputRequestMarshaller.Instance;
+            var unmarshaller = UpdateInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInputRequest,UpdateInputResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInputSecurityGroup
+
+
+        /// <summary>
+        /// Update an Input Security Group's Whilelists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInputSecurityGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInputSecurityGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup">REST API Reference for UpdateInputSecurityGroup Operation</seealso>
+        public virtual UpdateInputSecurityGroupResponse UpdateInputSecurityGroup(UpdateInputSecurityGroupRequest request)
+        {
+            var marshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInputSecurityGroupRequest,UpdateInputSecurityGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInputSecurityGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInputSecurityGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup">REST API Reference for UpdateInputSecurityGroup Operation</seealso>
+        public virtual Task<UpdateInputSecurityGroupResponse> UpdateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInputSecurityGroupRequest,UpdateInputSecurityGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

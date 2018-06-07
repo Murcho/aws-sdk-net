@@ -58,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetClusterExists())
+                {
+                    request.Parameters.Add("ClusterExists", StringUtils.FromBool(publicRequest.ClusterExists));
+                }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
@@ -111,5 +115,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeClusterSnapshotsRequestMarshaller _instance = new DescribeClusterSnapshotsRequestMarshaller();        
+
+        internal static DescribeClusterSnapshotsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeClusterSnapshotsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

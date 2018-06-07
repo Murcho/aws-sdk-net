@@ -94,6 +94,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FleetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPaths", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -146,6 +158,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StoppedActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StoppedActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TerminationTime", targetDepth))

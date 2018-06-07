@@ -198,7 +198,7 @@ namespace Amazon.DynamoDBv2
         #region  BatchGetItem
         internal virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
-            var marshaller = new BatchGetItemRequestMarshaller();
+            var marshaller = BatchGetItemRequestMarshaller.Instance;
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetItemRequest,BatchGetItemResponse>(request, marshaller, unmarshaller);
@@ -426,7 +426,7 @@ namespace Amazon.DynamoDBv2
         public virtual void BatchGetItemAsync(BatchGetItemRequest request, AmazonServiceCallback<BatchGetItemRequest, BatchGetItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new BatchGetItemRequestMarshaller();
+            var marshaller = BatchGetItemRequestMarshaller.Instance;
             var unmarshaller = BatchGetItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -443,7 +443,7 @@ namespace Amazon.DynamoDBv2
         #region  BatchWriteItem
         internal virtual BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
-            var marshaller = new BatchWriteItemRequestMarshaller();
+            var marshaller = BatchWriteItemRequestMarshaller.Instance;
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
 
             return Invoke<BatchWriteItemRequest,BatchWriteItemResponse>(request, marshaller, unmarshaller);
@@ -537,6 +537,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// There are more than 25 requests in the batch.
         /// </para>
         ///  </li> <li> 
@@ -596,7 +601,7 @@ namespace Amazon.DynamoDBv2
         public virtual void BatchWriteItemAsync(BatchWriteItemRequest request, AmazonServiceCallback<BatchWriteItemRequest, BatchWriteItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new BatchWriteItemRequestMarshaller();
+            var marshaller = BatchWriteItemRequestMarshaller.Instance;
             var unmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -613,7 +618,7 @@ namespace Amazon.DynamoDBv2
         #region  CreateBackup
         internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
-            var marshaller = new CreateBackupRequestMarshaller();
+            var marshaller = CreateBackupRequestMarshaller.Instance;
             var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
             return Invoke<CreateBackupRequest,CreateBackupResponse>(request, marshaller, unmarshaller);
@@ -631,7 +636,7 @@ namespace Amazon.DynamoDBv2
         public virtual void CreateBackupAsync(CreateBackupRequest request, AmazonServiceCallback<CreateBackupRequest, CreateBackupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateBackupRequestMarshaller();
+            var marshaller = CreateBackupRequestMarshaller.Instance;
             var unmarshaller = CreateBackupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -648,7 +653,7 @@ namespace Amazon.DynamoDBv2
         #region  CreateGlobalTable
         internal virtual CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request)
         {
-            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var marshaller = CreateGlobalTableRequestMarshaller.Instance;
             var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
 
             return Invoke<CreateGlobalTableRequest,CreateGlobalTableResponse>(request, marshaller, unmarshaller);
@@ -666,7 +671,7 @@ namespace Amazon.DynamoDBv2
         public virtual void CreateGlobalTableAsync(CreateGlobalTableRequest request, AmazonServiceCallback<CreateGlobalTableRequest, CreateGlobalTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateGlobalTableRequestMarshaller();
+            var marshaller = CreateGlobalTableRequestMarshaller.Instance;
             var unmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -683,7 +688,7 @@ namespace Amazon.DynamoDBv2
         #region  CreateTable
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var marshaller = new CreateTableRequestMarshaller();
+            var marshaller = CreateTableRequestMarshaller.Instance;
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
 
             return Invoke<CreateTableRequest,CreateTableResponse>(request, marshaller, unmarshaller);
@@ -729,13 +734,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -772,7 +782,7 @@ namespace Amazon.DynamoDBv2
         public virtual void CreateTableAsync(CreateTableRequest request, AmazonServiceCallback<CreateTableRequest, CreateTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateTableRequestMarshaller();
+            var marshaller = CreateTableRequestMarshaller.Instance;
             var unmarshaller = CreateTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -789,7 +799,7 @@ namespace Amazon.DynamoDBv2
         #region  DeleteBackup
         internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var marshaller = new DeleteBackupRequestMarshaller();
+            var marshaller = DeleteBackupRequestMarshaller.Instance;
             var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
@@ -807,7 +817,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DeleteBackupAsync(DeleteBackupRequest request, AmazonServiceCallback<DeleteBackupRequest, DeleteBackupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBackupRequestMarshaller();
+            var marshaller = DeleteBackupRequestMarshaller.Instance;
             var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -824,7 +834,7 @@ namespace Amazon.DynamoDBv2
         #region  DeleteItem
         internal virtual DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
-            var marshaller = new DeleteItemRequestMarshaller();
+            var marshaller = DeleteItemRequestMarshaller.Instance;
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
 
             return Invoke<DeleteItemRequest,DeleteItemResponse>(request, marshaller, unmarshaller);
@@ -968,7 +978,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DeleteItemAsync(DeleteItemRequest request, AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteItemRequestMarshaller();
+            var marshaller = DeleteItemRequestMarshaller.Instance;
             var unmarshaller = DeleteItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -985,7 +995,7 @@ namespace Amazon.DynamoDBv2
         #region  DeleteTable
         internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var marshaller = new DeleteTableRequestMarshaller();
+            var marshaller = DeleteTableRequestMarshaller.Instance;
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTableRequest,DeleteTableResponse>(request, marshaller, unmarshaller);
@@ -1033,13 +1043,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -1077,7 +1092,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DeleteTableAsync(DeleteTableRequest request, AmazonServiceCallback<DeleteTableRequest, DeleteTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteTableRequestMarshaller();
+            var marshaller = DeleteTableRequestMarshaller.Instance;
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1094,7 +1109,7 @@ namespace Amazon.DynamoDBv2
         #region  DescribeBackup
         internal virtual DescribeBackupResponse DescribeBackup(DescribeBackupRequest request)
         {
-            var marshaller = new DescribeBackupRequestMarshaller();
+            var marshaller = DescribeBackupRequestMarshaller.Instance;
             var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBackupRequest,DescribeBackupResponse>(request, marshaller, unmarshaller);
@@ -1112,7 +1127,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeBackupAsync(DescribeBackupRequest request, AmazonServiceCallback<DescribeBackupRequest, DescribeBackupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeBackupRequestMarshaller();
+            var marshaller = DescribeBackupRequestMarshaller.Instance;
             var unmarshaller = DescribeBackupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1129,7 +1144,7 @@ namespace Amazon.DynamoDBv2
         #region  DescribeContinuousBackups
         internal virtual DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request)
         {
-            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var marshaller = DescribeContinuousBackupsRequestMarshaller.Instance;
             var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeContinuousBackupsRequest,DescribeContinuousBackupsResponse>(request, marshaller, unmarshaller);
@@ -1147,7 +1162,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, AmazonServiceCallback<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeContinuousBackupsRequestMarshaller();
+            var marshaller = DescribeContinuousBackupsRequestMarshaller.Instance;
             var unmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1164,7 +1179,7 @@ namespace Amazon.DynamoDBv2
         #region  DescribeGlobalTable
         internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
         {
-            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var marshaller = DescribeGlobalTableRequestMarshaller.Instance;
             var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGlobalTableRequest,DescribeGlobalTableResponse>(request, marshaller, unmarshaller);
@@ -1182,7 +1197,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeGlobalTableAsync(DescribeGlobalTableRequest request, AmazonServiceCallback<DescribeGlobalTableRequest, DescribeGlobalTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeGlobalTableRequestMarshaller();
+            var marshaller = DescribeGlobalTableRequestMarshaller.Instance;
             var unmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1196,10 +1211,45 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeGlobalTableSettings
+        internal virtual DescribeGlobalTableSettingsResponse DescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request)
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual void DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, AmazonServiceCallback<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse> responseObject 
+                            = new AmazonServiceResult<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>((DescribeGlobalTableSettingsRequest)req, (DescribeGlobalTableSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeGlobalTableSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DescribeLimits
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
-            var marshaller = new DescribeLimitsRequestMarshaller();
+            var marshaller = DescribeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeLimitsRequest,DescribeLimitsResponse>(request, marshaller, unmarshaller);
@@ -1217,7 +1267,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeLimitsRequestMarshaller();
+            var marshaller = DescribeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1234,7 +1284,7 @@ namespace Amazon.DynamoDBv2
         #region  DescribeTable
         internal virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
-            var marshaller = new DescribeTableRequestMarshaller();
+            var marshaller = DescribeTableRequestMarshaller.Instance;
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTableRequest,DescribeTableResponse>(request, marshaller, unmarshaller);
@@ -1290,7 +1340,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeTableAsync(DescribeTableRequest request, AmazonServiceCallback<DescribeTableRequest, DescribeTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeTableRequestMarshaller();
+            var marshaller = DescribeTableRequestMarshaller.Instance;
             var unmarshaller = DescribeTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1307,7 +1357,7 @@ namespace Amazon.DynamoDBv2
         #region  DescribeTimeToLive
         internal virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
-            var marshaller = new DescribeTimeToLiveRequestMarshaller();
+            var marshaller = DescribeTimeToLiveRequestMarshaller.Instance;
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTimeToLiveRequest,DescribeTimeToLiveResponse>(request, marshaller, unmarshaller);
@@ -1352,7 +1402,7 @@ namespace Amazon.DynamoDBv2
         public virtual void DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeTimeToLiveRequestMarshaller();
+            var marshaller = DescribeTimeToLiveRequestMarshaller.Instance;
             var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1369,7 +1419,7 @@ namespace Amazon.DynamoDBv2
         #region  GetItem
         internal virtual GetItemResponse GetItem(GetItemRequest request)
         {
-            var marshaller = new GetItemRequestMarshaller();
+            var marshaller = GetItemRequestMarshaller.Instance;
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
 
             return Invoke<GetItemRequest,GetItemResponse>(request, marshaller, unmarshaller);
@@ -1481,7 +1531,7 @@ namespace Amazon.DynamoDBv2
         public virtual void GetItemAsync(GetItemRequest request, AmazonServiceCallback<GetItemRequest, GetItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetItemRequestMarshaller();
+            var marshaller = GetItemRequestMarshaller.Instance;
             var unmarshaller = GetItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1498,7 +1548,7 @@ namespace Amazon.DynamoDBv2
         #region  ListBackups
         internal virtual ListBackupsResponse ListBackups(ListBackupsRequest request)
         {
-            var marshaller = new ListBackupsRequestMarshaller();
+            var marshaller = ListBackupsRequestMarshaller.Instance;
             var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
 
             return Invoke<ListBackupsRequest,ListBackupsResponse>(request, marshaller, unmarshaller);
@@ -1516,7 +1566,7 @@ namespace Amazon.DynamoDBv2
         public virtual void ListBackupsAsync(ListBackupsRequest request, AmazonServiceCallback<ListBackupsRequest, ListBackupsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListBackupsRequestMarshaller();
+            var marshaller = ListBackupsRequestMarshaller.Instance;
             var unmarshaller = ListBackupsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1533,7 +1583,7 @@ namespace Amazon.DynamoDBv2
         #region  ListGlobalTables
         internal virtual ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request)
         {
-            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var marshaller = ListGlobalTablesRequestMarshaller.Instance;
             var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
 
             return Invoke<ListGlobalTablesRequest,ListGlobalTablesResponse>(request, marshaller, unmarshaller);
@@ -1551,7 +1601,7 @@ namespace Amazon.DynamoDBv2
         public virtual void ListGlobalTablesAsync(ListGlobalTablesRequest request, AmazonServiceCallback<ListGlobalTablesRequest, ListGlobalTablesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListGlobalTablesRequestMarshaller();
+            var marshaller = ListGlobalTablesRequestMarshaller.Instance;
             var unmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1584,7 +1634,7 @@ namespace Amazon.DynamoDBv2
         }
         internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var marshaller = new ListTablesRequestMarshaller();
+            var marshaller = ListTablesRequestMarshaller.Instance;
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
 
             return Invoke<ListTablesRequest,ListTablesResponse>(request, marshaller, unmarshaller);
@@ -1702,7 +1752,7 @@ namespace Amazon.DynamoDBv2
         public virtual void ListTablesAsync(ListTablesRequest request, AmazonServiceCallback<ListTablesRequest, ListTablesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListTablesRequestMarshaller();
+            var marshaller = ListTablesRequestMarshaller.Instance;
             var unmarshaller = ListTablesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1719,7 +1769,7 @@ namespace Amazon.DynamoDBv2
         #region  ListTagsOfResource
         internal virtual ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
         {
-            var marshaller = new ListTagsOfResourceRequestMarshaller();
+            var marshaller = ListTagsOfResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsOfResourceRequest,ListTagsOfResourceResponse>(request, marshaller, unmarshaller);
@@ -1737,7 +1787,7 @@ namespace Amazon.DynamoDBv2
         public virtual void ListTagsOfResourceAsync(ListTagsOfResourceRequest request, AmazonServiceCallback<ListTagsOfResourceRequest, ListTagsOfResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListTagsOfResourceRequestMarshaller();
+            var marshaller = ListTagsOfResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1754,7 +1804,7 @@ namespace Amazon.DynamoDBv2
         #region  PutItem
         internal virtual PutItemResponse PutItem(PutItemRequest request)
         {
-            var marshaller = new PutItemRequestMarshaller();
+            var marshaller = PutItemRequestMarshaller.Instance;
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
 
             return Invoke<PutItemRequest,PutItemResponse>(request, marshaller, unmarshaller);
@@ -2020,7 +2070,7 @@ namespace Amazon.DynamoDBv2
         public virtual void PutItemAsync(PutItemRequest request, AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutItemRequestMarshaller();
+            var marshaller = PutItemRequestMarshaller.Instance;
             var unmarshaller = PutItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2037,7 +2087,7 @@ namespace Amazon.DynamoDBv2
         #region  Query
         internal virtual QueryResponse Query(QueryRequest request)
         {
-            var marshaller = new QueryRequestMarshaller();
+            var marshaller = QueryRequestMarshaller.Instance;
             var unmarshaller = QueryResponseUnmarshaller.Instance;
 
             return Invoke<QueryRequest,QueryResponse>(request, marshaller, unmarshaller);
@@ -2055,7 +2105,7 @@ namespace Amazon.DynamoDBv2
         public virtual void QueryAsync(QueryRequest request, AmazonServiceCallback<QueryRequest, QueryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new QueryRequestMarshaller();
+            var marshaller = QueryRequestMarshaller.Instance;
             var unmarshaller = QueryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2072,7 +2122,7 @@ namespace Amazon.DynamoDBv2
         #region  RestoreTableFromBackup
         internal virtual RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request)
         {
-            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var marshaller = RestoreTableFromBackupRequestMarshaller.Instance;
             var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
 
             return Invoke<RestoreTableFromBackupRequest,RestoreTableFromBackupResponse>(request, marshaller, unmarshaller);
@@ -2090,7 +2140,7 @@ namespace Amazon.DynamoDBv2
         public virtual void RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, AmazonServiceCallback<RestoreTableFromBackupRequest, RestoreTableFromBackupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RestoreTableFromBackupRequestMarshaller();
+            var marshaller = RestoreTableFromBackupRequestMarshaller.Instance;
             var unmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2104,10 +2154,45 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableToPointInTime
+        internal virtual RestoreTableToPointInTimeResponse RestoreTableToPointInTime(RestoreTableToPointInTimeRequest request)
+        {
+            var marshaller = RestoreTableToPointInTimeRequestMarshaller.Instance;
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        public virtual void RestoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request, AmazonServiceCallback<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = RestoreTableToPointInTimeRequestMarshaller.Instance;
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse> responseObject 
+                            = new AmazonServiceResult<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>((RestoreTableToPointInTimeRequest)req, (RestoreTableToPointInTimeResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RestoreTableToPointInTimeRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  Scan
         internal virtual ScanResponse Scan(ScanRequest request)
         {
-            var marshaller = new ScanRequestMarshaller();
+            var marshaller = ScanRequestMarshaller.Instance;
             var unmarshaller = ScanResponseUnmarshaller.Instance;
 
             return Invoke<ScanRequest,ScanResponse>(request, marshaller, unmarshaller);
@@ -2343,7 +2428,7 @@ namespace Amazon.DynamoDBv2
         public virtual void ScanAsync(ScanRequest request, AmazonServiceCallback<ScanRequest, ScanResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ScanRequestMarshaller();
+            var marshaller = ScanRequestMarshaller.Instance;
             var unmarshaller = ScanResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2360,7 +2445,7 @@ namespace Amazon.DynamoDBv2
         #region  TagResource
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -2378,7 +2463,7 @@ namespace Amazon.DynamoDBv2
         public virtual void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2395,7 +2480,7 @@ namespace Amazon.DynamoDBv2
         #region  UntagResource
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -2413,7 +2498,7 @@ namespace Amazon.DynamoDBv2
         public virtual void UntagResourceAsync(UntagResourceRequest request, AmazonServiceCallback<UntagResourceRequest, UntagResourceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2427,10 +2512,45 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateContinuousBackups
+        internal virtual UpdateContinuousBackupsResponse UpdateContinuousBackups(UpdateContinuousBackupsRequest request)
+        {
+            var marshaller = UpdateContinuousBackupsRequestMarshaller.Instance;
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        public virtual void UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, AmazonServiceCallback<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = UpdateContinuousBackupsRequestMarshaller.Instance;
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse> responseObject 
+                            = new AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>((UpdateContinuousBackupsRequest)req, (UpdateContinuousBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateContinuousBackupsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UpdateGlobalTable
         internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
         {
-            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var marshaller = UpdateGlobalTableRequestMarshaller.Instance;
             var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, unmarshaller);
@@ -2448,7 +2568,7 @@ namespace Amazon.DynamoDBv2
         public virtual void UpdateGlobalTableAsync(UpdateGlobalTableRequest request, AmazonServiceCallback<UpdateGlobalTableRequest, UpdateGlobalTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateGlobalTableRequestMarshaller();
+            var marshaller = UpdateGlobalTableRequestMarshaller.Instance;
             var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2462,10 +2582,45 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateGlobalTableSettings
+        internal virtual UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request)
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual void UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, AmazonServiceCallback<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse> responseObject 
+                            = new AmazonServiceResult<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>((UpdateGlobalTableSettingsRequest)req, (UpdateGlobalTableSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateGlobalTableSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UpdateItem
         internal virtual UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
-            var marshaller = new UpdateItemRequestMarshaller();
+            var marshaller = UpdateItemRequestMarshaller.Instance;
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
 
             return Invoke<UpdateItemRequest,UpdateItemResponse>(request, marshaller, unmarshaller);
@@ -2595,7 +2750,7 @@ namespace Amazon.DynamoDBv2
         public virtual void UpdateItemAsync(UpdateItemRequest request, AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateItemRequestMarshaller();
+            var marshaller = UpdateItemRequestMarshaller.Instance;
             var unmarshaller = UpdateItemResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2612,7 +2767,7 @@ namespace Amazon.DynamoDBv2
         #region  UpdateTable
         internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
-            var marshaller = new UpdateTableRequestMarshaller();
+            var marshaller = UpdateTableRequestMarshaller.Instance;
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTableRequest,UpdateTableResponse>(request, marshaller, unmarshaller);
@@ -2665,13 +2820,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -2710,7 +2870,7 @@ namespace Amazon.DynamoDBv2
         public virtual void UpdateTableAsync(UpdateTableRequest request, AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateTableRequestMarshaller();
+            var marshaller = UpdateTableRequestMarshaller.Instance;
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2727,7 +2887,7 @@ namespace Amazon.DynamoDBv2
         #region  UpdateTimeToLive
         internal virtual UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
         {
-            var marshaller = new UpdateTimeToLiveRequestMarshaller();
+            var marshaller = UpdateTimeToLiveRequestMarshaller.Instance;
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTimeToLiveRequest,UpdateTimeToLiveResponse>(request, marshaller, unmarshaller);
@@ -2745,7 +2905,7 @@ namespace Amazon.DynamoDBv2
         public virtual void UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, AmazonServiceCallback<UpdateTimeToLiveRequest, UpdateTimeToLiveResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateTimeToLiveRequestMarshaller();
+            var marshaller = UpdateTimeToLiveRequestMarshaller.Instance;
             var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

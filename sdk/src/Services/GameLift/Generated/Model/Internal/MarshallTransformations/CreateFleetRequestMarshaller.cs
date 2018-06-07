@@ -101,6 +101,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EC2InstanceType);
                 }
 
+                if(publicRequest.IsSetFleetType())
+                {
+                    context.Writer.WritePropertyName("FleetType");
+                    context.Writer.Write(publicRequest.FleetType);
+                }
+
                 if(publicRequest.IsSetLogPaths())
                 {
                     context.Writer.WritePropertyName("LogPaths");
@@ -190,7 +196,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateFleetRequestMarshaller _instance = new CreateFleetRequestMarshaller();        
 
+        internal static CreateFleetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateFleetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

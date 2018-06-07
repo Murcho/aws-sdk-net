@@ -41,19 +41,41 @@ namespace Amazon.CodeBuild.Model
     /// Because billing is on a per-build basis, you will be billed for both builds. Therefore,
     /// if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild.
     /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
-    /// 9 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
-    /// a Build Project’s Settings</a>.
+    /// 5 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+    /// a Build Project's Settings</a>.
     /// </para>
     ///  </important>
     /// </summary>
     public partial class CreateWebhookRequest : AmazonCodeBuildRequest
     {
+        private string _branchFilter;
         private string _projectName;
+
+        /// <summary>
+        /// Gets and sets the property BranchFilter. 
+        /// <para>
+        /// A regular expression used to determine which branches in a repository are built when
+        /// a webhook is triggered. If the name of a branch matches the regular expression, then
+        /// it is built. If it doesn't match, then it is not. If branchFilter is empty, then all
+        /// branches are built.
+        /// </para>
+        /// </summary>
+        public string BranchFilter
+        {
+            get { return this._branchFilter; }
+            set { this._branchFilter = value; }
+        }
+
+        // Check to see if BranchFilter property is set
+        internal bool IsSetBranchFilter()
+        {
+            return this._branchFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the build project.
+        /// The name of the AWS CodeBuild project.
         /// </para>
         /// </summary>
         public string ProjectName

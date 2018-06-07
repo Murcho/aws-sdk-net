@@ -171,6 +171,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));
                 }
+                if(publicRequest.IsSetServiceLinkedRoleARN())
+                {
+                    request.Parameters.Add("ServiceLinkedRoleARN", StringUtils.FromString(publicRequest.ServiceLinkedRoleARN));
+                }
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -224,5 +228,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateAutoScalingGroupRequestMarshaller _instance = new CreateAutoScalingGroupRequestMarshaller();        
+
+        internal static CreateAutoScalingGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAutoScalingGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

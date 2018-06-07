@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDirectInternetAccess())
+                {
+                    context.Writer.WritePropertyName("DirectInternetAccess");
+                    context.Writer.Write(publicRequest.DirectInternetAccess);
+                }
+
                 if(publicRequest.IsSetInstanceType())
                 {
                     context.Writer.WritePropertyName("InstanceType");
@@ -77,6 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("KmsKeyId");
                     context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
+                if(publicRequest.IsSetLifecycleConfigName())
+                {
+                    context.Writer.WritePropertyName("LifecycleConfigName");
+                    context.Writer.Write(publicRequest.LifecycleConfigName);
                 }
 
                 if(publicRequest.IsSetNotebookInstanceName())
@@ -133,7 +145,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateNotebookInstanceRequestMarshaller _instance = new CreateNotebookInstanceRequestMarshaller();        
 
+        internal static CreateNotebookInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateNotebookInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

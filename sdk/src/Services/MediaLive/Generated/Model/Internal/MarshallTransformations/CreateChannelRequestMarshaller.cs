@@ -108,6 +108,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInputSpecification())
+                {
+                    context.Writer.WritePropertyName("inputSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -146,7 +157,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateChannelRequestMarshaller _instance = new CreateChannelRequestMarshaller();        
 
+        internal static CreateChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -109,6 +109,14 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Files, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Information about committed code in a repository, by calling the following:
     /// </para>
     ///  <ul> <li> 
@@ -479,7 +487,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         public virtual BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request)
         {
-            var marshaller = new BatchGetRepositoriesRequestMarshaller();
+            var marshaller = BatchGetRepositoriesRequestMarshaller.Instance;
             var unmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetRepositoriesRequest,BatchGetRepositoriesResponse>(request, marshaller, unmarshaller);
@@ -497,7 +505,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         public virtual Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetRepositoriesRequestMarshaller();
+            var marshaller = BatchGetRepositoriesRequestMarshaller.Instance;
             var unmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetRepositoriesRequest,BatchGetRepositoriesResponse>(request, marshaller, 
@@ -576,7 +584,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual CreateBranchResponse CreateBranch(CreateBranchRequest request)
         {
-            var marshaller = new CreateBranchRequestMarshaller();
+            var marshaller = CreateBranchRequestMarshaller.Instance;
             var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
 
             return Invoke<CreateBranchRequest,CreateBranchResponse>(request, marshaller, unmarshaller);
@@ -594,7 +602,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateBranchRequestMarshaller();
+            var marshaller = CreateBranchRequestMarshaller.Instance;
             var unmarshaller = CreateBranchResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateBranchRequest,CreateBranchResponse>(request, marshaller, 
@@ -717,7 +725,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
         public virtual CreatePullRequestResponse CreatePullRequest(CreatePullRequestRequest request)
         {
-            var marshaller = new CreatePullRequestRequestMarshaller();
+            var marshaller = CreatePullRequestRequestMarshaller.Instance;
             var unmarshaller = CreatePullRequestResponseUnmarshaller.Instance;
 
             return Invoke<CreatePullRequestRequest,CreatePullRequestResponse>(request, marshaller, unmarshaller);
@@ -735,7 +743,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
         public virtual Task<CreatePullRequestResponse> CreatePullRequestAsync(CreatePullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePullRequestRequestMarshaller();
+            var marshaller = CreatePullRequestRequestMarshaller.Instance;
             var unmarshaller = CreatePullRequestResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePullRequestRequest,CreatePullRequestResponse>(request, marshaller, 
@@ -794,7 +802,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var marshaller = new CreateRepositoryRequestMarshaller();
+            var marshaller = CreateRepositoryRequestMarshaller.Instance;
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
             return Invoke<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, unmarshaller);
@@ -812,7 +820,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateRepositoryRequestMarshaller();
+            var marshaller = CreateRepositoryRequestMarshaller.Instance;
             var unmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRepositoryRequest,CreateRepositoryResponse>(request, marshaller, 
@@ -876,7 +884,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual DeleteBranchResponse DeleteBranch(DeleteBranchRequest request)
         {
-            var marshaller = new DeleteBranchRequestMarshaller();
+            var marshaller = DeleteBranchRequestMarshaller.Instance;
             var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, unmarshaller);
@@ -894,7 +902,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBranchRequestMarshaller();
+            var marshaller = DeleteBranchRequestMarshaller.Instance;
             var unmarshaller = DeleteBranchResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBranchRequest,DeleteBranchResponse>(request, marshaller, 
@@ -929,7 +937,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent">REST API Reference for DeleteCommentContent Operation</seealso>
         public virtual DeleteCommentContentResponse DeleteCommentContent(DeleteCommentContentRequest request)
         {
-            var marshaller = new DeleteCommentContentRequestMarshaller();
+            var marshaller = DeleteCommentContentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentContentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCommentContentRequest,DeleteCommentContentResponse>(request, marshaller, unmarshaller);
@@ -947,7 +955,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent">REST API Reference for DeleteCommentContent Operation</seealso>
         public virtual Task<DeleteCommentContentResponse> DeleteCommentContentAsync(DeleteCommentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCommentContentRequestMarshaller();
+            var marshaller = DeleteCommentContentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCommentContentRequest,DeleteCommentContentResponse>(request, marshaller, 
@@ -1005,7 +1013,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var marshaller = new DeleteRepositoryRequestMarshaller();
+            var marshaller = DeleteRepositoryRequestMarshaller.Instance;
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, unmarshaller);
@@ -1023,7 +1031,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRepositoryRequestMarshaller();
+            var marshaller = DeleteRepositoryRequestMarshaller.Instance;
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, 
@@ -1087,7 +1095,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents">REST API Reference for DescribePullRequestEvents Operation</seealso>
         public virtual DescribePullRequestEventsResponse DescribePullRequestEvents(DescribePullRequestEventsRequest request)
         {
-            var marshaller = new DescribePullRequestEventsRequestMarshaller();
+            var marshaller = DescribePullRequestEventsRequestMarshaller.Instance;
             var unmarshaller = DescribePullRequestEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribePullRequestEventsRequest,DescribePullRequestEventsResponse>(request, marshaller, unmarshaller);
@@ -1105,7 +1113,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents">REST API Reference for DescribePullRequestEvents Operation</seealso>
         public virtual Task<DescribePullRequestEventsResponse> DescribePullRequestEventsAsync(DescribePullRequestEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribePullRequestEventsRequestMarshaller();
+            var marshaller = DescribePullRequestEventsRequestMarshaller.Instance;
             var unmarshaller = DescribePullRequestEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePullRequestEventsRequest,DescribePullRequestEventsResponse>(request, marshaller, 
@@ -1172,7 +1180,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         public virtual GetBlobResponse GetBlob(GetBlobRequest request)
         {
-            var marshaller = new GetBlobRequestMarshaller();
+            var marshaller = GetBlobRequestMarshaller.Instance;
             var unmarshaller = GetBlobResponseUnmarshaller.Instance;
 
             return Invoke<GetBlobRequest,GetBlobResponse>(request, marshaller, unmarshaller);
@@ -1190,7 +1198,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         public virtual Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBlobRequestMarshaller();
+            var marshaller = GetBlobRequestMarshaller.Instance;
             var unmarshaller = GetBlobResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBlobRequest,GetBlobResponse>(request, marshaller, 
@@ -1253,7 +1261,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual GetBranchResponse GetBranch(GetBranchRequest request)
         {
-            var marshaller = new GetBranchRequestMarshaller();
+            var marshaller = GetBranchRequestMarshaller.Instance;
             var unmarshaller = GetBranchResponseUnmarshaller.Instance;
 
             return Invoke<GetBranchRequest,GetBranchResponse>(request, marshaller, unmarshaller);
@@ -1271,7 +1279,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBranchRequestMarshaller();
+            var marshaller = GetBranchRequestMarshaller.Instance;
             var unmarshaller = GetBranchResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBranchRequest,GetBranchResponse>(request, marshaller, 
@@ -1306,7 +1314,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">REST API Reference for GetComment Operation</seealso>
         public virtual GetCommentResponse GetComment(GetCommentRequest request)
         {
-            var marshaller = new GetCommentRequestMarshaller();
+            var marshaller = GetCommentRequestMarshaller.Instance;
             var unmarshaller = GetCommentResponseUnmarshaller.Instance;
 
             return Invoke<GetCommentRequest,GetCommentResponse>(request, marshaller, unmarshaller);
@@ -1324,7 +1332,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">REST API Reference for GetComment Operation</seealso>
         public virtual Task<GetCommentResponse> GetCommentAsync(GetCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCommentRequestMarshaller();
+            var marshaller = GetCommentRequestMarshaller.Instance;
             var unmarshaller = GetCommentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommentRequest,GetCommentResponse>(request, marshaller, 
@@ -1393,7 +1401,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         public virtual GetCommentsForComparedCommitResponse GetCommentsForComparedCommit(GetCommentsForComparedCommitRequest request)
         {
-            var marshaller = new GetCommentsForComparedCommitRequestMarshaller();
+            var marshaller = GetCommentsForComparedCommitRequestMarshaller.Instance;
             var unmarshaller = GetCommentsForComparedCommitResponseUnmarshaller.Instance;
 
             return Invoke<GetCommentsForComparedCommitRequest,GetCommentsForComparedCommitResponse>(request, marshaller, unmarshaller);
@@ -1411,7 +1419,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         public virtual Task<GetCommentsForComparedCommitResponse> GetCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCommentsForComparedCommitRequestMarshaller();
+            var marshaller = GetCommentsForComparedCommitRequestMarshaller.Instance;
             var unmarshaller = GetCommentsForComparedCommitResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommentsForComparedCommitRequest,GetCommentsForComparedCommitResponse>(request, marshaller, 
@@ -1495,7 +1503,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">REST API Reference for GetCommentsForPullRequest Operation</seealso>
         public virtual GetCommentsForPullRequestResponse GetCommentsForPullRequest(GetCommentsForPullRequestRequest request)
         {
-            var marshaller = new GetCommentsForPullRequestRequestMarshaller();
+            var marshaller = GetCommentsForPullRequestRequestMarshaller.Instance;
             var unmarshaller = GetCommentsForPullRequestResponseUnmarshaller.Instance;
 
             return Invoke<GetCommentsForPullRequestRequest,GetCommentsForPullRequestResponse>(request, marshaller, unmarshaller);
@@ -1513,7 +1521,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">REST API Reference for GetCommentsForPullRequest Operation</seealso>
         public virtual Task<GetCommentsForPullRequestResponse> GetCommentsForPullRequestAsync(GetCommentsForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCommentsForPullRequestRequestMarshaller();
+            var marshaller = GetCommentsForPullRequestRequestMarshaller.Instance;
             var unmarshaller = GetCommentsForPullRequestResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommentsForPullRequestRequest,GetCommentsForPullRequestResponse>(request, marshaller, 
@@ -1575,7 +1583,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         public virtual GetCommitResponse GetCommit(GetCommitRequest request)
         {
-            var marshaller = new GetCommitRequestMarshaller();
+            var marshaller = GetCommitRequestMarshaller.Instance;
             var unmarshaller = GetCommitResponseUnmarshaller.Instance;
 
             return Invoke<GetCommitRequest,GetCommitResponse>(request, marshaller, unmarshaller);
@@ -1593,7 +1601,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         public virtual Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCommitRequestMarshaller();
+            var marshaller = GetCommitRequestMarshaller.Instance;
             var unmarshaller = GetCommitResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommitRequest,GetCommitResponse>(request, marshaller, 
@@ -1673,7 +1681,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         public virtual GetDifferencesResponse GetDifferences(GetDifferencesRequest request)
         {
-            var marshaller = new GetDifferencesRequestMarshaller();
+            var marshaller = GetDifferencesRequestMarshaller.Instance;
             var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
 
             return Invoke<GetDifferencesRequest,GetDifferencesResponse>(request, marshaller, unmarshaller);
@@ -1691,7 +1699,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         public virtual Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDifferencesRequestMarshaller();
+            var marshaller = GetDifferencesRequestMarshaller.Instance;
             var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDifferencesRequest,GetDifferencesResponse>(request, marshaller, 
@@ -1774,7 +1782,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
         public virtual GetMergeConflictsResponse GetMergeConflicts(GetMergeConflictsRequest request)
         {
-            var marshaller = new GetMergeConflictsRequestMarshaller();
+            var marshaller = GetMergeConflictsRequestMarshaller.Instance;
             var unmarshaller = GetMergeConflictsResponseUnmarshaller.Instance;
 
             return Invoke<GetMergeConflictsRequest,GetMergeConflictsResponse>(request, marshaller, unmarshaller);
@@ -1792,7 +1800,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
         public virtual Task<GetMergeConflictsResponse> GetMergeConflictsAsync(GetMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMergeConflictsRequestMarshaller();
+            var marshaller = GetMergeConflictsRequestMarshaller.Instance;
             var unmarshaller = GetMergeConflictsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMergeConflictsRequest,GetMergeConflictsResponse>(request, marshaller, 
@@ -1839,7 +1847,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest">REST API Reference for GetPullRequest Operation</seealso>
         public virtual GetPullRequestResponse GetPullRequest(GetPullRequestRequest request)
         {
-            var marshaller = new GetPullRequestRequestMarshaller();
+            var marshaller = GetPullRequestRequestMarshaller.Instance;
             var unmarshaller = GetPullRequestResponseUnmarshaller.Instance;
 
             return Invoke<GetPullRequestRequest,GetPullRequestResponse>(request, marshaller, unmarshaller);
@@ -1857,7 +1865,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest">REST API Reference for GetPullRequest Operation</seealso>
         public virtual Task<GetPullRequestResponse> GetPullRequestAsync(GetPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPullRequestRequestMarshaller();
+            var marshaller = GetPullRequestRequestMarshaller.Instance;
             var unmarshaller = GetPullRequestResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPullRequestRequest,GetPullRequestResponse>(request, marshaller, 
@@ -1920,7 +1928,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public virtual GetRepositoryResponse GetRepository(GetRepositoryRequest request)
         {
-            var marshaller = new GetRepositoryRequestMarshaller();
+            var marshaller = GetRepositoryRequestMarshaller.Instance;
             var unmarshaller = GetRepositoryResponseUnmarshaller.Instance;
 
             return Invoke<GetRepositoryRequest,GetRepositoryResponse>(request, marshaller, unmarshaller);
@@ -1938,7 +1946,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetRepositoryRequestMarshaller();
+            var marshaller = GetRepositoryRequestMarshaller.Instance;
             var unmarshaller = GetRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRepositoryRequest,GetRepositoryResponse>(request, marshaller, 
@@ -1991,7 +1999,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         public virtual GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request)
         {
-            var marshaller = new GetRepositoryTriggersRequestMarshaller();
+            var marshaller = GetRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
 
             return Invoke<GetRepositoryTriggersRequest,GetRepositoryTriggersResponse>(request, marshaller, unmarshaller);
@@ -2009,7 +2017,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         public virtual Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetRepositoryTriggersRequestMarshaller();
+            var marshaller = GetRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRepositoryTriggersRequest,GetRepositoryTriggersResponse>(request, marshaller, 
@@ -2065,7 +2073,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual ListBranchesResponse ListBranches(ListBranchesRequest request)
         {
-            var marshaller = new ListBranchesRequestMarshaller();
+            var marshaller = ListBranchesRequestMarshaller.Instance;
             var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
 
             return Invoke<ListBranchesRequest,ListBranchesResponse>(request, marshaller, unmarshaller);
@@ -2083,7 +2091,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBranchesRequestMarshaller();
+            var marshaller = ListBranchesRequestMarshaller.Instance;
             var unmarshaller = ListBranchesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBranchesRequest,ListBranchesResponse>(request, marshaller, 
@@ -2154,7 +2162,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         public virtual ListPullRequestsResponse ListPullRequests(ListPullRequestsRequest request)
         {
-            var marshaller = new ListPullRequestsRequestMarshaller();
+            var marshaller = ListPullRequestsRequestMarshaller.Instance;
             var unmarshaller = ListPullRequestsResponseUnmarshaller.Instance;
 
             return Invoke<ListPullRequestsRequest,ListPullRequestsResponse>(request, marshaller, unmarshaller);
@@ -2172,7 +2180,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         public virtual Task<ListPullRequestsResponse> ListPullRequestsAsync(ListPullRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPullRequestsRequestMarshaller();
+            var marshaller = ListPullRequestsRequestMarshaller.Instance;
             var unmarshaller = ListPullRequestsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPullRequestsRequest,ListPullRequestsResponse>(request, marshaller, 
@@ -2202,7 +2210,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
         {
-            var marshaller = new ListRepositoriesRequestMarshaller();
+            var marshaller = ListRepositoriesRequestMarshaller.Instance;
             var unmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
             return Invoke<ListRepositoriesRequest,ListRepositoriesResponse>(request, marshaller, unmarshaller);
@@ -2220,7 +2228,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListRepositoriesRequestMarshaller();
+            var marshaller = ListRepositoriesRequestMarshaller.Instance;
             var unmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRepositoriesRequest,ListRepositoriesResponse>(request, marshaller, 
@@ -2304,7 +2312,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">REST API Reference for MergePullRequestByFastForward Operation</seealso>
         public virtual MergePullRequestByFastForwardResponse MergePullRequestByFastForward(MergePullRequestByFastForwardRequest request)
         {
-            var marshaller = new MergePullRequestByFastForwardRequestMarshaller();
+            var marshaller = MergePullRequestByFastForwardRequestMarshaller.Instance;
             var unmarshaller = MergePullRequestByFastForwardResponseUnmarshaller.Instance;
 
             return Invoke<MergePullRequestByFastForwardRequest,MergePullRequestByFastForwardResponse>(request, marshaller, unmarshaller);
@@ -2322,7 +2330,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">REST API Reference for MergePullRequestByFastForward Operation</seealso>
         public virtual Task<MergePullRequestByFastForwardResponse> MergePullRequestByFastForwardAsync(MergePullRequestByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new MergePullRequestByFastForwardRequestMarshaller();
+            var marshaller = MergePullRequestByFastForwardRequestMarshaller.Instance;
             var unmarshaller = MergePullRequestByFastForwardResponseUnmarshaller.Instance;
 
             return InvokeAsync<MergePullRequestByFastForwardRequest,MergePullRequestByFastForwardResponse>(request, marshaller, 
@@ -2431,7 +2439,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         public virtual PostCommentForComparedCommitResponse PostCommentForComparedCommit(PostCommentForComparedCommitRequest request)
         {
-            var marshaller = new PostCommentForComparedCommitRequestMarshaller();
+            var marshaller = PostCommentForComparedCommitRequestMarshaller.Instance;
             var unmarshaller = PostCommentForComparedCommitResponseUnmarshaller.Instance;
 
             return Invoke<PostCommentForComparedCommitRequest,PostCommentForComparedCommitResponse>(request, marshaller, unmarshaller);
@@ -2449,7 +2457,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         public virtual Task<PostCommentForComparedCommitResponse> PostCommentForComparedCommitAsync(PostCommentForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PostCommentForComparedCommitRequestMarshaller();
+            var marshaller = PostCommentForComparedCommitRequestMarshaller.Instance;
             var unmarshaller = PostCommentForComparedCommitResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostCommentForComparedCommitRequest,PostCommentForComparedCommitResponse>(request, marshaller, 
@@ -2576,7 +2584,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest">REST API Reference for PostCommentForPullRequest Operation</seealso>
         public virtual PostCommentForPullRequestResponse PostCommentForPullRequest(PostCommentForPullRequestRequest request)
         {
-            var marshaller = new PostCommentForPullRequestRequestMarshaller();
+            var marshaller = PostCommentForPullRequestRequestMarshaller.Instance;
             var unmarshaller = PostCommentForPullRequestResponseUnmarshaller.Instance;
 
             return Invoke<PostCommentForPullRequestRequest,PostCommentForPullRequestResponse>(request, marshaller, unmarshaller);
@@ -2594,7 +2602,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest">REST API Reference for PostCommentForPullRequest Operation</seealso>
         public virtual Task<PostCommentForPullRequestResponse> PostCommentForPullRequestAsync(PostCommentForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PostCommentForPullRequestRequestMarshaller();
+            var marshaller = PostCommentForPullRequestRequestMarshaller.Instance;
             var unmarshaller = PostCommentForPullRequestResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostCommentForPullRequestRequest,PostCommentForPullRequestResponse>(request, marshaller, 
@@ -2648,7 +2656,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         public virtual PostCommentReplyResponse PostCommentReply(PostCommentReplyRequest request)
         {
-            var marshaller = new PostCommentReplyRequestMarshaller();
+            var marshaller = PostCommentReplyRequestMarshaller.Instance;
             var unmarshaller = PostCommentReplyResponseUnmarshaller.Instance;
 
             return Invoke<PostCommentReplyRequest,PostCommentReplyResponse>(request, marshaller, unmarshaller);
@@ -2666,10 +2674,156 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         public virtual Task<PostCommentReplyResponse> PostCommentReplyAsync(PostCommentReplyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PostCommentReplyRequestMarshaller();
+            var marshaller = PostCommentReplyRequestMarshaller.Instance;
             var unmarshaller = PostCommentReplyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostCommentReplyRequest,PostCommentReplyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutFile
+
+
+        /// <summary>
+        /// Adds or updates a file in an AWS CodeCommit repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFile service method.</param>
+        /// 
+        /// <returns>The response from the PutFile service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.DirectoryNameConflictsWithFileNameException">
+        /// A file cannot be added to the repository because the specified path name has the same
+        /// name as a file that already exists in this repository. Either provide a different
+        /// name for the file, or specify a different path for the file.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentRequiredException">
+        /// The file cannot be added because it is empty. Empty files cannot be added to the repository
+        /// with this API.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added using PutFile is 6 MB. For files larger than 6 MB but smaller than 2 GB, add
+        /// them using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
+        /// A file cannot be added to the repository because the specified file name has the same
+        /// name as a directory in this repository. Either provide another name for the file,
+        /// or add the file in a directory that does not match the file name.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidParentCommitIdException">
+        /// The parent commit ID is not valid. The commit ID cannot be empty, and must match the
+        /// head commit ID for the branch of the repository where you want to add or update a
+        /// file.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The file name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
+        /// The parent commit ID is not valid. The specified parent commit ID does not exist in
+        /// the specified branch of the repository.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdOutdatedException">
+        /// The file could not be added because the provided parent commit ID is not the current
+        /// tip of the specified branch. To view the full commit ID of the current head of the
+        /// branch, use <a>GetBranch</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdRequiredException">
+        /// A parent commit ID is required. To view the full commit ID of a branch in a repository,
+        /// use <a>GetBranch</a> or a Git command (for example, git pull or git log).
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The filePath for a location cannot be empty or null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.SameFileContentException">
+        /// The file was not added or updated because the content of the file is exactly the same
+        /// as the content of that file in the repository and branch that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        public virtual PutFileResponse PutFile(PutFileRequest request)
+        {
+            var marshaller = PutFileRequestMarshaller.Instance;
+            var unmarshaller = PutFileResponseUnmarshaller.Instance;
+
+            return Invoke<PutFileRequest,PutFileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        public virtual Task<PutFileResponse> PutFileAsync(PutFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutFileRequestMarshaller.Instance;
+            var unmarshaller = PutFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutFileRequest,PutFileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2762,7 +2916,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         public virtual PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request)
         {
-            var marshaller = new PutRepositoryTriggersRequestMarshaller();
+            var marshaller = PutRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
 
             return Invoke<PutRepositoryTriggersRequest,PutRepositoryTriggersResponse>(request, marshaller, unmarshaller);
@@ -2780,7 +2934,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         public virtual Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutRepositoryTriggersRequestMarshaller();
+            var marshaller = PutRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRepositoryTriggersRequest,PutRepositoryTriggersResponse>(request, marshaller, 
@@ -2878,7 +3032,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         public virtual TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request)
         {
-            var marshaller = new TestRepositoryTriggersRequestMarshaller();
+            var marshaller = TestRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
 
             return Invoke<TestRepositoryTriggersRequest,TestRepositoryTriggersResponse>(request, marshaller, unmarshaller);
@@ -2896,7 +3050,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         public virtual Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TestRepositoryTriggersRequestMarshaller();
+            var marshaller = TestRepositoryTriggersRequestMarshaller.Instance;
             var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
 
             return InvokeAsync<TestRepositoryTriggersRequest,TestRepositoryTriggersResponse>(request, marshaller, 
@@ -2942,7 +3096,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment">REST API Reference for UpdateComment Operation</seealso>
         public virtual UpdateCommentResponse UpdateComment(UpdateCommentRequest request)
         {
-            var marshaller = new UpdateCommentRequestMarshaller();
+            var marshaller = UpdateCommentRequestMarshaller.Instance;
             var unmarshaller = UpdateCommentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateCommentRequest,UpdateCommentResponse>(request, marshaller, unmarshaller);
@@ -2960,7 +3114,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment">REST API Reference for UpdateComment Operation</seealso>
         public virtual Task<UpdateCommentResponse> UpdateCommentAsync(UpdateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateCommentRequestMarshaller();
+            var marshaller = UpdateCommentRequestMarshaller.Instance;
             var unmarshaller = UpdateCommentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCommentRequest,UpdateCommentResponse>(request, marshaller, 
@@ -3030,7 +3184,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         public virtual UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request)
         {
-            var marshaller = new UpdateDefaultBranchRequestMarshaller();
+            var marshaller = UpdateDefaultBranchRequestMarshaller.Instance;
             var unmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDefaultBranchRequest,UpdateDefaultBranchResponse>(request, marshaller, unmarshaller);
@@ -3048,7 +3202,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         public virtual Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDefaultBranchRequestMarshaller();
+            var marshaller = UpdateDefaultBranchRequestMarshaller.Instance;
             var unmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDefaultBranchRequest,UpdateDefaultBranchResponse>(request, marshaller, 
@@ -3087,7 +3241,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription">REST API Reference for UpdatePullRequestDescription Operation</seealso>
         public virtual UpdatePullRequestDescriptionResponse UpdatePullRequestDescription(UpdatePullRequestDescriptionRequest request)
         {
-            var marshaller = new UpdatePullRequestDescriptionRequestMarshaller();
+            var marshaller = UpdatePullRequestDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestDescriptionResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePullRequestDescriptionRequest,UpdatePullRequestDescriptionResponse>(request, marshaller, unmarshaller);
@@ -3105,7 +3259,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription">REST API Reference for UpdatePullRequestDescription Operation</seealso>
         public virtual Task<UpdatePullRequestDescriptionResponse> UpdatePullRequestDescriptionAsync(UpdatePullRequestDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdatePullRequestDescriptionRequestMarshaller();
+            var marshaller = UpdatePullRequestDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestDescriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePullRequestDescriptionRequest,UpdatePullRequestDescriptionResponse>(request, marshaller, 
@@ -3163,7 +3317,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus">REST API Reference for UpdatePullRequestStatus Operation</seealso>
         public virtual UpdatePullRequestStatusResponse UpdatePullRequestStatus(UpdatePullRequestStatusRequest request)
         {
-            var marshaller = new UpdatePullRequestStatusRequestMarshaller();
+            var marshaller = UpdatePullRequestStatusRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestStatusResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePullRequestStatusRequest,UpdatePullRequestStatusResponse>(request, marshaller, unmarshaller);
@@ -3181,7 +3335,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus">REST API Reference for UpdatePullRequestStatus Operation</seealso>
         public virtual Task<UpdatePullRequestStatusResponse> UpdatePullRequestStatusAsync(UpdatePullRequestStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdatePullRequestStatusRequestMarshaller();
+            var marshaller = UpdatePullRequestStatusRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePullRequestStatusRequest,UpdatePullRequestStatusResponse>(request, marshaller, 
@@ -3223,7 +3377,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle">REST API Reference for UpdatePullRequestTitle Operation</seealso>
         public virtual UpdatePullRequestTitleResponse UpdatePullRequestTitle(UpdatePullRequestTitleRequest request)
         {
-            var marshaller = new UpdatePullRequestTitleRequestMarshaller();
+            var marshaller = UpdatePullRequestTitleRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestTitleResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePullRequestTitleRequest,UpdatePullRequestTitleResponse>(request, marshaller, unmarshaller);
@@ -3241,7 +3395,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle">REST API Reference for UpdatePullRequestTitle Operation</seealso>
         public virtual Task<UpdatePullRequestTitleResponse> UpdatePullRequestTitleAsync(UpdatePullRequestTitleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdatePullRequestTitleRequestMarshaller();
+            var marshaller = UpdatePullRequestTitleRequestMarshaller.Instance;
             var unmarshaller = UpdatePullRequestTitleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePullRequestTitleRequest,UpdatePullRequestTitleResponse>(request, marshaller, 
@@ -3307,7 +3461,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         public virtual UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request)
         {
-            var marshaller = new UpdateRepositoryDescriptionRequestMarshaller();
+            var marshaller = UpdateRepositoryDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRepositoryDescriptionRequest,UpdateRepositoryDescriptionResponse>(request, marshaller, unmarshaller);
@@ -3325,7 +3479,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         public virtual Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateRepositoryDescriptionRequestMarshaller();
+            var marshaller = UpdateRepositoryDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRepositoryDescriptionRequest,UpdateRepositoryDescriptionResponse>(request, marshaller, 
@@ -3370,7 +3524,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         public virtual UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request)
         {
-            var marshaller = new UpdateRepositoryNameRequestMarshaller();
+            var marshaller = UpdateRepositoryNameRequestMarshaller.Instance;
             var unmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRepositoryNameRequest,UpdateRepositoryNameResponse>(request, marshaller, unmarshaller);
@@ -3388,7 +3542,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         public virtual Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateRepositoryNameRequestMarshaller();
+            var marshaller = UpdateRepositoryNameRequestMarshaller.Instance;
             var unmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRepositoryNameRequest,UpdateRepositoryNameResponse>(request, marshaller, 

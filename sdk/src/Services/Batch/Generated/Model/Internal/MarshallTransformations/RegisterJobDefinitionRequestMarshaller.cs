@@ -107,6 +107,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTimeout())
+                {
+                    context.Writer.WritePropertyName("timeout");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobTimeoutMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Timeout, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("type");
@@ -122,7 +133,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RegisterJobDefinitionRequestMarshaller _instance = new RegisterJobDefinitionRequestMarshaller();        
 
+        internal static RegisterJobDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RegisterJobDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

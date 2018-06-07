@@ -99,6 +99,7 @@ namespace Amazon.SageMaker.Model
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
         private string _trainingJobName;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
@@ -106,8 +107,7 @@ namespace Amazon.SageMaker.Model
         /// The registry path of the Docker image that contains the training algorithm and algorithm-specific
         /// metadata, including the input mode. For more information about algorithms provided
         /// by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// For information about providing your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-        /// Your Own Algorithms </a>. 
+        /// For information about providing your own algorithms, see <a>your-algorithms</a>. 
         /// </para>
         /// </summary>
         public AlgorithmSpecification AlgorithmSpecification
@@ -125,9 +125,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Algorithm-specific parameters. You set hyperparameters before you start the learning
-        /// process. Hyperparameters influence the quality of the model. For a list of hyperparameters
-        /// for each training algorithm provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// Algorithm-specific parameters that influence the quality of the model. You set hyperparameters
+        /// before you start the learning process. For a list of hyperparameters for each training
+        /// algorithm provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  
@@ -243,6 +243,12 @@ namespace Amazon.SageMaker.Model
         /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
+        /// the <code>iam:PassRole</code> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string RoleArn
         {
@@ -321,6 +327,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobName()
         {
             return this._trainingJobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A object that specifies the VPC that you want your training job to connect to. Control
+        /// access to and from your training container by configuring the VPC. For more information,
+        /// see <a>train-vpc</a> 
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

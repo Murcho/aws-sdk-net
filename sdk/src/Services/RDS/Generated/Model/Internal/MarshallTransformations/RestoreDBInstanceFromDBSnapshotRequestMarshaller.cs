@@ -135,6 +135,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
+                if(publicRequest.IsSetProcessorFeatures())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ProcessorFeatures)
+                    {
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
@@ -167,8 +183,30 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TdeCredentialPassword", StringUtils.FromString(publicRequest.TdeCredentialPassword));
                 }
+                if(publicRequest.IsSetUseDefaultProcessorFeatures())
+                {
+                    request.Parameters.Add("UseDefaultProcessorFeatures", StringUtils.FromBool(publicRequest.UseDefaultProcessorFeatures));
+                }
             }
             return request;
         }
+                    private static RestoreDBInstanceFromDBSnapshotRequestMarshaller _instance = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();        
+
+        internal static RestoreDBInstanceFromDBSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreDBInstanceFromDBSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

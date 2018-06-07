@@ -169,6 +169,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TrainingJobName);
                 }
 
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("VpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -178,7 +189,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateTrainingJobRequestMarshaller _instance = new CreateTrainingJobRequestMarshaller();        
 
+        internal static CreateTrainingJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateTrainingJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

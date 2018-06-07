@@ -67,6 +67,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetJobNameContains())
+                {
+                    context.Writer.WritePropertyName("JobNameContains");
+                    context.Writer.Write(publicRequest.JobNameContains);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -94,7 +100,23 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTranscriptionJobsRequestMarshaller _instance = new ListTranscriptionJobsRequestMarshaller();        
 
+        internal static ListTranscriptionJobsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTranscriptionJobsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

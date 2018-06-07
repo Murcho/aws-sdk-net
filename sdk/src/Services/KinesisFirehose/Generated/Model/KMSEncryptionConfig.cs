@@ -37,8 +37,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property AWSKMSKeyARN. 
         /// <para>
-        /// The ARN of the encryption key. Must belong to the same region as the destination Amazon
-        /// S3 bucket.
+        /// The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS
+        /// Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string AWSKMSKeyARN

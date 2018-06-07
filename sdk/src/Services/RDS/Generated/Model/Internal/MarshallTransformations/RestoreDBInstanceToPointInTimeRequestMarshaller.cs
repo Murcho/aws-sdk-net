@@ -127,6 +127,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
+                if(publicRequest.IsSetProcessorFeatures())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ProcessorFeatures)
+                    {
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
@@ -171,6 +187,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TdeCredentialPassword", StringUtils.FromString(publicRequest.TdeCredentialPassword));
                 }
+                if(publicRequest.IsSetUseDefaultProcessorFeatures())
+                {
+                    request.Parameters.Add("UseDefaultProcessorFeatures", StringUtils.FromBool(publicRequest.UseDefaultProcessorFeatures));
+                }
                 if(publicRequest.IsSetUseLatestRestorableTime())
                 {
                     request.Parameters.Add("UseLatestRestorableTime", StringUtils.FromBool(publicRequest.UseLatestRestorableTime));
@@ -178,5 +198,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RestoreDBInstanceToPointInTimeRequestMarshaller _instance = new RestoreDBInstanceToPointInTimeRequestMarshaller();        
+
+        internal static RestoreDBInstanceToPointInTimeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreDBInstanceToPointInTimeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

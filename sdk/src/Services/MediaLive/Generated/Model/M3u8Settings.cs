@@ -45,6 +45,7 @@ namespace Amazon.MediaLive.Model
         private M3u8Scte35Behavior _scte35Behavior;
         private string _scte35Pid;
         private M3u8TimedMetadataBehavior _timedMetadataBehavior;
+        private string _timedMetadataPid;
         private int? _transportStreamId;
         private string _videoPid;
 
@@ -82,10 +83,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EcmPid. ThePlatform-protected transport streams using 'microsoft'
-        /// as Target Client include an ECM stream. This ECM stream contains the size, IV, and
-        /// PTS of every sample in the transport stream.  This stream PID is specified here. This
-        /// PID has no effect on non ThePlatform-protected streams.
+        /// Gets and sets the property EcmPid. This parameter is unused and deprecated.
         /// </summary>
         public string EcmPid
         {
@@ -262,6 +260,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTimedMetadataBehavior()
         {
             return this._timedMetadataBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
+        /// metadata stream in the transport stream. Can be entered as a decimal or hexadecimal
+        /// value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// </summary>
+        public string TimedMetadataPid
+        {
+            get { return this._timedMetadataPid; }
+            set { this._timedMetadataPid = value; }
+        }
+
+        // Check to see if TimedMetadataPid property is set
+        internal bool IsSetTimedMetadataPid()
+        {
+            return this._timedMetadataPid != null;
         }
 
         /// <summary>

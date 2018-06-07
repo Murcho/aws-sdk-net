@@ -80,6 +80,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetRevisionId())
+                {
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -89,7 +95,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PublishVersionRequestMarshaller _instance = new PublishVersionRequestMarshaller();        
 
+        internal static PublishVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PublishVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -89,6 +89,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Principal);
                 }
 
+                if(publicRequest.IsSetRevisionId())
+                {
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
+                }
+
                 if(publicRequest.IsSetSourceAccount())
                 {
                     context.Writer.WritePropertyName("SourceAccount");
@@ -117,7 +123,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddPermissionRequestMarshaller _instance = new AddPermissionRequestMarshaller();        
 
+        internal static AddPermissionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddPermissionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

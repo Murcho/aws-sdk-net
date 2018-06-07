@@ -39,7 +39,7 @@ namespace Amazon.ConfigService
     /// associated with your AWS account. You can use AWS Config to get the current and historical
     /// configurations of each AWS resource and also to get information about the relationship
     /// between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
-    /// instance, an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI),
+    /// instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI),
     /// or a security group. For a complete list of resources currently supported by AWS Config,
     /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
     /// AWS Resources</a>.
@@ -47,24 +47,15 @@ namespace Amazon.ConfigService
     ///  
     /// <para>
     /// You can access and manage AWS Config through the AWS Management Console, the AWS Command
-    /// Line Interface (AWS CLI), the AWS Config API, or the AWS SDKs for AWS Config
-    /// </para>
-    ///  
-    /// <para>
-    /// This reference guide contains documentation for the AWS Config API and the AWS CLI
-    /// commands that you can use to manage AWS Config.
-    /// </para>
-    ///  
-    /// <para>
-    /// The AWS Config API uses the Signature Version 4 protocol for signing requests. For
-    /// more information about how to sign a request with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 Signing Process</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For detailed information about AWS Config features and their associated actions or
-    /// commands, as well as how to work with AWS Management Console, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
-    /// Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.
+    /// Line Interface (AWS CLI), the AWS Config API, or the AWS SDKs for AWS Config. This
+    /// reference guide contains documentation for the AWS Config API and the AWS CLI commands
+    /// that you can use to manage AWS Config. The AWS Config API uses the Signature Version
+    /// 4 protocol for signing requests. For more information about how to sign a request
+    /// with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 Signing Process</a>. For detailed information about AWS Config features
+    /// and their associated actions or commands, as well as how to work with AWS Management
+    /// Console, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
+    /// Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
@@ -255,6 +246,138 @@ namespace Amazon.ConfigService
         #endregion
 
         
+        #region  BatchGetResourceConfig
+
+        /// <summary>
+        /// Returns the current configuration for one or more requested resources. The operation
+        /// also returns a list of resources that are not processed in the current request. If
+        /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+        /// list. 
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The API does not return results for deleted resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The API does not return any tags for the requested resources. This information is
+        /// filtered out of the supplementaryConfiguration section of the API response.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources. Create a configuration recorder.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        public virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
+        {
+            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetResourceConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetResourceConfig(BatchGetResourceConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchGetResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchGetResourceConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetResourceConfig.</param>
+        /// 
+        /// <returns>Returns a  BatchGetResourceConfigResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        public virtual BatchGetResourceConfigResponse EndBatchGetResourceConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetResourceConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAggregationAuthorization
+
+        /// <summary>
+        /// Deletes the authorization granted to the specified configuration aggregator account
+        /// in a specified region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAggregationAuthorization service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
+        public virtual DeleteAggregationAuthorizationResponse DeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request)
+        {
+            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAggregationAuthorizationRequest,DeleteAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAggregationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAggregationAuthorization operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAggregationAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAggregationAuthorizationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAggregationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAggregationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  DeleteAggregationAuthorizationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
+        public virtual DeleteAggregationAuthorizationResponse EndDeleteAggregationAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAggregationAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteConfigRule
 
         /// <summary>
@@ -285,7 +408,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
         {
-            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigRuleRequest,DeleteConfigRuleResponse>(request, marshaller, unmarshaller);
@@ -305,7 +428,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigRule(DeleteConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConfigRuleRequestMarshaller();
+            var marshaller = DeleteConfigRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConfigRuleRequest>(request, marshaller, unmarshaller,
@@ -323,6 +446,63 @@ namespace Amazon.ConfigService
         public virtual DeleteConfigRuleResponse EndDeleteConfigRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationAggregator
+
+        /// <summary>
+        /// Deletes the specified configuration aggregator and the aggregated data associated
+        /// with the aggregator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationAggregator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationAggregator service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
+        public virtual DeleteConfigurationAggregatorResponse DeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request)
+        {
+            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationAggregatorRequest,DeleteConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationAggregator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationAggregator operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationAggregator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
+            var unmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteConfigurationAggregatorRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfigurationAggregator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationAggregator.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfigurationAggregatorResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
+        public virtual DeleteConfigurationAggregatorResponse EndDeleteConfigurationAggregator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConfigurationAggregatorResponse>(asyncResult);
         }
 
         #endregion
@@ -354,7 +534,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
         {
-            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, unmarshaller);
@@ -374,7 +554,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var marshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConfigurationRecorderRequest>(request, marshaller, unmarshaller,
@@ -448,7 +628,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
         {
-            var marshaller = new DeleteDeliveryChannelRequestMarshaller();
+            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDeliveryChannelRequest,DeleteDeliveryChannelResponse>(request, marshaller, unmarshaller);
@@ -468,7 +648,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteDeliveryChannel(DeleteDeliveryChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDeliveryChannelRequestMarshaller();
+            var marshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDeliveryChannelRequest>(request, marshaller, unmarshaller,
@@ -493,10 +673,10 @@ namespace Amazon.ConfigService
         #region  DeleteEvaluationResults
 
         /// <summary>
-        /// Deletes the evaluation results for the specified Config rule. You can specify one
-        /// Config rule per request. After you delete the evaluation results, you can call the
-        /// <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources against
-        /// the rule.
+        /// Deletes the evaluation results for the specified AWS Config rule. You can specify
+        /// one AWS Config rule per request. After you delete the evaluation results, you can
+        /// call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources
+        /// against the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults service method.</param>
         /// 
@@ -512,7 +692,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
         {
-            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
             var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, unmarshaller);
@@ -532,7 +712,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual IAsyncResult BeginDeleteEvaluationResults(DeleteEvaluationResultsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var marshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
             var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteEvaluationResultsRequest>(request, marshaller, unmarshaller,
@@ -554,24 +734,142 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeletePendingAggregationRequest
+
+        /// <summary>
+        /// Deletes pending authorization requests for a specified aggregator account in a specified
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePendingAggregationRequest service method.</param>
+        /// 
+        /// <returns>The response from the DeletePendingAggregationRequest service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
+        public virtual DeletePendingAggregationRequestResponse DeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request)
+        {
+            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePendingAggregationRequestRequest,DeletePendingAggregationRequestResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePendingAggregationRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePendingAggregationRequest operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePendingAggregationRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
+        public virtual IAsyncResult BeginDeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
+            var unmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePendingAggregationRequestRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePendingAggregationRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePendingAggregationRequest.</param>
+        /// 
+        /// <returns>Returns a  DeletePendingAggregationRequestResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
+        public virtual DeletePendingAggregationRequestResponse EndDeletePendingAggregationRequest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePendingAggregationRequestResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRetentionConfiguration
+
+        /// <summary>
+        /// Deletes the retention configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRetentionConfiguration service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
+        /// You have specified a retention configuration that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        public virtual DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request)
+        {
+            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionConfiguration operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRetentionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteRetentionConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRetentionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteRetentionConfigurationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        public virtual DeleteRetentionConfigurationResponse EndDeleteRetentionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRetentionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends following notifications
+        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Notification of starting the delivery.
+        /// Notification of the start of the delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// Notification of the completion of the delivery, if the delivery was successfully completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Notification of delivery failure, if the delivery failed to complete.
+        /// Notification of delivery failure, if the delivery failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -599,20 +897,20 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified
-        /// delivery channel. After the delivery has started, AWS Config sends following notifications
+        /// delivery channel. After the delivery has started, AWS Config sends the following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Notification of starting the delivery.
+        /// Notification of the start of the delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// Notification of the completion of the delivery, if the delivery was successfully completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Notification of delivery failure, if the delivery failed to complete.
+        /// Notification of delivery failure, if the delivery failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -632,7 +930,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
         {
-            var marshaller = new DeliverConfigSnapshotRequestMarshaller();
+            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeliverConfigSnapshotRequest,DeliverConfigSnapshotResponse>(request, marshaller, unmarshaller);
@@ -652,7 +950,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeliverConfigSnapshot(DeliverConfigSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeliverConfigSnapshotRequestMarshaller();
+            var marshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeliverConfigSnapshotRequest>(request, marshaller, unmarshaller,
@@ -674,6 +972,144 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeAggregateComplianceByConfigRules
+
+        /// <summary>
+        /// Returns a list of compliant and noncompliant rules with the number of resources for
+        /// compliant and noncompliant rules. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConfigRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregateComplianceByConfigRules service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
+        public virtual DescribeAggregateComplianceByConfigRulesResponse DescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request)
+        {
+            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAggregateComplianceByConfigRulesRequest,DescribeAggregateComplianceByConfigRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregateComplianceByConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateComplianceByConfigRules operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAggregateComplianceByConfigRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAggregateComplianceByConfigRulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAggregateComplianceByConfigRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAggregateComplianceByConfigRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeAggregateComplianceByConfigRulesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
+        public virtual DescribeAggregateComplianceByConfigRulesResponse EndDescribeAggregateComplianceByConfigRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAggregateComplianceByConfigRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAggregationAuthorizations
+
+        /// <summary>
+        /// Returns a list of authorizations granted to various aggregator accounts and regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregationAuthorizations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregationAuthorizations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
+        public virtual DescribeAggregationAuthorizationsResponse DescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request)
+        {
+            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAggregationAuthorizationsRequest,DescribeAggregationAuthorizationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregationAuthorizations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAggregationAuthorizations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAggregationAuthorizationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAggregationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAggregationAuthorizations.</param>
+        /// 
+        /// <returns>Returns a  DescribeAggregationAuthorizationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
+        public virtual DescribeAggregationAuthorizationsResponse EndDescribeAggregationAuthorizations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAggregationAuthorizationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeComplianceByConfigRule
 
         /// <summary>
@@ -682,7 +1118,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant
+        /// A rule is compliant if all of the evaluated resources comply with it. It is noncompliant
         /// if any of these resources do not comply.
         /// </para>
         ///  
@@ -699,10 +1135,9 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-        /// Verify that the role that you assigned to your configuration recorder includes the
-        /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
-        /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-        /// permission.
+        /// Verify that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+        /// permission. If the rule is a custom rule, verify that the AWS Lambda execution role
+        /// includes the <code>config:PutEvaluations</code> permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -715,7 +1150,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeComplianceByConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -729,7 +1164,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
         {
-            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeComplianceByConfigRuleRequest,DescribeComplianceByConfigRuleResponse>(request, marshaller, unmarshaller);
@@ -749,7 +1184,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginDescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
+            var marshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeComplianceByConfigRuleRequest>(request, marshaller, unmarshaller,
@@ -814,7 +1249,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeComplianceByResource service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -824,7 +1259,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
         {
-            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
             return Invoke<DescribeComplianceByResourceRequest,DescribeComplianceByResourceResponse>(request, marshaller, unmarshaller);
@@ -844,7 +1279,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual IAsyncResult BeginDescribeComplianceByResource(DescribeComplianceByResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeComplianceByResourceRequestMarshaller();
+            var marshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeComplianceByResourceRequest>(request, marshaller, unmarshaller,
@@ -877,7 +1312,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -891,7 +1326,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
         {
-            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigRuleEvaluationStatusRequest,DescribeConfigRuleEvaluationStatusResponse>(request, marshaller, unmarshaller);
@@ -911,7 +1346,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+            var marshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigRuleEvaluationStatusRequest>(request, marshaller, unmarshaller,
@@ -942,7 +1377,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeConfigRules service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
@@ -952,7 +1387,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
         {
-            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigRulesRequest,DescribeConfigRulesResponse>(request, marshaller, unmarshaller);
@@ -972,7 +1407,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigRules(DescribeConfigRulesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigRulesRequestMarshaller();
+            var marshaller = DescribeConfigRulesRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigRulesRequest>(request, marshaller, unmarshaller,
@@ -990,6 +1425,144 @@ namespace Amazon.ConfigService
         public virtual DescribeConfigRulesResponse EndDescribeConfigRules(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigurationAggregators
+
+        /// <summary>
+        /// Returns the details of one or more configuration aggregators. If the configuration
+        /// aggregator is not specified, this action returns the details for all the configuration
+        /// aggregators associated with the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregators service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationAggregators service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
+        public virtual DescribeConfigurationAggregatorsResponse DescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request)
+        {
+            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationAggregatorsRequest,DescribeConfigurationAggregatorsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationAggregators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregators operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationAggregators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
+            var unmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigurationAggregatorsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigurationAggregators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationAggregators.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigurationAggregatorsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
+        public virtual DescribeConfigurationAggregatorsResponse EndDescribeConfigurationAggregators(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConfigurationAggregatorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigurationAggregatorSourcesStatus
+
+        /// <summary>
+        /// Returns status information for sources within an aggregator. The status includes information
+        /// about the last time AWS Config aggregated data from source accounts or AWS Config
+        /// failed to aggregate data from source accounts with the related error code or message.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationAggregatorSourcesStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
+        public virtual DescribeConfigurationAggregatorSourcesStatusResponse DescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request)
+        {
+            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationAggregatorSourcesStatusRequest,DescribeConfigurationAggregatorSourcesStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationAggregatorSourcesStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationAggregatorSourcesStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConfigurationAggregatorSourcesStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigurationAggregatorSourcesStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationAggregatorSourcesStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigurationAggregatorSourcesStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
+        public virtual DescribeConfigurationAggregatorSourcesStatusResponse EndDescribeConfigurationAggregatorSourcesStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConfigurationAggregatorSourcesStatusResponse>(asyncResult);
         }
 
         #endregion
@@ -1038,7 +1611,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request)
         {
-            var marshaller = new DescribeConfigurationRecordersRequestMarshaller();
+            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationRecordersRequest,DescribeConfigurationRecordersResponse>(request, marshaller, unmarshaller);
@@ -1058,7 +1631,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigurationRecordersRequestMarshaller();
+            var marshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigurationRecordersRequest>(request, marshaller, unmarshaller,
@@ -1084,7 +1657,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the current status of the specified configuration recorder. If a configuration
-        /// recorder is not specified, this action returns the status of all configuration recorder
+        /// recorder is not specified, this action returns the status of all configuration recorders
         /// associated with the account.
         /// 
         ///  <note> 
@@ -1106,7 +1679,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns the current status of the specified configuration recorder. If a configuration
-        /// recorder is not specified, this action returns the status of all configuration recorder
+        /// recorder is not specified, this action returns the status of all configuration recorders
         /// associated with the account.
         /// 
         ///  <note> 
@@ -1124,7 +1697,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request)
         {
-            var marshaller = new DescribeConfigurationRecorderStatusRequestMarshaller();
+            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationRecorderStatusRequest,DescribeConfigurationRecorderStatusResponse>(request, marshaller, unmarshaller);
@@ -1144,7 +1717,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConfigurationRecorderStatusRequestMarshaller();
+            var marshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConfigurationRecorderStatusRequest>(request, marshaller, unmarshaller,
@@ -1210,7 +1783,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request)
         {
-            var marshaller = new DescribeDeliveryChannelsRequestMarshaller();
+            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
             var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDeliveryChannelsRequest,DescribeDeliveryChannelsResponse>(request, marshaller, unmarshaller);
@@ -1230,7 +1803,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeliveryChannels(DescribeDeliveryChannelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDeliveryChannelsRequestMarshaller();
+            var marshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
             var unmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDeliveryChannelsRequest>(request, marshaller, unmarshaller,
@@ -1296,7 +1869,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request)
         {
-            var marshaller = new DescribeDeliveryChannelStatusRequestMarshaller();
+            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDeliveryChannelStatusRequest,DescribeDeliveryChannelStatusResponse>(request, marshaller, unmarshaller);
@@ -1316,7 +1889,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDeliveryChannelStatusRequestMarshaller();
+            var marshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
             var unmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDeliveryChannelStatusRequest>(request, marshaller, unmarshaller,
@@ -1338,6 +1911,293 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribePendingAggregationRequests
+
+        /// <summary>
+        /// Returns a list of all pending aggregation requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingAggregationRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribePendingAggregationRequests service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
+        public virtual DescribePendingAggregationRequestsResponse DescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request)
+        {
+            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePendingAggregationRequestsRequest,DescribePendingAggregationRequestsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePendingAggregationRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingAggregationRequests operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePendingAggregationRequests
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
+        public virtual IAsyncResult BeginDescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
+            var unmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePendingAggregationRequestsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePendingAggregationRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePendingAggregationRequests.</param>
+        /// 
+        /// <returns>Returns a  DescribePendingAggregationRequestsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
+        public virtual DescribePendingAggregationRequestsResponse EndDescribePendingAggregationRequests(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePendingAggregationRequestsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeRetentionConfigurations
+
+        /// <summary>
+        /// Returns the details of one or more retention configurations. If the retention configuration
+        /// name is not specified, this action returns the details for all the retention configurations
+        /// for that account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, AWS Config supports only one retention configuration per region in your
+        /// account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetentionConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRetentionConfigurations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
+        /// You have specified a retention configuration that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        public virtual DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request)
+        {
+            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRetentionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetentionConfigurations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRetentionConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeRetentionConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRetentionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRetentionConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeRetentionConfigurationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        public virtual DescribeRetentionConfigurationsResponse EndDescribeRetentionConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRetentionConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAggregateComplianceDetailsByConfigRule
+
+        /// <summary>
+        /// Returns the evaluation results for the specified AWS Config rule for a specific resource
+        /// in a rule. The results indicate which AWS resources were evaluated by the rule, when
+        /// each resource was last evaluated, and whether each resource complies with the rule.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page. But if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateComplianceDetailsByConfigRule service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
+        public virtual GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request)
+        {
+            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetAggregateComplianceDetailsByConfigRuleRequest,GetAggregateComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateComplianceDetailsByConfigRule operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAggregateComplianceDetailsByConfigRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
+        public virtual IAsyncResult BeginGetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAggregateComplianceDetailsByConfigRuleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAggregateComplianceDetailsByConfigRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAggregateComplianceDetailsByConfigRule.</param>
+        /// 
+        /// <returns>Returns a  GetAggregateComplianceDetailsByConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
+        public virtual GetAggregateComplianceDetailsByConfigRuleResponse EndGetAggregateComplianceDetailsByConfigRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAggregateComplianceDetailsByConfigRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAggregateConfigRuleComplianceSummary
+
+        /// <summary>
+        /// Returns the number of compliant and noncompliant rules for one or more accounts and
+        /// regions in an aggregator.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The results can return an empty result page, but if you have a nextToken, the results
+        /// are displayed on the next page.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConfigRuleComplianceSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateConfigRuleComplianceSummary service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
+        public virtual GetAggregateConfigRuleComplianceSummaryResponse GetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request)
+        {
+            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetAggregateConfigRuleComplianceSummaryRequest,GetAggregateConfigRuleComplianceSummaryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateConfigRuleComplianceSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateConfigRuleComplianceSummary operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAggregateConfigRuleComplianceSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
+        public virtual IAsyncResult BeginGetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAggregateConfigRuleComplianceSummaryRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAggregateConfigRuleComplianceSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAggregateConfigRuleComplianceSummary.</param>
+        /// 
+        /// <returns>Returns a  GetAggregateConfigRuleComplianceSummaryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
+        public virtual GetAggregateConfigRuleComplianceSummaryResponse EndGetAggregateConfigRuleComplianceSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAggregateConfigRuleComplianceSummaryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetComplianceDetailsByConfigRule
 
         /// <summary>
@@ -1349,7 +2209,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -1363,7 +2223,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
         {
-            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
             return Invoke<GetComplianceDetailsByConfigRuleRequest,GetComplianceDetailsByConfigRuleResponse>(request, marshaller, unmarshaller);
@@ -1383,7 +2243,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
+            var marshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetComplianceDetailsByConfigRuleRequest>(request, marshaller, unmarshaller,
@@ -1422,7 +2282,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
         {
-            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
             var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
             return Invoke<GetComplianceDetailsByResourceRequest,GetComplianceDetailsByResourceResponse>(request, marshaller, unmarshaller);
@@ -1442,7 +2302,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
+            var marshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
             var unmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetComplianceDetailsByResourceRequest>(request, marshaller, unmarshaller,
@@ -1476,7 +2336,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
         {
-            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
             return Invoke<GetComplianceSummaryByConfigRuleRequest,GetComplianceSummaryByConfigRuleResponse>(request, marshaller, unmarshaller);
@@ -1496,7 +2356,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
+            var marshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
             var unmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetComplianceSummaryByConfigRuleRequest>(request, marshaller, unmarshaller,
@@ -1535,7 +2395,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
         {
-            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
             var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
             return Invoke<GetComplianceSummaryByResourceTypeRequest,GetComplianceSummaryByResourceTypeResponse>(request, marshaller, unmarshaller);
@@ -1555,7 +2415,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+            var marshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
             var unmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetComplianceSummaryByResourceTypeRequest>(request, marshaller, unmarshaller,
@@ -1601,15 +2461,15 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The resource types (EC2 instances, IAM users, and S3 buckets)
+        /// The resource types (EC2 instances, IAM users, and S3 buckets).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The number of each resource type (25, 20, and 15)
+        /// The number of each resource type (25, 20, and 15).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The total number of all resources (60)
+        /// The total number of all resources (60).
         /// </para>
         ///  </li> </ul> </li> </ol> 
         /// <para>
@@ -1620,20 +2480,20 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
-        /// receive resource counts in the following situations:
+        /// If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you might not
+        /// immediately receive resource counts in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are a new AWS Config customer
+        /// You are a new AWS Config customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You just enabled resource recording
+        /// You just enabled resource recording.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// It may take a few minutes for AWS Config to record and count your resources. Wait
+        /// It might take a few minutes for AWS Config to record and count your resources. Wait
         /// a few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
         /// </para>
         ///  </note>
@@ -1645,7 +2505,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
@@ -1654,7 +2514,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
         {
-            var marshaller = new GetDiscoveredResourceCountsRequestMarshaller();
+            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
             var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
             return Invoke<GetDiscoveredResourceCountsRequest,GetDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
@@ -1674,7 +2534,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual IAsyncResult BeginGetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDiscoveredResourceCountsRequestMarshaller();
+            var marshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
             var unmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDiscoveredResourceCountsRequest>(request, marshaller, unmarshaller,
@@ -1700,7 +2560,10 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of configuration items for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval.
+        /// details about each state of the resource during the specified time interval. If you
+        /// specified a retention period to retain your <code>ConfigurationItems</code> between
+        /// a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the
+        /// <code>ConfigurationItems</code> for the specified retention period. 
         /// 
         ///  
         /// <para>
@@ -1724,7 +2587,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
@@ -1744,7 +2607,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
         {
-            var marshaller = new GetResourceConfigHistoryRequestMarshaller();
+            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
             var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
             return Invoke<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, unmarshaller);
@@ -1764,7 +2627,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual IAsyncResult BeginGetResourceConfigHistory(GetResourceConfigHistoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetResourceConfigHistoryRequestMarshaller();
+            var marshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
             var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetResourceConfigHistoryRequest>(request, marshaller, unmarshaller,
@@ -1797,7 +2660,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// You can specify either resource IDs or a resource name but not both in the same request.
+        /// You can specify either resource IDs or a resource name, but not both, in the same
+        /// request.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1814,7 +2678,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
@@ -1827,7 +2691,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var marshaller = new ListDiscoveredResourcesRequestMarshaller();
+            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
             return Invoke<ListDiscoveredResourcesRequest,ListDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
@@ -1847,7 +2711,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDiscoveredResourcesRequestMarshaller();
+            var marshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             var unmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDiscoveredResourcesRequest>(request, marshaller, unmarshaller,
@@ -1869,6 +2733,64 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutAggregationAuthorization
+
+        /// <summary>
+        /// Authorizes the aggregator account and region to collect data from the source account
+        /// and region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAggregationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the PutAggregationAuthorization service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
+        public virtual PutAggregationAuthorizationResponse PutAggregationAuthorization(PutAggregationAuthorizationRequest request)
+        {
+            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<PutAggregationAuthorizationRequest,PutAggregationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAggregationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAggregationAuthorization operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAggregationAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginPutAggregationAuthorization(PutAggregationAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutAggregationAuthorizationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAggregationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAggregationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  PutAggregationAuthorizationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
+        public virtual PutAggregationAuthorizationResponse EndPutAggregationAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAggregationAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutConfigRule
 
         /// <summary>
@@ -1877,14 +2799,14 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom Config rules and AWS managed Config rules. A custom
-        /// Config rule is a rule that you develop and maintain. An AWS managed Config rule is
-        /// a customizable, predefined rule that AWS Config provides.
+        /// You can use this action for custom AWS Config rules and AWS managed Config rules.
+        /// A custom AWS Config rule is a rule that you develop and maintain. An AWS managed Config
+        /// rule is a customizable, predefined rule that AWS Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom Config rule, you must first create the AWS Lambda function
-        /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+        /// If you are adding a new custom AWS Config rule, you must first create the AWS Lambda
+        /// function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
         /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
         /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
         /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
@@ -1915,7 +2837,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
         /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
         /// </para>
         ///  
@@ -1948,7 +2870,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
         /// Failed to add the AWS Config rule because the account already contains the maximum
-        /// number of 50 rules. Consider deleting any deactivated rules before adding new rules.
+        /// number of 50 rules. Consider deleting any deactivated rules before you add new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -1961,7 +2883,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
         {
-            var marshaller = new PutConfigRuleRequestMarshaller();
+            var marshaller = PutConfigRuleRequestMarshaller.Instance;
             var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
             return Invoke<PutConfigRuleRequest,PutConfigRuleResponse>(request, marshaller, unmarshaller);
@@ -1981,7 +2903,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual IAsyncResult BeginPutConfigRule(PutConfigRuleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutConfigRuleRequestMarshaller();
+            var marshaller = PutConfigRuleRequestMarshaller.Instance;
             var unmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutConfigRuleRequest>(request, marshaller, unmarshaller,
@@ -2003,6 +2925,93 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutConfigurationAggregator
+
+        /// <summary>
+        /// Creates and updates the configuration aggregator with the selected source accounts
+        /// and regions. The source account can be individual account(s) or an organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AWS Config should be enabled in source accounts and regions you want to aggregate.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your source type is an organization, you must be signed in to the master account
+        /// and all features must be enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code>
+        /// API to enable integration between AWS Config and AWS Organizations. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationAggregator service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationAggregator service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
+        /// You have provided a null or empty role ARN.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
+        /// This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a>
+        /// API more than once per minute.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
+        /// Organization does is no longer available.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// No permission to call the EnableAWSServiceAccess API.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
+        /// The configuration aggregator cannot be created because organization does not have
+        /// all features enabled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
+        public virtual PutConfigurationAggregatorResponse PutConfigurationAggregator(PutConfigurationAggregatorRequest request)
+        {
+            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationAggregatorRequest,PutConfigurationAggregatorResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigurationAggregator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationAggregator operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationAggregator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
+        public virtual IAsyncResult BeginPutConfigurationAggregator(PutConfigurationAggregatorRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
+            var unmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutConfigurationAggregatorRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutConfigurationAggregator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationAggregator.</param>
+        /// 
+        /// <returns>Returns a  PutConfigurationAggregatorResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
+        public virtual PutConfigurationAggregatorResponse EndPutConfigurationAggregator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutConfigurationAggregatorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutConfigurationRecorder
 
         /// <summary>
@@ -2010,7 +3019,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code>
+        /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
         /// of an existing recorder. To change the role, call the action on the existing configuration
         /// recorder and specify a role.
         /// </para>
@@ -2033,18 +3042,18 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
         /// AWS Config throws an exception if the recording group does not contain a valid list
-        /// of resource types. Invalid values could also be incorrectly formatted.
+        /// of resource types. Invalid values might also be incorrectly formatted.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
         /// You have provided a null or empty role ARN.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
-        /// You have reached the limit on the number of recorders you can create.
+        /// You have reached the limit of the number of recorders you can create.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
-            var marshaller = new PutConfigurationRecorderRequestMarshaller();
+            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
             return Invoke<PutConfigurationRecorderRequest,PutConfigurationRecorderResponse>(request, marshaller, unmarshaller);
@@ -2064,7 +3073,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginPutConfigurationRecorder(PutConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutConfigurationRecorderRequestMarshaller();
+            var marshaller = PutConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutConfigurationRecorderRequest>(request, marshaller, unmarshaller,
@@ -2126,7 +3135,7 @@ namespace Amazon.ConfigService
         /// The specified Amazon SNS topic does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfDeliveryChannelsExceededException">
-        /// You have reached the limit on the number of delivery channels you can create.
+        /// You have reached the limit of the number of delivery channels you can create.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -2138,7 +3147,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request)
         {
-            var marshaller = new PutDeliveryChannelRequestMarshaller();
+            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
             var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
             return Invoke<PutDeliveryChannelRequest,PutDeliveryChannelResponse>(request, marshaller, unmarshaller);
@@ -2158,7 +3167,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual IAsyncResult BeginPutDeliveryChannel(PutDeliveryChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutDeliveryChannelRequestMarshaller();
+            var marshaller = PutDeliveryChannelRequestMarshaller.Instance;
             var unmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutDeliveryChannelRequest>(request, marshaller, unmarshaller,
@@ -2203,7 +3212,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
         {
-            var marshaller = new PutEvaluationsRequestMarshaller();
+            var marshaller = PutEvaluationsRequestMarshaller.Instance;
             var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
             return Invoke<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, unmarshaller);
@@ -2223,7 +3232,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual IAsyncResult BeginPutEvaluations(PutEvaluationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutEvaluationsRequestMarshaller();
+            var marshaller = PutEvaluationsRequestMarshaller.Instance;
             var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutEvaluationsRequest>(request, marshaller, unmarshaller,
@@ -2245,31 +3254,103 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutRetentionConfiguration
+
+        /// <summary>
+        /// Creates and updates the retention configuration with details about retention period
+        /// (number of days) that AWS Config stores your historical information. The API creates
+        /// the <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
+        /// When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling
+        /// the API modifies the default object. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, AWS Config supports only one retention configuration per region in your
+        /// account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutRetentionConfiguration service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfRetentionConfigurationsExceededException">
+        /// Failed to add the retention configuration because a retention configuration with that
+        /// name already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        public virtual PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request)
+        {
+            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionConfiguration operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRetentionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutRetentionConfiguration(PutRetentionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutRetentionConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRetentionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutRetentionConfigurationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        public virtual PutRetentionConfigurationResponse EndPutRetentionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutRetentionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartConfigRulesEvaluation
 
         /// <summary>
-        /// Runs an on-demand evaluation for the specified Config rules against the last known
+        /// Runs an on-demand evaluation for the specified AWS Config rules against the last known
         /// configuration state of the resources. Use <code>StartConfigRulesEvaluation</code>
-        /// when you want to test a rule that you updated is working as expected. <code>StartConfigRulesEvaluation</code>
-        /// does not re-record the latest configuration state for your resources; it re-runs an
+        /// when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code>
+        /// does not re-record the latest configuration state for your resources. It re-runs an
         /// evaluation against the last known state of your resources. 
         /// 
         ///  
         /// <para>
-        /// You can specify up to 25 Config rules per request. 
+        /// You can specify up to 25 AWS Config rules per request. 
         /// </para>
         ///  
         /// <para>
-        /// An existing <code>StartConfigRulesEvaluation</code> call must complete for the specified
-        /// rules before you can call the API again. If you chose to have AWS Config stream to
-        /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
-        /// when the evaluation starts.
+        /// An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must
+        /// complete before you can call the API again. If you chose to have AWS Config stream
+        /// to an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
+        /// notification when the evaluation starts.
         /// </para>
         ///  <note> 
         /// <para>
         /// You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation
-        /// for a new rule. When you create a new rule, AWS Config automatically evaluates your
-        /// resources against the rule. 
+        /// for a new rule. When you create a rule, AWS Config evaluates your resources against
+        /// the rule automatically. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -2321,7 +3402,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
         {
-            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
             var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
             return Invoke<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, unmarshaller);
@@ -2341,7 +3422,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual IAsyncResult BeginStartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var marshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
             var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartConfigRulesEvaluationRequest>(request, marshaller, unmarshaller,
@@ -2415,7 +3496,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request)
         {
-            var marshaller = new StartConfigurationRecorderRequestMarshaller();
+            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
             return Invoke<StartConfigurationRecorderRequest,StartConfigurationRecorderResponse>(request, marshaller, unmarshaller);
@@ -2435,7 +3516,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginStartConfigurationRecorder(StartConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartConfigurationRecorderRequestMarshaller();
+            var marshaller = StartConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartConfigurationRecorderRequest>(request, marshaller, unmarshaller,
@@ -2491,7 +3572,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request)
         {
-            var marshaller = new StopConfigurationRecorderRequestMarshaller();
+            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
             return Invoke<StopConfigurationRecorderRequest,StopConfigurationRecorderResponse>(request, marshaller, unmarshaller);
@@ -2511,7 +3592,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual IAsyncResult BeginStopConfigurationRecorder(StopConfigurationRecorderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopConfigurationRecorderRequestMarshaller();
+            var marshaller = StopConfigurationRecorderRequestMarshaller.Instance;
             var unmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopConfigurationRecorderRequest>(request, marshaller, unmarshaller,

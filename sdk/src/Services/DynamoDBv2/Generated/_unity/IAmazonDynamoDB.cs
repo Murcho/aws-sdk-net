@@ -361,6 +361,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// There are more than 25 requests in the batch.
         /// </para>
         ///  </li> <li> 
@@ -493,13 +498,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -719,13 +729,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -806,6 +821,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
         void DescribeGlobalTableAsync(DescribeGlobalTableRequest request, AmazonServiceCallback<DescribeGlobalTableRequest, DescribeGlobalTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DescribeGlobalTableSettings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        void DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, AmazonServiceCallback<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1420,6 +1452,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableToPointInTime
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        void RestoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request, AmazonServiceCallback<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  Scan
 
 
@@ -1667,6 +1716,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateContinuousBackups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        void UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, AmazonServiceCallback<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  UpdateGlobalTable
 
 
@@ -1680,6 +1746,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
         void UpdateGlobalTableAsync(UpdateGlobalTableRequest request, AmazonServiceCallback<UpdateGlobalTableRequest, UpdateGlobalTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateGlobalTableSettings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        void UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, AmazonServiceCallback<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1846,13 +1929,18 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  

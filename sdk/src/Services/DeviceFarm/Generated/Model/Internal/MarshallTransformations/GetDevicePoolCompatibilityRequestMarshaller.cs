@@ -73,6 +73,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScheduleRunConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDevicePoolArn())
                 {
                     context.Writer.WritePropertyName("devicePoolArn");
@@ -105,7 +116,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDevicePoolCompatibilityRequestMarshaller _instance = new GetDevicePoolCompatibilityRequestMarshaller();        
 
+        internal static GetDevicePoolCompatibilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDevicePoolCompatibilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

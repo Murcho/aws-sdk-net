@@ -37,6 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentHash;
         private DocumentHashType _documentHashType;
         private string _documentName;
+        private string _documentVersion;
         private List<string> _instanceIds = new List<string>();
         private string _maxConcurrency;
         private string _maxErrors;
@@ -150,6 +151,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The SSM document version to use in the request. You can specify Default, Latest, or
+        /// a specific version number. 
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
         /// The instance IDs where the command should execute. You can specify a maximum of 50
@@ -199,7 +219,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed without the command failing. When the command
         /// fails one more time beyond the value of MaxErrors, the systems stops sending the command
         /// to additional targets. You can specify a number like 10 or a percentage like 10%.
-        /// The default value is 50. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
+        /// The default value is 0. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
         /// Error Controls</a>.
         /// </para>
         /// </summary>
@@ -349,7 +369,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
         /// If this time is reached and the command has not already started executing, it will
-        /// not execute.
+        /// not run.
         /// </para>
         /// </summary>
         public int TimeoutSeconds

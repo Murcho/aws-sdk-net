@@ -215,13 +215,14 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// You can create up to 10 listeners per load balancer.
-        /// </para>
-        ///  
-        /// <para>
         /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
         /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
         /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple listeners with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -246,6 +247,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidLoadBalancerActionException">
+        /// The requested action is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
@@ -257,6 +261,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyActionsException">
+        /// You've reached the limit on the number of actions per rule.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
         /// You've reached the limit on the number of certificates per load balancer.
@@ -300,9 +307,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify security groups, subnets, IP address
-        /// type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
-        /// <a>SetIpAddressType</a>, and <a>AddTags</a>.
+        /// When you create a load balancer, you can specify security groups, public subnets,
+        /// IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
+        /// <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.
         /// </para>
         ///  
         /// <para>
@@ -312,12 +319,15 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// You can create up to 20 load balancers per region per account. You can request an
-        /// increase for the number of load balancers for your account. For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+        /// For limit information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
         /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
         /// and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
         /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple load balancers with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -396,8 +406,9 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// Rules are evaluated in priority order, from the lowest value to the highest value.
-        /// When the condition for a rule is met, the specified action is taken. If no conditions
-        /// are met, the action for the default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+        /// When the conditions for a rule are met, its actions are performed. If the conditions
+        /// for no rules are met, the actions for the default rule are performed. For more information,
+        /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
         /// Rules</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         ///  
@@ -416,6 +427,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidLoadBalancerActionException">
+        /// The requested action is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
         /// The specified listener does not exist.
         /// </exception>
@@ -427,6 +441,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyActionsException">
+        /// You've reached the limit on the number of actions per rule.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyRegistrationsForTargetIdException">
         /// You've reached the limit on the number of times a target can be registered with a
@@ -440,6 +457,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
+        /// The specified protocol is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         CreateRuleResponse CreateRule(CreateRuleRequest request);
@@ -479,6 +499,11 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// To delete a target group, use <a>DeleteTargetGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple target groups with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -683,7 +708,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the DeregisterTargets service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -788,6 +814,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
+        /// The specified protocol is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         DescribeListenersResponse DescribeListeners(DescribeListenersRequest request);
 
@@ -812,6 +841,13 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Describes the attributes for the specified Application Load Balancer or Network Load
         /// Balancer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+        /// Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+        /// Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
@@ -888,6 +924,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RuleNotFoundException">
         /// The specified rule does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
+        /// The specified protocol is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         DescribeRulesResponse DescribeRules(DescribeRulesRequest request);
@@ -988,6 +1027,13 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the attributes for the specified target group.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+        /// Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+        /// Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTargetGroupAttributes service method.</param>
         /// 
@@ -1068,7 +1114,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The health of the specified targets could not be retrieved due to an internal error.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -1120,6 +1167,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidLoadBalancerActionException">
+        /// The requested action is not valid.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
         /// The specified listener does not exist.
         /// </exception>
@@ -1131,6 +1181,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyActionsException">
+        /// You've reached the limit on the number of actions per rule.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
         /// You've reached the limit on the number of certificates per load balancer.
@@ -1218,7 +1271,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// To modify the default action, use <a>ModifyListener</a>.
+        /// To modify the actions for the default rule, use <a>ModifyListener</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyRule service method.</param>
@@ -1226,6 +1279,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>The response from the ModifyRule service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.IncompatibleProtocolsException">
         /// The specified configuration is not valid with this protocol.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidLoadBalancerActionException">
+        /// The requested action is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.OperationNotPermittedException">
         /// This operation is not allowed.
@@ -1239,12 +1295,18 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyActionsException">
+        /// You've reached the limit on the number of actions per rule.
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyRegistrationsForTargetIdException">
         /// You've reached the limit on the number of times a target can be registered with a
         /// load balancer.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
+        /// The specified protocol is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         ModifyRuleResponse ModifyRule(ModifyRuleRequest request);
@@ -1369,7 +1431,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the RegisterTargets service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -1619,7 +1682,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Enables the Availability Zone for the specified subnets for the specified Application
+        /// Enables the Availability Zone for the specified public subnets for the specified Application
         /// Load Balancer. The specified subnets replace the previously enabled subnets.
         /// 
         ///  

@@ -77,6 +77,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetHomePageUrl())
+                {
+                    context.Writer.WritePropertyName("homePageUrl");
+                    context.Writer.Write(publicRequest.HomePageUrl);
+                }
+
                 if(publicRequest.IsSetLabels())
                 {
                     context.Writer.WritePropertyName("labels");
@@ -157,7 +163,23 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static CreateApplicationRequestMarshaller _instance = new CreateApplicationRequestMarshaller();        
 
+        internal static CreateApplicationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateApplicationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -301,7 +301,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var marshaller = new AddPermissionRequestMarshaller();
+            var marshaller = AddPermissionRequestMarshaller.Instance;
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
             return Invoke<AddPermissionRequest,AddPermissionResponse>(request, marshaller, unmarshaller);
@@ -356,7 +356,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddPermissionRequestMarshaller();
+            var marshaller = AddPermissionRequestMarshaller.Instance;
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddPermissionRequest,AddPermissionResponse>(request, marshaller, 
@@ -398,7 +398,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
         {
-            var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
+            var marshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
             var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
             return Invoke<CheckIfPhoneNumberIsOptedOutRequest,CheckIfPhoneNumberIsOptedOutResponse>(request, marshaller, unmarshaller);
@@ -416,7 +416,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual Task<CheckIfPhoneNumberIsOptedOutResponse> CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
+            var marshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
             var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
             return InvokeAsync<CheckIfPhoneNumberIsOptedOutRequest,CheckIfPhoneNumberIsOptedOutResponse>(request, marshaller, 
@@ -530,7 +530,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
-            var marshaller = new ConfirmSubscriptionRequestMarshaller();
+            var marshaller = ConfirmSubscriptionRequestMarshaller.Instance;
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<ConfirmSubscriptionRequest,ConfirmSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -628,7 +628,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ConfirmSubscriptionRequestMarshaller();
+            var marshaller = ConfirmSubscriptionRequestMarshaller.Instance;
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ConfirmSubscriptionRequest,ConfirmSubscriptionResponse>(request, marshaller, 
@@ -685,7 +685,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
         {
-            var marshaller = new CreatePlatformApplicationRequestMarshaller();
+            var marshaller = CreatePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
             return Invoke<CreatePlatformApplicationRequest,CreatePlatformApplicationResponse>(request, marshaller, unmarshaller);
@@ -703,7 +703,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePlatformApplicationRequestMarshaller();
+            var marshaller = CreatePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePlatformApplicationRequest,CreatePlatformApplicationResponse>(request, marshaller, 
@@ -753,7 +753,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
         {
-            var marshaller = new CreatePlatformEndpointRequestMarshaller();
+            var marshaller = CreatePlatformEndpointRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
             return Invoke<CreatePlatformEndpointRequest,CreatePlatformEndpointResponse>(request, marshaller, unmarshaller);
@@ -771,7 +771,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePlatformEndpointRequestMarshaller();
+            var marshaller = CreatePlatformEndpointRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePlatformEndpointRequest,CreatePlatformEndpointResponse>(request, marshaller, 
@@ -837,7 +837,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
-            var marshaller = new CreateTopicRequestMarshaller();
+            var marshaller = CreateTopicRequestMarshaller.Instance;
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
             return Invoke<CreateTopicRequest,CreateTopicResponse>(request, marshaller, unmarshaller);
@@ -888,7 +888,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateTopicRequestMarshaller();
+            var marshaller = CreateTopicRequestMarshaller.Instance;
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTopicRequest,CreateTopicResponse>(request, marshaller, 
@@ -926,7 +926,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var marshaller = new DeleteEndpointRequestMarshaller();
+            var marshaller = DeleteEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
@@ -944,7 +944,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteEndpointRequestMarshaller();
+            var marshaller = DeleteEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, 
@@ -976,7 +976,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
         {
-            var marshaller = new DeletePlatformApplicationRequestMarshaller();
+            var marshaller = DeletePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
             return Invoke<DeletePlatformApplicationRequest,DeletePlatformApplicationResponse>(request, marshaller, unmarshaller);
@@ -994,7 +994,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeletePlatformApplicationRequestMarshaller();
+            var marshaller = DeletePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePlatformApplicationRequest,DeletePlatformApplicationResponse>(request, marshaller, 
@@ -1058,7 +1058,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
-            var marshaller = new DeleteTopicRequestMarshaller();
+            var marshaller = DeleteTopicRequestMarshaller.Instance;
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTopicRequest,DeleteTopicResponse>(request, marshaller, unmarshaller);
@@ -1108,7 +1108,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTopicRequestMarshaller();
+            var marshaller = DeleteTopicRequestMarshaller.Instance;
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRequest,DeleteTopicResponse>(request, marshaller, 
@@ -1143,7 +1143,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
         {
-            var marshaller = new GetEndpointAttributesRequestMarshaller();
+            var marshaller = GetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetEndpointAttributesRequest,GetEndpointAttributesResponse>(request, marshaller, unmarshaller);
@@ -1161,7 +1161,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetEndpointAttributesRequestMarshaller();
+            var marshaller = GetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEndpointAttributesRequest,GetEndpointAttributesResponse>(request, marshaller, 
@@ -1196,7 +1196,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
         {
-            var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetPlatformApplicationAttributesRequest,GetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller);
@@ -1214,7 +1214,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPlatformApplicationAttributesRequest,GetPlatformApplicationAttributesResponse>(request, marshaller, 
@@ -1253,7 +1253,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
         {
-            var marshaller = new GetSMSAttributesRequestMarshaller();
+            var marshaller = GetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetSMSAttributesRequest,GetSMSAttributesResponse>(request, marshaller, unmarshaller);
@@ -1271,7 +1271,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual Task<GetSMSAttributesResponse> GetSMSAttributesAsync(GetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSMSAttributesRequestMarshaller();
+            var marshaller = GetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSMSAttributesRequest,GetSMSAttributesResponse>(request, marshaller, 
@@ -1331,7 +1331,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
-            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
+            var marshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetSubscriptionAttributesRequest,GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller);
@@ -1379,7 +1379,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
+            var marshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSubscriptionAttributesRequest,GetSubscriptionAttributesResponse>(request, marshaller, 
@@ -1441,7 +1441,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
-            var marshaller = new GetTopicAttributesRequestMarshaller();
+            var marshaller = GetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetTopicAttributesRequest,GetTopicAttributesResponse>(request, marshaller, unmarshaller);
@@ -1490,7 +1490,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTopicAttributesRequestMarshaller();
+            var marshaller = GetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTopicAttributesRequest,GetTopicAttributesResponse>(request, marshaller, 
@@ -1510,7 +1510,12 @@ namespace Amazon.SimpleNotificationService
         /// To receive the next page, you call <code>ListEndpointsByPlatformApplication</code>
         /// again using the NextToken string received from the previous call. When there are no
         /// more records to return, NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpointsByPlatformApplication service method.</param>
         /// 
@@ -1530,7 +1535,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
         {
-            var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
+            var marshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
             return Invoke<ListEndpointsByPlatformApplicationRequest,ListEndpointsByPlatformApplicationResponse>(request, marshaller, unmarshaller);
@@ -1548,7 +1553,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
+            var marshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEndpointsByPlatformApplicationRequest,ListEndpointsByPlatformApplicationResponse>(request, marshaller, 
@@ -1593,7 +1598,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
         {
-            var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
+            var marshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
             var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
             return Invoke<ListPhoneNumbersOptedOutRequest,ListPhoneNumbersOptedOutResponse>(request, marshaller, unmarshaller);
@@ -1611,7 +1616,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual Task<ListPhoneNumbersOptedOutResponse> ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
+            var marshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
             var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPhoneNumbersOptedOutRequest,ListPhoneNumbersOptedOutResponse>(request, marshaller, 
@@ -1631,7 +1636,12 @@ namespace Amazon.SimpleNotificationService
         /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
         /// string received from the previous call. When there are no more records to return,
         /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 15 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListPlatformApplications service method, as returned by SimpleNotificationService.</returns>
@@ -1659,7 +1669,12 @@ namespace Amazon.SimpleNotificationService
         /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
         /// string received from the previous call. When there are no more records to return,
         /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 15 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformApplications service method.</param>
         /// 
@@ -1676,7 +1691,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
         {
-            var marshaller = new ListPlatformApplicationsRequestMarshaller();
+            var marshaller = ListPlatformApplicationsRequestMarshaller.Instance;
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
             return Invoke<ListPlatformApplicationsRequest,ListPlatformApplicationsResponse>(request, marshaller, unmarshaller);
@@ -1691,7 +1706,12 @@ namespace Amazon.SimpleNotificationService
         /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
         /// string received from the previous call. When there are no more records to return,
         /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-        /// Amazon SNS Mobile Push Notifications</a>.
+        /// Amazon SNS Mobile Push Notifications</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 15 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1724,7 +1744,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPlatformApplicationsRequestMarshaller();
+            var marshaller = ListPlatformApplicationsRequestMarshaller.Instance;
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPlatformApplicationsRequest,ListPlatformApplicationsResponse>(request, marshaller, 
@@ -1741,6 +1761,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListSubscriptions service method, as returned by SimpleNotificationService.</returns>
@@ -1765,6 +1790,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptions</code> request.</param>
         /// 
@@ -1792,6 +1822,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
         /// 
@@ -1808,7 +1843,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            var marshaller = new ListSubscriptionsRequestMarshaller();
+            var marshaller = ListSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
             return Invoke<ListSubscriptionsRequest,ListSubscriptionsResponse>(request, marshaller, unmarshaller);
@@ -1820,6 +1855,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1846,6 +1886,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptions</code> request.</param>
         /// <param name="cancellationToken">
@@ -1882,7 +1927,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListSubscriptionsRequestMarshaller();
+            var marshaller = ListSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSubscriptionsRequest,ListSubscriptionsResponse>(request, marshaller, 
@@ -1899,6 +1944,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
@@ -1931,6 +1981,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// 
@@ -1961,6 +2016,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSubscriptionsByTopic service method.</param>
         /// 
@@ -1980,7 +2040,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
-            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
+            var marshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
             return Invoke<ListSubscriptionsByTopicRequest,ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller);
@@ -1992,6 +2052,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
@@ -2027,6 +2092,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <param name="cancellationToken">
@@ -2066,7 +2136,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
+            var marshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSubscriptionsByTopicRequest,ListSubscriptionsByTopicResponse>(request, marshaller, 
@@ -2083,6 +2153,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListTopics service method, as returned by SimpleNotificationService.</returns>
@@ -2107,6 +2182,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
         /// 
@@ -2134,6 +2214,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopics service method.</param>
         /// 
@@ -2150,7 +2235,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
-            var marshaller = new ListTopicsRequestMarshaller();
+            var marshaller = ListTopicsRequestMarshaller.Instance;
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
             return Invoke<ListTopicsRequest,ListTopicsResponse>(request, marshaller, unmarshaller);
@@ -2162,6 +2247,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2188,6 +2278,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
         /// <param name="cancellationToken">
@@ -2224,7 +2319,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTopicsRequestMarshaller();
+            var marshaller = ListTopicsRequestMarshaller.Instance;
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTopicsRequest,ListTopicsResponse>(request, marshaller, 
@@ -2264,7 +2359,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
         {
-            var marshaller = new OptInPhoneNumberRequestMarshaller();
+            var marshaller = OptInPhoneNumberRequestMarshaller.Instance;
             var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
             return Invoke<OptInPhoneNumberRequest,OptInPhoneNumberResponse>(request, marshaller, unmarshaller);
@@ -2282,7 +2377,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual Task<OptInPhoneNumberResponse> OptInPhoneNumberAsync(OptInPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new OptInPhoneNumberRequestMarshaller();
+            var marshaller = OptInPhoneNumberRequestMarshaller.Instance;
             var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
             return InvokeAsync<OptInPhoneNumberRequest,OptInPhoneNumberResponse>(request, marshaller, 
@@ -2295,11 +2390,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -2314,7 +2418,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// 
         /// <returns>The response from the Publish service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
@@ -2349,11 +2453,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -2368,7 +2481,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
         /// 
         /// <returns>The response from the Publish service method, as returned by SimpleNotificationService.</returns>
@@ -2405,11 +2518,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -2450,7 +2572,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
@@ -2458,11 +2580,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -2477,7 +2608,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2515,11 +2646,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -2534,7 +2674,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2584,7 +2724,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return InvokeAsync<PublishRequest,PublishResponse>(request, marshaller, 
@@ -2646,7 +2786,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
             return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
@@ -2696,7 +2836,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
@@ -2731,7 +2871,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
         {
-            var marshaller = new SetEndpointAttributesRequestMarshaller();
+            var marshaller = SetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
             return Invoke<SetEndpointAttributesRequest,SetEndpointAttributesResponse>(request, marshaller, unmarshaller);
@@ -2749,7 +2889,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetEndpointAttributesRequestMarshaller();
+            var marshaller = SetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetEndpointAttributesRequest,SetEndpointAttributesResponse>(request, marshaller, 
@@ -2786,7 +2926,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
         {
-            var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
             return Invoke<SetPlatformApplicationAttributesRequest,SetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller);
@@ -2804,7 +2944,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetPlatformApplicationAttributesRequest,SetPlatformApplicationAttributesResponse>(request, marshaller, 
@@ -2847,7 +2987,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
         {
-            var marshaller = new SetSMSAttributesRequestMarshaller();
+            var marshaller = SetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
             return Invoke<SetSMSAttributesRequest,SetSMSAttributesResponse>(request, marshaller, unmarshaller);
@@ -2865,7 +3005,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual Task<SetSMSAttributesResponse> SetSMSAttributesAsync(SetSMSAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetSMSAttributesRequestMarshaller();
+            var marshaller = SetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetSMSAttributesRequest,SetSMSAttributesResponse>(request, marshaller, 
@@ -2878,15 +3018,19 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Allows a subscription owner to set an attribute of the topic to a new value.
+        /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code> </param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// 
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -2909,13 +3053,17 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Allows a subscription owner to set an attribute of the topic to a new value.
+        /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSubscriptionAttributes service method.</param>
         /// 
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -2929,7 +3077,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
-            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
+            var marshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
             return Invoke<SetSubscriptionAttributesRequest,SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller);
@@ -2937,10 +3085,10 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Allows a subscription owner to set an attribute of the topic to a new value.
+        /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code> </param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2949,6 +3097,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -2981,7 +3133,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
+            var marshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetSubscriptionAttributesRequest,SetSubscriptionAttributesResponse>(request, marshaller, 
@@ -3045,7 +3197,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
-            var marshaller = new SetTopicAttributesRequestMarshaller();
+            var marshaller = SetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
             return Invoke<SetTopicAttributesRequest,SetTopicAttributesResponse>(request, marshaller, unmarshaller);
@@ -3097,7 +3249,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetTopicAttributesRequestMarshaller();
+            var marshaller = SetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetTopicAttributesRequest,SetTopicAttributesResponse>(request, marshaller, 
@@ -3114,6 +3266,11 @@ namespace Amazon.SimpleNotificationService
         /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
         /// action with the token from the confirmation message. Confirmation tokens are valid
         /// for three days.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> -- delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> -- delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> -- delivery of message via SMTP </li> <li>  <code>email-json</code> -- delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> -- delivery of message via SMS </li> <li>  <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function. </li> </ul></param>
@@ -3122,6 +3279,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3151,12 +3312,21 @@ namespace Amazon.SimpleNotificationService
         /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
         /// action with the token from the confirmation message. Confirmation tokens are valid
         /// for three days.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Subscribe service method.</param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3173,7 +3343,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual SubscribeResponse Subscribe(SubscribeRequest request)
         {
-            var marshaller = new SubscribeRequestMarshaller();
+            var marshaller = SubscribeRequestMarshaller.Instance;
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
 
             return Invoke<SubscribeRequest,SubscribeResponse>(request, marshaller, unmarshaller);
@@ -3185,6 +3355,11 @@ namespace Amazon.SimpleNotificationService
         /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
         /// action with the token from the confirmation message. Confirmation tokens are valid
         /// for three days.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> -- delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> -- delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> -- delivery of message via SMTP </li> <li>  <code>email-json</code> -- delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> -- delivery of message via SMS </li> <li>  <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function. </li> </ul></param>
@@ -3196,6 +3371,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3231,7 +3410,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SubscribeRequestMarshaller();
+            var marshaller = SubscribeRequestMarshaller.Instance;
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
 
             return InvokeAsync<SubscribeRequest,SubscribeResponse>(request, marshaller, 
@@ -3250,6 +3429,11 @@ namespace Amazon.SimpleNotificationService
         /// and the requester is not the subscription owner, a final cancellation message is delivered
         /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
         /// the <code>Unsubscribe</code> request was unintended.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
         /// 
@@ -3282,6 +3466,11 @@ namespace Amazon.SimpleNotificationService
         /// and the requester is not the subscription owner, a final cancellation message is delivered
         /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
         /// the <code>Unsubscribe</code> request was unintended.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Unsubscribe service method.</param>
         /// 
@@ -3301,7 +3490,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
-            var marshaller = new UnsubscribeRequestMarshaller();
+            var marshaller = UnsubscribeRequestMarshaller.Instance;
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
             return Invoke<UnsubscribeRequest,UnsubscribeResponse>(request, marshaller, unmarshaller);
@@ -3315,6 +3504,11 @@ namespace Amazon.SimpleNotificationService
         /// and the requester is not the subscription owner, a final cancellation message is delivered
         /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
         /// the <code>Unsubscribe</code> request was unintended.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
         /// <param name="cancellationToken">
@@ -3354,7 +3548,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UnsubscribeRequestMarshaller();
+            var marshaller = UnsubscribeRequestMarshaller.Instance;
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UnsubscribeRequest,UnsubscribeResponse>(request, marshaller, 

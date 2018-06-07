@@ -119,10 +119,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetObjectACL())
+                {
+                    context.Writer.WritePropertyName("ObjectACL");
+                    context.Writer.Write(publicRequest.ObjectACL);
+                }
+
                 if(publicRequest.IsSetReadOnly())
                 {
                     context.Writer.WritePropertyName("ReadOnly");
                     context.Writer.Write(publicRequest.ReadOnly);
+                }
+
+                if(publicRequest.IsSetRequesterPays())
+                {
+                    context.Writer.WritePropertyName("RequesterPays");
+                    context.Writer.Write(publicRequest.RequesterPays);
                 }
 
                 if(publicRequest.IsSetSquash())
@@ -140,7 +152,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateNFSFileShareRequestMarshaller _instance = new UpdateNFSFileShareRequestMarshaller();        
 
+        internal static UpdateNFSFileShareRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateNFSFileShareRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

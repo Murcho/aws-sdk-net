@@ -36,10 +36,11 @@ namespace Amazon.GameLift
     /// Amazon GameLift Service 
     /// <para>
     ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
-    /// server solution for their multiplayer games. Amazon GameLift provides tools for the
-    /// following tasks: (1) acquire computing resources and deploy game servers, (2) scale
-    /// game server capacity to meet player demand, (3) host game sessions and manage player
-    /// access, and (4) track in-depth metrics on player usage and server performance.
+    /// server solution for their multiplayer games. Use Amazon GameLift for these tasks:
+    /// (1) set up computing resources and deploy your game servers, (2) run game sessions
+    /// and get players into games, (3) automatically scale your resources to meet player
+    /// demand and manage costs, and (4) track in-depth metrics on game server performance
+    /// and player usage.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +54,7 @@ namespace Amazon.GameLift
     ///  </li> <li> 
     /// <para>
     ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
-    /// and aliases; set autoscaling policies; retrieve logs and metrics.
+    /// and aliases; set auto-scaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -91,18 +92,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>MORE RESOURCES</b> 
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a> -- Learn more about Amazon GameLift features and how to use them.
-    /// 
+    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a>
+    /// -- Read about Amazon GameLift features and how to use them. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
-    /// Tutorials</a> -- Get started fast with walkthroughs and sample projects.
+    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> -- Get started
+    /// fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -116,9 +116,10 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-    /// GameLift Document History</a> -- See changes to the Amazon GameLift service, SDKs,
-    /// and documentation, as well as links to release notes. 
+    ///  <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and
+    /// <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
+    /// history</a> -- Stay current with updates to the Amazon GameLift service, SDKs, and
+    /// documentation. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -177,12 +178,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Start new game sessions with FlexMatch matchmaking</b> 
+    ///  <b>Match players to game sessions with FlexMatch matchmaking</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want
     /// to play together. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
+    /// in an existing game session. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -258,8 +264,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
-    /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
-    /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
+    /// To create a build and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -331,21 +336,29 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Autoscale -- Manage autoscaling rules and apply them to a fleet.
+    /// Autoscale -- Manage auto-scaling rules and apply them to a fleet.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing
+    ///  <a>PutScalingPolicy</a> -- Create a new auto-scaling policy, or update an existing
     /// one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
+    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting
+    ///  <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and stop it from affecting
     /// a fleet's capacity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
@@ -743,6 +756,10 @@ namespace Amazon.GameLift
         /// <para>
         ///  <a>AcceptMatch</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StartMatchBackfill</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptMatch service method.</param>
@@ -766,7 +783,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
         public virtual AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
         {
-            var marshaller = new AcceptMatchRequestMarshaller();
+            var marshaller = AcceptMatchRequestMarshaller.Instance;
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
 
             return Invoke<AcceptMatchRequest,AcceptMatchResponse>(request, marshaller, unmarshaller);
@@ -786,7 +803,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
         public virtual IAsyncResult BeginAcceptMatch(AcceptMatchRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AcceptMatchRequestMarshaller();
+            var marshaller = AcceptMatchRequestMarshaller.Instance;
             var unmarshaller = AcceptMatchResponseUnmarshaller.Instance;
 
             return BeginInvoke<AcceptMatchRequest>(request, marshaller, unmarshaller,
@@ -888,7 +905,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
@@ -908,7 +925,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAliasRequest>(request, marshaller, unmarshaller,
@@ -933,28 +950,52 @@ namespace Amazon.GameLift
         #region  CreateBuild
 
         /// <summary>
-        /// Creates a new Amazon GameLift build from a set of game server binary files stored
-        /// in an Amazon Simple Storage Service (Amazon S3) location. To use this API call, create
-        /// a <code>.zip</code> file containing all of the files for the build and store it in
-        /// an Amazon S3 bucket under your AWS account. For help on packaging your build files
-        /// and creating a build, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-        /// Your Game to Amazon GameLift</a>.
+        /// Creates a new Amazon GameLift build record for your game server binary files and points
+        /// to the location of your game server build files in an Amazon Simple Storage Service
+        /// (Amazon S3) location. 
         /// 
+        ///  
+        /// <para>
+        /// Game server binaries must be combined into a <code>.zip</code> file for use with Amazon
+        /// GameLift. See <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> for more information. 
+        /// </para>
         ///  <important> 
         /// <para>
-        /// Use this API action ONLY if you are storing your game build files in an Amazon S3
-        /// bucket. To create a build using files stored locally, use the CLI command <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
-        /// <code>upload-build</code> </a>, which uploads the build files from a file location
-        /// you specify.
+        /// To create new builds quickly and easily, use the AWS CLI command <b> <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// </b>. This helper command uploads your build and creates a new build record in one
+        /// step, and automatically handles the necessary permissions. See <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+        /// Upload Build Files to Amazon GameLift</a> for more help.
         /// </para>
         ///  </important> 
         /// <para>
-        /// To create a new build using <code>CreateBuild</code>, identify the storage location
-        /// and operating system of your game build. You also have the option of specifying a
-        /// build name and version. If successful, this action creates a new build record with
-        /// an unique build ID and in <code>INITIALIZED</code> status. Use the API call <a>DescribeBuild</a>
-        /// to check the status of your build. A build must be in <code>READY</code> status before
-        /// it can be used to create fleets to host your game.
+        /// The <code>CreateBuild</code> operation should be used only when you need to manually
+        /// upload your build files, as in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Store a build file in an Amazon S3 bucket under your own AWS account. To use this
+        /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. See <a
+        /// href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+        /// Create a Build with Files in Amazon S3</a> for detailed help. To create a new build
+        /// record using files in your Amazon S3 bucket, call <code>CreateBuild</code> and specify
+        /// a build name, operating system, and the storage location of your game build.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upload a build file directly to Amazon GameLift's Amazon S3 account. To use this option,
+        /// you first call <code>CreateBuild</code> with a build name and operating system. This
+        /// action creates a new build record and returns an Amazon S3 storage location (bucket
+        /// and key only) and temporary access credentials. Use the credentials to manually upload
+        /// your build file to the storage location (see the Amazon S3 topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Objects</a>). You can upload files to a location only once. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If successful, this operation creates a new build record with a unique build ID and
+        /// places it in <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to
+        /// check the status of your build. A build must be in <code>READY</code> status before
+        /// it can be used to create fleets.
         /// </para>
         ///  
         /// <para>
@@ -1003,7 +1044,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         public virtual CreateBuildResponse CreateBuild(CreateBuildRequest request)
         {
-            var marshaller = new CreateBuildRequestMarshaller();
+            var marshaller = CreateBuildRequestMarshaller.Instance;
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
 
             return Invoke<CreateBuildRequest,CreateBuildResponse>(request, marshaller, unmarshaller);
@@ -1023,7 +1064,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         public virtual IAsyncResult BeginCreateBuild(CreateBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateBuildRequestMarshaller();
+            var marshaller = CreateBuildRequestMarshaller.Instance;
             var unmarshaller = CreateBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateBuildRequest>(request, marshaller, unmarshaller,
@@ -1050,19 +1091,17 @@ namespace Amazon.GameLift
         /// <summary>
         /// Creates a new fleet to run your game servers. A fleet is a set of Amazon Elastic Compute
         /// Cloud (Amazon EC2) instances, each of which can run multiple server processes to host
-        /// game sessions. You configure a fleet to create instances with certain hardware specifications
+        /// game sessions. You set up a fleet to use instances with certain hardware specifications
         /// (see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-        /// for more information), and deploy a specified game build to each instance. A newly
-        /// created fleet passes through several statuses; once it reaches the <code>ACTIVE</code>
-        /// status, it can begin hosting game sessions.
+        /// for more information), and deploy your game build to run on each instance. 
         /// 
         ///  
         /// <para>
-        /// To create a new fleet, you must specify the following: (1) fleet name, (2) build ID
-        /// of an uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration
-        /// that describes which server processes to run on each instance in the fleet. (Although
-        /// the run-time configuration is not a required parameter, the fleet cannot be successfully
-        /// activated without it.)
+        /// To create a new fleet, you must specify the following: (1) a fleet name, (2) the build
+        /// ID of a successfully uploaded game build, (3) an EC2 instance type, and (4) a run-time
+        /// configuration, which describes the server processes to run on each instance in the
+        /// fleet. If you don't specify a fleet type (on-demand or spot), the new fleet uses on-demand
+        /// instances by default.
         /// </para>
         ///  
         /// <para>
@@ -1082,49 +1121,54 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Resource creation limit
+        /// Resource usage limits
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// VPC peering connection (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>)
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you use Amazon CloudWatch for metrics, you can add the new fleet to a metric group.
-        /// This allows you to view aggregated metrics for a set of fleets. Once you specify a
-        /// metric group, the new fleet's metrics are included in the metric group's data.
+        /// By adding multiple fleets to a metric group, you can view aggregated metrics for all
+        /// the fleets in the group. 
         /// </para>
         ///  
         /// <para>
-        /// You have the option of creating a VPC peering connection with the new fleet. For more
-        /// information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon GameLift Fleets</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the CreateFleet call is successful, Amazon GameLift performs the following tasks:
+        /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
+        /// tasks. You can track the process of a fleet by checking the fleet status or by monitoring
+        /// fleet creation events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a fleet record and sets the status to <code>NEW</code> (followed by other
-        /// statuses as the fleet is activated).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Sets the fleet's target capacity to 1 (desired instances), which causes Amazon GameLift
-        /// to start one new EC2 instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Starts launching server processes on the instance. If the fleet is configured to run
-        /// multiple server processes per instance, Amazon GameLift staggers each launch by a
-        /// few seconds.
+        /// Creates a fleet record. Status: <code>NEW</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Begins writing events to the fleet event log, which can be accessed in the Amazon
         /// GameLift console.
         /// </para>
+        ///  
+        /// <para>
+        /// Sets the fleet's target capacity to 1 (desired instances), which triggers Amazon GameLift
+        /// to start one new EC2 instance.
+        /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sets the fleet's status to <code>ACTIVE</code> as soon as one server process in the
-        /// fleet is ready to host a game session.
+        /// Downloads the game build to the new instance and installs it. Statuses: <code>DOWNLOADING</code>,
+        /// <code>VALIDATING</code>, <code>BUILDING</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Starts launching server processes on the instance. If the fleet is configured to run
+        /// multiple server processes per instance, Amazon GameLift staggers each launch by a
+        /// few seconds. Status: <code>ACTIVATING</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sets the fleet's status to <code>ACTIVE</code> as soon as one server process is ready
+        /// to host a game session.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1140,11 +1184,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1157,6 +1209,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1184,37 +1240,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -1245,7 +1281,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var marshaller = new CreateFleetRequestMarshaller();
+            var marshaller = CreateFleetRequestMarshaller.Instance;
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
             return Invoke<CreateFleetRequest,CreateFleetResponse>(request, marshaller, unmarshaller);
@@ -1265,7 +1301,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateFleetRequestMarshaller();
+            var marshaller = CreateFleetRequestMarshaller.Instance;
             var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateFleetRequest>(request, marshaller, unmarshaller,
@@ -1425,7 +1461,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         public virtual CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
         {
-            var marshaller = new CreateGameSessionRequestMarshaller();
+            var marshaller = CreateGameSessionRequestMarshaller.Instance;
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
 
             return Invoke<CreateGameSessionRequest,CreateGameSessionResponse>(request, marshaller, unmarshaller);
@@ -1445,7 +1481,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         public virtual IAsyncResult BeginCreateGameSession(CreateGameSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateGameSessionRequestMarshaller();
+            var marshaller = CreateGameSessionRequestMarshaller.Instance;
             var unmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateGameSessionRequest>(request, marshaller, unmarshaller,
@@ -1548,7 +1584,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         public virtual CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
         {
-            var marshaller = new CreateGameSessionQueueRequestMarshaller();
+            var marshaller = CreateGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
 
             return Invoke<CreateGameSessionQueueRequest,CreateGameSessionQueueResponse>(request, marshaller, unmarshaller);
@@ -1568,7 +1604,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateGameSessionQueue(CreateGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateGameSessionQueueRequestMarshaller();
+            var marshaller = CreateGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateGameSessionQueueRequest>(request, marshaller, unmarshaller,
@@ -1596,9 +1632,9 @@ namespace Amazon.GameLift
         /// Defines a new matchmaking configuration for use with FlexMatch. A matchmaking configuration
         /// sets out guidelines for matching players and getting the matches into games. You can
         /// set up multiple matchmaking configurations to handle the scenarios needed for your
-        /// game. Each matchmaking request (<a>StartMatchmaking</a>) specifies a configuration
-        /// for the match and provides player attributes to support the configuration being used.
-        /// 
+        /// game. Each matchmaking ticket (<a>StartMatchmaking</a> or <a>StartMatchBackfill</a>)
+        /// specifies a configuration for the match and provides player attributes to support
+        /// the configuration being used. 
         /// 
         ///  
         /// <para>
@@ -1685,7 +1721,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
         public virtual CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
         {
-            var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
+            var marshaller = CreateMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<CreateMatchmakingConfigurationRequest,CreateMatchmakingConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1705,7 +1741,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateMatchmakingConfigurationRequestMarshaller();
+            var marshaller = CreateMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateMatchmakingConfigurationRequest>(request, marshaller, unmarshaller,
@@ -1744,7 +1780,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Once created, matchmaking rule sets cannot be changed or deleted, so we recommend
-        /// checking the rule set syntax using <a>ValidateMatchmakingRuleSet</a>before creating
+        /// checking the rule set syntax using <a>ValidateMatchmakingRuleSet</a> before creating
         /// the rule set.
         /// </para>
         ///  
@@ -1806,7 +1842,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
         public virtual CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
         {
-            var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
+            var marshaller = CreateMatchmakingRuleSetRequestMarshaller.Instance;
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateMatchmakingRuleSetRequest,CreateMatchmakingRuleSetResponse>(request, marshaller, unmarshaller);
@@ -1826,7 +1862,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
         public virtual IAsyncResult BeginCreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateMatchmakingRuleSetRequestMarshaller();
+            var marshaller = CreateMatchmakingRuleSetRequestMarshaller.Instance;
             var unmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateMatchmakingRuleSetRequest>(request, marshaller, unmarshaller,
@@ -2032,7 +2068,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         public virtual CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
         {
-            var marshaller = new CreatePlayerSessionRequestMarshaller();
+            var marshaller = CreatePlayerSessionRequestMarshaller.Instance;
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
 
             return Invoke<CreatePlayerSessionRequest,CreatePlayerSessionResponse>(request, marshaller, unmarshaller);
@@ -2052,7 +2088,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         public virtual IAsyncResult BeginCreatePlayerSession(CreatePlayerSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePlayerSessionRequestMarshaller();
+            var marshaller = CreatePlayerSessionRequestMarshaller.Instance;
             var unmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePlayerSessionRequest>(request, marshaller, unmarshaller,
@@ -2258,7 +2294,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         public virtual CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
         {
-            var marshaller = new CreatePlayerSessionsRequestMarshaller();
+            var marshaller = CreatePlayerSessionsRequestMarshaller.Instance;
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
 
             return Invoke<CreatePlayerSessionsRequest,CreatePlayerSessionsResponse>(request, marshaller, unmarshaller);
@@ -2278,7 +2314,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         public virtual IAsyncResult BeginCreatePlayerSessions(CreatePlayerSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePlayerSessionsRequestMarshaller();
+            var marshaller = CreatePlayerSessionsRequestMarshaller.Instance;
             var unmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePlayerSessionsRequest>(request, marshaller, unmarshaller,
@@ -2390,7 +2426,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
         public virtual CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
         {
-            var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
+            var marshaller = CreateVpcPeeringAuthorizationRequestMarshaller.Instance;
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
             return Invoke<CreateVpcPeeringAuthorizationRequest,CreateVpcPeeringAuthorizationResponse>(request, marshaller, unmarshaller);
@@ -2410,7 +2446,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateVpcPeeringAuthorizationRequestMarshaller();
+            var marshaller = CreateVpcPeeringAuthorizationRequestMarshaller.Instance;
             var unmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateVpcPeeringAuthorizationRequest>(request, marshaller, unmarshaller,
@@ -2513,7 +2549,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
-            var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
+            var marshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
             return Invoke<CreateVpcPeeringConnectionRequest,CreateVpcPeeringConnectionResponse>(request, marshaller, unmarshaller);
@@ -2533,7 +2569,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
+            var marshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateVpcPeeringConnectionRequest>(request, marshaller, unmarshaller,
@@ -2675,7 +2711,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
@@ -2695,7 +2731,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAliasRequest>(request, marshaller, unmarshaller,
@@ -2839,7 +2875,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         public virtual DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
         {
-            var marshaller = new DeleteBuildRequestMarshaller();
+            var marshaller = DeleteBuildRequestMarshaller.Instance;
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBuildRequest,DeleteBuildResponse>(request, marshaller, unmarshaller);
@@ -2859,7 +2895,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         public virtual IAsyncResult BeginDeleteBuild(DeleteBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBuildRequestMarshaller();
+            var marshaller = DeleteBuildRequestMarshaller.Instance;
             var unmarshaller = DeleteBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBuildRequest>(request, marshaller, unmarshaller,
@@ -2906,11 +2942,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2923,6 +2967,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2950,37 +2998,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// 
@@ -3036,11 +3064,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3053,6 +3089,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3080,37 +3120,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
@@ -3137,7 +3157,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var marshaller = new DeleteFleetRequestMarshaller();
+            var marshaller = DeleteFleetRequestMarshaller.Instance;
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFleetRequest,DeleteFleetResponse>(request, marshaller, unmarshaller);
@@ -3157,7 +3177,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteFleetRequestMarshaller();
+            var marshaller = DeleteFleetRequestMarshaller.Instance;
             var unmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteFleetRequest>(request, marshaller, unmarshaller,
@@ -3229,7 +3249,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         public virtual DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
         {
-            var marshaller = new DeleteGameSessionQueueRequestMarshaller();
+            var marshaller = DeleteGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGameSessionQueueRequest,DeleteGameSessionQueueResponse>(request, marshaller, unmarshaller);
@@ -3249,7 +3269,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         public virtual IAsyncResult BeginDeleteGameSessionQueue(DeleteGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteGameSessionQueueRequestMarshaller();
+            var marshaller = DeleteGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteGameSessionQueueRequest>(request, marshaller, unmarshaller,
@@ -3333,7 +3353,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
         public virtual DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
         {
-            var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
+            var marshaller = DeleteMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMatchmakingConfigurationRequest,DeleteMatchmakingConfigurationResponse>(request, marshaller, unmarshaller);
@@ -3353,7 +3373,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteMatchmakingConfigurationRequestMarshaller();
+            var marshaller = DeleteMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteMatchmakingConfigurationRequest>(request, marshaller, unmarshaller,
@@ -3384,63 +3404,12 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Fleet-related operations include:
+        /// To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation
+        /// suspends all policies for the fleet.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3452,25 +3421,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPolicy service method.</param>
         /// 
@@ -3493,7 +3474,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public virtual DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
-            var marshaller = new DeleteScalingPolicyRequestMarshaller();
+            var marshaller = DeleteScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteScalingPolicyRequest,DeleteScalingPolicyResponse>(request, marshaller, unmarshaller);
@@ -3513,7 +3494,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteScalingPolicy(DeleteScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteScalingPolicyRequestMarshaller();
+            var marshaller = DeleteScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteScalingPolicyRequest>(request, marshaller, unmarshaller,
@@ -3593,7 +3574,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
         public virtual DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
         {
-            var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
+            var marshaller = DeleteVpcPeeringAuthorizationRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVpcPeeringAuthorizationRequest,DeleteVpcPeeringAuthorizationResponse>(request, marshaller, unmarshaller);
@@ -3613,7 +3594,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteVpcPeeringAuthorizationRequestMarshaller();
+            var marshaller = DeleteVpcPeeringAuthorizationRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteVpcPeeringAuthorizationRequest>(request, marshaller, unmarshaller,
@@ -3700,7 +3681,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
-            var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
+            var marshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVpcPeeringConnectionRequest,DeleteVpcPeeringConnectionResponse>(request, marshaller, unmarshaller);
@@ -3720,7 +3701,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
+            var marshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteVpcPeeringConnectionRequest>(request, marshaller, unmarshaller,
@@ -3870,7 +3851,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         public virtual DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
         {
-            var marshaller = new DescribeAliasRequestMarshaller();
+            var marshaller = DescribeAliasRequestMarshaller.Instance;
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAliasRequest,DescribeAliasResponse>(request, marshaller, unmarshaller);
@@ -3890,7 +3871,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlias(DescribeAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAliasRequestMarshaller();
+            var marshaller = DescribeAliasRequestMarshaller.Instance;
             var unmarshaller = DescribeAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAliasRequest>(request, marshaller, unmarshaller,
@@ -3915,8 +3896,8 @@ namespace Amazon.GameLift
         #region  DescribeBuild
 
         /// <summary>
-        /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-        /// an object containing the build properties is returned.
+        /// Retrieves properties for a build. To request a build record, specify a build ID. If
+        /// successful, an object containing the build properties is returned.
         /// 
         ///  
         /// <para>
@@ -3972,8 +3953,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-        /// an object containing the build properties is returned.
+        /// Retrieves properties for a build. To request a build record, specify a build ID. If
+        /// successful, an object containing the build properties is returned.
         /// 
         ///  
         /// <para>
@@ -4022,7 +4003,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         public virtual DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
         {
-            var marshaller = new DescribeBuildRequestMarshaller();
+            var marshaller = DescribeBuildRequestMarshaller.Instance;
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBuildRequest,DescribeBuildResponse>(request, marshaller, unmarshaller);
@@ -4042,7 +4023,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         public virtual IAsyncResult BeginDescribeBuild(DescribeBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeBuildRequestMarshaller();
+            var marshaller = DescribeBuildRequestMarshaller.Instance;
             var unmarshaller = DescribeBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeBuildRequest>(request, marshaller, unmarshaller,
@@ -4097,11 +4078,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4114,6 +4103,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4141,37 +4134,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// 
@@ -4227,11 +4200,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4244,6 +4225,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4271,37 +4256,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
         /// 
@@ -4320,7 +4285,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
         {
-            var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
+            var marshaller = DescribeEC2InstanceLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEC2InstanceLimitsRequest,DescribeEC2InstanceLimitsResponse>(request, marshaller, unmarshaller);
@@ -4340,7 +4305,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         public virtual IAsyncResult BeginDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEC2InstanceLimitsRequestMarshaller();
+            var marshaller = DescribeEC2InstanceLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEC2InstanceLimitsRequest>(request, marshaller, unmarshaller,
@@ -4391,11 +4356,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4408,6 +4381,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4435,37 +4412,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAttributes service method.</param>
         /// 
@@ -4488,7 +4445,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         public virtual DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
         {
-            var marshaller = new DescribeFleetAttributesRequestMarshaller();
+            var marshaller = DescribeFleetAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetAttributesRequest,DescribeFleetAttributesResponse>(request, marshaller, unmarshaller);
@@ -4508,7 +4465,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetAttributes(DescribeFleetAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFleetAttributesRequestMarshaller();
+            var marshaller = DescribeFleetAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFleetAttributesRequest>(request, marshaller, unmarshaller,
@@ -4560,11 +4517,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4577,6 +4542,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4604,37 +4573,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetCapacity service method.</param>
         /// 
@@ -4657,7 +4606,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         public virtual DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
         {
-            var marshaller = new DescribeFleetCapacityRequestMarshaller();
+            var marshaller = DescribeFleetCapacityRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetCapacityRequest,DescribeFleetCapacityResponse>(request, marshaller, unmarshaller);
@@ -4677,7 +4626,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetCapacity(DescribeFleetCapacityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFleetCapacityRequestMarshaller();
+            var marshaller = DescribeFleetCapacityRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFleetCapacityRequest>(request, marshaller, unmarshaller,
@@ -4721,11 +4670,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4738,6 +4695,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4765,37 +4726,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetEvents service method.</param>
         /// 
@@ -4818,7 +4759,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         public virtual DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
         {
-            var marshaller = new DescribeFleetEventsRequestMarshaller();
+            var marshaller = DescribeFleetEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetEventsRequest,DescribeFleetEventsResponse>(request, marshaller, unmarshaller);
@@ -4838,7 +4779,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetEvents(DescribeFleetEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFleetEventsRequestMarshaller();
+            var marshaller = DescribeFleetEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFleetEventsRequest>(request, marshaller, unmarshaller,
@@ -4884,11 +4825,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4901,6 +4850,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4928,37 +4881,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// 
@@ -5009,11 +4942,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5026,6 +4967,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5053,37 +4998,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetPortSettings service method.</param>
         /// 
@@ -5106,7 +5031,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
         {
-            var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
+            var marshaller = DescribeFleetPortSettingsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetPortSettingsRequest,DescribeFleetPortSettingsResponse>(request, marshaller, unmarshaller);
@@ -5126,7 +5051,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetPortSettings(DescribeFleetPortSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFleetPortSettingsRequestMarshaller();
+            var marshaller = DescribeFleetPortSettingsRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFleetPortSettingsRequest>(request, marshaller, unmarshaller,
@@ -5177,11 +5102,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5194,6 +5127,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5221,37 +5158,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetUtilization service method.</param>
         /// 
@@ -5274,7 +5191,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         public virtual DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
         {
-            var marshaller = new DescribeFleetUtilizationRequestMarshaller();
+            var marshaller = DescribeFleetUtilizationRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFleetUtilizationRequest,DescribeFleetUtilizationResponse>(request, marshaller, unmarshaller);
@@ -5294,7 +5211,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetUtilization(DescribeFleetUtilizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFleetUtilizationRequestMarshaller();
+            var marshaller = DescribeFleetUtilizationRequestMarshaller.Instance;
             var unmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFleetUtilizationRequest>(request, marshaller, unmarshaller,
@@ -5405,7 +5322,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         public virtual DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
         {
-            var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
+            var marshaller = DescribeGameSessionDetailsRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGameSessionDetailsRequest,DescribeGameSessionDetailsResponse>(request, marshaller, unmarshaller);
@@ -5425,7 +5342,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         public virtual IAsyncResult BeginDescribeGameSessionDetails(DescribeGameSessionDetailsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGameSessionDetailsRequestMarshaller();
+            var marshaller = DescribeGameSessionDetailsRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGameSessionDetailsRequest>(request, marshaller, unmarshaller,
@@ -5521,7 +5438,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
         public virtual DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
         {
-            var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
+            var marshaller = DescribeGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGameSessionPlacementRequest,DescribeGameSessionPlacementResponse>(request, marshaller, unmarshaller);
@@ -5541,7 +5458,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
         public virtual IAsyncResult BeginDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGameSessionPlacementRequestMarshaller();
+            var marshaller = DescribeGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGameSessionPlacementRequest>(request, marshaller, unmarshaller,
@@ -5615,7 +5532,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
         public virtual DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
         {
-            var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
+            var marshaller = DescribeGameSessionQueuesRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGameSessionQueuesRequest,DescribeGameSessionQueuesResponse>(request, marshaller, unmarshaller);
@@ -5635,7 +5552,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
         public virtual IAsyncResult BeginDescribeGameSessionQueues(DescribeGameSessionQueuesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGameSessionQueuesRequestMarshaller();
+            var marshaller = DescribeGameSessionQueuesRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGameSessionQueuesRequest>(request, marshaller, unmarshaller,
@@ -5749,7 +5666,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         public virtual DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
         {
-            var marshaller = new DescribeGameSessionsRequestMarshaller();
+            var marshaller = DescribeGameSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGameSessionsRequest,DescribeGameSessionsResponse>(request, marshaller, unmarshaller);
@@ -5769,7 +5686,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         public virtual IAsyncResult BeginDescribeGameSessions(DescribeGameSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGameSessionsRequestMarshaller();
+            var marshaller = DescribeGameSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGameSessionsRequest>(request, marshaller, unmarshaller,
@@ -5827,7 +5744,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            var marshaller = new DescribeInstancesRequestMarshaller();
+            var marshaller = DescribeInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeInstancesRequest,DescribeInstancesResponse>(request, marshaller, unmarshaller);
@@ -5847,7 +5764,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeInstancesRequestMarshaller();
+            var marshaller = DescribeInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeInstancesRequest>(request, marshaller, unmarshaller,
@@ -5872,9 +5789,9 @@ namespace Amazon.GameLift
         #region  DescribeMatchmaking
 
         /// <summary>
-        /// Retrieves a set of one or more matchmaking tickets. Use this operation to retrieve
-        /// ticket information, including status and--once a successful match is made--acquire
-        /// connection information for the resulting new game session. 
+        /// Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information,
+        /// including status and--once a successful match is made--acquire connection information
+        /// for the resulting new game session. 
         /// 
         ///  
         /// <para>
@@ -5885,9 +5802,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// You can request data for a one or a list of ticket IDs. If the request is successful,
-        /// a ticket object is returned for each requested ID. When specifying a list of ticket
-        /// IDs, objects are returned only for tickets that currently exist. 
+        /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
+        /// is successful, a ticket object is returned for each requested ID that currently exists.
         /// </para>
         ///  
         /// <para>
@@ -5909,6 +5825,10 @@ namespace Amazon.GameLift
         /// <para>
         ///  <a>AcceptMatch</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StartMatchBackfill</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMatchmaking service method.</param>
@@ -5928,7 +5848,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
         public virtual DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
         {
-            var marshaller = new DescribeMatchmakingRequestMarshaller();
+            var marshaller = DescribeMatchmakingRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMatchmakingRequest,DescribeMatchmakingResponse>(request, marshaller, unmarshaller);
@@ -5948,7 +5868,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
         public virtual IAsyncResult BeginDescribeMatchmaking(DescribeMatchmakingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeMatchmakingRequestMarshaller();
+            var marshaller = DescribeMatchmakingRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeMatchmakingRequest>(request, marshaller, unmarshaller,
@@ -6032,7 +5952,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
         public virtual DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
         {
-            var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
+            var marshaller = DescribeMatchmakingConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMatchmakingConfigurationsRequest,DescribeMatchmakingConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -6052,7 +5972,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeMatchmakingConfigurationsRequestMarshaller();
+            var marshaller = DescribeMatchmakingConfigurationsRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeMatchmakingConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -6137,7 +6057,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
         public virtual DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
         {
-            var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
+            var marshaller = DescribeMatchmakingRuleSetsRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMatchmakingRuleSetsRequest,DescribeMatchmakingRuleSetsResponse>(request, marshaller, unmarshaller);
@@ -6157,7 +6077,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
         public virtual IAsyncResult BeginDescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeMatchmakingRuleSetsRequestMarshaller();
+            var marshaller = DescribeMatchmakingRuleSetsRequestMarshaller.Instance;
             var unmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeMatchmakingRuleSetsRequest>(request, marshaller, unmarshaller,
@@ -6255,7 +6175,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         public virtual DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
         {
-            var marshaller = new DescribePlayerSessionsRequestMarshaller();
+            var marshaller = DescribePlayerSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribePlayerSessionsRequest,DescribePlayerSessionsResponse>(request, marshaller, unmarshaller);
@@ -6275,7 +6195,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         public virtual IAsyncResult BeginDescribePlayerSessions(DescribePlayerSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribePlayerSessionsRequestMarshaller();
+            var marshaller = DescribePlayerSessionsRequestMarshaller.Instance;
             var unmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribePlayerSessionsRequest>(request, marshaller, unmarshaller,
@@ -6318,11 +6238,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6335,6 +6263,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6362,37 +6294,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRuntimeConfiguration service method.</param>
         /// 
@@ -6415,7 +6327,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         public virtual DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
         {
-            var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
+            var marshaller = DescribeRuntimeConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRuntimeConfigurationRequest,DescribeRuntimeConfigurationResponse>(request, marshaller, unmarshaller);
@@ -6435,7 +6347,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRuntimeConfigurationRequestMarshaller();
+            var marshaller = DescribeRuntimeConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRuntimeConfigurationRequest>(request, marshaller, unmarshaller,
@@ -6471,63 +6383,14 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Fleet-related operations include:
+        /// A fleet may have all of its scaling policies suspended (<a>StopFleetActions</a>).
+        /// This action does not affect the status of the scaling policies, which remains ACTIVE.
+        /// To see whether a fleet's scaling policies are in force or suspended, call <a>DescribeFleetAttributes</a>
+        /// and check the stopped actions.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6539,25 +6402,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPolicies service method.</param>
         /// 
@@ -6580,7 +6455,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public virtual DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
-            var marshaller = new DescribeScalingPoliciesRequestMarshaller();
+            var marshaller = DescribeScalingPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeScalingPoliciesRequest,DescribeScalingPoliciesResponse>(request, marshaller, unmarshaller);
@@ -6600,7 +6475,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public virtual IAsyncResult BeginDescribeScalingPolicies(DescribeScalingPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeScalingPoliciesRequestMarshaller();
+            var marshaller = DescribeScalingPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeScalingPoliciesRequest>(request, marshaller, unmarshaller,
@@ -6676,7 +6551,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
         public virtual DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
         {
-            var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
+            var marshaller = DescribeVpcPeeringAuthorizationsRequestMarshaller.Instance;
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVpcPeeringAuthorizationsRequest,DescribeVpcPeeringAuthorizationsResponse>(request, marshaller, unmarshaller);
@@ -6696,7 +6571,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeVpcPeeringAuthorizationsRequestMarshaller();
+            var marshaller = DescribeVpcPeeringAuthorizationsRequestMarshaller.Instance;
             var unmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeVpcPeeringAuthorizationsRequest>(request, marshaller, unmarshaller,
@@ -6783,7 +6658,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
-            var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
+            var marshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVpcPeeringConnectionsRequest,DescribeVpcPeeringConnectionsResponse>(request, marshaller, unmarshaller);
@@ -6803,7 +6678,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
+            var marshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeVpcPeeringConnectionsRequest>(request, marshaller, unmarshaller,
@@ -6989,7 +6864,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
         {
-            var marshaller = new GetGameSessionLogUrlRequestMarshaller();
+            var marshaller = GetGameSessionLogUrlRequestMarshaller.Instance;
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
 
             return Invoke<GetGameSessionLogUrlRequest,GetGameSessionLogUrlResponse>(request, marshaller, unmarshaller);
@@ -7009,7 +6884,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         public virtual IAsyncResult BeginGetGameSessionLogUrl(GetGameSessionLogUrlRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGameSessionLogUrlRequestMarshaller();
+            var marshaller = GetGameSessionLogUrlRequestMarshaller.Instance;
             var unmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGameSessionLogUrlRequest>(request, marshaller, unmarshaller,
@@ -7077,7 +6952,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         public virtual GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
         {
-            var marshaller = new GetInstanceAccessRequestMarshaller();
+            var marshaller = GetInstanceAccessRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceAccessRequest,GetInstanceAccessResponse>(request, marshaller, unmarshaller);
@@ -7097,7 +6972,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceAccess(GetInstanceAccessRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceAccessRequestMarshaller();
+            var marshaller = GetInstanceAccessRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceAccessRequest>(request, marshaller, unmarshaller,
@@ -7177,7 +7052,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return Invoke<ListAliasesRequest,ListAliasesResponse>(request, marshaller, unmarshaller);
@@ -7197,7 +7072,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAliasesRequest>(request, marshaller, unmarshaller,
@@ -7274,7 +7149,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return Invoke<ListBuildsRequest,ListBuildsResponse>(request, marshaller, unmarshaller);
@@ -7294,7 +7169,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListBuildsRequest>(request, marshaller, unmarshaller,
@@ -7340,11 +7215,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7357,6 +7240,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7384,37 +7271,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
         /// 
@@ -7437,7 +7304,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var marshaller = new ListFleetsRequestMarshaller();
+            var marshaller = ListFleetsRequestMarshaller.Instance;
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
             return Invoke<ListFleetsRequest,ListFleetsResponse>(request, marshaller, unmarshaller);
@@ -7457,7 +7324,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListFleetsRequestMarshaller();
+            var marshaller = ListFleetsRequestMarshaller.Instance;
             var unmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListFleetsRequest>(request, marshaller, unmarshaller,
@@ -7482,14 +7349,84 @@ namespace Amazon.GameLift
         #region  PutScalingPolicy
 
         /// <summary>
-        /// Creates or updates a scaling policy for a fleet. An active scaling policy prompts
-        /// Amazon GameLift to track a certain metric for a fleet and automatically change the
-        /// fleet's capacity in specific circumstances. Each scaling policy contains one rule
-        /// statement. Fleets can have multiple scaling policies in force simultaneously.
+        /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
+        /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
+        /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
+        /// when a certain threshold is reached. There are two types of scaling policies: target-based
+        /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
+        /// scaling; this option is the most commonly used. Use rule-based policies when you need
+        /// to exert fine-grained control over auto-scaling. 
         /// 
         ///  
         /// <para>
-        /// A scaling policy rule statement has the following structure:
+        /// Fleets can have multiple scaling policies of each type in force at the same time;
+        /// you can have one target-based policy, one or multiple rule-based scaling policies,
+        /// or both. We recommend caution, however, because multiple auto-scaling policies can
+        /// have unintended consequences.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can temporarily suspend all scaling policies for a fleet by calling <a>StopFleetActions</a>
+        /// with the fleet action AUTO_SCALING. To resume scaling policies, call <a>StartFleetActions</a>
+        /// with the same fleet action. To stop just one scaling policy--or to permanently remove
+        /// it, you must delete the policy with <a>DeleteScalingPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Learn more about how to work with auto-scaling in <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+        /// Up Fleet Automatic Scaling</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Target-based policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A target-based policy tracks a single metric: PercentAvailableGameSessions. This metric
+        /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
+        /// is not currently in use. This is the fleet's buffer; it measures the additional player
+        /// demand that the fleet could handle at current capacity. With a target-based policy,
+        /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
+        /// is needed to maintain that target. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
+        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
+        /// action whenever the fleet's available capacity falls below or rises above 10 game
+        /// sessions. Amazon GameLift will start new instances or stop unused instances in order
+        /// to return to the 10% buffer. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a target-based policy, specify a fleet ID and name, and set the
+        /// policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions)
+        /// and reference a <a>TargetConfiguration</a> object with your desired buffer value.
+        /// Exclude all other parameters. On a successful request, the policy name is returned.
+        /// The scaling policy is automatically in force as soon as it's successfully created.
+        /// If the fleet's auto-scaling actions are temporarily suspended, the new policy will
+        /// be in force once the fleet actions are restarted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Rule-based policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A rule-based policy tracks specified fleet metric, sets a threshold value, and specifies
+        /// the type of action to initiate when triggered. With a rule-based policy, you can select
+        /// from several available fleet metrics. Each policy specifies whether to scale up or
+        /// scale down (and by how much), so you need one policy for each type of action. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, a policy may make the following statement: "If the percentage of idle
+        /// instances is greater than 20% for more than 15 minutes, then reduce the fleet capacity
+        /// by 10%."
+        /// </para>
+        ///  
+        /// <para>
+        /// A policy's rule statement has the following structure:
         /// </para>
         ///  
         /// <para>
@@ -7499,81 +7436,25 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// For example, this policy: "If the number of idle instances exceeds 20 for more than
-        /// 15 minutes, then reduce the fleet capacity by 10 instances" could be implemented as
-        /// the following rule statement:
+        /// To implement the example, the rule statement would look like this:
         /// </para>
         ///  
         /// <para>
-        /// If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then
-        /// [ChangeInCapacity] by [-10].
+        /// If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code>
+        /// for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.
         /// </para>
         ///  
         /// <para>
         /// To create or update a scaling policy, specify a unique combination of name and fleet
-        /// ID, and set the rule values. All parameters for this action are required. If successful,
-        /// the policy name is returned. Scaling policies cannot be suspended or made inactive.
-        /// To stop enforcing a scaling policy, call <a>DeleteScalingPolicy</a>.
+        /// ID, and set the policy type to "RuleBased". Specify the parameter values for a policy
+        /// rule statement. On a successful request, the policy name is returned. Scaling policies
+        /// are automatically in force as soon as they're successfully created. If the fleet's
+        /// auto-scaling actions are temporarily suspended, the new policy will be in force once
+        /// the fleet actions are restarted.
         /// </para>
         ///  
         /// <para>
-        /// Fleet-related operations include:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7585,25 +7466,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
@@ -7626,7 +7519,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
-            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var marshaller = PutScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutScalingPolicyRequest,PutScalingPolicyResponse>(request, marshaller, unmarshaller);
@@ -7646,7 +7539,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutScalingPolicyRequestMarshaller();
+            var marshaller = PutScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutScalingPolicyRequest>(request, marshaller, unmarshaller,
@@ -7671,9 +7564,16 @@ namespace Amazon.GameLift
         #region  RequestUploadCredentials
 
         /// <summary>
-        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
-        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
-        /// are required to upload your game build files to Amazon S3.
+        /// Retrieves a fresh set of credentials for use when uploading a new set of game build
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// request. If successful, a new set of credentials are returned, along with the S3 storage
+        /// location associated with the build ID.
+        /// </para>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// 
@@ -7703,9 +7603,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
-        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
-        /// are required to upload your game build files to Amazon S3.
+        /// Retrieves a fresh set of credentials for use when uploading a new set of game build
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// request. If successful, a new set of credentials are returned, along with the S3 storage
+        /// location associated with the build ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestUploadCredentials service method.</param>
         /// 
@@ -7728,7 +7635,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         public virtual RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
         {
-            var marshaller = new RequestUploadCredentialsRequestMarshaller();
+            var marshaller = RequestUploadCredentialsRequestMarshaller.Instance;
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<RequestUploadCredentialsRequest,RequestUploadCredentialsResponse>(request, marshaller, unmarshaller);
@@ -7748,7 +7655,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         public virtual IAsyncResult BeginRequestUploadCredentials(RequestUploadCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RequestUploadCredentialsRequestMarshaller();
+            var marshaller = RequestUploadCredentialsRequestMarshaller.Instance;
             var unmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RequestUploadCredentialsRequest>(request, marshaller, unmarshaller,
@@ -7898,7 +7805,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         public virtual ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
         {
-            var marshaller = new ResolveAliasRequestMarshaller();
+            var marshaller = ResolveAliasRequestMarshaller.Instance;
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
 
             return Invoke<ResolveAliasRequest,ResolveAliasResponse>(request, marshaller, unmarshaller);
@@ -7918,7 +7825,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         public virtual IAsyncResult BeginResolveAlias(ResolveAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ResolveAliasRequestMarshaller();
+            var marshaller = ResolveAliasRequestMarshaller.Instance;
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<ResolveAliasRequest>(request, marshaller, unmarshaller,
@@ -7943,16 +7850,9 @@ namespace Amazon.GameLift
         #region  SearchGameSessions
 
         /// <summary>
-        /// Retrieves a set of game sessions that match a set of search criteria and sorts them
-        /// in a specified order. A game session search is limited to a single fleet. Search results
-        /// include only game sessions that are in <code>ACTIVE</code> status. If you need to
-        /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
-        /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
+        /// Retrieves all active game sessions that match a set of search criteria and sorts them
+        /// in a specified order. You can search or sort by the following game session attributes:
         /// 
-        ///  
-        /// <para>
-        /// You can search or sort by the following game session attributes:
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
@@ -7966,6 +7866,21 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>gameSessionProperties</b> -- Custom data defined in a game session's <code>GameProperty</code>
+        /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
+        /// expression must indicate the key and a string to search the data values for. For example,
+        /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
+        /// specify the following: <code>gameSessionProperties.gameMode = "brawl"</code>. All
+        /// custom data values are searched as strings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
+        /// This value is set when requesting a new game session with <a>CreateGameSession</a>
+        /// or updating with <a>UpdateGameSession</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>creationTimeMillis</b> -- Value indicating when a game session was created. It
         /// is expressed in Unix time as milliseconds.
         /// </para>
@@ -7976,26 +7891,12 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
-        /// This value is set when requesting a new game session with <a>CreateGameSession</a>
-        /// or updating with <a>UpdateGameSession</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session
-        /// has reached its maximum number of players. When searching with this attribute, the
-        /// search value must be <code>true</code> or <code>false</code>. It is highly recommended
-        /// that all search requests include this filter attribute to optimize search performance
-        /// and return only sessions that players can join. 
+        /// has reached its maximum number of players. It is highly recommended that all search
+        /// requests include this filter attribute to optimize search performance and return only
+        /// sessions that players can join. 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
-        /// filter expression, a sort expression, or both. Use the pagination parameters to retrieve
-        /// results as a set of sequential pages. If successful, a collection of <a>GameSession</a>
-        /// objects matching the request is returned.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
         /// change quickly as players join sessions and others drop out. Results should be considered
@@ -8003,6 +7904,20 @@ namespace Amazon.GameLift
         /// fill up before a player can join. 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
+        /// filter expression, a sort expression, or both. If successful, a collection of <a>GameSession</a>
+        /// objects matching the request is returned. Use the pagination parameters to retrieve
+        /// results as a set of sequential pages. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can search for game sessions one fleet at a time only. To find game sessions across
+        /// multiple fleets, you must search each fleet separately and combine the results. This
+        /// search feature finds only game sessions that are in <code>ACTIVE</code> status. To
+        /// locate games in statuses other than active, use <a>DescribeGameSessionDetails</a>.
+        /// </para>
+        ///  
         /// <para>
         /// Game-session-related operations include:
         /// </para>
@@ -8075,7 +7990,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         public virtual SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
         {
-            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var marshaller = SearchGameSessionsRequestMarshaller.Instance;
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
 
             return Invoke<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, unmarshaller);
@@ -8095,7 +8010,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         public virtual IAsyncResult BeginSearchGameSessions(SearchGameSessionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var marshaller = SearchGameSessionsRequestMarshaller.Instance;
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<SearchGameSessionsRequest>(request, marshaller, unmarshaller,
@@ -8113,6 +8028,129 @@ namespace Amazon.GameLift
         public virtual SearchGameSessionsResponse EndSearchGameSessions(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchGameSessionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartFleetActions
+
+        /// <summary>
+        /// Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>. Currently,
+        /// this operation is used to restart a fleet's auto-scaling activity. 
+        /// 
+        ///  
+        /// <para>
+        /// To start fleet actions, specify the fleet ID and the type of actions to restart. When
+        /// auto-scaling fleet actions are restarted, Amazon GameLift once again initiates scaling
+        /// events as triggered by the fleet's scaling policies. If actions on the fleet were
+        /// never stopped, this operation will have no effect. You can view a fleet's stopped
+        /// actions using <a>DescribeFleetAttributes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to fleet capacity scaling include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFleetActions service method.</param>
+        /// 
+        /// <returns>The response from the StartFleetActions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual StartFleetActionsResponse StartFleetActions(StartFleetActionsRequest request)
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StartFleetActionsRequest,StartFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFleetActions operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFleetActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual IAsyncResult BeginStartFleetActions(StartFleetActionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartFleetActionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFleetActions.</param>
+        /// 
+        /// <returns>Returns a  StartFleetActionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual StartFleetActionsResponse EndStartFleetActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartFleetActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -8248,7 +8286,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         public virtual StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
         {
-            var marshaller = new StartGameSessionPlacementRequestMarshaller();
+            var marshaller = StartGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
 
             return Invoke<StartGameSessionPlacementRequest,StartGameSessionPlacementResponse>(request, marshaller, unmarshaller);
@@ -8268,7 +8306,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         public virtual IAsyncResult BeginStartGameSessionPlacement(StartGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartGameSessionPlacementRequestMarshaller();
+            var marshaller = StartGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartGameSessionPlacementRequest>(request, marshaller, unmarshaller,
@@ -8286,6 +8324,126 @@ namespace Amazon.GameLift
         public virtual StartGameSessionPlacementResponse EndStartGameSessionPlacement(IAsyncResult asyncResult)
         {
             return EndInvoke<StartGameSessionPlacementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMatchBackfill
+
+        /// <summary>
+        /// Finds new players to fill open slots in an existing game session. This operation can
+        /// be used to add players to matched games that start with fewer than the maximum number
+        /// of players or to replace players when they drop out. By backfilling with the same
+        /// matchmaker used to create the original match, you ensure that new players meet the
+        /// match criteria and maintain a consistent experience throughout the game session. You
+        /// can backfill a match anytime after a game session has been created. 
+        /// 
+        ///  
+        /// <para>
+        /// To request a match backfill, specify a unique ticket ID, the existing game session's
+        /// ARN, a matchmaking configuration, and a set of data that describes all current players
+        /// in the game session. If successful, a match backfill ticket is created and returned
+        /// with status set to QUEUED. The ticket is placed in the matchmaker's ticket pool and
+        /// processed. Track the status of the ticket to respond as needed. For more detail how
+        /// to set up backfilling, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+        /// Backfill Existing Games with FlexMatch</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The process of finding backfill matches is essentially identical to the initial matchmaking
+        /// process. The matchmaker searches the pool and groups tickets together to form potential
+        /// matches, allowing only one backfill ticket per potential match. Once the a match is
+        /// formed, the matchmaker creates player sessions for the new players. All tickets in
+        /// the match are updated with the game session's connection information, and the <a>GameSession</a>
+        /// object is updated to include matchmaker data on the new players. For more detail on
+        /// how match backfill requests are processed, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+        /// How Amazon GameLift FlexMatch Works</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StartMatchBackfill</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill service method.</param>
+        /// 
+        /// <returns>The response from the StartMatchBackfill service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        public virtual StartMatchBackfillResponse StartMatchBackfill(StartMatchBackfillRequest request)
+        {
+            var marshaller = StartMatchBackfillRequestMarshaller.Instance;
+            var unmarshaller = StartMatchBackfillResponseUnmarshaller.Instance;
+
+            return Invoke<StartMatchBackfillRequest,StartMatchBackfillResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMatchBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMatchBackfill
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        public virtual IAsyncResult BeginStartMatchBackfill(StartMatchBackfillRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartMatchBackfillRequestMarshaller.Instance;
+            var unmarshaller = StartMatchBackfillResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartMatchBackfillRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMatchBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMatchBackfill.</param>
+        /// 
+        /// <returns>Returns a  StartMatchBackfillResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        public virtual StartMatchBackfillResponse EndStartMatchBackfill(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMatchBackfillResponse>(asyncResult);
         }
 
         #endregion
@@ -8392,6 +8550,10 @@ namespace Amazon.GameLift
         /// <para>
         ///  <a>AcceptMatch</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StartMatchBackfill</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMatchmaking service method.</param>
@@ -8415,7 +8577,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
         public virtual StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
         {
-            var marshaller = new StartMatchmakingRequestMarshaller();
+            var marshaller = StartMatchmakingRequestMarshaller.Instance;
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
 
             return Invoke<StartMatchmakingRequest,StartMatchmakingResponse>(request, marshaller, unmarshaller);
@@ -8435,7 +8597,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
         public virtual IAsyncResult BeginStartMatchmaking(StartMatchmakingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartMatchmakingRequestMarshaller();
+            var marshaller = StartMatchmakingRequestMarshaller.Instance;
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartMatchmakingRequest>(request, marshaller, unmarshaller,
@@ -8453,6 +8615,87 @@ namespace Amazon.GameLift
         public virtual StartMatchmakingResponse EndStartMatchmaking(IAsyncResult asyncResult)
         {
             return EndInvoke<StartMatchmakingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopFleetActions
+
+        /// <summary>
+        /// Suspends activity on a fleet. Currently, this operation is used to stop a fleet's
+        /// auto-scaling activity. It is used to temporarily stop scaling events triggered by
+        /// the fleet's scaling policies. The policies can be retained and auto-scaling activity
+        /// can be restarted using <a>StartFleetActions</a>. You can view a fleet's stopped actions
+        /// using <a>DescribeFleetAttributes</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To stop fleet actions, specify the fleet ID and the type of actions to suspend. When
+        /// auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates scaling
+        /// events except to maintain the fleet's desired instances setting (<a>FleetCapacity</a>.
+        /// Changes to the fleet's capacity must be done manually using <a>UpdateFleetCapacity</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopFleetActions service method.</param>
+        /// 
+        /// <returns>The response from the StopFleetActions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual StopFleetActionsResponse StopFleetActions(StopFleetActionsRequest request)
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StopFleetActionsRequest,StopFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopFleetActions operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopFleetActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual IAsyncResult BeginStopFleetActions(StopFleetActionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopFleetActionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopFleetActions.</param>
+        /// 
+        /// <returns>Returns a  StopFleetActionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual StopFleetActionsResponse EndStopFleetActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopFleetActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -8531,7 +8774,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         public virtual StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
         {
-            var marshaller = new StopGameSessionPlacementRequestMarshaller();
+            var marshaller = StopGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
 
             return Invoke<StopGameSessionPlacementRequest,StopGameSessionPlacementResponse>(request, marshaller, unmarshaller);
@@ -8551,7 +8794,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         public virtual IAsyncResult BeginStopGameSessionPlacement(StopGameSessionPlacementRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopGameSessionPlacementRequestMarshaller();
+            var marshaller = StopGameSessionPlacementRequestMarshaller.Instance;
             var unmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopGameSessionPlacementRequest>(request, marshaller, unmarshaller,
@@ -8600,6 +8843,10 @@ namespace Amazon.GameLift
         /// <para>
         ///  <a>AcceptMatch</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StartMatchBackfill</a> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMatchmaking service method.</param>
@@ -8623,7 +8870,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
         public virtual StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
         {
-            var marshaller = new StopMatchmakingRequestMarshaller();
+            var marshaller = StopMatchmakingRequestMarshaller.Instance;
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
 
             return Invoke<StopMatchmakingRequest,StopMatchmakingResponse>(request, marshaller, unmarshaller);
@@ -8643,7 +8890,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
         public virtual IAsyncResult BeginStopMatchmaking(StopMatchmakingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopMatchmakingRequestMarshaller();
+            var marshaller = StopMatchmakingRequestMarshaller.Instance;
             var unmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopMatchmakingRequest>(request, marshaller, unmarshaller,
@@ -8724,7 +8971,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var marshaller = new UpdateAliasRequestMarshaller();
+            var marshaller = UpdateAliasRequestMarshaller.Instance;
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAliasRequest,UpdateAliasResponse>(request, marshaller, unmarshaller);
@@ -8744,7 +8991,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAliasRequestMarshaller();
+            var marshaller = UpdateAliasRequestMarshaller.Instance;
             var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAliasRequest>(request, marshaller, unmarshaller,
@@ -8820,7 +9067,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         public virtual UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
         {
-            var marshaller = new UpdateBuildRequestMarshaller();
+            var marshaller = UpdateBuildRequestMarshaller.Instance;
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
 
             return Invoke<UpdateBuildRequest,UpdateBuildResponse>(request, marshaller, unmarshaller);
@@ -8840,7 +9087,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         public virtual IAsyncResult BeginUpdateBuild(UpdateBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateBuildRequestMarshaller();
+            var marshaller = UpdateBuildRequestMarshaller.Instance;
             var unmarshaller = UpdateBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateBuildRequest>(request, marshaller, unmarshaller,
@@ -8883,11 +9130,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8900,6 +9155,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8927,37 +9186,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetAttributes service method.</param>
         /// 
@@ -8992,7 +9231,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         public virtual UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
         {
-            var marshaller = new UpdateFleetAttributesRequestMarshaller();
+            var marshaller = UpdateFleetAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFleetAttributesRequest,UpdateFleetAttributesResponse>(request, marshaller, unmarshaller);
@@ -9012,7 +9251,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         public virtual IAsyncResult BeginUpdateFleetAttributes(UpdateFleetAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateFleetAttributesRequestMarshaller();
+            var marshaller = UpdateFleetAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateFleetAttributesRequest>(request, marshaller, unmarshaller,
@@ -9044,10 +9283,10 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If you're using autoscaling (see <a>PutScalingPolicy</a>), you may want to specify
-        /// a minimum and/or maximum capacity. If you don't provide these, autoscaling can set
-        /// capacity anywhere between zero and the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-        /// limits</a>.
+        /// Specify minimum and maximum number of instances. Amazon GameLift will not change fleet
+        /// capacity to values fall outside of this range. This is particularly important when
+        /// using auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based
+        /// on player demand while imposing limits on automatic adjustments.
         /// </para>
         ///  
         /// <para>
@@ -9072,11 +9311,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9089,6 +9336,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9116,37 +9367,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetCapacity service method.</param>
         /// 
@@ -9181,7 +9412,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         public virtual UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
         {
-            var marshaller = new UpdateFleetCapacityRequestMarshaller();
+            var marshaller = UpdateFleetCapacityRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFleetCapacityRequest,UpdateFleetCapacityResponse>(request, marshaller, unmarshaller);
@@ -9201,7 +9432,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         public virtual IAsyncResult BeginUpdateFleetCapacity(UpdateFleetCapacityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateFleetCapacityRequestMarshaller();
+            var marshaller = UpdateFleetCapacityRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateFleetCapacityRequest>(request, marshaller, unmarshaller,
@@ -9247,11 +9478,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9264,6 +9503,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9291,37 +9534,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetPortSettings service method.</param>
         /// 
@@ -9356,7 +9579,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         public virtual UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
         {
-            var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
+            var marshaller = UpdateFleetPortSettingsRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFleetPortSettingsRequest,UpdateFleetPortSettingsResponse>(request, marshaller, unmarshaller);
@@ -9376,7 +9599,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateFleetPortSettings(UpdateFleetPortSettingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateFleetPortSettingsRequestMarshaller();
+            var marshaller = UpdateFleetPortSettingsRequestMarshaller.Instance;
             var unmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateFleetPortSettingsRequest>(request, marshaller, unmarshaller,
@@ -9484,7 +9707,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         public virtual UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
         {
-            var marshaller = new UpdateGameSessionRequestMarshaller();
+            var marshaller = UpdateGameSessionRequestMarshaller.Instance;
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGameSessionRequest,UpdateGameSessionResponse>(request, marshaller, unmarshaller);
@@ -9504,7 +9727,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         public virtual IAsyncResult BeginUpdateGameSession(UpdateGameSessionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGameSessionRequestMarshaller();
+            var marshaller = UpdateGameSessionRequestMarshaller.Instance;
             var unmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGameSessionRequest>(request, marshaller, unmarshaller,
@@ -9577,7 +9800,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
         public virtual UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
         {
-            var marshaller = new UpdateGameSessionQueueRequestMarshaller();
+            var marshaller = UpdateGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGameSessionQueueRequest,UpdateGameSessionQueueResponse>(request, marshaller, unmarshaller);
@@ -9597,7 +9820,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
         public virtual IAsyncResult BeginUpdateGameSessionQueue(UpdateGameSessionQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGameSessionQueueRequestMarshaller();
+            var marshaller = UpdateGameSessionQueueRequestMarshaller.Instance;
             var unmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGameSessionQueueRequest>(request, marshaller, unmarshaller,
@@ -9680,7 +9903,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
         public virtual UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
         {
-            var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
+            var marshaller = UpdateMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMatchmakingConfigurationRequest,UpdateMatchmakingConfigurationResponse>(request, marshaller, unmarshaller);
@@ -9700,7 +9923,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateMatchmakingConfigurationRequestMarshaller();
+            var marshaller = UpdateMatchmakingConfigurationRequestMarshaller.Instance;
             var unmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateMatchmakingConfigurationRequest>(request, marshaller, unmarshaller,
@@ -9759,11 +9982,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9776,6 +10007,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9803,37 +10038,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
         /// 
@@ -9860,7 +10075,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         public virtual UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
         {
-            var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
+            var marshaller = UpdateRuntimeConfigurationRequestMarshaller.Instance;
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRuntimeConfigurationRequest,UpdateRuntimeConfigurationResponse>(request, marshaller, unmarshaller);
@@ -9880,7 +10095,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRuntimeConfigurationRequestMarshaller();
+            var marshaller = UpdateRuntimeConfigurationRequestMarshaller.Instance;
             var unmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRuntimeConfigurationRequest>(request, marshaller, unmarshaller,
@@ -9960,7 +10175,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
         public virtual ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
         {
-            var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
+            var marshaller = ValidateMatchmakingRuleSetRequestMarshaller.Instance;
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
             return Invoke<ValidateMatchmakingRuleSetRequest,ValidateMatchmakingRuleSetResponse>(request, marshaller, unmarshaller);
@@ -9980,7 +10195,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
         public virtual IAsyncResult BeginValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ValidateMatchmakingRuleSetRequestMarshaller();
+            var marshaller = ValidateMatchmakingRuleSetRequestMarshaller.Instance;
             var unmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<ValidateMatchmakingRuleSetRequest>(request, marshaller, unmarshaller,

@@ -75,6 +75,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 
 ### NuGet Packages
 
+* [AWSSDK.ACMPCA](https://www.nuget.org/packages/AWSSDK.ACMPCA/)
+	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) is a managed private CA service that helps you easily and securely manage the lifecycle of your private certificates. ACM Private CA provides you a highly-available private CA service without the upfront investment and ongoing maintenance costs of operating your own private CA. ACM Private CA extends ACM's certificate management capabilities to private certificates, enabling you to manage public and private certificates centrally.
 * [AWSSDK.AlexaForBusiness](https://www.nuget.org/packages/AWSSDK.AlexaForBusiness/)
 	* Alexa for Business is now generally available for production use. Alexa for Business makes it easy for you to use Alexa in your organization. The Alexa for Business SDK gives you APIs to manage Alexa devices, enroll users, and assign skills at scale. For more information about Alexa for Business, go to https://aws.amazon.com/alexaforbusiness
 * [AWSSDK.APIGateway](https://www.nuget.org/packages/AWSSDK.APIGateway/)
@@ -151,6 +153,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Comprehend is an AWS service for gaining insight into the content of text and documents. It can be used to determine the topics contained in your documents, the topics they discuss, the  predominant sentiment expressed in them, the predominant language used, and more. For more information, go to the Amazon Comprehend product page. To get started, see the Amazon Comprehend Developer Guide.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+* [AWSSDK.Connect](https://www.nuget.org/packages/AWSSDK.Connect/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
 	* The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences.
 * [AWSSDK.CostExplorer](https://www.nuget.org/packages/AWSSDK.CostExplorer/)
@@ -175,6 +179,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.
 * [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)
 	* Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.
+* [AWSSDK.EKS](https://www.nuget.org/packages/AWSSDK.EKS/)
+	* Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a fully managed service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS.Amazon EKS runs Kubernetes management infrastructure for you across multiple AWS availability zones to eliminate a single point of failure. Amazon EKS is certified Kubernetes conformant so you can use existing tooling and plugins from partners and the Kubernetes community. Applications running on any standard Kubernetes environment are fully compatible and can be easily migrated to Amazon EKS.
 * [AWSSDK.ElastiCache](https://www.nuget.org/packages/AWSSDK.ElastiCache/)
 	* ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.
 * [AWSSDK.ElasticBeanstalk](https://www.nuget.org/packages/AWSSDK.ElasticBeanstalk/)
@@ -191,6 +197,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
 * [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
+* [AWSSDK.FMS](https://www.nuget.org/packages/AWSSDK.FMS/)
+	* This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
@@ -209,6 +217,12 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Inspector identifies security issues in your application deployments.
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
+* [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
+	* AWS IoT 1-Click makes it easy for customers to incorporate simple ready-to-use IoT devices into their workflows. These devices can trigger AWS Lambda functions that implement business logic. In order to build applications using AWS IoT 1-Click devices, programmers can use the AWS IoT 1-Click Devices API and the AWS IoT 1-Click Projects API. Learn more at https://aws.amazon.com/documentation/iot-1-click/
+* [AWSSDK.IoT1ClickProjects](https://www.nuget.org/packages/AWSSDK.IoT1ClickProjects/)
+	* New Service temporary synopsis, please replace it.
+* [AWSSDK.IoTAnalytics](https://www.nuget.org/packages/AWSSDK.IoTAnalytics/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
 	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
@@ -249,6 +263,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
 * [AWSSDK.MediaStoreData](https://www.nuget.org/packages/AWSSDK.MediaStoreData/)
 	* AWS Elemental MediaStore Data is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore Data acts as the origin store in your video workflow.
+* [AWSSDK.MediaTailor](https://www.nuget.org/packages/AWSSDK.MediaTailor/)
+	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
 * [AWSSDK.MigrationHub](https://www.nuget.org/packages/AWSSDK.MigrationHub/)
 	* AWS Migration Hub provides a single location to track migrations across multiple AWS and partner solutions. Using Migration Hub allows you to choose the AWS and partner migration tools that best fit your needs, while providing visibility into the status of your entire migration portfolio. Migration Hub also provides key metrics and progress for individual applications, regardless of which tools are being used to migrate them. For example, you might use AWS Database Migration Service, AWS Server Migration Service, and partner migration tools to migrate an application comprised of a database, virtualized web servers, and a bare metal server. Using Migration Hub will provide you with a single screen that shows the migration progress of all the resources in the application. This allows you to quickly get progress updates across all of your migrations, easily identify and troubleshoot any issues, and reduce the overall time and effort spent on your migration projects. Migration Hub is available to all AWS customers at no additional charge. You only pay for the cost of the migration tools you use, and any resources being consumed on AWS. 
 * [AWSSDK.Mobile](https://www.nuget.org/packages/AWSSDK.Mobile/)
@@ -259,12 +275,16 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud.
 * [AWSSDK.MTurk](https://www.nuget.org/packages/AWSSDK.MTurk/)
 	* Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
+* [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
+	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
 	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
 * [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.PI](https://www.nuget.org/packages/AWSSDK.PI/)
+	* Performance Insights is a feature of Amazon Relational Database Service (RDS) that helps you quickly assess the load on your database, and determine when and where to take action. You can use the SDK to retrieve Performance Insights data and integrate your monitoring solutions.
 * [AWSSDK.Pinpoint](https://www.nuget.org/packages/AWSSDK.Pinpoint/)
 	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
 * [AWSSDK.Polly](https://www.nuget.org/packages/AWSSDK.Polly/)
@@ -291,6 +311,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SageMakerRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerRuntime/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
+* [AWSSDK.SecretsManager](https://www.nuget.org/packages/AWSSDK.SecretsManager/)
+	* AWS Secrets Manager enables you to easily create and manage the secrets that you use in your customer-facing apps. Instead of embedding credentials into your source code, you can dynamically query Secrets Manager from your app whenever you need credentials. You can automatically and frequently rotate your secrets without having to deploy updates to your apps. All secret values are encrypted when they're at rest with AWS KMS, and while they're in transit with HTTPS and TLS.
 * [AWSSDK.SecurityToken](https://www.nuget.org/packages/AWSSDK.SecurityToken/)
 	* The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.
 * [AWSSDK.ServerlessApplicationRepository](https://www.nuget.org/packages/AWSSDK.ServerlessApplicationRepository/)

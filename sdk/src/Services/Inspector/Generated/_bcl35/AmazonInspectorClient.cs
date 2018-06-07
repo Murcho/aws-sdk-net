@@ -254,7 +254,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public virtual AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request)
         {
-            var marshaller = new AddAttributesToFindingsRequestMarshaller();
+            var marshaller = AddAttributesToFindingsRequestMarshaller.Instance;
             var unmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
 
             return Invoke<AddAttributesToFindingsRequest,AddAttributesToFindingsResponse>(request, marshaller, unmarshaller);
@@ -274,7 +274,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public virtual IAsyncResult BeginAddAttributesToFindings(AddAttributesToFindingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddAttributesToFindingsRequestMarshaller();
+            var marshaller = AddAttributesToFindingsRequestMarshaller.Instance;
             var unmarshaller = AddAttributesToFindingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddAttributesToFindingsRequest>(request, marshaller, unmarshaller,
@@ -316,6 +316,10 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
+        /// Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
+        /// instances during the assessment run.
+        /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -331,7 +335,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public virtual CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request)
         {
-            var marshaller = new CreateAssessmentTargetRequestMarshaller();
+            var marshaller = CreateAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
             return Invoke<CreateAssessmentTargetRequest,CreateAssessmentTargetResponse>(request, marshaller, unmarshaller);
@@ -351,7 +355,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public virtual IAsyncResult BeginCreateAssessmentTarget(CreateAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAssessmentTargetRequestMarshaller();
+            var marshaller = CreateAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAssessmentTargetRequest>(request, marshaller, unmarshaller,
@@ -405,7 +409,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public virtual CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request)
         {
-            var marshaller = new CreateAssessmentTemplateRequestMarshaller();
+            var marshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
             return Invoke<CreateAssessmentTemplateRequest,CreateAssessmentTemplateResponse>(request, marshaller, unmarshaller);
@@ -425,7 +429,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateAssessmentTemplate(CreateAssessmentTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAssessmentTemplateRequestMarshaller();
+            var marshaller = CreateAssessmentTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAssessmentTemplateRequest>(request, marshaller, unmarshaller,
@@ -475,7 +479,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public virtual CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
         {
-            var marshaller = new CreateResourceGroupRequestMarshaller();
+            var marshaller = CreateResourceGroupRequestMarshaller.Instance;
             var unmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceGroupRequest,CreateResourceGroupResponse>(request, marshaller, unmarshaller);
@@ -495,7 +499,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateResourceGroup(CreateResourceGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateResourceGroupRequestMarshaller();
+            var marshaller = CreateResourceGroupRequestMarshaller.Instance;
             var unmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateResourceGroupRequest>(request, marshaller, unmarshaller,
@@ -545,7 +549,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public virtual DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request)
         {
-            var marshaller = new DeleteAssessmentRunRequestMarshaller();
+            var marshaller = DeleteAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAssessmentRunRequest,DeleteAssessmentRunResponse>(request, marshaller, unmarshaller);
@@ -565,7 +569,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentRun(DeleteAssessmentRunRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAssessmentRunRequestMarshaller();
+            var marshaller = DeleteAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAssessmentRunRequest>(request, marshaller, unmarshaller,
@@ -615,7 +619,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public virtual DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request)
         {
-            var marshaller = new DeleteAssessmentTargetRequestMarshaller();
+            var marshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAssessmentTargetRequest,DeleteAssessmentTargetResponse>(request, marshaller, unmarshaller);
@@ -635,7 +639,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentTarget(DeleteAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAssessmentTargetRequestMarshaller();
+            var marshaller = DeleteAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAssessmentTargetRequest>(request, marshaller, unmarshaller,
@@ -685,7 +689,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public virtual DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request)
         {
-            var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
+            var marshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAssessmentTemplateRequest,DeleteAssessmentTemplateResponse>(request, marshaller, unmarshaller);
@@ -705,7 +709,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
+            var marshaller = DeleteAssessmentTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAssessmentTemplateRequest>(request, marshaller, unmarshaller,
@@ -745,7 +749,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public virtual DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request)
         {
-            var marshaller = new DescribeAssessmentRunsRequestMarshaller();
+            var marshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAssessmentRunsRequest,DescribeAssessmentRunsResponse>(request, marshaller, unmarshaller);
@@ -765,7 +769,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssessmentRuns(DescribeAssessmentRunsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAssessmentRunsRequestMarshaller();
+            var marshaller = DescribeAssessmentRunsRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAssessmentRunsRequest>(request, marshaller, unmarshaller,
@@ -806,7 +810,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public virtual DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request)
         {
-            var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
+            var marshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAssessmentTargetsRequest,DescribeAssessmentTargetsResponse>(request, marshaller, unmarshaller);
@@ -826,7 +830,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssessmentTargets(DescribeAssessmentTargetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
+            var marshaller = DescribeAssessmentTargetsRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAssessmentTargetsRequest>(request, marshaller, unmarshaller,
@@ -867,7 +871,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public virtual DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request)
         {
-            var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
+            var marshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAssessmentTemplatesRequest,DescribeAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
@@ -887,7 +891,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
+            var marshaller = DescribeAssessmentTemplatesRequestMarshaller.Instance;
             var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAssessmentTemplatesRequest>(request, marshaller, unmarshaller,
@@ -923,7 +927,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public virtual DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request)
         {
-            var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
+            var marshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
             var unmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCrossAccountAccessRoleRequest,DescribeCrossAccountAccessRoleResponse>(request, marshaller, unmarshaller);
@@ -943,7 +947,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public virtual IAsyncResult BeginDescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
+            var marshaller = DescribeCrossAccountAccessRoleRequestMarshaller.Instance;
             var unmarshaller = DescribeCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeCrossAccountAccessRoleRequest>(request, marshaller, unmarshaller,
@@ -983,7 +987,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public virtual DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
         {
-            var marshaller = new DescribeFindingsRequestMarshaller();
+            var marshaller = DescribeFindingsRequestMarshaller.Instance;
             var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFindingsRequest,DescribeFindingsResponse>(request, marshaller, unmarshaller);
@@ -1003,7 +1007,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public virtual IAsyncResult BeginDescribeFindings(DescribeFindingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFindingsRequestMarshaller();
+            var marshaller = DescribeFindingsRequestMarshaller.Instance;
             var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFindingsRequest>(request, marshaller, unmarshaller,
@@ -1043,7 +1047,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public virtual DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request)
         {
-            var marshaller = new DescribeResourceGroupsRequestMarshaller();
+            var marshaller = DescribeResourceGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourceGroupsRequest,DescribeResourceGroupsResponse>(request, marshaller, unmarshaller);
@@ -1063,7 +1067,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeResourceGroups(DescribeResourceGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeResourceGroupsRequestMarshaller();
+            var marshaller = DescribeResourceGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeResourceGroupsRequest>(request, marshaller, unmarshaller,
@@ -1103,7 +1107,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public virtual DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request)
         {
-            var marshaller = new DescribeRulesPackagesRequestMarshaller();
+            var marshaller = DescribeRulesPackagesRequestMarshaller.Instance;
             var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRulesPackagesRequest,DescribeRulesPackagesResponse>(request, marshaller, unmarshaller);
@@ -1123,7 +1127,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public virtual IAsyncResult BeginDescribeRulesPackages(DescribeRulesPackagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRulesPackagesRequestMarshaller();
+            var marshaller = DescribeRulesPackagesRequestMarshaller.Instance;
             var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRulesPackagesRequest>(request, marshaller, unmarshaller,
@@ -1180,7 +1184,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
         public virtual GetAssessmentReportResponse GetAssessmentReport(GetAssessmentReportRequest request)
         {
-            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var marshaller = GetAssessmentReportRequestMarshaller.Instance;
             var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
 
             return Invoke<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, unmarshaller);
@@ -1200,7 +1204,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport">REST API Reference for GetAssessmentReport Operation</seealso>
         public virtual IAsyncResult BeginGetAssessmentReport(GetAssessmentReportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAssessmentReportRequestMarshaller();
+            var marshaller = GetAssessmentReportRequestMarshaller.Instance;
             var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAssessmentReportRequest>(request, marshaller, unmarshaller,
@@ -1247,7 +1251,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public virtual GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)
         {
-            var marshaller = new GetTelemetryMetadataRequestMarshaller();
+            var marshaller = GetTelemetryMetadataRequestMarshaller.Instance;
             var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
             return Invoke<GetTelemetryMetadataRequest,GetTelemetryMetadataResponse>(request, marshaller, unmarshaller);
@@ -1267,7 +1271,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetTelemetryMetadata(GetTelemetryMetadataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTelemetryMetadataRequestMarshaller();
+            var marshaller = GetTelemetryMetadataRequestMarshaller.Instance;
             var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTelemetryMetadataRequest>(request, marshaller, unmarshaller,
@@ -1315,7 +1319,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public virtual ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request)
         {
-            var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
+            var marshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
             return Invoke<ListAssessmentRunAgentsRequest,ListAssessmentRunAgentsResponse>(request, marshaller, unmarshaller);
@@ -1335,7 +1339,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentRunAgents(ListAssessmentRunAgentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
+            var marshaller = ListAssessmentRunAgentsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAssessmentRunAgentsRequest>(request, marshaller, unmarshaller,
@@ -1383,7 +1387,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public virtual ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request)
         {
-            var marshaller = new ListAssessmentRunsRequestMarshaller();
+            var marshaller = ListAssessmentRunsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
             return Invoke<ListAssessmentRunsRequest,ListAssessmentRunsResponse>(request, marshaller, unmarshaller);
@@ -1403,7 +1407,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentRuns(ListAssessmentRunsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAssessmentRunsRequestMarshaller();
+            var marshaller = ListAssessmentRunsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAssessmentRunsRequest>(request, marshaller, unmarshaller,
@@ -1448,7 +1452,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public virtual ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request)
         {
-            var marshaller = new ListAssessmentTargetsRequestMarshaller();
+            var marshaller = ListAssessmentTargetsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
             return Invoke<ListAssessmentTargetsRequest,ListAssessmentTargetsResponse>(request, marshaller, unmarshaller);
@@ -1468,7 +1472,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentTargets(ListAssessmentTargetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAssessmentTargetsRequestMarshaller();
+            var marshaller = ListAssessmentTargetsRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAssessmentTargetsRequest>(request, marshaller, unmarshaller,
@@ -1516,7 +1520,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public virtual ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request)
         {
-            var marshaller = new ListAssessmentTemplatesRequestMarshaller();
+            var marshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
             return Invoke<ListAssessmentTemplatesRequest,ListAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
@@ -1536,7 +1540,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentTemplates(ListAssessmentTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAssessmentTemplatesRequestMarshaller();
+            var marshaller = ListAssessmentTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAssessmentTemplatesRequest>(request, marshaller, unmarshaller,
@@ -1585,7 +1589,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public virtual ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request)
         {
-            var marshaller = new ListEventSubscriptionsRequestMarshaller();
+            var marshaller = ListEventSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
             return Invoke<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, unmarshaller);
@@ -1605,7 +1609,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListEventSubscriptions(ListEventSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListEventSubscriptionsRequestMarshaller();
+            var marshaller = ListEventSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListEventSubscriptionsRequest>(request, marshaller, unmarshaller,
@@ -1653,7 +1657,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var marshaller = new ListFindingsRequestMarshaller();
+            var marshaller = ListFindingsRequestMarshaller.Instance;
             var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
             return Invoke<ListFindingsRequest,ListFindingsResponse>(request, marshaller, unmarshaller);
@@ -1673,7 +1677,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual IAsyncResult BeginListFindings(ListFindingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListFindingsRequestMarshaller();
+            var marshaller = ListFindingsRequestMarshaller.Instance;
             var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListFindingsRequest>(request, marshaller, unmarshaller,
@@ -1716,7 +1720,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public virtual ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request)
         {
-            var marshaller = new ListRulesPackagesRequestMarshaller();
+            var marshaller = ListRulesPackagesRequestMarshaller.Instance;
             var unmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
 
             return Invoke<ListRulesPackagesRequest,ListRulesPackagesResponse>(request, marshaller, unmarshaller);
@@ -1736,7 +1740,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public virtual IAsyncResult BeginListRulesPackages(ListRulesPackagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListRulesPackagesRequestMarshaller();
+            var marshaller = ListRulesPackagesRequestMarshaller.Instance;
             var unmarshaller = ListRulesPackagesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListRulesPackagesRequest>(request, marshaller, unmarshaller,
@@ -1783,7 +1787,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -1803,7 +1807,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
@@ -1855,7 +1859,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public virtual PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request)
         {
-            var marshaller = new PreviewAgentsRequestMarshaller();
+            var marshaller = PreviewAgentsRequestMarshaller.Instance;
             var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
             return Invoke<PreviewAgentsRequest,PreviewAgentsResponse>(request, marshaller, unmarshaller);
@@ -1875,7 +1879,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public virtual IAsyncResult BeginPreviewAgents(PreviewAgentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PreviewAgentsRequestMarshaller();
+            var marshaller = PreviewAgentsRequestMarshaller.Instance;
             var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PreviewAgentsRequest>(request, marshaller, unmarshaller,
@@ -1923,7 +1927,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public virtual RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request)
         {
-            var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
+            var marshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
             var unmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
             return Invoke<RegisterCrossAccountAccessRoleRequest,RegisterCrossAccountAccessRoleResponse>(request, marshaller, unmarshaller);
@@ -1943,7 +1947,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public virtual IAsyncResult BeginRegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
+            var marshaller = RegisterCrossAccountAccessRoleRequestMarshaller.Instance;
             var unmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterCrossAccountAccessRoleRequest>(request, marshaller, unmarshaller,
@@ -1991,7 +1995,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public virtual RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request)
         {
-            var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
+            var marshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
             var unmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveAttributesFromFindingsRequest,RemoveAttributesFromFindingsResponse>(request, marshaller, unmarshaller);
@@ -2011,7 +2015,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public virtual IAsyncResult BeginRemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
+            var marshaller = RemoveAttributesFromFindingsRequestMarshaller.Instance;
             var unmarshaller = RemoveAttributesFromFindingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveAttributesFromFindingsRequest>(request, marshaller, unmarshaller,
@@ -2059,7 +2063,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public virtual SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request)
         {
-            var marshaller = new SetTagsForResourceRequestMarshaller();
+            var marshaller = SetTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<SetTagsForResourceRequest,SetTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2079,7 +2083,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginSetTagsForResource(SetTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetTagsForResourceRequestMarshaller();
+            var marshaller = SetTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetTagsForResourceRequest>(request, marshaller, unmarshaller,
@@ -2140,7 +2144,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public virtual StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request)
         {
-            var marshaller = new StartAssessmentRunRequestMarshaller();
+            var marshaller = StartAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
             return Invoke<StartAssessmentRunRequest,StartAssessmentRunResponse>(request, marshaller, unmarshaller);
@@ -2160,7 +2164,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public virtual IAsyncResult BeginStartAssessmentRun(StartAssessmentRunRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartAssessmentRunRequestMarshaller();
+            var marshaller = StartAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartAssessmentRunRequest>(request, marshaller, unmarshaller,
@@ -2207,7 +2211,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public virtual StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request)
         {
-            var marshaller = new StopAssessmentRunRequestMarshaller();
+            var marshaller = StopAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
             return Invoke<StopAssessmentRunRequest,StopAssessmentRunResponse>(request, marshaller, unmarshaller);
@@ -2227,7 +2231,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public virtual IAsyncResult BeginStopAssessmentRun(StopAssessmentRunRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopAssessmentRunRequestMarshaller();
+            var marshaller = StopAssessmentRunRequestMarshaller.Instance;
             var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopAssessmentRunRequest>(request, marshaller, unmarshaller,
@@ -2279,7 +2283,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public virtual SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request)
         {
-            var marshaller = new SubscribeToEventRequestMarshaller();
+            var marshaller = SubscribeToEventRequestMarshaller.Instance;
             var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
             return Invoke<SubscribeToEventRequest,SubscribeToEventResponse>(request, marshaller, unmarshaller);
@@ -2299,7 +2303,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public virtual IAsyncResult BeginSubscribeToEvent(SubscribeToEventRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SubscribeToEventRequestMarshaller();
+            var marshaller = SubscribeToEventRequestMarshaller.Instance;
             var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
             return BeginInvoke<SubscribeToEventRequest>(request, marshaller, unmarshaller,
@@ -2347,7 +2351,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public virtual UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request)
         {
-            var marshaller = new UnsubscribeFromEventRequestMarshaller();
+            var marshaller = UnsubscribeFromEventRequestMarshaller.Instance;
             var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
             return Invoke<UnsubscribeFromEventRequest,UnsubscribeFromEventResponse>(request, marshaller, unmarshaller);
@@ -2367,7 +2371,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public virtual IAsyncResult BeginUnsubscribeFromEvent(UnsubscribeFromEventRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UnsubscribeFromEventRequestMarshaller();
+            var marshaller = UnsubscribeFromEventRequestMarshaller.Instance;
             var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
             return BeginInvoke<UnsubscribeFromEventRequest>(request, marshaller, unmarshaller,
@@ -2414,7 +2418,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public virtual UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request)
         {
-            var marshaller = new UpdateAssessmentTargetRequestMarshaller();
+            var marshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAssessmentTargetRequest,UpdateAssessmentTargetResponse>(request, marshaller, unmarshaller);
@@ -2434,7 +2438,7 @@ namespace Amazon.Inspector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentTarget(UpdateAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAssessmentTargetRequestMarshaller();
+            var marshaller = UpdateAssessmentTargetRequestMarshaller.Instance;
             var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAssessmentTargetRequest>(request, marshaller, unmarshaller,

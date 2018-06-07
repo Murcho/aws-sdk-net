@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAdministrationRoleARN())
+                {
+                    request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,6 +82,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetExecutionRoleName())
+                {
+                    request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
                 }
                 if(publicRequest.IsSetParameters())
                 {
@@ -134,5 +142,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateStackSetRequestMarshaller _instance = new CreateStackSetRequestMarshaller();        
+
+        internal static CreateStackSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateStackSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

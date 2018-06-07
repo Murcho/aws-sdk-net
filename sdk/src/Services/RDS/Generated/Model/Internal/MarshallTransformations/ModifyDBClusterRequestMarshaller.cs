@@ -62,9 +62,34 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+                if(publicRequest.IsSetBacktrackWindow())
+                {
+                    request.Parameters.Add("BacktrackWindow", StringUtils.FromLong(publicRequest.BacktrackWindow));
+                }
                 if(publicRequest.IsSetBackupRetentionPeriod())
                 {
                     request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
+                }
+                if(publicRequest.IsSetCloudwatchLogsExportConfiguration())
+                {
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetDisableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetEnableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
                 }
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
@@ -77,6 +102,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableIAMDatabaseAuthentication())
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
                 if(publicRequest.IsSetMasterUserPassword())
                 {
@@ -114,5 +143,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyDBClusterRequestMarshaller _instance = new ModifyDBClusterRequestMarshaller();        
+
+        internal static ModifyDBClusterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyDBClusterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

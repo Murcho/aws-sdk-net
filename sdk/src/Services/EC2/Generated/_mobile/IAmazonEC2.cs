@@ -34,7 +34,7 @@ namespace Amazon.EC2
     /// Amazon Elastic Compute Cloud 
     /// <para>
     /// Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in
-    /// the AWS Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front,
+    /// the AWS Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front,
     /// so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
@@ -701,6 +701,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateFleet
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFlowLogs
 
 
@@ -1298,6 +1315,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteFleets
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        Task<DeleteFleetsResponse> DeleteFleetsAsync(DeleteFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteFlowLogs
 
 
@@ -1821,7 +1855,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
@@ -1897,6 +1931,23 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeAggregateIdFormat
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregateIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        Task<DescribeAggregateIdFormatResponse> DescribeAggregateIdFormatAsync(DescribeAggregateIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2159,6 +2210,57 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeFleetHistory
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        Task<DescribeFleetHistoryResponse> DescribeFleetHistoryAsync(DescribeFleetHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeFleetInstances
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        Task<DescribeFleetInstancesResponse> DescribeFleetInstancesAsync(DescribeFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeFleets
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2822,6 +2924,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribePrincipalIdFormat
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrincipalIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        Task<DescribePrincipalIdFormatResponse> DescribePrincipalIdFormatAsync(DescribePrincipalIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeRegions
 
 
@@ -3276,7 +3395,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3356,10 +3475,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -3371,7 +3487,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -3403,7 +3519,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -4429,6 +4545,23 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyFleet
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        Task<ModifyFleetResponse> ModifyFleetAsync(ModifyFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

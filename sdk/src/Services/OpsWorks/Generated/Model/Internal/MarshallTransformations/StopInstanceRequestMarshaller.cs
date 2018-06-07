@@ -67,6 +67,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("Force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetInstanceId())
                 {
                     context.Writer.WritePropertyName("InstanceId");
@@ -82,7 +88,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopInstanceRequestMarshaller _instance = new StopInstanceRequestMarshaller();        
 
+        internal static StopInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

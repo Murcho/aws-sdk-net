@@ -179,7 +179,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AddCustomAttributes
         internal virtual AddCustomAttributesResponse AddCustomAttributes(AddCustomAttributesRequest request)
         {
-            var marshaller = new AddCustomAttributesRequestMarshaller();
+            var marshaller = AddCustomAttributesRequestMarshaller.Instance;
             var unmarshaller = AddCustomAttributesResponseUnmarshaller.Instance;
 
             return Invoke<AddCustomAttributesRequest,AddCustomAttributesResponse>(request, marshaller, unmarshaller);
@@ -197,7 +197,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AddCustomAttributesAsync(AddCustomAttributesRequest request, AmazonServiceCallback<AddCustomAttributesRequest, AddCustomAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AddCustomAttributesRequestMarshaller();
+            var marshaller = AddCustomAttributesRequestMarshaller.Instance;
             var unmarshaller = AddCustomAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -214,7 +214,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminAddUserToGroup
         internal virtual AdminAddUserToGroupResponse AdminAddUserToGroup(AdminAddUserToGroupRequest request)
         {
-            var marshaller = new AdminAddUserToGroupRequestMarshaller();
+            var marshaller = AdminAddUserToGroupRequestMarshaller.Instance;
             var unmarshaller = AdminAddUserToGroupResponseUnmarshaller.Instance;
 
             return Invoke<AdminAddUserToGroupRequest,AdminAddUserToGroupResponse>(request, marshaller, unmarshaller);
@@ -232,7 +232,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminAddUserToGroupAsync(AdminAddUserToGroupRequest request, AmazonServiceCallback<AdminAddUserToGroupRequest, AdminAddUserToGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminAddUserToGroupRequestMarshaller();
+            var marshaller = AdminAddUserToGroupRequestMarshaller.Instance;
             var unmarshaller = AdminAddUserToGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -249,7 +249,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminConfirmSignUp
         internal virtual AdminConfirmSignUpResponse AdminConfirmSignUp(AdminConfirmSignUpRequest request)
         {
-            var marshaller = new AdminConfirmSignUpRequestMarshaller();
+            var marshaller = AdminConfirmSignUpRequestMarshaller.Instance;
             var unmarshaller = AdminConfirmSignUpResponseUnmarshaller.Instance;
 
             return Invoke<AdminConfirmSignUpRequest,AdminConfirmSignUpResponse>(request, marshaller, unmarshaller);
@@ -267,7 +267,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminConfirmSignUpAsync(AdminConfirmSignUpRequest request, AmazonServiceCallback<AdminConfirmSignUpRequest, AdminConfirmSignUpResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminConfirmSignUpRequestMarshaller();
+            var marshaller = AdminConfirmSignUpRequestMarshaller.Instance;
             var unmarshaller = AdminConfirmSignUpResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -284,7 +284,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminCreateUser
         internal virtual AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request)
         {
-            var marshaller = new AdminCreateUserRequestMarshaller();
+            var marshaller = AdminCreateUserRequestMarshaller.Instance;
             var unmarshaller = AdminCreateUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminCreateUserRequest,AdminCreateUserResponse>(request, marshaller, unmarshaller);
@@ -302,7 +302,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminCreateUserAsync(AdminCreateUserRequest request, AmazonServiceCallback<AdminCreateUserRequest, AdminCreateUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminCreateUserRequestMarshaller();
+            var marshaller = AdminCreateUserRequestMarshaller.Instance;
             var unmarshaller = AdminCreateUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -319,7 +319,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminDeleteUser
         internal virtual AdminDeleteUserResponse AdminDeleteUser(AdminDeleteUserRequest request)
         {
-            var marshaller = new AdminDeleteUserRequestMarshaller();
+            var marshaller = AdminDeleteUserRequestMarshaller.Instance;
             var unmarshaller = AdminDeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminDeleteUserRequest,AdminDeleteUserResponse>(request, marshaller, unmarshaller);
@@ -337,7 +337,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminDeleteUserAsync(AdminDeleteUserRequest request, AmazonServiceCallback<AdminDeleteUserRequest, AdminDeleteUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminDeleteUserRequestMarshaller();
+            var marshaller = AdminDeleteUserRequestMarshaller.Instance;
             var unmarshaller = AdminDeleteUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -354,7 +354,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminDeleteUserAttributes
         internal virtual AdminDeleteUserAttributesResponse AdminDeleteUserAttributes(AdminDeleteUserAttributesRequest request)
         {
-            var marshaller = new AdminDeleteUserAttributesRequestMarshaller();
+            var marshaller = AdminDeleteUserAttributesRequestMarshaller.Instance;
             var unmarshaller = AdminDeleteUserAttributesResponseUnmarshaller.Instance;
 
             return Invoke<AdminDeleteUserAttributesRequest,AdminDeleteUserAttributesResponse>(request, marshaller, unmarshaller);
@@ -372,7 +372,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminDeleteUserAttributesAsync(AdminDeleteUserAttributesRequest request, AmazonServiceCallback<AdminDeleteUserAttributesRequest, AdminDeleteUserAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminDeleteUserAttributesRequestMarshaller();
+            var marshaller = AdminDeleteUserAttributesRequestMarshaller.Instance;
             var unmarshaller = AdminDeleteUserAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -389,7 +389,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminDisableProviderForUser
         internal virtual AdminDisableProviderForUserResponse AdminDisableProviderForUser(AdminDisableProviderForUserRequest request)
         {
-            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var marshaller = AdminDisableProviderForUserRequestMarshaller.Instance;
             var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminDisableProviderForUserRequest,AdminDisableProviderForUserResponse>(request, marshaller, unmarshaller);
@@ -407,7 +407,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminDisableProviderForUserAsync(AdminDisableProviderForUserRequest request, AmazonServiceCallback<AdminDisableProviderForUserRequest, AdminDisableProviderForUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminDisableProviderForUserRequestMarshaller();
+            var marshaller = AdminDisableProviderForUserRequestMarshaller.Instance;
             var unmarshaller = AdminDisableProviderForUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -424,7 +424,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminDisableUser
         internal virtual AdminDisableUserResponse AdminDisableUser(AdminDisableUserRequest request)
         {
-            var marshaller = new AdminDisableUserRequestMarshaller();
+            var marshaller = AdminDisableUserRequestMarshaller.Instance;
             var unmarshaller = AdminDisableUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminDisableUserRequest,AdminDisableUserResponse>(request, marshaller, unmarshaller);
@@ -442,7 +442,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminDisableUserAsync(AdminDisableUserRequest request, AmazonServiceCallback<AdminDisableUserRequest, AdminDisableUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminDisableUserRequestMarshaller();
+            var marshaller = AdminDisableUserRequestMarshaller.Instance;
             var unmarshaller = AdminDisableUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -459,7 +459,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminEnableUser
         internal virtual AdminEnableUserResponse AdminEnableUser(AdminEnableUserRequest request)
         {
-            var marshaller = new AdminEnableUserRequestMarshaller();
+            var marshaller = AdminEnableUserRequestMarshaller.Instance;
             var unmarshaller = AdminEnableUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminEnableUserRequest,AdminEnableUserResponse>(request, marshaller, unmarshaller);
@@ -477,7 +477,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminEnableUserAsync(AdminEnableUserRequest request, AmazonServiceCallback<AdminEnableUserRequest, AdminEnableUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminEnableUserRequestMarshaller();
+            var marshaller = AdminEnableUserRequestMarshaller.Instance;
             var unmarshaller = AdminEnableUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -494,7 +494,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminForgetDevice
         internal virtual AdminForgetDeviceResponse AdminForgetDevice(AdminForgetDeviceRequest request)
         {
-            var marshaller = new AdminForgetDeviceRequestMarshaller();
+            var marshaller = AdminForgetDeviceRequestMarshaller.Instance;
             var unmarshaller = AdminForgetDeviceResponseUnmarshaller.Instance;
 
             return Invoke<AdminForgetDeviceRequest,AdminForgetDeviceResponse>(request, marshaller, unmarshaller);
@@ -512,7 +512,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminForgetDeviceAsync(AdminForgetDeviceRequest request, AmazonServiceCallback<AdminForgetDeviceRequest, AdminForgetDeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminForgetDeviceRequestMarshaller();
+            var marshaller = AdminForgetDeviceRequestMarshaller.Instance;
             var unmarshaller = AdminForgetDeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -529,7 +529,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminGetDevice
         internal virtual AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request)
         {
-            var marshaller = new AdminGetDeviceRequestMarshaller();
+            var marshaller = AdminGetDeviceRequestMarshaller.Instance;
             var unmarshaller = AdminGetDeviceResponseUnmarshaller.Instance;
 
             return Invoke<AdminGetDeviceRequest,AdminGetDeviceResponse>(request, marshaller, unmarshaller);
@@ -547,7 +547,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminGetDeviceAsync(AdminGetDeviceRequest request, AmazonServiceCallback<AdminGetDeviceRequest, AdminGetDeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminGetDeviceRequestMarshaller();
+            var marshaller = AdminGetDeviceRequestMarshaller.Instance;
             var unmarshaller = AdminGetDeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -564,7 +564,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminGetUser
         internal virtual AdminGetUserResponse AdminGetUser(AdminGetUserRequest request)
         {
-            var marshaller = new AdminGetUserRequestMarshaller();
+            var marshaller = AdminGetUserRequestMarshaller.Instance;
             var unmarshaller = AdminGetUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminGetUserRequest,AdminGetUserResponse>(request, marshaller, unmarshaller);
@@ -582,7 +582,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminGetUserAsync(AdminGetUserRequest request, AmazonServiceCallback<AdminGetUserRequest, AdminGetUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminGetUserRequestMarshaller();
+            var marshaller = AdminGetUserRequestMarshaller.Instance;
             var unmarshaller = AdminGetUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -599,7 +599,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminInitiateAuth
         internal virtual AdminInitiateAuthResponse AdminInitiateAuth(AdminInitiateAuthRequest request)
         {
-            var marshaller = new AdminInitiateAuthRequestMarshaller();
+            var marshaller = AdminInitiateAuthRequestMarshaller.Instance;
             var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
 
             return Invoke<AdminInitiateAuthRequest,AdminInitiateAuthResponse>(request, marshaller, unmarshaller);
@@ -617,7 +617,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminInitiateAuthAsync(AdminInitiateAuthRequest request, AmazonServiceCallback<AdminInitiateAuthRequest, AdminInitiateAuthResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminInitiateAuthRequestMarshaller();
+            var marshaller = AdminInitiateAuthRequestMarshaller.Instance;
             var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -634,7 +634,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminLinkProviderForUser
         internal virtual AdminLinkProviderForUserResponse AdminLinkProviderForUser(AdminLinkProviderForUserRequest request)
         {
-            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var marshaller = AdminLinkProviderForUserRequestMarshaller.Instance;
             var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminLinkProviderForUserRequest,AdminLinkProviderForUserResponse>(request, marshaller, unmarshaller);
@@ -652,7 +652,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminLinkProviderForUserAsync(AdminLinkProviderForUserRequest request, AmazonServiceCallback<AdminLinkProviderForUserRequest, AdminLinkProviderForUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminLinkProviderForUserRequestMarshaller();
+            var marshaller = AdminLinkProviderForUserRequestMarshaller.Instance;
             var unmarshaller = AdminLinkProviderForUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -669,7 +669,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminListDevices
         internal virtual AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request)
         {
-            var marshaller = new AdminListDevicesRequestMarshaller();
+            var marshaller = AdminListDevicesRequestMarshaller.Instance;
             var unmarshaller = AdminListDevicesResponseUnmarshaller.Instance;
 
             return Invoke<AdminListDevicesRequest,AdminListDevicesResponse>(request, marshaller, unmarshaller);
@@ -687,7 +687,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminListDevicesAsync(AdminListDevicesRequest request, AmazonServiceCallback<AdminListDevicesRequest, AdminListDevicesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminListDevicesRequestMarshaller();
+            var marshaller = AdminListDevicesRequestMarshaller.Instance;
             var unmarshaller = AdminListDevicesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -704,7 +704,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminListGroupsForUser
         internal virtual AdminListGroupsForUserResponse AdminListGroupsForUser(AdminListGroupsForUserRequest request)
         {
-            var marshaller = new AdminListGroupsForUserRequestMarshaller();
+            var marshaller = AdminListGroupsForUserRequestMarshaller.Instance;
             var unmarshaller = AdminListGroupsForUserResponseUnmarshaller.Instance;
 
             return Invoke<AdminListGroupsForUserRequest,AdminListGroupsForUserResponse>(request, marshaller, unmarshaller);
@@ -722,7 +722,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminListGroupsForUserAsync(AdminListGroupsForUserRequest request, AmazonServiceCallback<AdminListGroupsForUserRequest, AdminListGroupsForUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminListGroupsForUserRequestMarshaller();
+            var marshaller = AdminListGroupsForUserRequestMarshaller.Instance;
             var unmarshaller = AdminListGroupsForUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -739,7 +739,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminListUserAuthEvents
         internal virtual AdminListUserAuthEventsResponse AdminListUserAuthEvents(AdminListUserAuthEventsRequest request)
         {
-            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var marshaller = AdminListUserAuthEventsRequestMarshaller.Instance;
             var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
 
             return Invoke<AdminListUserAuthEventsRequest,AdminListUserAuthEventsResponse>(request, marshaller, unmarshaller);
@@ -757,7 +757,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminListUserAuthEventsAsync(AdminListUserAuthEventsRequest request, AmazonServiceCallback<AdminListUserAuthEventsRequest, AdminListUserAuthEventsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminListUserAuthEventsRequestMarshaller();
+            var marshaller = AdminListUserAuthEventsRequestMarshaller.Instance;
             var unmarshaller = AdminListUserAuthEventsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -774,7 +774,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminRemoveUserFromGroup
         internal virtual AdminRemoveUserFromGroupResponse AdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request)
         {
-            var marshaller = new AdminRemoveUserFromGroupRequestMarshaller();
+            var marshaller = AdminRemoveUserFromGroupRequestMarshaller.Instance;
             var unmarshaller = AdminRemoveUserFromGroupResponseUnmarshaller.Instance;
 
             return Invoke<AdminRemoveUserFromGroupRequest,AdminRemoveUserFromGroupResponse>(request, marshaller, unmarshaller);
@@ -792,7 +792,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest request, AmazonServiceCallback<AdminRemoveUserFromGroupRequest, AdminRemoveUserFromGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminRemoveUserFromGroupRequestMarshaller();
+            var marshaller = AdminRemoveUserFromGroupRequestMarshaller.Instance;
             var unmarshaller = AdminRemoveUserFromGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -809,7 +809,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminResetUserPassword
         internal virtual AdminResetUserPasswordResponse AdminResetUserPassword(AdminResetUserPasswordRequest request)
         {
-            var marshaller = new AdminResetUserPasswordRequestMarshaller();
+            var marshaller = AdminResetUserPasswordRequestMarshaller.Instance;
             var unmarshaller = AdminResetUserPasswordResponseUnmarshaller.Instance;
 
             return Invoke<AdminResetUserPasswordRequest,AdminResetUserPasswordResponse>(request, marshaller, unmarshaller);
@@ -827,7 +827,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminResetUserPasswordAsync(AdminResetUserPasswordRequest request, AmazonServiceCallback<AdminResetUserPasswordRequest, AdminResetUserPasswordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminResetUserPasswordRequestMarshaller();
+            var marshaller = AdminResetUserPasswordRequestMarshaller.Instance;
             var unmarshaller = AdminResetUserPasswordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -844,7 +844,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminRespondToAuthChallenge
         internal virtual AdminRespondToAuthChallengeResponse AdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request)
         {
-            var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
+            var marshaller = AdminRespondToAuthChallengeRequestMarshaller.Instance;
             var unmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
 
             return Invoke<AdminRespondToAuthChallengeRequest,AdminRespondToAuthChallengeResponse>(request, marshaller, unmarshaller);
@@ -862,7 +862,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminRespondToAuthChallengeAsync(AdminRespondToAuthChallengeRequest request, AmazonServiceCallback<AdminRespondToAuthChallengeRequest, AdminRespondToAuthChallengeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
+            var marshaller = AdminRespondToAuthChallengeRequestMarshaller.Instance;
             var unmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -879,7 +879,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminSetUserMFAPreference
         internal virtual AdminSetUserMFAPreferenceResponse AdminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest request)
         {
-            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var marshaller = AdminSetUserMFAPreferenceRequestMarshaller.Instance;
             var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
 
             return Invoke<AdminSetUserMFAPreferenceRequest,AdminSetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
@@ -897,7 +897,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminSetUserMFAPreferenceAsync(AdminSetUserMFAPreferenceRequest request, AmazonServiceCallback<AdminSetUserMFAPreferenceRequest, AdminSetUserMFAPreferenceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminSetUserMFAPreferenceRequestMarshaller();
+            var marshaller = AdminSetUserMFAPreferenceRequestMarshaller.Instance;
             var unmarshaller = AdminSetUserMFAPreferenceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -914,7 +914,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminSetUserSettings
         internal virtual AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request)
         {
-            var marshaller = new AdminSetUserSettingsRequestMarshaller();
+            var marshaller = AdminSetUserSettingsRequestMarshaller.Instance;
             var unmarshaller = AdminSetUserSettingsResponseUnmarshaller.Instance;
 
             return Invoke<AdminSetUserSettingsRequest,AdminSetUserSettingsResponse>(request, marshaller, unmarshaller);
@@ -932,7 +932,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminSetUserSettingsAsync(AdminSetUserSettingsRequest request, AmazonServiceCallback<AdminSetUserSettingsRequest, AdminSetUserSettingsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminSetUserSettingsRequestMarshaller();
+            var marshaller = AdminSetUserSettingsRequestMarshaller.Instance;
             var unmarshaller = AdminSetUserSettingsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -949,7 +949,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUpdateAuthEventFeedback
         internal virtual AdminUpdateAuthEventFeedbackResponse AdminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest request)
         {
-            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var marshaller = AdminUpdateAuthEventFeedbackRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
 
             return Invoke<AdminUpdateAuthEventFeedbackRequest,AdminUpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
@@ -967,7 +967,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminUpdateAuthEventFeedbackAsync(AdminUpdateAuthEventFeedbackRequest request, AmazonServiceCallback<AdminUpdateAuthEventFeedbackRequest, AdminUpdateAuthEventFeedbackResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminUpdateAuthEventFeedbackRequestMarshaller();
+            var marshaller = AdminUpdateAuthEventFeedbackRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateAuthEventFeedbackResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -984,7 +984,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUpdateDeviceStatus
         internal virtual AdminUpdateDeviceStatusResponse AdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request)
         {
-            var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
+            var marshaller = AdminUpdateDeviceStatusRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateDeviceStatusResponseUnmarshaller.Instance;
 
             return Invoke<AdminUpdateDeviceStatusRequest,AdminUpdateDeviceStatusResponse>(request, marshaller, unmarshaller);
@@ -1002,7 +1002,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest request, AmazonServiceCallback<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
+            var marshaller = AdminUpdateDeviceStatusRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateDeviceStatusResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1019,7 +1019,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUpdateUserAttributes
         internal virtual AdminUpdateUserAttributesResponse AdminUpdateUserAttributes(AdminUpdateUserAttributesRequest request)
         {
-            var marshaller = new AdminUpdateUserAttributesRequestMarshaller();
+            var marshaller = AdminUpdateUserAttributesRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateUserAttributesResponseUnmarshaller.Instance;
 
             return Invoke<AdminUpdateUserAttributesRequest,AdminUpdateUserAttributesResponse>(request, marshaller, unmarshaller);
@@ -1037,7 +1037,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminUpdateUserAttributesAsync(AdminUpdateUserAttributesRequest request, AmazonServiceCallback<AdminUpdateUserAttributesRequest, AdminUpdateUserAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminUpdateUserAttributesRequestMarshaller();
+            var marshaller = AdminUpdateUserAttributesRequestMarshaller.Instance;
             var unmarshaller = AdminUpdateUserAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1054,7 +1054,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminUserGlobalSignOut
         internal virtual AdminUserGlobalSignOutResponse AdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request)
         {
-            var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
+            var marshaller = AdminUserGlobalSignOutRequestMarshaller.Instance;
             var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
 
             return Invoke<AdminUserGlobalSignOutRequest,AdminUserGlobalSignOutResponse>(request, marshaller, unmarshaller);
@@ -1072,7 +1072,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AdminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest request, AmazonServiceCallback<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
+            var marshaller = AdminUserGlobalSignOutRequestMarshaller.Instance;
             var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1089,7 +1089,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AssociateSoftwareToken
         internal virtual AssociateSoftwareTokenResponse AssociateSoftwareToken(AssociateSoftwareTokenRequest request)
         {
-            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var marshaller = AssociateSoftwareTokenRequestMarshaller.Instance;
             var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
 
             return Invoke<AssociateSoftwareTokenRequest,AssociateSoftwareTokenResponse>(request, marshaller, unmarshaller);
@@ -1107,7 +1107,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void AssociateSoftwareTokenAsync(AssociateSoftwareTokenRequest request, AmazonServiceCallback<AssociateSoftwareTokenRequest, AssociateSoftwareTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AssociateSoftwareTokenRequestMarshaller();
+            var marshaller = AssociateSoftwareTokenRequestMarshaller.Instance;
             var unmarshaller = AssociateSoftwareTokenResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1124,7 +1124,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ChangePassword
         internal virtual ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
         {
-            var marshaller = new ChangePasswordRequestMarshaller();
+            var marshaller = ChangePasswordRequestMarshaller.Instance;
             var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
 
             return Invoke<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, unmarshaller);
@@ -1142,7 +1142,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ChangePasswordAsync(ChangePasswordRequest request, AmazonServiceCallback<ChangePasswordRequest, ChangePasswordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ChangePasswordRequestMarshaller();
+            var marshaller = ChangePasswordRequestMarshaller.Instance;
             var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1159,7 +1159,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ConfirmDevice
         internal virtual ConfirmDeviceResponse ConfirmDevice(ConfirmDeviceRequest request)
         {
-            var marshaller = new ConfirmDeviceRequestMarshaller();
+            var marshaller = ConfirmDeviceRequestMarshaller.Instance;
             var unmarshaller = ConfirmDeviceResponseUnmarshaller.Instance;
 
             return Invoke<ConfirmDeviceRequest,ConfirmDeviceResponse>(request, marshaller, unmarshaller);
@@ -1177,7 +1177,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ConfirmDeviceAsync(ConfirmDeviceRequest request, AmazonServiceCallback<ConfirmDeviceRequest, ConfirmDeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ConfirmDeviceRequestMarshaller();
+            var marshaller = ConfirmDeviceRequestMarshaller.Instance;
             var unmarshaller = ConfirmDeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1194,7 +1194,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ConfirmForgotPassword
         internal virtual ConfirmForgotPasswordResponse ConfirmForgotPassword(ConfirmForgotPasswordRequest request)
         {
-            var marshaller = new ConfirmForgotPasswordRequestMarshaller();
+            var marshaller = ConfirmForgotPasswordRequestMarshaller.Instance;
             var unmarshaller = ConfirmForgotPasswordResponseUnmarshaller.Instance;
 
             return Invoke<ConfirmForgotPasswordRequest,ConfirmForgotPasswordResponse>(request, marshaller, unmarshaller);
@@ -1212,7 +1212,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ConfirmForgotPasswordAsync(ConfirmForgotPasswordRequest request, AmazonServiceCallback<ConfirmForgotPasswordRequest, ConfirmForgotPasswordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ConfirmForgotPasswordRequestMarshaller();
+            var marshaller = ConfirmForgotPasswordRequestMarshaller.Instance;
             var unmarshaller = ConfirmForgotPasswordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1229,7 +1229,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ConfirmSignUp
         internal virtual ConfirmSignUpResponse ConfirmSignUp(ConfirmSignUpRequest request)
         {
-            var marshaller = new ConfirmSignUpRequestMarshaller();
+            var marshaller = ConfirmSignUpRequestMarshaller.Instance;
             var unmarshaller = ConfirmSignUpResponseUnmarshaller.Instance;
 
             return Invoke<ConfirmSignUpRequest,ConfirmSignUpResponse>(request, marshaller, unmarshaller);
@@ -1247,7 +1247,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ConfirmSignUpAsync(ConfirmSignUpRequest request, AmazonServiceCallback<ConfirmSignUpRequest, ConfirmSignUpResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ConfirmSignUpRequestMarshaller();
+            var marshaller = ConfirmSignUpRequestMarshaller.Instance;
             var unmarshaller = ConfirmSignUpResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1264,7 +1264,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateGroup
         internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
@@ -1282,7 +1282,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateGroupAsync(CreateGroupRequest request, AmazonServiceCallback<CreateGroupRequest, CreateGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1299,7 +1299,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateIdentityProvider
         internal virtual CreateIdentityProviderResponse CreateIdentityProvider(CreateIdentityProviderRequest request)
         {
-            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var marshaller = CreateIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
 
             return Invoke<CreateIdentityProviderRequest,CreateIdentityProviderResponse>(request, marshaller, unmarshaller);
@@ -1317,7 +1317,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateIdentityProviderAsync(CreateIdentityProviderRequest request, AmazonServiceCallback<CreateIdentityProviderRequest, CreateIdentityProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateIdentityProviderRequestMarshaller();
+            var marshaller = CreateIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1334,7 +1334,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateResourceServer
         internal virtual CreateResourceServerResponse CreateResourceServer(CreateResourceServerRequest request)
         {
-            var marshaller = new CreateResourceServerRequestMarshaller();
+            var marshaller = CreateResourceServerRequestMarshaller.Instance;
             var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceServerRequest,CreateResourceServerResponse>(request, marshaller, unmarshaller);
@@ -1352,7 +1352,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateResourceServerAsync(CreateResourceServerRequest request, AmazonServiceCallback<CreateResourceServerRequest, CreateResourceServerResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateResourceServerRequestMarshaller();
+            var marshaller = CreateResourceServerRequestMarshaller.Instance;
             var unmarshaller = CreateResourceServerResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1369,7 +1369,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserImportJob
         internal virtual CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
         {
-            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var marshaller = CreateUserImportJobRequestMarshaller.Instance;
             var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserImportJobRequest,CreateUserImportJobResponse>(request, marshaller, unmarshaller);
@@ -1387,7 +1387,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateUserImportJobAsync(CreateUserImportJobRequest request, AmazonServiceCallback<CreateUserImportJobRequest, CreateUserImportJobResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var marshaller = CreateUserImportJobRequestMarshaller.Instance;
             var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1404,7 +1404,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserPool
         internal virtual CreateUserPoolResponse CreateUserPool(CreateUserPoolRequest request)
         {
-            var marshaller = new CreateUserPoolRequestMarshaller();
+            var marshaller = CreateUserPoolRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserPoolRequest,CreateUserPoolResponse>(request, marshaller, unmarshaller);
@@ -1422,7 +1422,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateUserPoolAsync(CreateUserPoolRequest request, AmazonServiceCallback<CreateUserPoolRequest, CreateUserPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateUserPoolRequestMarshaller();
+            var marshaller = CreateUserPoolRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1439,7 +1439,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserPoolClient
         internal virtual CreateUserPoolClientResponse CreateUserPoolClient(CreateUserPoolClientRequest request)
         {
-            var marshaller = new CreateUserPoolClientRequestMarshaller();
+            var marshaller = CreateUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolClientResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserPoolClientRequest,CreateUserPoolClientResponse>(request, marshaller, unmarshaller);
@@ -1457,7 +1457,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateUserPoolClientAsync(CreateUserPoolClientRequest request, AmazonServiceCallback<CreateUserPoolClientRequest, CreateUserPoolClientResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateUserPoolClientRequestMarshaller();
+            var marshaller = CreateUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolClientResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1474,7 +1474,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserPoolDomain
         internal virtual CreateUserPoolDomainResponse CreateUserPoolDomain(CreateUserPoolDomainRequest request)
         {
-            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var marshaller = CreateUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserPoolDomainRequest,CreateUserPoolDomainResponse>(request, marshaller, unmarshaller);
@@ -1492,7 +1492,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void CreateUserPoolDomainAsync(CreateUserPoolDomainRequest request, AmazonServiceCallback<CreateUserPoolDomainRequest, CreateUserPoolDomainResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateUserPoolDomainRequestMarshaller();
+            var marshaller = CreateUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1509,7 +1509,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteGroup
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
@@ -1527,7 +1527,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteGroupAsync(DeleteGroupRequest request, AmazonServiceCallback<DeleteGroupRequest, DeleteGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1544,7 +1544,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteIdentityProvider
         internal virtual DeleteIdentityProviderResponse DeleteIdentityProvider(DeleteIdentityProviderRequest request)
         {
-            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var marshaller = DeleteIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIdentityProviderRequest,DeleteIdentityProviderResponse>(request, marshaller, unmarshaller);
@@ -1562,7 +1562,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteIdentityProviderAsync(DeleteIdentityProviderRequest request, AmazonServiceCallback<DeleteIdentityProviderRequest, DeleteIdentityProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteIdentityProviderRequestMarshaller();
+            var marshaller = DeleteIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1579,7 +1579,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteResourceServer
         internal virtual DeleteResourceServerResponse DeleteResourceServer(DeleteResourceServerRequest request)
         {
-            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var marshaller = DeleteResourceServerRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteResourceServerRequest,DeleteResourceServerResponse>(request, marshaller, unmarshaller);
@@ -1597,7 +1597,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteResourceServerAsync(DeleteResourceServerRequest request, AmazonServiceCallback<DeleteResourceServerRequest, DeleteResourceServerResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteResourceServerRequestMarshaller();
+            var marshaller = DeleteResourceServerRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceServerResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1614,7 +1614,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUser
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -1632,7 +1632,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteUserAsync(DeleteUserRequest request, AmazonServiceCallback<DeleteUserRequest, DeleteUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1649,7 +1649,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUserAttributes
         internal virtual DeleteUserAttributesResponse DeleteUserAttributes(DeleteUserAttributesRequest request)
         {
-            var marshaller = new DeleteUserAttributesRequestMarshaller();
+            var marshaller = DeleteUserAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteUserAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserAttributesRequest,DeleteUserAttributesResponse>(request, marshaller, unmarshaller);
@@ -1667,7 +1667,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteUserAttributesAsync(DeleteUserAttributesRequest request, AmazonServiceCallback<DeleteUserAttributesRequest, DeleteUserAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteUserAttributesRequestMarshaller();
+            var marshaller = DeleteUserAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteUserAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1684,7 +1684,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUserPool
         internal virtual DeleteUserPoolResponse DeleteUserPool(DeleteUserPoolRequest request)
         {
-            var marshaller = new DeleteUserPoolRequestMarshaller();
+            var marshaller = DeleteUserPoolRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserPoolRequest,DeleteUserPoolResponse>(request, marshaller, unmarshaller);
@@ -1702,7 +1702,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteUserPoolAsync(DeleteUserPoolRequest request, AmazonServiceCallback<DeleteUserPoolRequest, DeleteUserPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteUserPoolRequestMarshaller();
+            var marshaller = DeleteUserPoolRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1719,7 +1719,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUserPoolClient
         internal virtual DeleteUserPoolClientResponse DeleteUserPoolClient(DeleteUserPoolClientRequest request)
         {
-            var marshaller = new DeleteUserPoolClientRequestMarshaller();
+            var marshaller = DeleteUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolClientResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserPoolClientRequest,DeleteUserPoolClientResponse>(request, marshaller, unmarshaller);
@@ -1737,7 +1737,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteUserPoolClientAsync(DeleteUserPoolClientRequest request, AmazonServiceCallback<DeleteUserPoolClientRequest, DeleteUserPoolClientResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteUserPoolClientRequestMarshaller();
+            var marshaller = DeleteUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolClientResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1754,7 +1754,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DeleteUserPoolDomain
         internal virtual DeleteUserPoolDomainResponse DeleteUserPoolDomain(DeleteUserPoolDomainRequest request)
         {
-            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var marshaller = DeleteUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserPoolDomainRequest,DeleteUserPoolDomainResponse>(request, marshaller, unmarshaller);
@@ -1772,7 +1772,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DeleteUserPoolDomainAsync(DeleteUserPoolDomainRequest request, AmazonServiceCallback<DeleteUserPoolDomainRequest, DeleteUserPoolDomainResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteUserPoolDomainRequestMarshaller();
+            var marshaller = DeleteUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1789,7 +1789,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeIdentityProvider
         internal virtual DescribeIdentityProviderResponse DescribeIdentityProvider(DescribeIdentityProviderRequest request)
         {
-            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var marshaller = DescribeIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
 
             return Invoke<DescribeIdentityProviderRequest,DescribeIdentityProviderResponse>(request, marshaller, unmarshaller);
@@ -1807,7 +1807,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeIdentityProviderAsync(DescribeIdentityProviderRequest request, AmazonServiceCallback<DescribeIdentityProviderRequest, DescribeIdentityProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeIdentityProviderRequestMarshaller();
+            var marshaller = DescribeIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1824,7 +1824,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeResourceServer
         internal virtual DescribeResourceServerResponse DescribeResourceServer(DescribeResourceServerRequest request)
         {
-            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var marshaller = DescribeResourceServerRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourceServerRequest,DescribeResourceServerResponse>(request, marshaller, unmarshaller);
@@ -1842,7 +1842,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeResourceServerAsync(DescribeResourceServerRequest request, AmazonServiceCallback<DescribeResourceServerRequest, DescribeResourceServerResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeResourceServerRequestMarshaller();
+            var marshaller = DescribeResourceServerRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceServerResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1859,7 +1859,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeRiskConfiguration
         internal virtual DescribeRiskConfigurationResponse DescribeRiskConfiguration(DescribeRiskConfigurationRequest request)
         {
-            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var marshaller = DescribeRiskConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRiskConfigurationRequest,DescribeRiskConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1877,7 +1877,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeRiskConfigurationAsync(DescribeRiskConfigurationRequest request, AmazonServiceCallback<DescribeRiskConfigurationRequest, DescribeRiskConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeRiskConfigurationRequestMarshaller();
+            var marshaller = DescribeRiskConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeRiskConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1894,7 +1894,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeUserImportJob
         internal virtual DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
         {
-            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var marshaller = DescribeUserImportJobRequestMarshaller.Instance;
             var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserImportJobRequest,DescribeUserImportJobResponse>(request, marshaller, unmarshaller);
@@ -1912,7 +1912,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeUserImportJobAsync(DescribeUserImportJobRequest request, AmazonServiceCallback<DescribeUserImportJobRequest, DescribeUserImportJobResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var marshaller = DescribeUserImportJobRequestMarshaller.Instance;
             var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1929,7 +1929,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeUserPool
         internal virtual DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request)
         {
-            var marshaller = new DescribeUserPoolRequestMarshaller();
+            var marshaller = DescribeUserPoolRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserPoolRequest,DescribeUserPoolResponse>(request, marshaller, unmarshaller);
@@ -1947,7 +1947,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeUserPoolAsync(DescribeUserPoolRequest request, AmazonServiceCallback<DescribeUserPoolRequest, DescribeUserPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeUserPoolRequestMarshaller();
+            var marshaller = DescribeUserPoolRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1964,7 +1964,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeUserPoolClient
         internal virtual DescribeUserPoolClientResponse DescribeUserPoolClient(DescribeUserPoolClientRequest request)
         {
-            var marshaller = new DescribeUserPoolClientRequestMarshaller();
+            var marshaller = DescribeUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolClientResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserPoolClientRequest,DescribeUserPoolClientResponse>(request, marshaller, unmarshaller);
@@ -1982,7 +1982,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeUserPoolClientAsync(DescribeUserPoolClientRequest request, AmazonServiceCallback<DescribeUserPoolClientRequest, DescribeUserPoolClientResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeUserPoolClientRequestMarshaller();
+            var marshaller = DescribeUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolClientResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1999,7 +1999,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  DescribeUserPoolDomain
         internal virtual DescribeUserPoolDomainResponse DescribeUserPoolDomain(DescribeUserPoolDomainRequest request)
         {
-            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var marshaller = DescribeUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserPoolDomainRequest,DescribeUserPoolDomainResponse>(request, marshaller, unmarshaller);
@@ -2017,7 +2017,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void DescribeUserPoolDomainAsync(DescribeUserPoolDomainRequest request, AmazonServiceCallback<DescribeUserPoolDomainRequest, DescribeUserPoolDomainResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeUserPoolDomainRequestMarshaller();
+            var marshaller = DescribeUserPoolDomainRequestMarshaller.Instance;
             var unmarshaller = DescribeUserPoolDomainResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2034,7 +2034,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ForgetDevice
         internal virtual ForgetDeviceResponse ForgetDevice(ForgetDeviceRequest request)
         {
-            var marshaller = new ForgetDeviceRequestMarshaller();
+            var marshaller = ForgetDeviceRequestMarshaller.Instance;
             var unmarshaller = ForgetDeviceResponseUnmarshaller.Instance;
 
             return Invoke<ForgetDeviceRequest,ForgetDeviceResponse>(request, marshaller, unmarshaller);
@@ -2052,7 +2052,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ForgetDeviceAsync(ForgetDeviceRequest request, AmazonServiceCallback<ForgetDeviceRequest, ForgetDeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ForgetDeviceRequestMarshaller();
+            var marshaller = ForgetDeviceRequestMarshaller.Instance;
             var unmarshaller = ForgetDeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2069,7 +2069,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ForgotPassword
         internal virtual ForgotPasswordResponse ForgotPassword(ForgotPasswordRequest request)
         {
-            var marshaller = new ForgotPasswordRequestMarshaller();
+            var marshaller = ForgotPasswordRequestMarshaller.Instance;
             var unmarshaller = ForgotPasswordResponseUnmarshaller.Instance;
 
             return Invoke<ForgotPasswordRequest,ForgotPasswordResponse>(request, marshaller, unmarshaller);
@@ -2087,7 +2087,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ForgotPasswordAsync(ForgotPasswordRequest request, AmazonServiceCallback<ForgotPasswordRequest, ForgotPasswordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ForgotPasswordRequestMarshaller();
+            var marshaller = ForgotPasswordRequestMarshaller.Instance;
             var unmarshaller = ForgotPasswordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2104,7 +2104,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetCSVHeader
         internal virtual GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request)
         {
-            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var marshaller = GetCSVHeaderRequestMarshaller.Instance;
             var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
 
             return Invoke<GetCSVHeaderRequest,GetCSVHeaderResponse>(request, marshaller, unmarshaller);
@@ -2122,7 +2122,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetCSVHeaderAsync(GetCSVHeaderRequest request, AmazonServiceCallback<GetCSVHeaderRequest, GetCSVHeaderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var marshaller = GetCSVHeaderRequestMarshaller.Instance;
             var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2139,7 +2139,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetDevice
         internal virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
-            var marshaller = new GetDeviceRequestMarshaller();
+            var marshaller = GetDeviceRequestMarshaller.Instance;
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
             return Invoke<GetDeviceRequest,GetDeviceResponse>(request, marshaller, unmarshaller);
@@ -2157,7 +2157,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetDeviceAsync(GetDeviceRequest request, AmazonServiceCallback<GetDeviceRequest, GetDeviceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetDeviceRequestMarshaller();
+            var marshaller = GetDeviceRequestMarshaller.Instance;
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2174,7 +2174,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetGroup
         internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
@@ -2192,7 +2192,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetGroupAsync(GetGroupRequest request, AmazonServiceCallback<GetGroupRequest, GetGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2209,7 +2209,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetIdentityProviderByIdentifier
         internal virtual GetIdentityProviderByIdentifierResponse GetIdentityProviderByIdentifier(GetIdentityProviderByIdentifierRequest request)
         {
-            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var marshaller = GetIdentityProviderByIdentifierRequestMarshaller.Instance;
             var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityProviderByIdentifierRequest,GetIdentityProviderByIdentifierResponse>(request, marshaller, unmarshaller);
@@ -2227,7 +2227,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetIdentityProviderByIdentifierAsync(GetIdentityProviderByIdentifierRequest request, AmazonServiceCallback<GetIdentityProviderByIdentifierRequest, GetIdentityProviderByIdentifierResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetIdentityProviderByIdentifierRequestMarshaller();
+            var marshaller = GetIdentityProviderByIdentifierRequestMarshaller.Instance;
             var unmarshaller = GetIdentityProviderByIdentifierResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2241,10 +2241,45 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetSigningCertificate
+        internal virtual GetSigningCertificateResponse GetSigningCertificate(GetSigningCertificateRequest request)
+        {
+            var marshaller = GetSigningCertificateRequestMarshaller.Instance;
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSigningCertificateRequest,GetSigningCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSigningCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual void GetSigningCertificateAsync(GetSigningCertificateRequest request, AmazonServiceCallback<GetSigningCertificateRequest, GetSigningCertificateResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetSigningCertificateRequestMarshaller.Instance;
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetSigningCertificateRequest,GetSigningCertificateResponse> responseObject 
+                            = new AmazonServiceResult<GetSigningCertificateRequest,GetSigningCertificateResponse>((GetSigningCertificateRequest)req, (GetSigningCertificateResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetSigningCertificateRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetUICustomization
         internal virtual GetUICustomizationResponse GetUICustomization(GetUICustomizationRequest request)
         {
-            var marshaller = new GetUICustomizationRequestMarshaller();
+            var marshaller = GetUICustomizationRequestMarshaller.Instance;
             var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
 
             return Invoke<GetUICustomizationRequest,GetUICustomizationResponse>(request, marshaller, unmarshaller);
@@ -2262,7 +2297,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetUICustomizationAsync(GetUICustomizationRequest request, AmazonServiceCallback<GetUICustomizationRequest, GetUICustomizationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetUICustomizationRequestMarshaller();
+            var marshaller = GetUICustomizationRequestMarshaller.Instance;
             var unmarshaller = GetUICustomizationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2279,7 +2314,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetUser
         internal virtual GetUserResponse GetUser(GetUserRequest request)
         {
-            var marshaller = new GetUserRequestMarshaller();
+            var marshaller = GetUserRequestMarshaller.Instance;
             var unmarshaller = GetUserResponseUnmarshaller.Instance;
 
             return Invoke<GetUserRequest,GetUserResponse>(request, marshaller, unmarshaller);
@@ -2297,7 +2332,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetUserAsync(GetUserRequest request, AmazonServiceCallback<GetUserRequest, GetUserResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetUserRequestMarshaller();
+            var marshaller = GetUserRequestMarshaller.Instance;
             var unmarshaller = GetUserResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2314,7 +2349,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetUserAttributeVerificationCode
         internal virtual GetUserAttributeVerificationCodeResponse GetUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request)
         {
-            var marshaller = new GetUserAttributeVerificationCodeRequestMarshaller();
+            var marshaller = GetUserAttributeVerificationCodeRequestMarshaller.Instance;
             var unmarshaller = GetUserAttributeVerificationCodeResponseUnmarshaller.Instance;
 
             return Invoke<GetUserAttributeVerificationCodeRequest,GetUserAttributeVerificationCodeResponse>(request, marshaller, unmarshaller);
@@ -2332,7 +2367,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetUserAttributeVerificationCodeAsync(GetUserAttributeVerificationCodeRequest request, AmazonServiceCallback<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetUserAttributeVerificationCodeRequestMarshaller();
+            var marshaller = GetUserAttributeVerificationCodeRequestMarshaller.Instance;
             var unmarshaller = GetUserAttributeVerificationCodeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2349,7 +2384,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GetUserPoolMfaConfig
         internal virtual GetUserPoolMfaConfigResponse GetUserPoolMfaConfig(GetUserPoolMfaConfigRequest request)
         {
-            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var marshaller = GetUserPoolMfaConfigRequestMarshaller.Instance;
             var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
 
             return Invoke<GetUserPoolMfaConfigRequest,GetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
@@ -2367,7 +2402,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GetUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest request, AmazonServiceCallback<GetUserPoolMfaConfigRequest, GetUserPoolMfaConfigResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetUserPoolMfaConfigRequestMarshaller();
+            var marshaller = GetUserPoolMfaConfigRequestMarshaller.Instance;
             var unmarshaller = GetUserPoolMfaConfigResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2384,7 +2419,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  GlobalSignOut
         internal virtual GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request)
         {
-            var marshaller = new GlobalSignOutRequestMarshaller();
+            var marshaller = GlobalSignOutRequestMarshaller.Instance;
             var unmarshaller = GlobalSignOutResponseUnmarshaller.Instance;
 
             return Invoke<GlobalSignOutRequest,GlobalSignOutResponse>(request, marshaller, unmarshaller);
@@ -2402,7 +2437,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void GlobalSignOutAsync(GlobalSignOutRequest request, AmazonServiceCallback<GlobalSignOutRequest, GlobalSignOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GlobalSignOutRequestMarshaller();
+            var marshaller = GlobalSignOutRequestMarshaller.Instance;
             var unmarshaller = GlobalSignOutResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2419,7 +2454,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  InitiateAuth
         internal virtual InitiateAuthResponse InitiateAuth(InitiateAuthRequest request)
         {
-            var marshaller = new InitiateAuthRequestMarshaller();
+            var marshaller = InitiateAuthRequestMarshaller.Instance;
             var unmarshaller = InitiateAuthResponseUnmarshaller.Instance;
 
             return Invoke<InitiateAuthRequest,InitiateAuthResponse>(request, marshaller, unmarshaller);
@@ -2437,7 +2472,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void InitiateAuthAsync(InitiateAuthRequest request, AmazonServiceCallback<InitiateAuthRequest, InitiateAuthResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new InitiateAuthRequestMarshaller();
+            var marshaller = InitiateAuthRequestMarshaller.Instance;
             var unmarshaller = InitiateAuthResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2454,7 +2489,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListDevices
         internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var marshaller = new ListDevicesRequestMarshaller();
+            var marshaller = ListDevicesRequestMarshaller.Instance;
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
             return Invoke<ListDevicesRequest,ListDevicesResponse>(request, marshaller, unmarshaller);
@@ -2472,7 +2507,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListDevicesAsync(ListDevicesRequest request, AmazonServiceCallback<ListDevicesRequest, ListDevicesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListDevicesRequestMarshaller();
+            var marshaller = ListDevicesRequestMarshaller.Instance;
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2489,7 +2524,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListGroups
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
@@ -2507,7 +2542,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListGroupsAsync(ListGroupsRequest request, AmazonServiceCallback<ListGroupsRequest, ListGroupsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2524,7 +2559,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListIdentityProviders
         internal virtual ListIdentityProvidersResponse ListIdentityProviders(ListIdentityProvidersRequest request)
         {
-            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var marshaller = ListIdentityProvidersRequestMarshaller.Instance;
             var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
 
             return Invoke<ListIdentityProvidersRequest,ListIdentityProvidersResponse>(request, marshaller, unmarshaller);
@@ -2542,7 +2577,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListIdentityProvidersAsync(ListIdentityProvidersRequest request, AmazonServiceCallback<ListIdentityProvidersRequest, ListIdentityProvidersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListIdentityProvidersRequestMarshaller();
+            var marshaller = ListIdentityProvidersRequestMarshaller.Instance;
             var unmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2559,7 +2594,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListResourceServers
         internal virtual ListResourceServersResponse ListResourceServers(ListResourceServersRequest request)
         {
-            var marshaller = new ListResourceServersRequestMarshaller();
+            var marshaller = ListResourceServersRequestMarshaller.Instance;
             var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
 
             return Invoke<ListResourceServersRequest,ListResourceServersResponse>(request, marshaller, unmarshaller);
@@ -2577,7 +2612,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListResourceServersAsync(ListResourceServersRequest request, AmazonServiceCallback<ListResourceServersRequest, ListResourceServersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListResourceServersRequestMarshaller();
+            var marshaller = ListResourceServersRequestMarshaller.Instance;
             var unmarshaller = ListResourceServersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2594,7 +2629,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUserImportJobs
         internal virtual ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request)
         {
-            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var marshaller = ListUserImportJobsRequestMarshaller.Instance;
             var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListUserImportJobsRequest,ListUserImportJobsResponse>(request, marshaller, unmarshaller);
@@ -2612,7 +2647,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListUserImportJobsAsync(ListUserImportJobsRequest request, AmazonServiceCallback<ListUserImportJobsRequest, ListUserImportJobsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var marshaller = ListUserImportJobsRequestMarshaller.Instance;
             var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2629,7 +2664,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUserPoolClients
         internal virtual ListUserPoolClientsResponse ListUserPoolClients(ListUserPoolClientsRequest request)
         {
-            var marshaller = new ListUserPoolClientsRequestMarshaller();
+            var marshaller = ListUserPoolClientsRequestMarshaller.Instance;
             var unmarshaller = ListUserPoolClientsResponseUnmarshaller.Instance;
 
             return Invoke<ListUserPoolClientsRequest,ListUserPoolClientsResponse>(request, marshaller, unmarshaller);
@@ -2647,7 +2682,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListUserPoolClientsAsync(ListUserPoolClientsRequest request, AmazonServiceCallback<ListUserPoolClientsRequest, ListUserPoolClientsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListUserPoolClientsRequestMarshaller();
+            var marshaller = ListUserPoolClientsRequestMarshaller.Instance;
             var unmarshaller = ListUserPoolClientsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2664,7 +2699,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUserPools
         internal virtual ListUserPoolsResponse ListUserPools(ListUserPoolsRequest request)
         {
-            var marshaller = new ListUserPoolsRequestMarshaller();
+            var marshaller = ListUserPoolsRequestMarshaller.Instance;
             var unmarshaller = ListUserPoolsResponseUnmarshaller.Instance;
 
             return Invoke<ListUserPoolsRequest,ListUserPoolsResponse>(request, marshaller, unmarshaller);
@@ -2682,7 +2717,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListUserPoolsAsync(ListUserPoolsRequest request, AmazonServiceCallback<ListUserPoolsRequest, ListUserPoolsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListUserPoolsRequestMarshaller();
+            var marshaller = ListUserPoolsRequestMarshaller.Instance;
             var unmarshaller = ListUserPoolsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2699,7 +2734,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUsers
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
@@ -2717,7 +2752,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListUsersAsync(ListUsersRequest request, AmazonServiceCallback<ListUsersRequest, ListUsersResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2734,7 +2769,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ListUsersInGroup
         internal virtual ListUsersInGroupResponse ListUsersInGroup(ListUsersInGroupRequest request)
         {
-            var marshaller = new ListUsersInGroupRequestMarshaller();
+            var marshaller = ListUsersInGroupRequestMarshaller.Instance;
             var unmarshaller = ListUsersInGroupResponseUnmarshaller.Instance;
 
             return Invoke<ListUsersInGroupRequest,ListUsersInGroupResponse>(request, marshaller, unmarshaller);
@@ -2752,7 +2787,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ListUsersInGroupAsync(ListUsersInGroupRequest request, AmazonServiceCallback<ListUsersInGroupRequest, ListUsersInGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListUsersInGroupRequestMarshaller();
+            var marshaller = ListUsersInGroupRequestMarshaller.Instance;
             var unmarshaller = ListUsersInGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2769,7 +2804,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  ResendConfirmationCode
         internal virtual ResendConfirmationCodeResponse ResendConfirmationCode(ResendConfirmationCodeRequest request)
         {
-            var marshaller = new ResendConfirmationCodeRequestMarshaller();
+            var marshaller = ResendConfirmationCodeRequestMarshaller.Instance;
             var unmarshaller = ResendConfirmationCodeResponseUnmarshaller.Instance;
 
             return Invoke<ResendConfirmationCodeRequest,ResendConfirmationCodeResponse>(request, marshaller, unmarshaller);
@@ -2787,7 +2822,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void ResendConfirmationCodeAsync(ResendConfirmationCodeRequest request, AmazonServiceCallback<ResendConfirmationCodeRequest, ResendConfirmationCodeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ResendConfirmationCodeRequestMarshaller();
+            var marshaller = ResendConfirmationCodeRequestMarshaller.Instance;
             var unmarshaller = ResendConfirmationCodeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2804,7 +2839,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  RespondToAuthChallenge
         internal virtual RespondToAuthChallengeResponse RespondToAuthChallenge(RespondToAuthChallengeRequest request)
         {
-            var marshaller = new RespondToAuthChallengeRequestMarshaller();
+            var marshaller = RespondToAuthChallengeRequestMarshaller.Instance;
             var unmarshaller = RespondToAuthChallengeResponseUnmarshaller.Instance;
 
             return Invoke<RespondToAuthChallengeRequest,RespondToAuthChallengeResponse>(request, marshaller, unmarshaller);
@@ -2822,7 +2857,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void RespondToAuthChallengeAsync(RespondToAuthChallengeRequest request, AmazonServiceCallback<RespondToAuthChallengeRequest, RespondToAuthChallengeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RespondToAuthChallengeRequestMarshaller();
+            var marshaller = RespondToAuthChallengeRequestMarshaller.Instance;
             var unmarshaller = RespondToAuthChallengeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2839,7 +2874,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetRiskConfiguration
         internal virtual SetRiskConfigurationResponse SetRiskConfiguration(SetRiskConfigurationRequest request)
         {
-            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var marshaller = SetRiskConfigurationRequestMarshaller.Instance;
             var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<SetRiskConfigurationRequest,SetRiskConfigurationResponse>(request, marshaller, unmarshaller);
@@ -2857,7 +2892,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SetRiskConfigurationAsync(SetRiskConfigurationRequest request, AmazonServiceCallback<SetRiskConfigurationRequest, SetRiskConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetRiskConfigurationRequestMarshaller();
+            var marshaller = SetRiskConfigurationRequestMarshaller.Instance;
             var unmarshaller = SetRiskConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2874,7 +2909,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetUICustomization
         internal virtual SetUICustomizationResponse SetUICustomization(SetUICustomizationRequest request)
         {
-            var marshaller = new SetUICustomizationRequestMarshaller();
+            var marshaller = SetUICustomizationRequestMarshaller.Instance;
             var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
 
             return Invoke<SetUICustomizationRequest,SetUICustomizationResponse>(request, marshaller, unmarshaller);
@@ -2892,7 +2927,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SetUICustomizationAsync(SetUICustomizationRequest request, AmazonServiceCallback<SetUICustomizationRequest, SetUICustomizationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetUICustomizationRequestMarshaller();
+            var marshaller = SetUICustomizationRequestMarshaller.Instance;
             var unmarshaller = SetUICustomizationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2909,7 +2944,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetUserMFAPreference
         internal virtual SetUserMFAPreferenceResponse SetUserMFAPreference(SetUserMFAPreferenceRequest request)
         {
-            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var marshaller = SetUserMFAPreferenceRequestMarshaller.Instance;
             var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
 
             return Invoke<SetUserMFAPreferenceRequest,SetUserMFAPreferenceResponse>(request, marshaller, unmarshaller);
@@ -2927,7 +2962,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SetUserMFAPreferenceAsync(SetUserMFAPreferenceRequest request, AmazonServiceCallback<SetUserMFAPreferenceRequest, SetUserMFAPreferenceResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetUserMFAPreferenceRequestMarshaller();
+            var marshaller = SetUserMFAPreferenceRequestMarshaller.Instance;
             var unmarshaller = SetUserMFAPreferenceResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2944,7 +2979,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetUserPoolMfaConfig
         internal virtual SetUserPoolMfaConfigResponse SetUserPoolMfaConfig(SetUserPoolMfaConfigRequest request)
         {
-            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var marshaller = SetUserPoolMfaConfigRequestMarshaller.Instance;
             var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
 
             return Invoke<SetUserPoolMfaConfigRequest,SetUserPoolMfaConfigResponse>(request, marshaller, unmarshaller);
@@ -2962,7 +2997,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SetUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest request, AmazonServiceCallback<SetUserPoolMfaConfigRequest, SetUserPoolMfaConfigResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetUserPoolMfaConfigRequestMarshaller();
+            var marshaller = SetUserPoolMfaConfigRequestMarshaller.Instance;
             var unmarshaller = SetUserPoolMfaConfigResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2979,7 +3014,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetUserSettings
         internal virtual SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request)
         {
-            var marshaller = new SetUserSettingsRequestMarshaller();
+            var marshaller = SetUserSettingsRequestMarshaller.Instance;
             var unmarshaller = SetUserSettingsResponseUnmarshaller.Instance;
 
             return Invoke<SetUserSettingsRequest,SetUserSettingsResponse>(request, marshaller, unmarshaller);
@@ -2997,7 +3032,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SetUserSettingsAsync(SetUserSettingsRequest request, AmazonServiceCallback<SetUserSettingsRequest, SetUserSettingsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetUserSettingsRequestMarshaller();
+            var marshaller = SetUserSettingsRequestMarshaller.Instance;
             var unmarshaller = SetUserSettingsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3014,7 +3049,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SignUp
         internal virtual SignUpResponse SignUp(SignUpRequest request)
         {
-            var marshaller = new SignUpRequestMarshaller();
+            var marshaller = SignUpRequestMarshaller.Instance;
             var unmarshaller = SignUpResponseUnmarshaller.Instance;
 
             return Invoke<SignUpRequest,SignUpResponse>(request, marshaller, unmarshaller);
@@ -3032,7 +3067,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void SignUpAsync(SignUpRequest request, AmazonServiceCallback<SignUpRequest, SignUpResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SignUpRequestMarshaller();
+            var marshaller = SignUpRequestMarshaller.Instance;
             var unmarshaller = SignUpResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3049,7 +3084,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  StartUserImportJob
         internal virtual StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request)
         {
-            var marshaller = new StartUserImportJobRequestMarshaller();
+            var marshaller = StartUserImportJobRequestMarshaller.Instance;
             var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
 
             return Invoke<StartUserImportJobRequest,StartUserImportJobResponse>(request, marshaller, unmarshaller);
@@ -3067,7 +3102,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void StartUserImportJobAsync(StartUserImportJobRequest request, AmazonServiceCallback<StartUserImportJobRequest, StartUserImportJobResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StartUserImportJobRequestMarshaller();
+            var marshaller = StartUserImportJobRequestMarshaller.Instance;
             var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3084,7 +3119,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  StopUserImportJob
         internal virtual StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request)
         {
-            var marshaller = new StopUserImportJobRequestMarshaller();
+            var marshaller = StopUserImportJobRequestMarshaller.Instance;
             var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
 
             return Invoke<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, unmarshaller);
@@ -3102,7 +3137,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void StopUserImportJobAsync(StopUserImportJobRequest request, AmazonServiceCallback<StopUserImportJobRequest, StopUserImportJobResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StopUserImportJobRequestMarshaller();
+            var marshaller = StopUserImportJobRequestMarshaller.Instance;
             var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3119,7 +3154,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateAuthEventFeedback
         internal virtual UpdateAuthEventFeedbackResponse UpdateAuthEventFeedback(UpdateAuthEventFeedbackRequest request)
         {
-            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var marshaller = UpdateAuthEventFeedbackRequestMarshaller.Instance;
             var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAuthEventFeedbackRequest,UpdateAuthEventFeedbackResponse>(request, marshaller, unmarshaller);
@@ -3137,7 +3172,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest request, AmazonServiceCallback<UpdateAuthEventFeedbackRequest, UpdateAuthEventFeedbackResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateAuthEventFeedbackRequestMarshaller();
+            var marshaller = UpdateAuthEventFeedbackRequestMarshaller.Instance;
             var unmarshaller = UpdateAuthEventFeedbackResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3154,7 +3189,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateDeviceStatus
         internal virtual UpdateDeviceStatusResponse UpdateDeviceStatus(UpdateDeviceStatusRequest request)
         {
-            var marshaller = new UpdateDeviceStatusRequestMarshaller();
+            var marshaller = UpdateDeviceStatusRequestMarshaller.Instance;
             var unmarshaller = UpdateDeviceStatusResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDeviceStatusRequest,UpdateDeviceStatusResponse>(request, marshaller, unmarshaller);
@@ -3172,7 +3207,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateDeviceStatusAsync(UpdateDeviceStatusRequest request, AmazonServiceCallback<UpdateDeviceStatusRequest, UpdateDeviceStatusResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateDeviceStatusRequestMarshaller();
+            var marshaller = UpdateDeviceStatusRequestMarshaller.Instance;
             var unmarshaller = UpdateDeviceStatusResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3189,7 +3224,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateGroup
         internal virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
@@ -3207,7 +3242,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateGroupAsync(UpdateGroupRequest request, AmazonServiceCallback<UpdateGroupRequest, UpdateGroupResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3224,7 +3259,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateIdentityProvider
         internal virtual UpdateIdentityProviderResponse UpdateIdentityProvider(UpdateIdentityProviderRequest request)
         {
-            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var marshaller = UpdateIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIdentityProviderRequest,UpdateIdentityProviderResponse>(request, marshaller, unmarshaller);
@@ -3242,7 +3277,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateIdentityProviderAsync(UpdateIdentityProviderRequest request, AmazonServiceCallback<UpdateIdentityProviderRequest, UpdateIdentityProviderResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateIdentityProviderRequestMarshaller();
+            var marshaller = UpdateIdentityProviderRequestMarshaller.Instance;
             var unmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3259,7 +3294,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateResourceServer
         internal virtual UpdateResourceServerResponse UpdateResourceServer(UpdateResourceServerRequest request)
         {
-            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var marshaller = UpdateResourceServerRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
 
             return Invoke<UpdateResourceServerRequest,UpdateResourceServerResponse>(request, marshaller, unmarshaller);
@@ -3277,7 +3312,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateResourceServerAsync(UpdateResourceServerRequest request, AmazonServiceCallback<UpdateResourceServerRequest, UpdateResourceServerResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateResourceServerRequestMarshaller();
+            var marshaller = UpdateResourceServerRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceServerResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3294,7 +3329,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserAttributes
         internal virtual UpdateUserAttributesResponse UpdateUserAttributes(UpdateUserAttributesRequest request)
         {
-            var marshaller = new UpdateUserAttributesRequestMarshaller();
+            var marshaller = UpdateUserAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateUserAttributesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserAttributesRequest,UpdateUserAttributesResponse>(request, marshaller, unmarshaller);
@@ -3312,7 +3347,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateUserAttributesAsync(UpdateUserAttributesRequest request, AmazonServiceCallback<UpdateUserAttributesRequest, UpdateUserAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateUserAttributesRequestMarshaller();
+            var marshaller = UpdateUserAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateUserAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3329,7 +3364,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserPool
         internal virtual UpdateUserPoolResponse UpdateUserPool(UpdateUserPoolRequest request)
         {
-            var marshaller = new UpdateUserPoolRequestMarshaller();
+            var marshaller = UpdateUserPoolRequestMarshaller.Instance;
             var unmarshaller = UpdateUserPoolResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserPoolRequest,UpdateUserPoolResponse>(request, marshaller, unmarshaller);
@@ -3347,7 +3382,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateUserPoolAsync(UpdateUserPoolRequest request, AmazonServiceCallback<UpdateUserPoolRequest, UpdateUserPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateUserPoolRequestMarshaller();
+            var marshaller = UpdateUserPoolRequestMarshaller.Instance;
             var unmarshaller = UpdateUserPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3364,7 +3399,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserPoolClient
         internal virtual UpdateUserPoolClientResponse UpdateUserPoolClient(UpdateUserPoolClientRequest request)
         {
-            var marshaller = new UpdateUserPoolClientRequestMarshaller();
+            var marshaller = UpdateUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = UpdateUserPoolClientResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserPoolClientRequest,UpdateUserPoolClientResponse>(request, marshaller, unmarshaller);
@@ -3382,7 +3417,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void UpdateUserPoolClientAsync(UpdateUserPoolClientRequest request, AmazonServiceCallback<UpdateUserPoolClientRequest, UpdateUserPoolClientResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateUserPoolClientRequestMarshaller();
+            var marshaller = UpdateUserPoolClientRequestMarshaller.Instance;
             var unmarshaller = UpdateUserPoolClientResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3399,7 +3434,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  VerifySoftwareToken
         internal virtual VerifySoftwareTokenResponse VerifySoftwareToken(VerifySoftwareTokenRequest request)
         {
-            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var marshaller = VerifySoftwareTokenRequestMarshaller.Instance;
             var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
 
             return Invoke<VerifySoftwareTokenRequest,VerifySoftwareTokenResponse>(request, marshaller, unmarshaller);
@@ -3417,7 +3452,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void VerifySoftwareTokenAsync(VerifySoftwareTokenRequest request, AmazonServiceCallback<VerifySoftwareTokenRequest, VerifySoftwareTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new VerifySoftwareTokenRequestMarshaller();
+            var marshaller = VerifySoftwareTokenRequestMarshaller.Instance;
             var unmarshaller = VerifySoftwareTokenResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3434,7 +3469,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  VerifyUserAttribute
         internal virtual VerifyUserAttributeResponse VerifyUserAttribute(VerifyUserAttributeRequest request)
         {
-            var marshaller = new VerifyUserAttributeRequestMarshaller();
+            var marshaller = VerifyUserAttributeRequestMarshaller.Instance;
             var unmarshaller = VerifyUserAttributeResponseUnmarshaller.Instance;
 
             return Invoke<VerifyUserAttributeRequest,VerifyUserAttributeResponse>(request, marshaller, unmarshaller);
@@ -3452,7 +3487,7 @@ namespace Amazon.CognitoIdentityProvider
         public virtual void VerifyUserAttributeAsync(VerifyUserAttributeRequest request, AmazonServiceCallback<VerifyUserAttributeRequest, VerifyUserAttributeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new VerifyUserAttributeRequestMarshaller();
+            var marshaller = VerifyUserAttributeRequestMarshaller.Instance;
             var unmarshaller = VerifyUserAttributeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
